@@ -1,0 +1,12 @@
+{
+  "name": "radkod/posts",
+  "description": "Sanalyer İçerik Modülü",
+  "authors": [
+    {
+      "name": "RadKod",
+      "email": "info@radkod.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {}
+}

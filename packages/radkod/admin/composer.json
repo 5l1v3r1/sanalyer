@@ -1,0 +1,12 @@
+{
+  "name": "radkod/admin",
+  "description": "Sanalyer Admin Modülü",
+  "authors": [
+    {
+      "name": "RadKod",
+      "email": "info@radkod.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {}
+}
