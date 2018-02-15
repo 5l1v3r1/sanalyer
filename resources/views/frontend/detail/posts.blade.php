@@ -68,12 +68,19 @@
                                         class="content-info__author">{{ $posts->user->firstname }}</a></span>
                             <span class="content-info__line">—</span>
                             <time class="content-info__date" itemprop="datePublished"
-                                  datetime="{{ $posts->created_at->format(DateTime::ATOM) }}">{{ $posts->created_at->diffForHumans() }}
-                            </time>
+                            datetime="{{ $posts->created_at->format(DateTime::ATOM) }}">{{ $posts->created_at->diffForHumans() }}
+                            </time>&nbsp;
+                            @if($posts->user->rank == 1 || $posts->user->rank == 2)
+                                <span><a href="{{ route('edit_post',$posts->id) }}">Düzenle</a></span>
+                            @elseif($posts->user->id == $posts->author)
+                                <span><a href="{{ route('edit_post',$posts->id) }}">Düzenle</a></span>
+                            @endif
+
                         </div>
                         <div class="content-esimited-read">
                             {{ $est }} dk okuma süresi
                         </div>
+
                         <div class="content-font hide-phone">
                             <div class="content-font__item" data-action="minus">
                                 <span class="content-font__item__icon content-font__item__icon--minus"></span>
