@@ -186,6 +186,7 @@ class HomePostsController extends Controller
     public function newPost(){
         $category = Category::get();
         $type = 0;
+        SEO::setTitle('Yeni Yazı Ekle');
         return view('frontend.new_post',compact('category','type'));
     }
 
@@ -238,6 +239,7 @@ class HomePostsController extends Controller
     public function newVideo(){
         $category = Category::get();
         $type = 1;
+        SEO::setTitle('Yeni Video Ekle');
         return view('frontend.new_post',compact('category','type'));
     }
 
@@ -290,7 +292,9 @@ class HomePostsController extends Controller
     }
 
     public function threads(){
-
+        SEO::setTitle('İçeriklerim');
+        return view('frontend.threads');
     }
+
 
 }
