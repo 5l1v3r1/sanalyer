@@ -20,7 +20,9 @@
                         <tr>
                             <th>#</th>
                             <th>Başlık</th>
-                            <th>Tarih</th>
+                            <th>Durum</th>
+                            <th>Yayın Durumu</th>
+                            <th>İşlem</th>
                         </tr>
                         </thead>
                     </table>
@@ -47,8 +49,26 @@
 
 @section('script')
     <script>
-        $(document).ready(function() {
-            $('#threadsTable').DataTable( {
+        $(document).ready(function () {
+            var status = null;
+            var text = null;
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1; //January is 0!
+            var yyyy = today.getFullYear();
+            var hours = today.getHours();
+            var minutes = today.getMinutes();
+            var seconds = today.getSeconds();
+
+            if(dd<10) {
+                dd = '0'+dd
+            }
+
+            if(mm<10) {
+                mm = '0'+mm
+            }
+            var totime = yyyy + "-" + mm + "-" + dd + " " + hours + ":" + minutes + ":" + seconds;
+            $('#threadsTable').DataTable({
                 order: [[0, "desc"]],
                 processing: true,
                 serverSide: true,
@@ -56,14 +76,41 @@
                 "columns": [
                     {data: 'id', name: 'id', sClass: 'font-weight-bold'},
                     {data: 'title', name: 'title'},
-                    {data: 'updated_at', name: 'updated_at'}
+                    {
+                        data: null, render: function (data) {
+                            if (data.status == 0){
+                                status = 'Onay Bekliyor';
+                            }else {
+                                status = 'Onaylı';
+                            }
+                            return status;
+                        }
+                    },
+                    {
+                        data: null, render: function (data) {
+
+                            if (data.updated_at < totime){
+                                text = 'Yayında';
+                            }else {
+                                text = 'Zamanlanmış';
+                            }
+                            return text;
+                        }
+                    },
+                    {
+                        data: null, render: function (data) {
+                            return '<a href="{{ route('edit_post',null) }}/' + data.id + '" class="editor_edit">Düzenle</a> ' +
+                                '/' +
+                                ' <a href="{{ route('delete_post',null) }}/' + data.id + '" class="editor_remove" onclick="return confirm(\'Silmek istediğinizden emin misiniz?\')">Sil</a>';
+                        }
+                    }
                 ],
                 "language": {
                     "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Turkish.json"
                 },
                 keys: true
-            } );
-        } );
+            });
+        });
     </script>
     <script type="text/javascript"
             src="{{ asset('assets/default/js-packages/jquery.datetimepicker.full.min.js') }}">

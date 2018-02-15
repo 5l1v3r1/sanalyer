@@ -212,7 +212,7 @@
                                 <ul>
                                     @foreach($categoryArray as $cat)
                                         <li class="dropdown-container__item ripple">
-                                            <a href="{{ route('show_category',str_slug($cat['title']).'-'.$cat['id']) }}"
+                                            <a href="{{ route('show_category',$cat['full_url']) }}"
                                                title="{{ $cat['title'] }}">{{ $cat['title'] }}</a>
                                         </li>
                                     @endforeach

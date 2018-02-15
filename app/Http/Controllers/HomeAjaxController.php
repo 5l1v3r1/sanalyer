@@ -247,9 +247,13 @@ class HomeAjaxController extends Controller
 
     public function ajaxThreads(){
         $user = Auth::user();
+        if($user == null){
+            alert()->error('Giriş Yapınız');
+            return redirect(route('home'));
+        }
        /* $post = Posts::where('author',$user->id)->orderBy('id','desc')->select(['id','title','updated_at'])->get();
         return ['data'=>$post];*/
-        $posts = Posts::where('author',$user->id)->select(['id','title','updated_at']);
+        $posts = Posts::where('author',$user->id)->get();
 
         return DataTables::of($posts)->make();
     }

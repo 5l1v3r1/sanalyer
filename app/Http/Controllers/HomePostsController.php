@@ -296,5 +296,87 @@ class HomePostsController extends Controller
         return view('frontend.threads');
     }
 
+    public function editPost($id, Request $request){
+        $post = Posts::find($id);
+        if($post == null){
+            alert()->error('İçerik bulunamadı')->persistent("Kapat");
+            return redirect(route('threads'));
+        }
+        $category = Category::get();
+        $type = 0;
+        $user = Auth::user();
+        if($user->rank !== 1 || $user->rank !== 2){
+            if($user->id !== $post->author){
+                alert()->error('Bu içerik size ait değil');
+                return redirect(route('home'));
+            }
+        }
+        return view('frontend.post_edit',compact('post','category','type'));
+    }
+
+    public function editPostP($id, Request $request){
+        $validator = Validator::make($request->all(), [
+            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'title' => 'required|min:6',
+            'short_desc' => 'required',
+            'content_full' => 'required',
+            'category' => 'required',
+            'location' => 'required',
+            'date' => 'required'
+        ]);
+        $post = Posts::find($id);
+        if($post == null){
+            alert()->error('İçerik bulunamadı')->persistent("Kapat");
+            return redirect(route('threads'));
+        }
+        $user = Auth::user();
+        $contents = $request->short_desc."----------------------".$request->content_full;
+        if($user->rank == 1 || $user->rank == 2){
+            $status = 1;
+            $responseText = 'İçerik Başarıyla Güncelleştirildi.';
+        }else{
+            $status = 0;
+            $responseText = 'İçerik Onaya Sunuldu.';
+        }
+        $date = Carbon::createFromFormat('d-m-Y H:i:s', $request->date)->toDateTimeString();
+        if ($validator->passes()) {
+            if ($request->file('image')) {
+                $imageName = str_slug($request->title) . '.' . request()->image->getClientOriginalExtension();
+                request()->image->move(public_path('resimler'), $imageName);
+                $post->image = $imageName;
+            }
+            $post->title = $request->title;
+            $post->content = $contents;
+            $post->author = $user->id;
+            $post->status = $status;
+            $post->type = 1;
+            $post->category = $request->category;
+            $post->video = $request->video;
+            $post->location = $request->location;
+            $post->tag = $request->tag;
+            $post->created_at = $date;
+            $post->updated_at = $date;
+            $post->save();
+            alert()->success($responseText);
+            return redirect(route('threads'));
+        }
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+
+    public function deletePost($id){
+        $post = Posts::find($id);
+        if($post == null){
+            alert()->error('İçerik bulunamadı')->persistent("Kapat");
+            return redirect(route('threads'));
+        }
+        $user = Auth::user();
+        if($user->rank == 1){
+            $post->delete();
+            alert()->success('İçerik Silindi');
+            return redirect(route('threads'));
+        }
+        alert()->error('Lütfen bizimle iletişime geçiniz.','Bunu yapmaya yetkiniz yok.')->persistent("Kapat");
+        return redirect(route('threads'));
+    }
 
 }

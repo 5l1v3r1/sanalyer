@@ -11,7 +11,7 @@
     </div>
     <div class="content-timeline--right">
         <div class="content-timeline__media media-video">
-            <a href="{{ route('show_video',str_slug($item->title).'-'.$item->id) }}"
+            <a href="{{ route('show_video',$item->full_url) }}"
                class="content-timeline__link clearfix" title="{{ $item->title }}">
                 <div class="content-timeline__media--inset">
                     <img class="content-timeline__media__image lazy"
@@ -39,7 +39,7 @@
         </div>
         <div class="content-timeline__detail hide visible-phone">
             <div class="content-timeline__detail__container">
-                <a href="{{ route('show_video',str_slug($item->title).'-'.$item->id) }}" class="clearfix"
+                <a href="{{ route('show_video',$item->full_url) }}" class="clearfix"
                    title="{{ $item->title }}">
                     <div class="content-timeline__detail--top">
                         <h5 class="content-timeline__detail__category">{{ $item->category()->first()->title }}</h5>
@@ -55,35 +55,35 @@
                             <li class="dropdown-container__item ripple wt-share-button" data-share-type="facebook"
                                 data-type="video" data-id="{{ $item->id }}" data-post-url="/update-share"
                                 data-title="{{ $item->title }}"
-                                data-sef="{{ route('show_video',str_slug($item->title).'-'.$item->id) }}">
+                                data-sef="{{ route('show_video',$item->full_url) }}">
                                 <span class="share-dropdown__icon share-dropdown__icon--facebook"></span>
                                 <span class="share-dropdown__title">Facebook</span>
                             </li>
                             <li class="dropdown-container__item ripple wt-share-button" data-share-type="twitter"
                                 data-type="video" data-id="{{ $item->id }}" data-post-url="/update-share"
                                 data-title="{{ $item->title }}"
-                                data-sef="{{ route('show_video',str_slug($item->title).'-'.$item->id) }}">
+                                data-sef="{{ route('show_video',$item->full_url) }}">
                                 <span class="share-dropdown__icon share-dropdown__icon--twitter"></span>
                                 <span class="share-dropdown__title">Twitter</span>
                             </li>
                             <li class="dropdown-container__item ripple wt-share-button hide-phone"
                                 data-share-type="gplus" data-type="video" data-id="{{ $item->id }}"
                                 data-post-url="/update-share" data-title="{{ $item->title }}"
-                                data-sef="{{ route('show_video',str_slug($item->title).'-'.$item->id) }}">
+                                data-sef="{{ route('show_video',$item->full_url) }}">
                                 <span class="share-dropdown__icon share-dropdown__icon--google"></span>
                                 <span class="share-dropdown__title">Google +</span>
                             </li>
                             <li class="dropdown-container__item ripple wt-share-button visible-phone"
                                 data-share-type="whatsapp" data-type="video" data-id="{{ $item->id }}"
                                 data-post-url="/update-share" data-title="{{ $item->title }}"
-                                data-sef="{{ route('show_video',str_slug($item->title).'-'.$item->id) }}">
+                                data-sef="{{ route('show_video',$item->full_url) }}">
                                 <span class="share-dropdown__icon share-dropdown__icon--whatsapp"></span>
                                 <span class="share-dropdown__title">Whatsapp</span>
                             </li>
                             <li class="dropdown-container__item ripple wt-share-button" data-share-type="mail"
                                 data-type="video" data-id="{{ $item->id }}" data-post-url="/update-share"
                                 data-title="{{ $item->title }}"
-                                data-sef="{{ route('show_video',str_slug($item->title).'-'.$item->id) }}">
+                                data-sef="{{ route('show_video',$item->full_url) }}">
                                 <span class="share-dropdown__icon share-dropdown__icon--mail"></span>
                                 <span class="share-dropdown__title">Email</span>
                             </li>
