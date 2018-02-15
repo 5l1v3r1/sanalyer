@@ -199,6 +199,7 @@ class HomePostsController extends Controller
             'content_full' => 'required',
             'category' => 'required',
             'location' => 'required',
+            'tag' => 'required',
             'date' => 'required'
         ]);
         $contents = $request->short_desc."----------------------".$request->content_full;
@@ -252,6 +253,7 @@ class HomePostsController extends Controller
             'content_full' => 'required',
             'category' => 'required',
             'video' => 'required',
+            'tag' => 'required',
             'location' => 'required',
             'date' => 'required'
         ]);
@@ -346,6 +348,7 @@ class HomePostsController extends Controller
             'content_full' => 'required',
             'category' => 'required',
             'location' => 'required',
+            'tag' => 'required',
             'date' => 'required'
         ]);
         $post = Posts::find($id);
@@ -394,6 +397,7 @@ class HomePostsController extends Controller
             'content_full' => 'required',
             'category' => 'required',
             'location' => 'required',
+            'tag' => 'required',
             'date' => 'required'
         ]);
         $post = Posts::find($id);
