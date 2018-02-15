@@ -9,6 +9,7 @@
             <ul>
                 <li class="dropdown-container__item ripple"><a class="modal-button" href="{{ route('new_post') }}" title="Yazı Ekle">Yazı Ekle</a></li>
                 <li class="dropdown-container__item ripple"><a class="modal-button" href="{{ route('new_video') }}" title="Video Ekle">Video Ekle</a></li>
+                <li class="dropdown-container__item ripple"><a class="modal-button" href="{{ route('threads') }}" title="İçeriklerim">İçeriklerim</a></li>
                 <li class="dropdown-container__item ripple"><a class="modal-button" data-modal="modal-edit-profile" title="Profilimi Düzenle">Profilimi Düzenle</a></li>
                 @if(Auth::user()->rank == 1)
                 <li class="dropdown-container__item ripple"><a class="modal-button" href="{{ route('admin::index') }}" target="_blank">Admin</a></li>
