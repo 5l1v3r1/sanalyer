@@ -26,6 +26,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('yeni-video', 'HomePostsController@newVideoPost');
     Route::get('icerik-duzenle/{id}', 'HomePostsController@editPost')->name('edit_post');
     Route::post('icerik-duzenle/{id}', 'HomePostsController@editPostP');
+    Route::get('video-duzenle/{id}', 'HomePostsController@editVideo')->name('edit_video');
+    Route::post('video-duzenle/{id}', 'HomePostsController@editVideoP');
     Route::get('icerik-sil/{id}', 'HomePostsController@deletePost')->name('delete_post');
     Route::get('iceriklerim', 'HomePostsController@threads')->name('threads');
 });

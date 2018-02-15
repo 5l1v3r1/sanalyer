@@ -16,8 +16,8 @@ class HomeController extends Controller
     public function index()
     {
         $date = date('Y-m-d H:i:s');
-        $posts = Posts::where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->paginate(10);
-        $slider = Posts::where('status', 1)->where('location', 1)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->limit(4)->get();
+        $posts = Posts::where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->paginate(10);
+        $slider = Posts::where('status', 1)->where('location', 1)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->limit(4)->get();
         return view('frontend.home', compact('posts', 'slider'));
     }
 
@@ -32,7 +32,7 @@ class HomeController extends Controller
 
 
         $date = date('Y-m-d H:i:s');
-        $posts = Posts::where('type', 0)->where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->paginate(10);
+        $posts = Posts::where('type', 0)->where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->paginate(10);
         return view('frontend.news', compact('posts'));
     }
 
@@ -47,7 +47,7 @@ class HomeController extends Controller
 
 
         $date = date('Y-m-d H:i:s');
-        $posts = Posts::where('type', 1)->where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->paginate(10);
+        $posts = Posts::where('type', 1)->where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->paginate(10);
         return view('frontend.video', compact('posts'));
     }
 
@@ -66,8 +66,8 @@ class HomeController extends Controller
             ->orWhere('tag', 'like', '%'.$search.'%');
             })->where('status', 1)
             ->where('location', '!=', 5)
-            ->where('updated_at', '<=', $date)
-            ->orderBy('updated_at', 'DESC')
+            ->where('created_at', '<=', $date)
+            ->orderBy('created_at', 'DESC')
             ->paginate(10);
             
         return view('frontend.detail.search', compact('search','posts'));
@@ -82,7 +82,7 @@ class HomeController extends Controller
         $sitemap = App::make('sitemap');
         $sitemap->setCache('sitemap_' . $page, 60);
         if (!$sitemap->isCached() || !empty($request->debug)) {
-            $posts = Posts::skip($skip)->take($take)->where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->orderBy('updated_at', 'ASC')->get();
+            $posts = Posts::skip($skip)->take($take)->where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'ASC')->get();
 
             foreach ($posts as $p) {
                 $images = array();
@@ -105,7 +105,7 @@ class HomeController extends Controller
     {
         $limit = 500;
         $date = date('Y-m-d H:i:s');
-        $count = Posts::where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->count();
+        $count = Posts::where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->count();
         $total = intval(floor($count / $limit));
         $sitemap = App::make('sitemap');
         $sitemap->setCache('sitemap_index', 60);
@@ -122,7 +122,7 @@ class HomeController extends Controller
         $feed = App::make('feed');
         $feed->setCache('feed', 60);
         if (!$feed->isCached()) {
-            $posts = Posts::take($take)->where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->get();
+            $posts = Posts::take($take)->where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->get();
             $feed->ctype = "text/xml";
             $feed->title = env('APP_NAME') . ' RSS Servisi';
             $feed->description = env('APP_DESC');
@@ -157,7 +157,7 @@ class HomeController extends Controller
         $rss = App::make('feed');
         $rss->setCache('rss', 60);
         if (!$rss->isCached()) {
-            $posts = Posts::take($take)->where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->get();
+            $posts = Posts::take($take)->where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->get();
             $rss->ctype = "text/xml";
             $rss->title = env('APP_NAME') . ' Feed Servisi';
             $rss->description = env('APP_DESC');

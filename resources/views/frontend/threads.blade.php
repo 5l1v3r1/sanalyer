@@ -99,9 +99,15 @@
                     },
                     {
                         data: null, render: function (data) {
-                            return '<a href="{{ route('edit_post',null) }}/' + data.id + '" class="editor_edit">Düzenle</a> ' +
-                                '/' +
-                                ' <a href="{{ route('delete_post',null) }}/' + data.id + '" class="editor_remove" onclick="return confirm(\'Silmek istediğinizden emin misiniz?\')">Sil</a>';
+                            if(data.type == 0){
+                                return '<a href="{{ route('edit_post',null) }}/' + data.id + '" class="editor_edit">Düzenle</a> ' +
+                                    '/' +
+                                    ' <a href="{{ route('delete_post',null) }}/' + data.id + '" class="editor_remove" onclick="return confirm(\'Silmek istediğinizden emin misiniz?\')">Sil</a>';
+                            }else if(data.type == 1){
+                                return '<a href="{{ route('edit_video',null) }}/' + data.id + '" class="editor_edit">Düzenle</a> ' +
+                                    '/' +
+                                    ' <a href="{{ route('delete_post',null) }}/' + data.id + '" class="editor_remove" onclick="return confirm(\'Silmek istediğinizden emin misiniz?\')">Sil</a>';
+                            }
                         }
                     }
                 ],
