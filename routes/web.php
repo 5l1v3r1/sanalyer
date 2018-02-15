@@ -14,6 +14,7 @@ Route::group(['middleware' => ['App\Http\Middleware\Cors']], function () {
     Route::post('/ajax/comment-send', 'HomeAjaxController@commentsSend')->name("ajax::comment_send");
     Route::post('/ajax/comments', 'HomeAjaxController@comments')->name("ajax::comments");
     Route::post('/ajax/commentsLoad', 'HomeAjaxController@commentsLoad')->name("ajax::commentsLoad");
+    Route::get('/ajax/threads','HomeAjaxController@ajaxThreads')->name('ajax::threads');
 });
 
 Route::group(['middleware' => 'auth'], function () {

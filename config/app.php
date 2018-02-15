@@ -184,6 +184,7 @@ return [
         Roumen\Feed\FeedServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
 
     ],
 
@@ -237,6 +238,7 @@ return [
         'Image' => Folklore\Image\Facades\Image::class,
         'Feed' => Roumen\Feed\Feed::class,
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
     ],
 
 ];

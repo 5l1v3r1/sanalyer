@@ -31,6 +31,12 @@ function YoutubeID($url)
     return $url;
 }
 
+function img_amp($text){
+   /* $find = array('<img', 'resimler/haber');
+    $replace = array('<amp-img', env('APP_URL').'/resimler/haber');
+    $text = strtolower(str_replace($find, $replace, $text));*/
+    return $text;
+}
 
 function vendorBladeTemplate($string,$data){
     $php = Blade::compileString($string);
