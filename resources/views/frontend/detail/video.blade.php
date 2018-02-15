@@ -94,7 +94,7 @@
                             @foreach($prev as $item)
                                 <li class="video-showcase__content--right__video-list__item "
                                     id="video-{{ $item->id }}">
-                                    <a href="{{ route('show_video',str_slug($item->title).'-'.$item->id) }}">
+                                    <a href="{{ route('show_video',$item->full_url) }}">
                                         <figure class="video-showcase__content--right__video-list__item__image">
                                             <img src="{{ Image::url(\App\checkImage($item->image), 100, 56, array('crop')) }}"
                                                  alt="{{ $item->title }}">
