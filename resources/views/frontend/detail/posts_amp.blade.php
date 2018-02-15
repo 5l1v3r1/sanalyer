@@ -9,13 +9,12 @@
     {!! app('seotools')->generate() !!}
     <base href="{{ route('home') }}" >
     <script custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js" async></script>
-    <script custom-element="amp-web-push" src="https://cdn.ampproject.org/v0/amp-web-push-0.1.js" async></script>
     <script custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js" async></script>
     <script custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js" async></script>
     <script custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"
             async></script>
-    <script custom-element="amp-facebook-like" src="https://cdn.ampproject.org/v0/amp-facebook-like-0.1.js"
-            async></script>
+    {{--<script custom-element="amp-facebook-like" src="https://cdn.ampproject.org/v0/amp-facebook-like-0.1.js"
+            async></script>--}}
     <script custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js" async></script>
     <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async></script>
     <script src="https://cdn.ampproject.org/v0.js" async></script>
@@ -72,14 +71,16 @@
             }
         }</style>
     <noscript>
-        <style amp-boilerplate>body {
+        <style amp-boilerplate>
+            body {
                 -webkit-animation: none;
                 -moz-animation: none;
                 -ms-animation: none;
                 animation: none
-            }</style>
+            }
+        </style>
     </noscript>
-    <style amp-custom>
+    <style amp-boilerplate>
         amp-sticky-ad {
             z-index: 9999
         }
@@ -2035,7 +2036,7 @@
             <div class="amp-wp-article-content">
                 <div class="amp-wp-content the_content">
                    <h3> {!! $postDesc !!}</h3>
-                    {!! $postContent !!}
+                    {!! \App\img_amp($postContent) !!}
             </div>
             <div class="amp-wp-content amp-wp-article-tags amp-wp-article-category ampforwp-meta-taxonomy ">
                 <div class="amp-wp-meta amp-wp-content ampforwp-tax-tag">
@@ -2146,7 +2147,6 @@
 <amp-analytics type="googleanalytics" id="analytics1">
     <script type="application/json">
         {"vars":{"account":"UA-54494799-1"},"triggers":{"trackPageview":{"on":"visible","request":"pageview"}}}
-
     </script>
 </amp-analytics> <!-- ngg_resource_manager_marker --></body>
 </html>

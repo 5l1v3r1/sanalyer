@@ -4,6 +4,10 @@
 <script src="{{ asset('/assets/default/packages/sweetalert/sweetalert.js') }}"></script>
 @include('sweet::alert')
 <script src="{{ asset('/js/ckeditor/ckeditor.js?v=2.3.4') }}"></script>
+<link href="{{ asset('assets/default/prism/prism.css') }}" rel="stylesheet" />
+<script src="{{ asset('assets/default/prism/prism.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/default/datatables/datatables.min.css') }}"/>
+<script type="text/javascript" src="{{ asset('assets/default/datatables/datatables.min.js') }}"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

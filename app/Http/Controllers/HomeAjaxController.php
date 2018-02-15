@@ -7,6 +7,7 @@ use function App\checkImage;
 use Folklore\Image\Facades\Image;
 use Radkod\Posts\Models\Comments;
 use Radkod\Posts\Models\Posts;
+use Yajra\DataTables\DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -242,6 +243,15 @@ class HomeAjaxController extends Controller
             ]);
 
         return view('frontend.posts_prev', compact('posts', 'prev', 'postDesc', 'postContent', 'prevDesc', 'prevContent'));
+    }
+
+    public function ajaxThreads(){
+        $user = Auth::user();
+       /* $post = Posts::where('author',$user->id)->orderBy('id','desc')->select(['id','title','updated_at'])->get();
+        return ['data'=>$post];*/
+        $posts = Posts::where('author',$user->id)->select(['id','title','updated_at']);
+
+        return DataTables::of($posts)->make();
     }
 
 }
