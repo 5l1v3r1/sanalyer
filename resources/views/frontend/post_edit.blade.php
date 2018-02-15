@@ -10,7 +10,7 @@
     $postDescEx = explode('----------------------', $post->content);
             $postDesc = $postDescEx[0];
             $postContent = $postDescEx[1];
-$newDate = date("d-m-Y H:i:s", strtotime($post->updated_at));
+$newDate = date("d-m-Y H:i:s", strtotime($post->created_at));
 @endphp
 @section('content')
     <div class="global-container container">

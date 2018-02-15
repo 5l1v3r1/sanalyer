@@ -64,7 +64,7 @@ class HomeAjaxController extends Controller
             ->where('status', 1)
             ->where('parent_id', 0)
             ->with('children')
-            ->orderBy('updated_at', 'DESC')
+            ->orderBy('created_at', 'DESC')
             ->paginate(10);
         return view('frontend.comments', compact('pp','comments','thread','commentsTotal'));
     }
@@ -82,7 +82,7 @@ class HomeAjaxController extends Controller
             ->where('status', 1)
             ->where('parent_id', 0)
             ->with('children')
-            ->orderBy('updated_at', 'DESC')
+            ->orderBy('created_at', 'DESC')
             ->paginate(10);
 
         return view('frontend.commentsLoad', compact('pp','comments','thread'));
@@ -199,14 +199,14 @@ class HomeAjaxController extends Controller
         $date = date('Y-m-d H:i:s');
 
         if ($filter_type == "all") {
-            $posts = Posts::where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->paginate(10);
+            $posts = Posts::where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->paginate(10);
         } else {
             if ($filter_type == 'news') {
                 $type = 0;
             } elseif ($filter_type == 'video') {
                 $type = 1;
             }
-            $posts = Posts::where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->where('type', $type)->orderBy('updated_at', 'DESC')->paginate(10);
+            $posts = Posts::where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->where('type', $type)->orderBy('created_at', 'DESC')->paginate(10);
         }
 
         return view('frontend.inc.home_content', compact('posts'));
@@ -216,11 +216,11 @@ class HomeAjaxController extends Controller
     {
         $date = date('Y-m-d H:i:s');
         $id = $request->id;
-        $posts = Posts::where('status', 1)->where('location', '!=', 5)->where('id', $id)->where('type', 0)->where('updated_at', '<=', $date)->first();
+        $posts = Posts::where('status', 1)->where('location', '!=', 5)->where('id', $id)->where('type', 0)->where('created_at', '<=', $date)->first();
         $postDescEx = explode('----------------------', $posts->content);
         $postDesc = $postDescEx[0];
         $postContent = $postDescEx[1];
-        $prev = Posts::where('status', 1)->where('location', '!=', 5)->where('type', 0)->where('updated_at', '<', $posts->updated_at)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->first();
+        $prev = Posts::where('status', 1)->where('location', '!=', 5)->where('type', 0)->where('created_at', '<', $posts->created_at)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->first();
         $prevDescEx = explode('----------------------', $prev->content);
         $prevDesc = $prevDescEx[0];
         $prevContent = $prevDescEx[1];
@@ -236,7 +236,7 @@ class HomeAjaxController extends Controller
             ->setType('article')
             ->setArticle([
                 'published_time' => $posts->created_at->toW3CString(),
-                'modified_time' => $posts->updated_at->toW3CString(),
+                'modified_time' => $posts->created_at->toW3CString(),
                 'author' => $posts->user->firstname . ' ' . $posts->user->lastname,
                 'section' => $posts->category()->first()->title,
                 'tag' => $postTag
@@ -251,7 +251,7 @@ class HomeAjaxController extends Controller
             alert()->error('Giriş Yapınız');
             return redirect(route('home'));
         }
-       /* $post = Posts::where('author',$user->id)->orderBy('id','desc')->select(['id','title','updated_at'])->get();
+       /* $post = Posts::where('author',$user->id)->orderBy('id','desc')->select(['id','title','created_at'])->get();
         return ['data'=>$post];*/
         $posts = Posts::where('author',$user->id)->get();
 
