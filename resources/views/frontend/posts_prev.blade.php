@@ -35,7 +35,7 @@
     <div class="content-info clearfix">
         <div class="content-author">
                             <span itemprop="author" itemscope itemtype="http://schema.org/Person"><a
-                                        href="{{ env('APP_URL') }}/yazar/enesk" itemprop="name"
+                                        href="{{ route('show_profile',str_slug($posts->user->name).'-'.$posts->user->id) }}" itemprop="name"
                                         class="content-info__author">{{ $posts->user->firstname }}</a></span>
             <span class="content-info__line">—</span>
             <time class="content-info__date" itemprop="datePublished"

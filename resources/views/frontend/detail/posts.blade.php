@@ -64,7 +64,7 @@
                     <div class="content-info clearfix">
                         <div class="content-author">
                             <span itemprop="author" itemscope itemtype="http://schema.org/Person"><a
-                                        href="{{ env('APP_URL') }}/yazar/enesk" itemprop="name"
+                                        href="{{ route('show_profile',str_slug($posts->user->name).'-'.$posts->user->id) }}" itemprop="name"
                                         class="content-info__author">{{ $posts->user->firstname }}</a></span>
                             <span class="content-info__line">—</span>
                             <time class="content-info__date" itemprop="datePublished"
@@ -190,25 +190,25 @@
                                 {!! $postDesc !!}
                             </div>
 
+                            <div class="hide-mobile" style="margin: 10px 0px">
+                                <a href="https://goo.gl/AmmZCx" target="_blank"><img src="https://www.sanalyer.com/resimler/G9W0zy.gif"  width="760" height="90"></a>
+                            </div>
+
+
+                            <div class="visible-mobile">
+                                <a href="https://goo.gl/AmmZCx" target="_blank"><img src="https://www.sanalyer.com/resimler/G9W0zy.gif"  style="width: 100%;"></a>
+                            </div>
 
                             <div id="vidout_inread"></div>
                             <div class="content-body__detail" itemprop="articleBody">
-                                <!-- content-ads -->
+                               {{-- <!-- content-ads -->
                                 <div class="ads ads-300x250-content visible-mobile">
                                     Mobil Reklam
-                                </div>
+                                </div>--}}
                                 {!! $postContent !!}
                                 <div class="bottom-new-video"></div>
 
 
-                                <div class="hide-mobile" style="margin: 10px 0px">
-                                    reklalm
-                                </div>
-
-
-                                <div class="visible-mobile">
-                                    reklam mobil
-                                </div>
 
                             </div>
 

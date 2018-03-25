@@ -1,9 +1,7 @@
 <div class="sidebar hide-mobile">
-
     <div class="ads ads-300x250-sidebar">
         Sidebar Reklam
     </div>
-
 {{--
     <div class="sidebar-block">
         <div class="sidebar-teknostore">
@@ -38,6 +36,7 @@
     <div class="sidebar-block">
         <div class="sidebar-title global-title">Trend Videolar</div>
         <ol class="sidebar-trend">
+
             <li class="sidebar-trend__item">
                 <div class="sidebar-trend__item__body">
                     <a class="sidebar-trend__item__link" href="{{ env('APP_URL') }}/turkcell-in-internet-hizinizi-arttiriyor-diye-sattigi-kilifi-test-ettik-v1039.html" title="Turkcell’in İnternet Hızınızı Arttırıyor Diye Sattığı Kılıfı Test Ettik!" onclick="ga(&#039;send&#039;, &#039;event&#039;, &#039;Sidebar Trend Videos&#039;, &#039;Click&#039;, &#039;{{ env('APP_URL') }}/turkcell-in-internet-hizinizi-arttiriyor-diye-sattigi-kilifi-test-ettik-v1039.html&#039;)">
