@@ -64,7 +64,6 @@ class HomeController extends Controller
         }
         $posts = Posts::where('created_at', '<=', $date)
             ->where('status', 1)
-            ->where('location', '!=', 5)
             ->where('author',$user->id)
             ->orderBy('created_at', 'DESC')
             ->paginate(10);

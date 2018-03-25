@@ -302,19 +302,19 @@
     </div>
     <ul class="drawer__menu">
         <li class="drawer__menu__item {{ url()->full() == route('home') ? "drawer__menu__item--active" : "" }}">
-            <a class="drawer__menu__item__link" href="{{ route('home') }}/">
+            <a class="drawer__menu__item__link" href="{{ route('home') }}">
                 <span class="drawer__menu__item__icon"><i class="material-icons">&#xE88A;</i></span>
                 <span class="drawer__menu__item__title">Anasayfa</span>
             </a>
         </li>
         <li class="drawer__menu__item {{ url()->full() == route('news') ? "drawer__menu__item--active" : "" }}">
-            <a class="drawer__menu__item__link" href="{{ route('news') }}/">
+            <a class="drawer__menu__item__link" href="{{ route('news') }}">
                 <span class="drawer__menu__item__icon"><i class="material-icons">&#xE8B0;</i></span>
                 <span class="drawer__menu__item__title">Haber</span>
             </a>
         </li>
         <li class="drawer__menu__item {{ url()->full() == route('video') ? "drawer__menu__item--active" : "" }}">
-            <a class="drawer__menu__item__link" href="{{ route('video') }}/">
+            <a class="drawer__menu__item__link" href="{{ route('video') }}">
                 <span class="drawer__menu__item__icon"><i class="material-icons">&#xE038;</i></span>
                 <span class="drawer__menu__item__title">Video</span>
             </a>
