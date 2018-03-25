@@ -116,6 +116,10 @@ $homeRoute = function () {
     Route::post('kayit', 'Auth\RegisterController@register');
 
     Route::get('uye/{slug}', 'HomeController@showProfile')->name('show_profile');
+    Route::get('hakkimizda', 'HomePageController@abouts')->name('abouts');
+    Route::get('kunye', 'HomePageController@corporate')->name('corporate');
+    Route::get('gizlilik', 'HomePageController@privacy')->name('privacy');
+    Route::get('iletisim', 'HomePageController@contact')->name('contact');
 
     Route::get('uyelik-sozlesmesi', 'HomeController@memberAgree')->name('memberAgree');
 

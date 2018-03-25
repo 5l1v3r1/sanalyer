@@ -60,7 +60,7 @@
                 <div class="video-showcase__content--right">
                     <div class="video-showcase__content--right__options hide-mobile">
                         <div class="video-showcase__content--right__options__subscribe">
-                            <div class="g-ytsubscribe" data-channel="webteknotv" data-layout="default"
+                            <div class="g-ytsubscribe" data-channel="sanalyertv" data-layout="default"
                                  data-theme="default" data-count="hidden"></div>
                         </div>
                         <div class="material-switch material-switch--small">

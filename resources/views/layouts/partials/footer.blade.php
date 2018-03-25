@@ -252,7 +252,7 @@
                 if (pushButton.length > 0) {
                     pushButton.on('click', function () {
                         createCookie('push_notification_permission-v2', 'allow', 365);
-                        window.open('https://notif.webtekno.com/notification-index', "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=250, left=500, width=550, height=500");
+                        window.open('https://notif.sanalyer.com/notification-index', "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=250, left=500, width=550, height=500");
                         if (pushNotification) {
                             pushNotification.css('top', '-200px');
                         }

@@ -25,7 +25,11 @@
                 </div>
                 <div class="content-timeline__list">
                     @foreach($posts as $item)
-                        @include('frontend.inc.widgets.posts')
+                        @if($item->type == 0)
+                            @include('frontend.inc.widgets.posts')
+                        @elseif($item->type == 1)
+                            @include('frontend.inc.widgets.posts_video')
+                        @endif
                     @endforeach
                 </div>
                 <center>
