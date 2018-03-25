@@ -176,7 +176,7 @@ class HomePostsController extends Controller
             ->paginate(10);
         SEO::setTitle($category->title);
         SEO::setDescription($category->content);
-        SEO::setCanonical(route("news"));
+        SEO::setCanonical(route('show_category',str_slug($category-> title).'-'.$category->id));
         SEO::opengraph()->setTitle($category->title)
             ->setDescription($category->content)
             ->setUrl(route('show_category',str_slug($category-> title).'-'.$category->id));

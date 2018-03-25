@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use function App\checkImage;
+use App\User;
 use Carbon\Carbon;
 use Radkod\Posts\Models\Posts;
 use Illuminate\Http\Request;
@@ -49,6 +50,31 @@ class HomeController extends Controller
         $date = date('Y-m-d H:i:s');
         $posts = Posts::where('type', 1)->where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->paginate(10);
         return view('frontend.video', compact('posts'));
+    }
+
+    public function showProfile(Request $request){
+        $date = date('Y-m-d H:i:s');
+        $slug = $request->slug;
+        $data = explode("-", $slug);
+        $id = $data[count($data) - 1];
+        $user = User::find($id);
+        if($user == null){
+            alert()->error('Böyle bir üye bulunmamakta');
+            return redirect(route('home'));
+        }
+        $posts = Posts::where('created_at', '<=', $date)
+            ->where('status', 1)
+            ->where('location', '!=', 5)
+            ->where('author',$user->id)
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
+        SEO::setTitle($user->firstname.' '.$user->lastname.' adlı editörün tüm yazıları');
+        SEO::setDescription($user->firstname.' '.$user->lastname.' adlı editörün tüm yazıları');
+        SEO::setCanonical(route('show_profile',str_slug($user->name).'-'.$user->id));
+        SEO::opengraph()->setTitle($user->firstname.' '.$user->lastname.' adlı editörün tüm yazıları')
+            ->setDescription($user->firstname.' '.$user->lastname.' adlı editörün tüm yazıları')
+            ->setUrl(route('show_profile',str_slug($user->name).'-'.$user->id));
+        return view('auth.profile',compact('posts','user'));
     }
 
     public function search(Request $request){
@@ -110,7 +136,7 @@ class HomeController extends Controller
         $sitemap = App::make('sitemap');
         $sitemap->setCache('sitemap_index', 60);
         for ($i = 0; $i <= $total; $i++) {
-            $sitemap->addSitemap(route("sitemap", $i), Carbon::parse($date));
+            $sitemap->addSitemap(route('sitemap',$i), Carbon::parse($date));
         }
         return $sitemap->render('sitemapindex');
     }
