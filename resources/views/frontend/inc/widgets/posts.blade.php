@@ -1,6 +1,7 @@
 <div class="content-timeline__item">
     <div class="content-timeline--left">
         <div class="content-timeline__time">
+            @if($item->category() != null)
             <a class="content-timeline__time__link"
                href="{{ route('show_category',$item->category()->first()->full_url) }}">
                 <span class="content-timeline__time__icon content-timeline__time__icon--news tooltip"
@@ -8,6 +9,7 @@
                     <i class="material-icons">&#xE8B0;</i>
                 </span>
             </a>
+            @endif
             <span class="content-timeline__time__timeago"><time
                         datetime="{{ $item->created_at->format(DateTime::ATOM) }}">{{ $item->created_at->diffForHumans() }}</time></span>
         </div>
@@ -27,11 +29,13 @@
         <div class="content-timeline__detail">
             <div class="content-timeline__detail__container">
                 <div class="content-timeline__detail--top">
+                    @if($item->category() != null)
                     <a href="{{ route('show_category',$item->category()->first()->full_url) }}"
                        class="content-timeline__link clearfix"
                        title="{{ $item->category()->first()->title }}">
                         <h5 class="content-timeline__detail__category">{{ $item->category()->first()->title }}</h5>
                     </a>
+                    @endif
                     <span class="content-timeline__detail__time hide"><time
                                 datetime="{{ $item->created_at->format(DateTime::ATOM) }}">{{ $item->created_at->diffForHumans() }}</time></span>
                 </div>
