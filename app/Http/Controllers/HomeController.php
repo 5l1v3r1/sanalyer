@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use function App\checkImage;
+use App\User;
 use Carbon\Carbon;
 use Radkod\Posts\Models\Posts;
 use Illuminate\Http\Request;
@@ -16,8 +17,8 @@ class HomeController extends Controller
     public function index()
     {
         $date = date('Y-m-d H:i:s');
-        $posts = Posts::where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->paginate(10);
-        $slider = Posts::where('status', 1)->where('location', 1)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->limit(4)->get();
+        $posts = Posts::where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->paginate(10);
+        $slider = Posts::where('status', 1)->where('location', 1)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->limit(4)->get();
         return view('frontend.home', compact('posts', 'slider'));
     }
 
@@ -32,7 +33,7 @@ class HomeController extends Controller
 
 
         $date = date('Y-m-d H:i:s');
-        $posts = Posts::where('type', 0)->where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->paginate(10);
+        $posts = Posts::where('type', 0)->where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->paginate(10);
         return view('frontend.news', compact('posts'));
     }
 
@@ -47,8 +48,32 @@ class HomeController extends Controller
 
 
         $date = date('Y-m-d H:i:s');
-        $posts = Posts::where('type', 1)->where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->paginate(10);
+        $posts = Posts::where('type', 1)->where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->paginate(10);
         return view('frontend.video', compact('posts'));
+    }
+
+    public function showProfile(Request $request){
+        $date = date('Y-m-d H:i:s');
+        $slug = $request->slug;
+        $data = explode("-", $slug);
+        $id = $data[count($data) - 1];
+        $user = User::find($id);
+        if($user == null){
+            alert()->error('Böyle bir üye bulunmamakta');
+            return redirect(route('home'));
+        }
+        $posts = Posts::where('created_at', '<=', $date)
+            ->where('status', 1)
+            ->where('author',$user->id)
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
+        SEO::setTitle($user->firstname.' '.$user->lastname.' adlı editörün tüm yazıları');
+        SEO::setDescription($user->firstname.' '.$user->lastname.' adlı editörün tüm yazıları');
+        SEO::setCanonical(route('show_profile',str_slug($user->name).'-'.$user->id));
+        SEO::opengraph()->setTitle($user->firstname.' '.$user->lastname.' adlı editörün tüm yazıları')
+            ->setDescription($user->firstname.' '.$user->lastname.' adlı editörün tüm yazıları')
+            ->setUrl(route('show_profile',str_slug($user->name).'-'.$user->id));
+        return view('auth.profile',compact('posts','user'));
     }
 
     public function search(Request $request){
@@ -66,8 +91,8 @@ class HomeController extends Controller
             ->orWhere('tag', 'like', '%'.$search.'%');
             })->where('status', 1)
             ->where('location', '!=', 5)
-            ->where('updated_at', '<=', $date)
-            ->orderBy('updated_at', 'DESC')
+            ->where('created_at', '<=', $date)
+            ->orderBy('created_at', 'DESC')
             ->paginate(10);
             
         return view('frontend.detail.search', compact('search','posts'));
@@ -82,7 +107,7 @@ class HomeController extends Controller
         $sitemap = App::make('sitemap');
         $sitemap->setCache('sitemap_' . $page, 60);
         if (!$sitemap->isCached() || !empty($request->debug)) {
-            $posts = Posts::skip($skip)->take($take)->where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->orderBy('updated_at', 'ASC')->get();
+            $posts = Posts::skip($skip)->take($take)->where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'ASC')->get();
 
             foreach ($posts as $p) {
                 $images = array();
@@ -105,12 +130,12 @@ class HomeController extends Controller
     {
         $limit = 500;
         $date = date('Y-m-d H:i:s');
-        $count = Posts::where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->count();
+        $count = Posts::where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->count();
         $total = intval(floor($count / $limit));
         $sitemap = App::make('sitemap');
         $sitemap->setCache('sitemap_index', 60);
         for ($i = 0; $i <= $total; $i++) {
-            $sitemap->addSitemap(route("sitemap", $i), Carbon::parse($date));
+            $sitemap->addSitemap(route('sitemap',$i), Carbon::parse($date));
         }
         return $sitemap->render('sitemapindex');
     }
@@ -122,7 +147,7 @@ class HomeController extends Controller
         $feed = App::make('feed');
         $feed->setCache('feed', 60);
         if (!$feed->isCached()) {
-            $posts = Posts::take($take)->where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->get();
+            $posts = Posts::take($take)->where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->get();
             $feed->ctype = "text/xml";
             $feed->title = env('APP_NAME') . ' RSS Servisi';
             $feed->description = env('APP_DESC');
@@ -157,7 +182,7 @@ class HomeController extends Controller
         $rss = App::make('feed');
         $rss->setCache('rss', 60);
         if (!$rss->isCached()) {
-            $posts = Posts::take($take)->where('status', 1)->where('location', '!=', 5)->where('updated_at', '<=', $date)->orderBy('updated_at', 'DESC')->get();
+            $posts = Posts::take($take)->where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->get();
             $rss->ctype = "text/xml";
             $rss->title = env('APP_NAME') . ' Feed Servisi';
             $rss->description = env('APP_DESC');

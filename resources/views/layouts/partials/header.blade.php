@@ -212,7 +212,7 @@
                                 <ul>
                                     @foreach($categoryArray as $cat)
                                         <li class="dropdown-container__item ripple">
-                                            <a href="{{ route('show_category',str_slug($cat['title']).'-'.$cat['id']) }}"
+                                            <a href="{{ route('show_category',$cat['full_url']) }}"
                                                title="{{ $cat['title'] }}">{{ $cat['title'] }}</a>
                                         </li>
                                     @endforeach
@@ -251,12 +251,6 @@
                             <a href="{{ route('home') }}/hakkimizda" title="Sanalyer Hakkında">Hakkımızda</a>
                         </li>
                         <li class="dropdown-container__item ripple">
-                            <a href="{{ route('home') }}/yazarlar" title="Sanalyer Yazarları">Yazarlar</a>
-                        </li>
-                        <li class="dropdown-container__item ripple">
-                            <a href="{{ route('home') }}/odullerimiz" title="Sanalyer Ödülleri">Ödüllerimiz</a>
-                        </li>
-                        <li class="dropdown-container__item ripple">
                             <a href="{{ route('home') }}/kunye" title="Sanalyer Künye">Künye</a>
                         </li>
                         <li class="dropdown-container__item ripple">
@@ -282,9 +276,9 @@
     <div class="container">
         <div id="counter-black-friday">
             <div id="counter-numbers">
-                <span id="hours"></span>
-                <span id="minutes"></span>
-                <span id="seconds"></span>
+                <span id="hours">1</span>
+                <span id="minutes">2</span>
+                <span id="seconds">3</span>
             </div>
             <div id="counter-titles">
                 <span id="hours-title">Saat</span>
@@ -302,19 +296,19 @@
     </div>
     <ul class="drawer__menu">
         <li class="drawer__menu__item {{ url()->full() == route('home') ? "drawer__menu__item--active" : "" }}">
-            <a class="drawer__menu__item__link" href="{{ route('home') }}/">
+            <a class="drawer__menu__item__link" href="{{ route('home') }}">
                 <span class="drawer__menu__item__icon"><i class="material-icons">&#xE88A;</i></span>
                 <span class="drawer__menu__item__title">Anasayfa</span>
             </a>
         </li>
         <li class="drawer__menu__item {{ url()->full() == route('news') ? "drawer__menu__item--active" : "" }}">
-            <a class="drawer__menu__item__link" href="{{ route('news') }}/">
+            <a class="drawer__menu__item__link" href="{{ route('news') }}">
                 <span class="drawer__menu__item__icon"><i class="material-icons">&#xE8B0;</i></span>
                 <span class="drawer__menu__item__title">Haber</span>
             </a>
         </li>
         <li class="drawer__menu__item {{ url()->full() == route('video') ? "drawer__menu__item--active" : "" }}">
-            <a class="drawer__menu__item__link" href="{{ route('video') }}/">
+            <a class="drawer__menu__item__link" href="{{ route('video') }}">
                 <span class="drawer__menu__item__icon"><i class="material-icons">&#xE038;</i></span>
                 <span class="drawer__menu__item__title">Video</span>
             </a>
@@ -330,16 +324,6 @@
         <li class="drawer__menu__item drawer__menu__item--border">
             <a href="{{ env('APP_URL') }}/hakkimizda" title="Sanalyer Hakkında" class="drawer__menu__item__link">
                 <span class="drawer__menu__item__title pl0">Hakkımızda</span>
-            </a>
-        </li>
-        <li class="drawer__menu__item">
-            <a href="{{ env('APP_URL') }}/yazarlar" title="Sanalyer Yazarları" class="drawer__menu__item__link">
-                <span class="drawer__menu__item__title pl0">Yazarlar</span>
-            </a>
-        </li>
-        <li class="drawer__menu__item">
-            <a href="{{ env('APP_URL') }}/odullerimiz" title="Sanalyer Ödülleri" class="drawer__menu__item__link">
-                <span class="drawer__menu__item__title pl0">Ödüllerimiz</span>
             </a>
         </li>
         <li class="drawer__menu__item">
@@ -365,7 +349,7 @@
         <a class="drawer__social__item drawer__social__item--twitter" href="https://twitter.com/Sanalyer"
            target="_blank" title="Twitter'da Takip Edin"></a>
         <a class="drawer__social__item drawer__social__item--youtube"
-           href="https://www.youtube.com/subscription_center?add_user=Sanalyertv" target="_blank"
+           href="https://www.youtube.com/channel/UCgzkm9WUK7dDX4X5GBaRJCg" target="_blank"
            title="Youtube'ta Takip Edin"></a>
         <a class="drawer__social__item drawer__social__item--instagram" href="https://www.instagram.com/Sanalyer/"
            target="_blank" title="Instagram'da Takip Edin"></a>

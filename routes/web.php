@@ -24,6 +24,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('yeni-yazi', 'HomePostsController@newPostPost');
     Route::get('yeni-video', 'HomePostsController@newVideo')->name('new_video');
     Route::post('yeni-video', 'HomePostsController@newVideoPost');
+    Route::get('icerik-duzenle/{id}', 'HomePostsController@editPost')->name('edit_post');
+    Route::post('icerik-duzenle/{id}', 'HomePostsController@editPostP');
+    Route::get('video-duzenle/{id}', 'HomePostsController@editVideo')->name('edit_video');
+    Route::post('video-duzenle/{id}', 'HomePostsController@editVideoP');
+    Route::get('icerik-sil/{id}', 'HomePostsController@deletePost')->name('delete_post');
     Route::get('iceriklerim', 'HomePostsController@threads')->name('threads');
 });
 
@@ -59,31 +64,31 @@ $homeRoute = function () {
         return '<h1>Cache facade value cleared</h1>';
     });
 
-//Reoptimized class loader:
+    //Reoptimized class loader:
     Route::get('/optimize', function () {
         $exitCode = Artisan::call('optimize');
         return '<h1>Reoptimized class loader</h1>';
     });
 
-//Route cache:
+    //Route cache:
     Route::get('/route-cache', function () {
         $exitCode = Artisan::call('route:cache');
         return '<h1>Routes cached</h1>';
     });
 
-//Clear Route cache:
+    //Clear Route cache:
     Route::get('/route-clear', function () {
         $exitCode = Artisan::call('route:clear');
         return '<h1>Route cache cleared</h1>';
     });
 
-//Clear View cache:
+    //Clear View cache:
     Route::get('/view-clear', function () {
         $exitCode = Artisan::call('view:clear');
         return '<h1>View cache cleared</h1>';
     });
 
-//Clear Config cache:
+    //Clear Config cache:
     Route::get('/config-cache', function () {
         $exitCode = Artisan::call('config:cache');
         return '<h1>Clear Config cleared</h1>';
@@ -110,6 +115,12 @@ $homeRoute = function () {
     Route::get('kayit', 'Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('kayit', 'Auth\RegisterController@register');
 
+    Route::get('uye/{slug}', 'HomeController@showProfile')->name('show_profile');
+    Route::get('hakkimizda', 'HomePageController@abouts')->name('abouts');
+    Route::get('kunye', 'HomePageController@corporate')->name('corporate');
+    Route::get('gizlilik', 'HomePageController@privacy')->name('privacy');
+    Route::get('iletisim', 'HomePageController@contact')->name('contact');
+
     Route::get('uyelik-sozlesmesi', 'HomeController@memberAgree')->name('memberAgree');
 
     Route::get('haber/{slug}.html', 'HomePostsController@showPost')->name('show_post');
@@ -117,5 +128,37 @@ $homeRoute = function () {
     Route::get('video/{slug}.html', 'HomePostsController@showVideo')->name('show_video');
     Route::get('kategori/{slug}.html', 'HomePostsController@showCategory')->name('show_category');
     Route::get('/ara', 'HomeController@search')->name("search");
+    Route::get('/bot/sdn',function() {
+        $array =  array();
+        $detailContent = array();
+        $link = 'https://shiftdelete.net';
+        $site = \App\curlConnect($link);
+        preg_match_all('@<div class="title"><a href="(.*?)" class="u-url p-name">(.*?)<br>@si',$site, $array[]);
+        $post = new \Radkod\Posts\Models\Posts();
+        foreach($array[0][1] as $i => $url)
+        {
+            $title = $array[0][2][$i];
+            $detailUrl = \App\curlConnect($url);
+            preg_match_all('@<h1>(.*?)</h1>@si',$detailUrl, $detailContent[]);
+            preg_match_all('@<div class="img"><a href="(.*?)"><img src="(.*?)" width="580" height="330" alt="(.*?)"></a></div>@si',$detailUrl, $detailContent[]);
+            preg_match_all('@<div id="post_detail_content">(.*?)</div>@si',$detailUrl, $detailContent[]);
+            preg_match_all('@<meta name="news_keywords" content="(.*?)"/>@si',$detailUrl, $detailContent[]);
+            $title = $detailContent[0][1];
+            $image = $detailContent[1][2];
+            $content = $detailContent[2][1];
+            $keyw = $detailContent[3][1];
+            return response()->json(['title'=>$title,'content'=>$content,'key'=>$keyw]);
+            /*$post->title = $title;
+            $post->content = $content;
+            $post->tag = $keyw;
+            $post->author = number_format(1);
+            $post->save();*/
+            //dd($title,$image,$content,$keyw);
+        }
+    });
+    Route::get('/spintest',function() {
+        echo \App\articleRewriter('merhaba');
+    });
+
 };
 Route::group(['domain' => env("APP_URL")], $homeRoute);

@@ -60,7 +60,7 @@
                 <div class="video-showcase__content--right">
                     <div class="video-showcase__content--right__options hide-mobile">
                         <div class="video-showcase__content--right__options__subscribe">
-                            <div class="g-ytsubscribe" data-channel="webteknotv" data-layout="default"
+                            <div class="g-ytsubscribe" data-channel="sanalyertv" data-layout="default"
                                  data-theme="default" data-count="hidden"></div>
                         </div>
                         <div class="material-switch material-switch--small">
@@ -94,7 +94,7 @@
                             @foreach($prev as $item)
                                 <li class="video-showcase__content--right__video-list__item "
                                     id="video-{{ $item->id }}">
-                                    <a href="{{ route('show_video',str_slug($item->title).'-'.$item->id) }}">
+                                    <a href="{{ route('show_video',$item->full_url) }}">
                                         <figure class="video-showcase__content--right__video-list__item__image">
                                             <img src="{{ Image::url(\App\checkImage($item->image), 100, 56, array('crop')) }}"
                                                  alt="{{ $item->title }}">
@@ -144,7 +144,7 @@
 
                 <div class="content-info">
                    <span itemprop="author" itemscope itemtype="http://schema.org/Person"><a
-                               href="{{ env('APP_URL') }}/yazar/enesk" itemprop="name"
+                               href="{{ route('show_profile',str_slug($posts->user->name).'-'.$posts->user->id) }}" itemprop="name"
                                class="content-info__author">{{ $posts->user->firstname }}</a></span>
                     <span class="content-info__line">—</span>
                     <time class="content-info__date" itemprop="datePublished"

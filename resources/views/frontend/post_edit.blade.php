@@ -6,72 +6,84 @@
 
 
 @endsection
-
+@php
+    $postDescEx = explode('----------------------', $post->content);
+            $postDesc = $postDescEx[0];
+            $postContent = $postDescEx[1];
+$newDate = date("d-m-Y H:i:s", strtotime($post->created_at));
+@endphp
 @section('content')
     <div class="global-container container">
         <div class="content">
             <div class="content-title">
-                @if($type==0)
-                    <h1>İçerik Ekle</h1>
+                @if($type == 0)
+                    <h1>İçerik Düzenle</h1>
                 @elseif($type == 1)
-                    <h1>Video Ekle</h1>
+                    <h1>Video Düzenle</h1>
                 @endif
             </div>
             <div class="content-body">
                 <div class="content-body__detail">
                     @if (count($errors) > 0)
-                    @foreach ($errors->all() as $error)
-
-                        <li>{{ $error }}</li>
-
-                    @endforeach
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
                     @endif
-                    <form name="sanalyer_client_bundle_contact_type" method="post" class="material" enctype="multipart/form-data">
+                    <form name="sanalyer_client_bundle_contact_type" method="post" class="material"
+                          enctype="multipart/form-data">
                         <input type="hidden" value="{{ csrf_token() }}" name="_token">
                         <div>
                             <input type="text" name="title" required="required"
-                                   placeholder="Başlık" value="{{ old('title') }}"/>
+                                   placeholder="Başlık" value="{{ old('title',$post->title) }}"/>
                         </div>
                         <div>
-                            <input type="text" value="{{ old('date') }}" class="material" name="date" placeholder="Tarih" id="datetimepicker1"/>
+                            <input type="text" class="material" name="date" value="{{ old('date',$newDate) }}"
+                                   placeholder="Tarih" id="datetimepicker1"/>
                         </div>
                         <div>
                             <input type="file" name="image"/>
                         </div>
                         <div>
                             <textarea name="short_desc" required="required"
-                                      placeholder="Kısa Açıklama">{{ old('short_desc') }}</textarea>
+                                      placeholder="Kısa Açıklama">{{ old('short_desc',$postDesc) }}</textarea>
                         </div>
                         <div>
                             <select name="category" placeholder="Kategori">
                                 @foreach($category as $item)
                                     @if($item->parent_id == 0)
-                                        <option value="{{ $item->id }}" {{ old("category") == $item->id ? "selected":"" }}>{{ $item->title }}</option>
+                                        <option value="{{ $item->id }}" {{ old("category",$post->category) == $item->id ? "selected":"" }}>{{ $item->title }}</option>
                                     @endif
                                 @endforeach
                             </select>
                         </div>
 
                         <div>
-                            <textarea name="content_full" required="required" class="ckeditor " id="editor-ckeditor">{!! old('content_full') !!}</textarea>
+                            <textarea name="content_full" required="required" class="ckeditor "
+                                      id="editor-ckeditor">{!! old('content_full',$postContent) !!}</textarea>
                         </div>
 
                         <div>
                             <select name="location" placeholder="Nerede Gözüksün ?">
-                                <option value="0" {{ old('location') == 0 ? 'selected': '' }}>Aşağıda Kalsın</option>
-                                <option value="1" {{ old('location') == 1 ? 'selected': '' }}>Manşet</option>
-                                <option value="2" {{ old('location') == 2 ? 'selected': '' }}>Manşet Yanı</option>
-                                <option value="5" {{ old('location') == 5 ? 'selected': '' }}>Gizli</option>
+                                <option value="0" {{ old('location',$post->location) == 0 ? 'selected': '' }}>Aşağıda
+                                    Kalsın
+                                </option>
+                                <option value="1" {{ old('location',$post->location) == 1 ? 'selected': '' }}>Manşet
+                                </option>
+                                <option value="2" {{ old('location',$post->location) == 2 ? 'selected': '' }}>Manşet
+                                    Yanı
+                                </option>
+                                <option value="5" {{ old('location',$post->location) == 5 ? 'selected': '' }}>Gizli
+                                </option>
                             </select>
                         </div>
                         <div>
                             <textarea name="tag" required="required"
-                                      placeholder="Tag (virgül ile ayırınız)">{!! old('tag') !!}</textarea>
+                                      placeholder="Tag (virgül ile ayırınız)">{!! old('tag',$post->tag) !!}</textarea>
                         </div>
                         @if($type == 1)
                             <div>
                             <textarea name="video"
-                                      placeholder="Youtube Video URL">{!! old('video') !!}</textarea>
+                                      placeholder="Youtube Video URL">{!! old('video',$post->video) !!}</textarea>
                             </div>
                         @endif
 
@@ -110,18 +122,17 @@
     </script>
     <script type="text/javascript">
         $('#datetimepicker1').datetimepicker({
-            value:new Date(),
-            datepicker:true,
-            format:'d-m-Y H:i:s',
-            step:5
+            datepicker: true,
+            format: 'd-m-Y H:i:s',
+            step: 5
         });
     </script>
     <script>
-        CKEDITOR.replace( 'editor-ckeditor', {
-            filebrowserUploadUrl : "{{ url('js/ckeditor/plugins/filemanager/dialog.php?type=2&editor=ckeditor&fldr=') }}",
-            filebrowserBrowseUrl : "{{ url('js/ckeditor/plugins/filemanager/dialog.php?type=2&editor=ckeditor&fldr=') }}",
-            filebrowserImageBrowseUrl : "{{ url('js/ckeditor/plugins/filemanager/dialog.php?type=1&editor=ckeditor&fldr=') }}"
+        CKEDITOR.replace('editor-ckeditor', {
+            filebrowserUploadUrl: "{{ url('js/ckeditor/plugins/filemanager/dialog.php?type=2&editor=ckeditor&fldr=') }}",
+            filebrowserBrowseUrl: "{{ url('js/ckeditor/plugins/filemanager/dialog.php?type=2&editor=ckeditor&fldr=') }}",
+            filebrowserImageBrowseUrl: "{{ url('js/ckeditor/plugins/filemanager/dialog.php?type=1&editor=ckeditor&fldr=') }}"
 
-        } );
+        });
     </script>
 @endsection
