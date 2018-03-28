@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/RadKod/sanalyer.svg?branch=master)](https://travis-ci.org/RadKod/sanalyer)
 ## sanalyer.com
 
 ### Github Komutları

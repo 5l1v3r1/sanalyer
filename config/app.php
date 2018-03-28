@@ -2,6 +2,46 @@
 
 return [
 
+    'debug_blacklist' => [
+        '_ENV' => [
+            'MAIL_USERNAME',
+            'MAIL_PORT',
+            'MAIL_HOST',
+            'REDIS_HOST',
+            'DB_CONNECTION',
+            'APP_KEY',
+            'DB_HOST',
+            'DB_PORT',
+            'DB_PASSWORD',
+            'DB_DATABASE',
+            'DB_USERNAME',
+            'REDIS_PASSWORD',
+            'MAIL_PASSWORD',
+            'PUSHER_APP_KEY',
+            'PUSHER_APP_SECRET',
+        ],
+        '_SERVER' => [
+            'MAIL_USERNAME',
+            'MAIL_PORT',
+            'MAIL_HOST',
+            'REDIS_HOST',
+            'DB_CONNECTION',
+            'APP_KEY',
+            'DB_HOST',
+            'DB_PORT',
+            'DB_PASSWORD',
+            'DB_DATABASE',
+            'DB_USERNAME',
+            'REDIS_PASSWORD',
+            'MAIL_PASSWORD',
+            'PUSHER_APP_KEY',
+            'PUSHER_APP_SECRET',
+        ],
+        '_POST' => [
+            'password',
+        ],
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -185,7 +225,6 @@ return [
         DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
-
     ],
 
     /*
