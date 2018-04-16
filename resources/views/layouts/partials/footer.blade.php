@@ -3,7 +3,7 @@
 <script src="{{ asset('/assets/default/js/main.js?v=2.3.4') }}"></script>
 <script src="{{ asset('/assets/default/packages/sweetalert/sweetalert.js') }}"></script>
 @include('sweet::alert')
-<script src="{{ asset('/js/ckeditor/ckeditor.js?v=2.3.4') }}"></script>
+{{--<script src="{{ asset('/js/ckeditor/ckeditor.js?v=2.3.4') }}"></script>--}}
 <link href="{{ asset('assets/default/prism/prism.css') }}" rel="stylesheet" />
 <script src="{{ asset('assets/default/prism/prism.js') }}"></script>
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/default/datatables/datatables.min.css') }}"/>
