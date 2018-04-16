@@ -116,12 +116,4 @@
             step:5
         });
     </script>
-    <script>
-        CKEDITOR.replace( 'editor-ckeditor', {
-            filebrowserUploadUrl : "{{ url('js/ckeditor/plugins/filemanager/dialog.php?type=2&editor=ckeditor&fldr=') }}",
-            filebrowserBrowseUrl : "{{ url('js/ckeditor/plugins/filemanager/dialog.php?type=2&editor=ckeditor&fldr=') }}",
-            filebrowserImageBrowseUrl : "{{ url('js/ckeditor/plugins/filemanager/dialog.php?type=1&editor=ckeditor&fldr=') }}"
-
-        } );
-    </script>
 @endsection
