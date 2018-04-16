@@ -2,6 +2,37 @@ let editor_config = {
   /* replace textarea having class .tinymce with tinymce editor */
   selector: "textarea.ckeditor",
 
+    images_upload_handler: function (blobInfo, success, failure) {
+        var xhr, formData;
+
+        xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        xhr.open('POST', 'postAcceptor.php');
+
+        xhr.onload = function() {
+            var json;
+
+            if (xhr.status < 200 || xhr.status >= 300) {
+                failure('HTTP Error: ' + xhr.status);
+                return;
+            }
+
+            json = JSON.parse(xhr.responseText);
+
+            if (!json || typeof json.location != 'string') {
+                failure('Invalid JSON: ' + xhr.responseText);
+                return;
+            }
+
+            success(json.location);
+        };
+
+        formData = new FormData();
+        formData.append('file', blobInfo.blob(), fileName(blobInfo));
+
+        xhr.send(formData);
+    },
+
   /* theme of the editor */
   theme: "modern",
   skin: "lightgray",
@@ -16,13 +47,13 @@ let editor_config = {
 
   /* plugin */
   plugins: [
-    "advlist autolink link image lists charmap print preview hr anchor pagebreak",
+    "codesample advlist autolink link image lists charmap print preview hr anchor pagebreak",
     "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
     "save table contextmenu directionality emoticons template paste responsivefilemanager textcolor"
   ],
 
   /* toolbar */
-  toolbar: "responsivefilemanager | insertfile undo redo | styleselect fontsizeselect fontselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
+  toolbar: "codesample responsivefilemanager | insertfile undo redo | styleselect fontsizeselect fontselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
   /*font_formats: 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;AkrutiKndPadmini=Akpdmi-n',*/
   fontsize_formats: '8pt 9pt 10pt 11pt 12pt 13pt 14pt 15pt 16pt 17pt 18pt 24pt 36pt',
   /* style */
@@ -59,7 +90,7 @@ let editor_config = {
     ]}
   ],
   external_filemanager_path:"/filemanager/",
-  filemanager_title:"Responsive Filemanager" ,
+  filemanager_title:"Dosya Yöneticisi" ,
   external_plugins: { "filemanager" : "/filemanager/plugin.min.js"}
 };
 
