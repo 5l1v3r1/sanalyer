@@ -9,7 +9,7 @@
     @include('frontend.inc.feature')
     <link rel="stylesheet" href="{{ asset('assets/default/packages/sweetalert/sweetalert.css') }}">
     <script src="{{ asset("js/tinymce/tinymce.min.js") }}"></script>
-    <script src="{{ asset("js/tinymce/init-tinymce-radkod.js?v=2") }}"></script>
+    <script src="{{ asset("js/tinymce/init-tinymce-radkodV5.js") }}"></script>
     </head>
 <body>
 @include('layouts.partials.header')

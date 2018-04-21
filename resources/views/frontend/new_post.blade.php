@@ -39,7 +39,7 @@
                             <input type="file" name="image"/>
                         </div>
                         <div>
-                            <textarea name="short_desc" required="required"
+                            <textarea name="short_desc"
                                       placeholder="Kısa Açıklama">{{ old('short_desc') }}</textarea>
                         </div>
                         <div>
