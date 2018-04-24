@@ -53,7 +53,7 @@
                         </div>
 
                         <div>
-                            <textarea name="content_full" required="required" class="ckeditor " id="editor-ckeditor">{!! old('content_full') !!}</textarea>
+                            <textarea name="content_full" class="ckeditor " id="editor-ckeditor">{!! old('content_full') !!}</textarea>
                         </div>
 
                         <div>
