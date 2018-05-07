@@ -182,7 +182,7 @@
                 <div class="content-tags hide-mobile">
                     <b>Etiketler: </b>
                     @foreach(explode(',', $posts->tag) as $info)
-                        <a href="/etiket/{{ str_slug($info) }}" title="{{ $info }}">{{ $info }}</a>,
+                        <a href="{{ route("tag",$info) }}" title="{{ $info }}">{{ $info }}</a>,
                     @endforeach
                 </div>
         @endif

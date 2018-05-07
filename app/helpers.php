@@ -14,7 +14,9 @@ function checkImage($image)
     return $image;
 }
 
-
+function numberFormat($number){
+    return number_format($number, 2, ',', '.');
+}
 
 function YoutubeID($url)
 {
@@ -32,9 +34,9 @@ function YoutubeID($url)
 }
 
 function img_amp($text){
-   /* $find = array('<img', 'resimler/haber');
-    $replace = array('<amp-img', env('APP_URL').'/resimler/haber');
-    $text = strtolower(str_replace($find, $replace, $text));*/
+    $find = array( 'resimler');
+    $replace = array( env('APP_URL').'/resimler');
+    $text = strtolower(str_replace($find, $replace, $text));
     return $text;
 }
 

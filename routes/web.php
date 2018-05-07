@@ -128,6 +128,7 @@ $homeRoute = function () {
     Route::get('video/{slug}.html', 'HomePostsController@showVideo')->name('show_video');
     Route::get('kategori/{slug}.html', 'HomePostsController@showCategory')->name('show_category');
     Route::get('/ara', 'HomeController@search')->name("search");
+    Route::get('/etiket/{q}', 'HomeController@search')->name("tag");
     Route::get('/bot/sdn',function() {
         $array =  array();
         $detailContent = array();
