@@ -34,69 +34,24 @@
     </div>
     --}}
     <div class="sidebar-block">
-        <div class="sidebar-title global-title">Trend Videolar</div>
+        <div class="sidebar-title global-title">Son Eklenen Videolar</div>
         <ol class="sidebar-trend">
-
-            <li class="sidebar-trend__item">
-                <div class="sidebar-trend__item__body">
-                    <a class="sidebar-trend__item__link" href="{{ env('APP_URL') }}/turkcell-in-internet-hizinizi-arttiriyor-diye-sattigi-kilifi-test-ettik-v1039.html" title="Turkcell’in İnternet Hızınızı Arttırıyor Diye Sattığı Kılıfı Test Ettik!" onclick="ga(&#039;send&#039;, &#039;event&#039;, &#039;Sidebar Trend Videos&#039;, &#039;Click&#039;, &#039;{{ env('APP_URL') }}/turkcell-in-internet-hizinizi-arttiriyor-diye-sattigi-kilifi-test-ettik-v1039.html&#039;)">
-                        <div class="sidebar-trend__item__image lazy" data-original="https://www.sanalyer.com/resimler/6745326-sanalyer-703933323-image(788x443-crop).jpg">
-                            <span class="sidebar-trend__item__icon"><i class="material-icons">&#xE037;</i></span>
-                            <span class="sidebar-trend__item__duration">04:05</span>
-                        </div>
-                    </a>
-                    <div class="sidebar-trend__item__caption">
-                        <h3 class="sidebar-trend__item__title">
-                            <a class="sidebar-trend__item__link" href="{{ env('APP_URL') }}/turkcell-in-internet-hizinizi-arttiriyor-diye-sattigi-kilifi-test-ettik-v1039.html" title="Turkcell’in İnternet Hızınızı Arttırıyor Diye Sattığı Kılıfı Test Ettik!" onclick="ga(&#039;send&#039;, &#039;event&#039;, &#039;Sidebar Trend Videos&#039;, &#039;Click&#039;, &#039;{{ env('APP_URL') }}/turkcell-in-internet-hizinizi-arttiriyor-diye-sattigi-kilifi-test-ettik-v1039.html&#039;)">
-                                <span class="underline">Turkcell’in İnternet Hızınızı Arttırıyor Diye Sattığı Kılıfı Test Ettik!</span>
-                            </a>
-                        </h3>
-                    </div>
-                </div>
-            </li>
-
+            @widget("TrendVideos")
         </ol>
     </div>
     <div class="sidebar-block clearfix">
-        <div class="sidebar-title global-title"><a href="/en-cok-okunanlar">Bugün En Çok Okunanlar</a></div>
+        <div class="sidebar-title global-title">En Çok Okunanlar</div>
         <ol class="sidebar-mosts sidebar-mosts--readed">
-            <li class="sidebar-mosts__item sidebar-mosts__item--1">
-                <div class="sidebar-mosts__item__body">
-                    <a class="sidebar-mosts__item__link" href="{{ env('APP_URL') }}/itu-yle-bir-garip-tesla-roadster-olayi-yasayan-ali-agaoglu-daha-iyisini-yapsinlar-diye-verdim-curumeye-birakmislar-h38504.html" title="Başlık" >
-                        <div class="sidebar-mosts__item__image lazy" data-original="https://www.sanalyer.com/resimler/6745326-sanalyer-703933323-image(788x443-crop).jpg"></div>
-                    </a>
-                    <div class="sidebar-mosts__item__content">
-                        <a class="sidebar-mosts__item__link" href="{{ env('APP_URL') }}/itu-yle-bir-garip-tesla-roadster-olayi-yasayan-ali-agaoglu-daha-iyisini-yapsinlar-diye-verdim-curumeye-birakmislar-h38504.html" title="Başlık" >
-                            <h3 class="sidebar-mosts__item__title"><span class="underline">Başlık</span></h3>
-                        </a>
-                        <span class="sidebar-mosts__item__icon"><i class="material-icons">&#xE8E5;</i></span>
-                        <span class="sidebar-mosts__item__count">12</span>
-                    </div>
-                </div>
-            </li>
-
+            @widget("MostReadPost")
         </ol>
     </div>
     <div class="sidebar-block clearfix">
-        <div class="sidebar-title global-title"><a href="/en-cok-paylasilanlar">Bugün En Çok Paylaşılanlar</a></div>
+        <div class="sidebar-title global-title">Bu Hafta En Çok Okunanlar</div>
         <ol class="sidebar-mosts sidebar-mosts--shared">
-            <li class="sidebar-mosts__item sidebar-mosts__item--1">
-                <div class="sidebar-mosts__item__body">
-                    <a class="sidebar-mosts__item__link" href="{{ env('APP_URL') }}/itu-yle-bir-garip-tesla-roadster-olayi-yasayan-ali-agaoglu-daha-iyisini-yapsinlar-diye-verdim-curumeye-birakmislar-h38504.html" title="Başlık" >
-                        <div class="sidebar-mosts__item__image lazy" data-original="https://www.sanalyer.com/resimler/6745326-sanalyer-703933323-image(788x443-crop).jpg"></div>
-                    </a>
-                    <div class="sidebar-mosts__item__content">
-                        <a class="sidebar-mosts__item__link" href="{{ env('APP_URL') }}/itu-yle-bir-garip-tesla-roadster-olayi-yasayan-ali-agaoglu-daha-iyisini-yapsinlar-diye-verdim-curumeye-birakmislar-h38504.html" title="Başlık" >
-                            <h3 class="sidebar-mosts__item__title"><span class="underline">Başlık</span></h3>
-                        </a>
-                        <span class="sidebar-mosts__item__icon"><i class="material-icons">&#xE8E5;</i></span>
-                        <span class="sidebar-mosts__item__count">12</span>
-                    </div>
-                </div>
-            </li>
-
+            @widget("MostWeekReadPost")
         </ol>
     </div>
+
     <div class="sidebar-block clearfix">
         <div class="sidebar-title global-title">Bizi Takip Et</div>
         <ul class="sidebar-social">
@@ -106,7 +61,7 @@
                         <span class="sidebar-social__item__media__icon"></span>
                     </div>
                     <div class="sidebar-social__item__caption">
-                        <span class="sidebar-social__item__count">518B</span>
+                        <span class="sidebar-social__item__count">Facebook</span>
                         <span class="sidebar-social__item__title">BEĞENİ</span>
                     </div>
                 </a>
@@ -117,18 +72,18 @@
                         <span class="sidebar-social__item__media__icon"></span>
                     </div>
                     <div class="sidebar-social__item__caption">
-                        <span class="sidebar-social__item__count">120B</span>
+                        <span class="sidebar-social__item__count">Twitter</span>
                         <span class="sidebar-social__item__title">TAKİPÇİ</span>
                     </div>
                 </a>
             </li>
             <li class="sidebar-social__item">
-                <a class="sidebar-social__item__link" href="https://www.youtube.com/subscription_center?add_user=UCgzkm9WUK7dDX4X5GBaRJCg" target="_blank" title="Youtube'ta Takip Edin">
+                <a class="sidebar-social__item__link" href="https://www.youtube.com/channel/UCgzkm9WUK7dDX4X5GBaRJCg" target="_blank" title="Youtube'ta Takip Edin">
                     <div class="sidebar-social__item__media sidebar-social__item__media--youtube">
                         <span class="sidebar-social__item__media__icon"></span>
                     </div>
                     <div class="sidebar-social__item__caption">
-                        <span class="sidebar-social__item__count">1.7M</span>
+                        <span class="sidebar-social__item__count">YouTube</span>
                         <span class="sidebar-social__item__title">ABONE</span>
                     </div>
                 </a>
@@ -139,7 +94,7 @@
                         <span class="sidebar-social__item__media__icon"></span>
                     </div>
                     <div class="sidebar-social__item__caption">
-                        <span class="sidebar-social__item__count">345B</span>
+                        <span class="sidebar-social__item__count">Instagram</span>
                         <span class="sidebar-social__item__title">TAKİPÇİ</span>
                     </div>
                 </a>

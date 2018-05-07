@@ -27,6 +27,10 @@ class HomeAjaxController extends Controller
         }
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function commentsSend(Request $request){
         $content = $request->content;
         $posts_id = $request->thread_id;

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use function App\checkImage;
-use App\User;
+use function App\img_amp;
+use Lullabot\AMP\AMP;
 use function App\YoutubeID;
 use Carbon\Carbon;
 use Radkod\Posts\Models\Category;
@@ -12,8 +13,8 @@ use Illuminate\Routing\Controller as Controller;
 use SEO;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Input;
 
 class HomePostsController extends Controller
 {
@@ -31,6 +32,9 @@ class HomePostsController extends Controller
             alert()->error('Aradıgınız içerik bulunmamakta.');
             return redirect(route('home'));
         }
+
+        $posts->hitUpdate();
+
         $postDescEx = explode('----------------------', $posts->content);
         $postDesc = $postDescEx[0];
         $postContent = $postDescEx[1];
@@ -66,6 +70,7 @@ class HomePostsController extends Controller
 
     public function showPostAMP($slug)
     {
+        $amp = new AMP();
         $date = date('Y-m-d H:i:s');
         $data = explode("-", $slug);
         $id = $data[count($data) - 1];
@@ -80,6 +85,12 @@ class HomePostsController extends Controller
         $postDescEx = explode('----------------------', $posts->content);
         $postDesc = $postDescEx[0];
         $postContent = $postDescEx[1];
+        $posts->hitUpdate();
+
+        $amp->loadHtml($postContent);
+       /* $amp->loadHtml($postContent, ['add_stats_html_comment' => true]);*/
+        $postContent = $amp->convertToAmpHtml();
+
         $category = Category::where('id', $posts->category)->first();
         $prev = Posts::where('created_at', '<', $posts->created_at)
             ->where('created_at', '<=', $date)
@@ -123,6 +134,7 @@ class HomePostsController extends Controller
             alert()->error('Aradıgınız içerik bulunmamakta.');
             return redirect(route('home'));
         }
+        $posts->hitUpdate();
         $postDescEx = explode('----------------------', $posts->content);
         $postDesc = $postDescEx[0];
         $postContent = $postDescEx[1];

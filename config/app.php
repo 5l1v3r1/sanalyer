@@ -225,6 +225,7 @@ return [
         DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
+        Imanghafoori\Widgets\WidgetsServiceProvider::class,
     ],
 
     /*
