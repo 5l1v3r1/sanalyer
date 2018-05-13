@@ -90,7 +90,6 @@ class HomeController extends Controller
             return $q->where('title', 'like', '%'.$search.'%')
             ->orWhere('tag', 'like', '%'.$search.'%');
             })->where('status', 1)
-            ->where('location', '!=', 5)
             ->where('created_at', '<=', $date)
             ->orderBy('created_at', 'DESC')
             ->paginate(10);
