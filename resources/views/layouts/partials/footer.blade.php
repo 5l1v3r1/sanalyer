@@ -527,7 +527,7 @@
 
         setTimeout(function(){
             $.smartbanner({
-                url:'https://play.google.com/store/apps/details?id=com.sanalyer&hl=tr',
+                url:'https://play.google.com/store/apps/details?id=com.radkod.sanalyer&hl=tr',
                 title: 'Sanalyer', // What the title of the app should be in the banner (defaults to <title>)
                 author: null, // What the author of the app should be in the banner (defaults to <meta name="author"> or hostname)
                 price: null, // Price of the app

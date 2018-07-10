@@ -226,6 +226,7 @@ return [
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Imanghafoori\Widgets\WidgetsServiceProvider::class,
+        Urb\XenforoBridge\XenforoBridgeServiceProvider::class,
     ],
 
     /*
@@ -279,6 +280,7 @@ return [
         'Feed' => Roumen\Feed\Feed::class,
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+        'XF' => 'Urb\XenforoBridge\Facades\XenforoBridge',
     ],
 
 ];

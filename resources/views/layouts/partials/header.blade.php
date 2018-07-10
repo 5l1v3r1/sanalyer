@@ -271,7 +271,7 @@
     </div>
 </header>
 
-{{--<div class="banner" style="height:80px; background: #000000 url(assets/default/images/black-friday-bg.jpg) no-repeat top center;">
+{{--<div class="banner" style="height:80px; background: #000000 url({{ asset("assets/default/images/black-friday-bg.jpg") }}) no-repeat top center;">
 <a href="https://www.teknostore.com/collections/black-friday" target="_blank" title="Black Friday" style="display:block;position:relative;height:80px">
     <div class="container">
         <div id="counter-black-friday">
@@ -289,6 +289,12 @@
     </div>
 </a>
 </div>--}}
+
+<div class="banner" style="height:65px; background: #007EE7 url(https://www.sanalyer.com/resimler/sanalyer_app.jpg) no-repeat top center;    background-size: 780px !important;background-position: center -15px !important;">
+    <a href="https://play.google.com/store/apps/details?id=com.radkod.sanalyer" target="_blank" title="Teknoloji Haberleri" style="display:block;position:relative;height:65px">
+    </a>
+</div>
+
 <div class="drawer">
     <div class="drawer__header clearfix">
         <a href="{{ env('APP_URL') }}/" class="drawer__header__logo"></a>

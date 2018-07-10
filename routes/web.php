@@ -44,9 +44,11 @@ Route::group(['middleware' => 'auth'], function () {
 */
 
 $homeRoute = function () {
-    Route::get('deneme', function (){
-        dd(Auth::id());
+    Route::get('/example', function(){
+        XF::loginAsUser(1);
+        echo 'başarılı!';
     });
+
 
     Route::get('composer-dumpload', function (){
         system('composer dump-autoload');

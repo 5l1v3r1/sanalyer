@@ -417,7 +417,12 @@
             $(function () {
                 $(".news").wtScroll({item: ".news__item"});
             });
+        }else{
+            $(function () {
+                $(".news").wtScroll({item: ".news__item"});
+            });
         }
+
         {{--
                 $(function () {
                     var limit = $('.gallery-widget__container__item').length;

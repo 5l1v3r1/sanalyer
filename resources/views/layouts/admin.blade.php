@@ -1,1377 +1,1362 @@
 <!DOCTYPE html>
-<html>
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <meta name="csrf-token" content="{{ csrf_token() }}"/>
-    <title>Admin</title>
-    <base href="{{ route('home') }}" >
-    <link rel="stylesheet" href="{{ asset('assets/default/packages/sweetalert/sweetalert.css') }}">
-    <!-- style -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/animate.css/animate.min.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('admin/assets/glyphicons/glyphicons.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('admin/assets/font-awesome/css/font-awesome.min.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('admin/assets/material-design-icons/material-design-icons.css') }}" type="text/css" />
+    <title>AdminLTE 3 | Dashboard 2</title>
 
-    <link rel="stylesheet" href="{{ asset('admin/assets/bootstrap/dist/css/bootstrap.min.css') }}" type="text/css" />
-    <!-- build:css assets/styles/app.min.css -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/styles/app.css') }}" type="text/css" />
-    <!-- endbuild -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/styles/font.css') }}" type="text/css" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{{ asset("admin/plugins/font-awesome/css/font-awesome.min.css") }}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset("admin/dist/css/adminlte.min.css") }}">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="index3.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
 
-    <div class="app" id="app">
-
-        <!-- ############ LAYOUT START-->
-
-        <!-- aside -->
-        <div id="aside" class="app-aside modal nav-dropdown">
-            <!-- fluid app aside -->
-            <div class="left navside dark dk" data-layout="column">
-                <div class="navbar no-radius">
-                    <!-- brand -->
-                    <a class="navbar-brand">
-                        <div ui-include="'assets/images/logo.svg'"></div>
-                        <img src="assets/images/logo.png" alt="." class="hide">
-                        <span class="hidden-folded inline">Flatkit</span>
-                    </a>
-                    <!-- / brand -->
+        <!-- SEARCH FORM -->
+        <form class="form-inline ml-3">
+            <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-navbar" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
                 </div>
-                <div class="hide-scroll" data-flex>
-                    <nav class="scroll nav-light">
+            </div>
+        </form>
 
-                        <ul class="nav" ui-nav>
-                            <li class="nav-header hidden-folded">
-                                <small class="text-muted">Main</small>
-                            </li>
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Messages Dropdown Menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="fa fa-comments-o"></i>
+                    <span class="badge badge-danger navbar-badge">3</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <a href="#" class="dropdown-item">
+                        <!-- Message Start -->
+                        <div class="media">
+                            <img src="{{ asset("admin/dist/img/user1-128x128.jpg") }}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                            <div class="media-body">
+                                <h3 class="dropdown-item-title">
+                                    Brad Diesel
+                                    <span class="float-right text-sm text-danger"><i class="fa fa-star"></i></span>
+                                </h3>
+                                <p class="text-sm">Call me whenever you can...</p>
+                                <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>
+                            </div>
+                        </div>
+                        <!-- Message End -->
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <!-- Message Start -->
+                        <div class="media">
+                            <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                            <div class="media-body">
+                                <h3 class="dropdown-item-title">
+                                    John Pierce
+                                    <span class="float-right text-sm text-muted"><i class="fa fa-star"></i></span>
+                                </h3>
+                                <p class="text-sm">I got your message bro</p>
+                                <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>
+                            </div>
+                        </div>
+                        <!-- Message End -->
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <!-- Message Start -->
+                        <div class="media">
+                            <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                            <div class="media-body">
+                                <h3 class="dropdown-item-title">
+                                    Nora Silvester
+                                    <span class="float-right text-sm text-warning"><i class="fa fa-star"></i></span>
+                                </h3>
+                                <p class="text-sm">The subject goes here</p>
+                                <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>
+                            </div>
+                        </div>
+                        <!-- Message End -->
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+                </div>
+            </li>
+            <!-- Notifications Dropdown Menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="fa fa-bell-o"></i>
+                    <span class="badge badge-warning navbar-badge">15</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <span class="dropdown-item dropdown-header">15 Notifications</span>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-envelope mr-2"></i> 4 new messages
+                        <span class="float-right text-muted text-sm">3 mins</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-users mr-2"></i> 8 friend requests
+                        <span class="float-right text-muted text-sm">12 hours</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fa fa-file mr-2"></i> 3 new reports
+                        <span class="float-right text-muted text-sm">2 days</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
+                            class="fa fa-th-large"></i></a>
+            </li>
+        </ul>
+    </nav>
+    <!-- /.navbar -->
 
-                            <li>
-                                <a href="dashboard.html" >
-                    <span class="nav-icon">
-                      <i class="material-icons">&#xe3fc;
-                        <span ui-include="'assets/images/i_0.svg'"></span>
-                      </i>
-                    </span>
-                                    <span class="nav-text">Dashboard</span>
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="index3.html" class="brand-link">
+            <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">AdminLTE 3</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                </div>
+                <div class="info">
+                    <a href="#" class="d-block">Alexander Pierce</a>
+                </div>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+                         with font-awesome or any other icon font library -->
+                    <li class="nav-item has-treeview menu-open">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fa fa-dashboard"></i>
+                            <p>
+                                Dashboard
+                                <i class="right fa fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="./index.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Dashboard v1</p>
                                 </a>
                             </li>
-
-                            <li>
-                                <a>
-                    <span class="nav-caret">
-                      <i class="fa fa-caret-down"></i>
-                    </span>
-                                    <span class="nav-label">
-                      <b class="label rounded label-sm primary">5</b>
-                    </span>
-                                    <span class="nav-icon">
-                      <i class="material-icons">&#xe5c3;
-                        <span ui-include="'assets/images/i_1.svg'"></span>
-                      </i>
-                    </span>
-                                    <span class="nav-text">Apps</span>
-                                </a>
-                                <ul class="nav-sub">
-                                    <li>
-                                        <a href="inbox.html" >
-                                            <span class="nav-text">Inbox</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html" >
-                                            <span class="nav-text">Contacts</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="calendar.html" >
-                                            <span class="nav-text">Calendar</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a>
-                    <span class="nav-caret">
-                      <i class="fa fa-caret-down"></i>
-                    </span>
-                                    <span class="nav-icon">
-                      <i class="material-icons">&#xe8f0;
-                        <span ui-include="'assets/images/i_2.svg'"></span>
-                      </i>
-                    </span>
-                                    <span class="nav-text">Layouts</span>
-                                </a>
-                                <ul class="nav-sub">
-                                    <li>
-                                        <a href="headers.html" >
-                                            <span class="nav-text">Header</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="asides.html" >
-                                            <span class="nav-text">Aside</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="footers.html" >
-                                            <span class="nav-text">Footer</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="widget.html" >
-                    <span class="nav-icon">
-                      <i class="material-icons">&#xe8d2;
-                        <span ui-include="'assets/images/i_3.svg'"></span>
-                      </i>
-                    </span>
-                                    <span class="nav-text">Widgets</span>
+                            <li class="nav-item">
+                                <a href="./index2.html" class="nav-link active">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Dashboard v2</p>
                                 </a>
                             </li>
-
-                            <li class="nav-header hidden-folded">
-                                <small class="text-muted">Components</small>
-                            </li>
-
-                            <li>
-                                <a>
-                    <span class="nav-caret">
-                      <i class="fa fa-caret-down"></i>
-                    </span>
-                                    <span class="nav-label">
-                      <b class="label label-sm accent">8</b>
-                    </span>
-                                    <span class="nav-icon">
-                      <i class="material-icons">&#xe429;
-                        <span ui-include="'assets/images/i_4.svg'"></span>
-                      </i>
-                    </span>
-                                    <span class="nav-text">UI kit</span>
+                            <li class="nav-item">
+                                <a href="./index3.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Dashboard v3</p>
                                 </a>
-                                <ul class="nav-sub nav-mega nav-mega-3">
-                                    <li>
-                                        <a href="arrow.html" >
-                                            <span class="nav-text">Arrow</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="box.html" >
-                                            <span class="nav-text">Box</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="button.html" >
-                                            <span class="nav-text">Button</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="color.html" >
-                                            <span class="nav-text">Color</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="dropdown.html" >
-                                            <span class="nav-text">Dropdown</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="grid.html" >
-                                            <span class="nav-text">Grid</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="icon.html" >
-                                            <span class="nav-text">Icon</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="label.html" >
-                                            <span class="nav-text">Label</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="list.html" >
-                                            <span class="nav-text">List Group</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="modal.html" >
-                                            <span class="nav-text">Modal</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="nav.html" >
-                                            <span class="nav-text">Nav</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="progress.html" >
-                                            <span class="nav-text">Progress</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="social.html" >
-                                            <span class="nav-text">Social</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="sortable.html" >
-                                            <span class="nav-text">Sortable</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="streamline.html" >
-                                            <span class="nav-text">Streamline</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="timeline.html" >
-                                            <span class="nav-text">Timeline</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="map.vector.html" >
-                                            <span class="nav-text">Vector Map</span>
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/widgets.html" class="nav-link">
+                            <i class="nav-icon fa fa-th"></i>
+                            <p>
+                                Widgets
+                                <span class="right badge badge-danger">New</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-pie-chart"></i>
+                            <p>
+                                Charts
+                                <i class="right fa fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="pages/charts/chartjs.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>ChartJS</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/charts/flot.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Flot</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/charts/inline.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Inline</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-tree"></i>
+                            <p>
+                                UI Elements
+                                <i class="fa fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="pages/UI/general.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>General</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/UI/icons.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Icons</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/UI/buttons.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Buttons</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/UI/sliders.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Sliders</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-edit"></i>
+                            <p>
+                                Forms
+                                <i class="fa fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="pages/forms/general.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>General Elements</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/forms/advanced.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Advanced Elements</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/forms/editors.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Editors</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-table"></i>
+                            <p>
+                                Tables
+                                <i class="fa fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="pages/tables/simple.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Simple Tables</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/tables/data.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Data Tables</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">EXAMPLES</li>
+                    <li class="nav-item">
+                        <a href="pages/calendar.html" class="nav-link">
+                            <i class="nav-icon fa fa-calendar"></i>
+                            <p>
+                                Calendar
+                                <span class="badge badge-info right">2</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-envelope-o"></i>
+                            <p>
+                                Mailbox
+                                <i class="fa fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Inbox</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/mailbox/compose.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Compose</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/mailbox/read-mail.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Read</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-book"></i>
+                            <p>
+                                Pages
+                                <i class="fa fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="pages/examples/invoice.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Invoice</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/examples/profile.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Profile</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/examples/login.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Login</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/examples/register.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Register</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/examples/lockscreen.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Lockscreen</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-plus-square-o"></i>
+                            <p>
+                                Extras
+                                <i class="fa fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="pages/examples/404.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Error 404</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/examples/500.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Error 500</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/examples/blank.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Blank Page</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="starter.html" class="nav-link">
+                                    <i class="fa fa-circle-o nav-icon"></i>
+                                    <p>Starter Page</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">MISCELLANEOUS</li>
+                    <li class="nav-item">
+                        <a href="https://adminlte.io/docs" class="nav-link">
+                            <i class="nav-icon fa fa-file"></i>
+                            <p>Documentation</p>
+                        </a>
+                    </li>
+                    <li class="nav-header">LABELS</li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-circle-o text-danger"></i>
+                            <p class="text">Important</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-circle-o text-warning"></i>
+                            <p>Warning</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa fa-circle-o text-info"></i>
+                            <p>Informational</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
 
-                            <li>
-                                <a>
-                    <span class="nav-caret">
-                      <i class="fa fa-caret-down"></i>
-                    </span>
-                                    <span class="nav-label"><b class="label no-bg">9</b></span>
-                                    <span class="nav-icon">
-                      <i class="material-icons">&#xe3e8;
-                        <span ui-include="'assets/images/i_5.svg'"></span>
-                      </i>
-                    </span>
-                                    <span class="nav-text">Pages</span>
-                                </a>
-                                <ul class="nav-sub nav-mega">
-                                    <li>
-                                        <a href="profile.html" >
-                                            <span class="nav-text">Profile</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="setting.html" >
-                                            <span class="nav-text">Setting</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="search.html" >
-                                            <span class="nav-text">Search</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="faq.html" >
-                                            <span class="nav-text">FAQ</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="gallery.html" >
-                                            <span class="nav-text">Gallery</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="invoice.html" >
-                                            <span class="nav-text">Invoice</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="price.html" >
-                                            <span class="nav-text">Price</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="blank.html" >
-                                            <span class="nav-text">Blank</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="signin.html" >
-                                            <span class="nav-text">Sign In</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="signup.html" >
-                                            <span class="nav-text">Sign Up</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="forgot-password.html" >
-                                            <span class="nav-text">Forgot Password</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="lockme.html" >
-                                            <span class="nav-text">Lockme Screen</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="404.html" >
-                                            <span class="nav-text">Error 404</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="505.html" >
-                                            <span class="nav-text">Error 505</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">Dashboard v2</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard v2</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
 
-                            <li>
-                                <a>
-                    <span class="nav-caret">
-                      <i class="fa fa-caret-down"></i>
-                    </span>
-                                    <span class="nav-icon">
-                      <i class="material-icons">&#xe39e;
-                        <span ui-include="'assets/images/i_6.svg'"></span>
-                      </i>
-                    </span>
-                                    <span class="nav-text">Form</span>
-                                </a>
-                                <ul class="nav-sub">
-                                    <li>
-                                        <a href="form.layout.html" >
-                                            <span class="nav-text">Form Layout</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="form.element.html" >
-                                            <span class="nav-text">Form Element</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="form.validation.html" >
-                                            <span class="nav-text">Form Validation</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="form.select.html" >
-                                            <span class="nav-text">Select</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="form.editor.html" >
-                                            <span class="nav-text">Editor</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="form.picker.html">
-                                            <span class="nav-text">Picker</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="form.wizard.html">
-                                            <span class="nav-text">Wizard</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="form.dropzone.html" class="no-ajax" >
-                                            <span class="nav-text">File Upload</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <!-- Info boxes -->
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-info elevation-1"><i class="fa fa-gear"></i></span>
 
-                            <li>
-                                <a>
-                    <span class="nav-caret">
-                      <i class="fa fa-caret-down"></i>
-                    </span>
-                                    <span class="nav-icon">
-                      <i class="material-icons">&#xe896;
-                        <span ui-include="'assets/images/i_7.svg'"></span>
-                      </i>
-                    </span>
-                                    <span class="nav-text">Tables</span>
-                                </a>
-                                <ul class="nav-sub">
-                                    <li>
-                                        <a href="static.html" >
-                                            <span class="nav-text">Static table</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="datatable.html" >
-                                            <span class="nav-text">Datatable</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="footable.html" >
-                                            <span class="nav-text">Footable</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a>
-                    <span class="nav-caret">
-                      <i class="fa fa-caret-down"></i>
-                    </span>
-                                    <span class="nav-label hidden-folded">
-                      <b class="label label-sm info">N</b>
-                    </span>
-                                    <span class="nav-icon">
-                      <i class="material-icons">&#xe1b8;
-                        <span ui-include="'assets/images/i_8.svg'"></span>
-                      </i>
-                    </span>
-                                    <span class="nav-text">Charts</span>
-                                </a>
-                                <ul class="nav-sub">
-                                    <li>
-                                        <a href="chart.html" >
-                                            <span class="nav-text">Chart</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                        <span class="nav-caret">
-                          <i class="fa fa-caret-down"></i>
+                            <div class="info-box-content">
+                                <span class="info-box-text">CPU Traffic</span>
+                                <span class="info-box-number">
+                  10
+                  <small>%</small>
+                </span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-danger elevation-1"><i class="fa fa-google-plus"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Likes</span>
+                                <span class="info-box-number">41,410</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+
+                    <!-- fix for small devices only -->
+                    <div class="clearfix hidden-md-up"></div>
+
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-success elevation-1"><i class="fa fa-shopping-cart"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Sales</span>
+                                <span class="info-box-number">760</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="info-box mb-3">
+                            <span class="info-box-icon bg-warning elevation-1"><i class="fa fa-users"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">New Members</span>
+                                <span class="info-box-number">2,000</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title">Monthly Recap Report</h5>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-widget="collapse">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                                            <i class="fa fa-wrench"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                            <a href="#" class="dropdown-item">Action</a>
+                                            <a href="#" class="dropdown-item">Another action</a>
+                                            <a href="#" class="dropdown-item">Something else here</a>
+                                            <a class="dropdown-divider"></a>
+                                            <a href="#" class="dropdown-item">Separated link</a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-tool" data-widget="remove">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <p class="text-center">
+                                            <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
+                                        </p>
+
+                                        <div class="chart">
+                                            <!-- Sales Chart Canvas -->
+                                            <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
+                                        </div>
+                                        <!-- /.chart-responsive -->
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-md-4">
+                                        <p class="text-center">
+                                            <strong>Goal Completion</strong>
+                                        </p>
+
+                                        <div class="progress-group">
+                                            Add Products to Cart
+                                            <span class="float-right"><b>160</b>/200</span>
+                                            <div class="progress progress-sm">
+                                                <div class="progress-bar bg-primary" style="width: 80%"></div>
+                                            </div>
+                                        </div>
+                                        <!-- /.progress-group -->
+
+                                        <div class="progress-group">
+                                            Complete Purchase
+                                            <span class="float-right"><b>310</b>/400</span>
+                                            <div class="progress progress-sm">
+                                                <div class="progress-bar bg-danger" style="width: 75%"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- /.progress-group -->
+                                        <div class="progress-group">
+                                            <span class="progress-text">Visit Premium Page</span>
+                                            <span class="float-right"><b>480</b>/800</span>
+                                            <div class="progress progress-sm">
+                                                <div class="progress-bar bg-success" style="width: 60%"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- /.progress-group -->
+                                        <div class="progress-group">
+                                            Send Inquiries
+                                            <span class="float-right"><b>250</b>/500</span>
+                                            <div class="progress progress-sm">
+                                                <div class="progress-bar bg-warning" style="width: 50%"></div>
+                                            </div>
+                                        </div>
+                                        <!-- /.progress-group -->
+                                    </div>
+                                    <!-- /.col -->
+                                </div>
+                                <!-- /.row -->
+                            </div>
+                            <!-- ./card-body -->
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-sm-3 col-6">
+                                        <div class="description-block border-right">
+                                            <span class="description-percentage text-success"><i class="fa fa-caret-up"></i> 17%</span>
+                                            <h5 class="description-header">$35,210.43</h5>
+                                            <span class="description-text">TOTAL REVENUE</span>
+                                        </div>
+                                        <!-- /.description-block -->
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-sm-3 col-6">
+                                        <div class="description-block border-right">
+                                            <span class="description-percentage text-warning"><i class="fa fa-caret-left"></i> 0%</span>
+                                            <h5 class="description-header">$10,390.90</h5>
+                                            <span class="description-text">TOTAL COST</span>
+                                        </div>
+                                        <!-- /.description-block -->
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-sm-3 col-6">
+                                        <div class="description-block border-right">
+                                            <span class="description-percentage text-success"><i class="fa fa-caret-up"></i> 20%</span>
+                                            <h5 class="description-header">$24,813.53</h5>
+                                            <span class="description-text">TOTAL PROFIT</span>
+                                        </div>
+                                        <!-- /.description-block -->
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-sm-3 col-6">
+                                        <div class="description-block">
+                                            <span class="description-percentage text-danger"><i class="fa fa-caret-down"></i> 18%</span>
+                                            <h5 class="description-header">1200</h5>
+                                            <span class="description-text">GOAL COMPLETIONS</span>
+                                        </div>
+                                        <!-- /.description-block -->
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                            </div>
+                            <!-- /.card-footer -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+
+                <!-- Main row -->
+                <div class="row">
+                    <!-- Left col -->
+                    <div class="col-md-8">
+                        <!-- MAP & BOX PANE -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Visitors Report</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-widget="collapse">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-tool" data-widget="remove">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body p-0">
+                                <div class="d-md-flex">
+                                    <div class="p-1 flex-1" style="overflow: hidden">
+                                        <!-- Map will be created here -->
+                                        <div id="world-map-markers" style="height: 325px; overflow: hidden"></div>
+                                    </div>
+                                    <div class="card-pane-right bg-success pt-2 pb-2 pl-4 pr-4">
+                                        <div class="description-block mb-4">
+                                            <div class="sparkbar pad" data-color="#fff">90,70,90,70,75,80,70</div>
+                                            <h5 class="description-header">8390</h5>
+                                            <span class="description-text">Visits</span>
+                                        </div>
+                                        <!-- /.description-block -->
+                                        <div class="description-block mb-4">
+                                            <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
+                                            <h5 class="description-header">30%</h5>
+                                            <span class="description-text">Referrals</span>
+                                        </div>
+                                        <!-- /.description-block -->
+                                        <div class="description-block">
+                                            <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
+                                            <h5 class="description-header">70%</h5>
+                                            <span class="description-text">Organic</span>
+                                        </div>
+                                        <!-- /.description-block -->
+                                    </div><!-- /.card-pane-right -->
+                                </div><!-- /.d-md-flex -->
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- DIRECT CHAT -->
+                                <div class="card direct-chat direct-chat-warning">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Direct Chat</h3>
+
+                                        <div class="card-tools">
+                                            <span data-toggle="tooltip" title="3 New Messages" class="badge badge-warning">3</span>
+                                            <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-toggle="tooltip" title="Contacts"
+                                                    data-widget="chat-pane-toggle">
+                                                <i class="fa fa-comments"></i></button>
+                                            <button type="button" class="btn btn-tool" data-widget="remove"><i class="fa fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
+                                        <!-- Conversations are loaded here -->
+                                        <div class="direct-chat-messages">
+                                            <!-- Message. Default to the left -->
+                                            <div class="direct-chat-msg">
+                                                <div class="direct-chat-info clearfix">
+                                                    <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                    <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                                                </div>
+                                                <!-- /.direct-chat-info -->
+                                                <img class="direct-chat-img" src="{{ asset("admin/dist/img/user1-128x128.jpg") }}" alt="message user image">
+                                                <!-- /.direct-chat-img -->
+                                                <div class="direct-chat-text">
+                                                    Is this template really for free? That's unbelievable!
+                                                </div>
+                                                <!-- /.direct-chat-text -->
+                                            </div>
+                                            <!-- /.direct-chat-msg -->
+
+                                            <!-- Message to the right -->
+                                            <div class="direct-chat-msg right">
+                                                <div class="direct-chat-info clearfix">
+                                                    <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                    <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                                                </div>
+                                                <!-- /.direct-chat-info -->
+                                                <img class="direct-chat-img" src="{{ asset("admin/dist/img/user3-128x128.jpg") }}" alt="message user image">
+                                                <!-- /.direct-chat-img -->
+                                                <div class="direct-chat-text">
+                                                    You better believe it!
+                                                </div>
+                                                <!-- /.direct-chat-text -->
+                                            </div>
+                                            <!-- /.direct-chat-msg -->
+
+                                            <!-- Message. Default to the left -->
+                                            <div class="direct-chat-msg">
+                                                <div class="direct-chat-info clearfix">
+                                                    <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                    <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
+                                                </div>
+                                                <!-- /.direct-chat-info -->
+                                                <img class="direct-chat-img" src="{{ asset("admin/dist/img/user1-128x128.jpg") }}" alt="message user image">
+                                                <!-- /.direct-chat-img -->
+                                                <div class="direct-chat-text">
+                                                    Working with AdminLTE on a great new app! Wanna join?
+                                                </div>
+                                                <!-- /.direct-chat-text -->
+                                            </div>
+                                            <!-- /.direct-chat-msg -->
+
+                                            <!-- Message to the right -->
+                                            <div class="direct-chat-msg right">
+                                                <div class="direct-chat-info clearfix">
+                                                    <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                    <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
+                                                </div>
+                                                <!-- /.direct-chat-info -->
+                                                <img class="direct-chat-img" src="{{ asset("admin/dist/img/user3-128x128.jpg") }}" alt="message user image">
+                                                <!-- /.direct-chat-img -->
+                                                <div class="direct-chat-text">
+                                                    I would love to.
+                                                </div>
+                                                <!-- /.direct-chat-text -->
+                                            </div>
+                                            <!-- /.direct-chat-msg -->
+
+                                        </div>
+                                        <!--/.direct-chat-messages-->
+
+                                        <!-- Contacts are loaded here -->
+                                        <div class="direct-chat-contacts">
+                                            <ul class="contacts-list">
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="contacts-list-img" src="{{ asset("admin/dist/img/user1-128x128.jpg") }}">
+
+                                                        <div class="contacts-list-info">
+                              <span class="contacts-list-name">
+                                Count Dracula
+                                <small class="contacts-list-date float-right">2/28/2015</small>
+                              </span>
+                                                            <span class="contacts-list-msg">How have you been? I was...</span>
+                                                        </div>
+                                                        <!-- /.contacts-list-info -->
+                                                    </a>
+                                                </li>
+                                                <!-- End Contact Item -->
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="contacts-list-img" src="{{ asset("admin/dist/img/user7-128x128.jpg") }}">
+
+                                                        <div class="contacts-list-info">
+                              <span class="contacts-list-name">
+                                Sarah Doe
+                                <small class="contacts-list-date float-right">2/23/2015</small>
+                              </span>
+                                                            <span class="contacts-list-msg">I will be waiting for...</span>
+                                                        </div>
+                                                        <!-- /.contacts-list-info -->
+                                                    </a>
+                                                </li>
+                                                <!-- End Contact Item -->
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="contacts-list-img" src="{{ asset("admin/dist/img/user3-128x128.jpg") }}">
+
+                                                        <div class="contacts-list-info">
+                              <span class="contacts-list-name">
+                                Nadia Jolie
+                                <small class="contacts-list-date float-right">2/20/2015</small>
+                              </span>
+                                                            <span class="contacts-list-msg">I'll call you back at...</span>
+                                                        </div>
+                                                        <!-- /.contacts-list-info -->
+                                                    </a>
+                                                </li>
+                                                <!-- End Contact Item -->
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="contacts-list-img" src="{{ asset("admin/dist/img/user5-128x128.jpg") }}">
+
+                                                        <div class="contacts-list-info">
+                              <span class="contacts-list-name">
+                                Nora S. Vans
+                                <small class="contacts-list-date float-right">2/10/2015</small>
+                              </span>
+                                                            <span class="contacts-list-msg">Where is your new...</span>
+                                                        </div>
+                                                        <!-- /.contacts-list-info -->
+                                                    </a>
+                                                </li>
+                                                <!-- End Contact Item -->
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="contacts-list-img" src="{{ asset("admin/dist/img/user6-128x128.jpg") }}">
+
+                                                        <div class="contacts-list-info">
+                              <span class="contacts-list-name">
+                                John K.
+                                <small class="contacts-list-date float-right">1/27/2015</small>
+                              </span>
+                                                            <span class="contacts-list-msg">Can I take a look at...</span>
+                                                        </div>
+                                                        <!-- /.contacts-list-info -->
+                                                    </a>
+                                                </li>
+                                                <!-- End Contact Item -->
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="contacts-list-img" src="{{ asset("admin/dist/img/user8-128x128.jpg") }}">
+
+                                                        <div class="contacts-list-info">
+                              <span class="contacts-list-name">
+                                Kenneth M.
+                                <small class="contacts-list-date float-right">1/4/2015</small>
+                              </span>
+                                                            <span class="contacts-list-msg">Never mind I found...</span>
+                                                        </div>
+                                                        <!-- /.contacts-list-info -->
+                                                    </a>
+                                                </li>
+                                                <!-- End Contact Item -->
+                                            </ul>
+                                            <!-- /.contacts-list -->
+                                        </div>
+                                        <!-- /.direct-chat-pane -->
+                                    </div>
+                                    <!-- /.card-body -->
+                                    <div class="card-footer">
+                                        <form action="#" method="post">
+                                            <div class="input-group">
+                                                <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                                                <span class="input-group-append">
+                          <button type="button" class="btn btn-warning">Send</button>
                         </span>
-                                            <span class="nav-text">Echarts</span>
-                                        </a>
-                                        <ul class="nav-sub">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- /.card-footer-->
+                                </div>
+                                <!--/.direct-chat -->
+                            </div>
+                            <!-- /.col -->
+
+                            <div class="col-md-6">
+                                <!-- USERS LIST -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Latest Members</h3>
+
+                                        <div class="card-tools">
+                                            <span class="badge badge-danger">8 New Members</span>
+                                            <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-widget="remove"><i class="fa fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body p-0">
+                                        <ul class="users-list clearfix">
                                             <li>
-                                                <a href="echarts-line.html" >
-                                                    <span class="nav-text">line</span>
-                                                </a>
+                                                <img src="{{ asset("admin/dist/img/user1-128x128.jpg") }}" alt="User Image">
+                                                <a class="users-list-name" href="#">Alexander Pierce</a>
+                                                <span class="users-list-date">Today</span>
                                             </li>
                                             <li>
-                                                <a href="echarts-bar.html" >
-                                                    <span class="nav-text">Bar</span>
-                                                </a>
+                                                <img src="{{ asset("admin/dist/img/user8-128x128.jpg") }}" alt="User Image">
+                                                <a class="users-list-name" href="#">Norman</a>
+                                                <span class="users-list-date">Yesterday</span>
                                             </li>
                                             <li>
-                                                <a href="echarts-pie.html" >
-                                                    <span class="nav-text">Pie</span>
-                                                </a>
+                                                <img src="{{ asset("admin/dist/img/user7-128x128.jpg") }}" alt="User Image">
+                                                <a class="users-list-name" href="#">Jane</a>
+                                                <span class="users-list-date">12 Jan</span>
                                             </li>
                                             <li>
-                                                <a href="echarts-scatter.html" >
-                                                    <span class="nav-text">Scatter</span>
-                                                </a>
+                                                <img src="{{ asset("admin/dist/img/user6-128x128.jpg") }}" alt="User Image">
+                                                <a class="users-list-name" href="#">John</a>
+                                                <span class="users-list-date">12 Jan</span>
                                             </li>
                                             <li>
-                                                <a href="echarts-radar-chord.html" >
-                                                    <span class="nav-text">Radar &amp; Chord</span>
-                                                </a>
+                                                <img src="{{ asset("admin/dist/img/user2-160x160.jpg") }}" alt="User Image">
+                                                <a class="users-list-name" href="#">Alexander</a>
+                                                <span class="users-list-date">13 Jan</span>
                                             </li>
                                             <li>
-                                                <a href="echarts-gauge-funnel.html" >
-                                                    <span class="nav-text">Gauges &amp; Funnel</span>
-                                                </a>
+                                                <img src="{{ asset("admin/dist/img/user5-128x128.jpg") }}" alt="User Image">
+                                                <a class="users-list-name" href="#">Sarah</a>
+                                                <span class="users-list-date">14 Jan</span>
                                             </li>
                                             <li>
-                                                <a href="echarts-map.html" >
-                                                    <span class="nav-text">Map</span>
-                                                </a>
+                                                <img src="{{ asset("admin/dist/img/user4-128x128.jpg") }}" alt="User Image">
+                                                <a class="users-list-name" href="#">Nora</a>
+                                                <span class="users-list-date">15 Jan</span>
+                                            </li>
+                                            <li>
+                                                <img src="{{ asset("admin/dist/img/user3-128x128.jpg") }}" alt="User Image">
+                                                <a class="users-list-name" href="#">Nadia</a>
+                                                <span class="users-list-date">15 Jan</span>
                                             </li>
                                         </ul>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="nav-header hidden-folded">
-                                <small class="text-muted">Help</small>
-                            </li>
-
-                            <li class="hidden-folded" >
-                                <a href="docs.html" >
-                                    <span class="nav-text">Documents</span>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </nav>
-                </div>
-                <div class="b-t">
-                    <div class="nav-fold">
-                        <a href="profile.html">
-        	    <span class="pull-left">
-        	      <img src="assets/images/a0.jpg" alt="..." class="w-40 img-circle">
-        	    </span>
-                            <span class="clear hidden-folded p-x">
-        	      <span class="block _500">Jean Reyes</span>
-        	      <small class="block text-muted"><i class="fa fa-circle text-success m-r-sm"></i>online</small>
-        	    </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- / -->
-
-        <!-- content -->
-        <div id="content" class="app-content box-shadow-z0" role="main">
-            <div class="app-header white box-shadow">
-                <div class="navbar navbar-toggleable-sm flex-row align-items-center">
-                    <!-- Open side - Naviation on mobile -->
-                    <a data-toggle="modal" data-target="#aside" class="hidden-lg-up mr-3">
-                        <i class="material-icons">&#xe5d2;</i>
-                    </a>
-                    <!-- / -->
-
-                    <!-- Page title - Bind to $state's title -->
-                    <div class="mb-0 h5 no-wrap" ng-bind="$state.current.data.title" id="pageTitle"></div>
-
-                    <!-- navbar collapse -->
-                    <div class="collapse navbar-collapse" id="collapse">
-                        <!-- link and dropdown -->
-                        <ul class="nav navbar-nav mr-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" href data-toggle="dropdown">
-                                    <i class="fa fa-fw fa-plus text-muted"></i>
-                                    <span>New</span>
-                                </a>
-                                <div ui-include="'views/blocks/dropdown.new.html'"></div>
-                            </li>
-                        </ul>
-
-                        <div ui-include="'views/blocks/navbar.form.html'"></div>
-                        <!-- / -->
-                    </div>
-                    <!-- / navbar collapse -->
-
-                    <!-- navbar right -->
-                    <ul class="nav navbar-nav ml-auto flex-row">
-                        <li class="nav-item dropdown pos-stc-xs">
-                            <a class="nav-link mr-2" href data-toggle="dropdown">
-                                <i class="material-icons">&#xe7f5;</i>
-                                <span class="label label-sm up warn">3</span>
-                            </a>
-                            <div ui-include="'views/blocks/dropdown.notification.html'"></div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link p-0 clear" href="#" data-toggle="dropdown">
-                  <span class="avatar w-32">
-                    <img src="assets/images/a0.jpg" alt="...">
-                    <i class="on b-white bottom"></i>
-                  </span>
-                            </a>
-                            <div ui-include="'views/blocks/dropdown.user.html'"></div>
-                        </li>
-                        <li class="nav-item hidden-md-up">
-                            <a class="nav-link pl-2" data-toggle="collapse" data-target="#collapse">
-                                <i class="material-icons">&#xe5d4;</i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- / navbar right -->
-                </div>
-            </div>
-            <div class="app-footer">
-                <div class="p-2 text-xs">
-                    <div class="pull-right text-muted py-1">
-                        &copy; Copyright <strong>Flatkit</strong> <span class="hidden-xs-down">- Built with Love v1.1.3</span>
-                        <a ui-scroll-to="content"><i class="fa fa-long-arrow-up p-x-sm"></i></a>
-                    </div>
-                    <div class="nav">
-                        <a class="nav-link" href="">About</a>
-                        <a class="nav-link" href="http://themeforest.net/user/flatfull/portfolio?ref=flatfull">Get it</a>
-                    </div>
-                </div>
-            </div>
-            <div ui-view class="app-body" id="view">
-
-                <!-- ############ PAGE START-->
-                <div class="p-a white lt box-shadow">
-                    <div class="row">
-                        @yield('content')
-                        <div class="col-sm-6">
-                            <h4 class="mb-0 _300">Welcome to Flatkit</h4>
-                            <small class="text-muted">Bootstrap <strong>4</strong> Web App Kit with AngularJS</small>
-                        </div>
-                        <div class="col-sm-6 text-sm-right">
-                            <div class="m-y-sm">
-                                <span class="m-r-sm">Start manage:</span>
-                                <div class="btn-group dropdown">
-                                    <button class="btn white btn-sm ">Projects</button>
-                                    <button class="btn white btn-sm dropdown-toggle" data-toggle="dropdown"></button>
-                                    <div class="dropdown-menu dropdown-menu-scale pull-right">
-                                        <a class="dropdown-item" href>Members</a>
-                                        <a class="dropdown-item" href>Tasks</a>
-                                        <a class="dropdown-item" href>Inbox</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item">Profile</a>
+                                        <!-- /.users-list -->
                                     </div>
+                                    <!-- /.card-body -->
+                                    <div class="card-footer text-center">
+                                        <a href="#">View All Users</a>
+                                    </div>
+                                    <!-- /.card-footer -->
+                                </div>
+                                <!--/.card -->
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+
+                        <!-- TABLE: LATEST ORDERS -->
+                        <div class="card">
+                            <div class="card-header border-transparent">
+                                <h3 class="card-title">Latest Orders</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-widget="collapse">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-tool" data-widget="remove">
+                                        <i class="fa fa-times"></i>
+                                    </button>
                                 </div>
                             </div>
+                            <!-- /.card-header -->
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table m-0">
+                                        <thead>
+                                        <tr>
+                                            <th>Order ID</th>
+                                            <th>Item</th>
+                                            <th>Status</th>
+                                            <th>Popularity</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                                            <td>Call of Duty IV</td>
+                                            <td><span class="badge badge-success">Shipped</span></td>
+                                            <td>
+                                                <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="pages/examples/invoice.html">OR1848</a></td>
+                                            <td>Samsung Smart TV</td>
+                                            <td><span class="badge badge-warning">Pending</span></td>
+                                            <td>
+                                                <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                                            <td>iPhone 6 Plus</td>
+                                            <td><span class="badge badge-danger">Delivered</span></td>
+                                            <td>
+                                                <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                                            <td>Samsung Smart TV</td>
+                                            <td><span class="badge badge-info">Processing</span></td>
+                                            <td>
+                                                <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="pages/examples/invoice.html">OR1848</a></td>
+                                            <td>Samsung Smart TV</td>
+                                            <td><span class="badge badge-warning">Pending</span></td>
+                                            <td>
+                                                <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                                            <td>iPhone 6 Plus</td>
+                                            <td><span class="badge badge-danger">Delivered</span></td>
+                                            <td>
+                                                <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                                            <td>Call of Duty IV</td>
+                                            <td><span class="badge badge-success">Shipped</span></td>
+                                            <td>
+                                                <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.table-responsive -->
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer clearfix">
+                                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
+                                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
+                            </div>
+                            <!-- /.card-footer -->
                         </div>
+                        <!-- /.card -->
                     </div>
-                </div>
-                <div class="padding">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-4">
-                            <div class="box p-a">
-                                <div class="pull-left m-r">
-	            <span class="w-48 rounded  accent">
-	              <i class="material-icons">&#xe151;</i>
-	            </span>
-                                </div>
-                                <div class="clear">
-                                    <h4 class="m-0 text-lg _300"><a href>125 <span class="text-sm">Emails</span></a></h4>
-                                    <small class="text-muted">6 new arrivals.</small>
+                    <!-- /.col -->
+
+                    <div class="col-md-4">
+                        <!-- Info Boxes Style 2 -->
+                        <div class="info-box mb-3 bg-warning">
+                            <span class="info-box-icon"><i class="fa fa-tag"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Inventory</span>
+                                <span class="info-box-number">5,200</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                        <div class="info-box mb-3 bg-success">
+                            <span class="info-box-icon"><i class="fa fa-heart-o"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Mentions</span>
+                                <span class="info-box-number">92,050</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                        <div class="info-box mb-3 bg-danger">
+                            <span class="info-box-icon"><i class="fa fa-cloud-download"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Downloads</span>
+                                <span class="info-box-number">114,381</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                        <div class="info-box mb-3 bg-info">
+                            <span class="info-box-icon"><i class="fa fa-comment-o"></i></span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Direct Messages</span>
+                                <span class="info-box-number">163,921</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Browser Usage</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-tool" data-widget="remove"><i class="fa fa-times"></i>
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-4">
-                            <div class="box p-a">
-                                <div class="pull-left m-r">
-	            <span class="w-48 rounded primary">
-	              <i class="material-icons">&#xe54f;</i>
-	            </span>
-                                </div>
-                                <div class="clear">
-                                    <h4 class="m-0 text-lg _300"><a href>40 <span class="text-sm">Projects</span></a></h4>
-                                    <small class="text-muted">38 open.</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-4">
-                            <div class="box p-a">
-                                <div class="pull-left m-r">
-	            <span class="w-48 rounded warn">
-	              <i class="material-icons">&#xe8d3;</i>
-	            </span>
-                                </div>
-                                <div class="clear">
-                                    <h4 class="m-0 text-lg _300"><a href>600 <span class="text-sm">Users</span></a></h4>
-                                    <small class="text-muted">632 vips.</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4">
-                            <div class="box">
-                                <div class="box-header">
-                                    <h3>Projects monitor</h3>
-                                    <small>Calculated in last 30 days</small>
-                                </div>
-                                <div class="box-tool">
-                                    <ul class="nav">
-                                        <li class="nav-item inline">
-                                            <a class="nav-link">
-                                                <i class="material-icons md-18">&#xe863;</i>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item inline dropdown">
-                                            <a class="nav-link" data-toggle="dropdown">
-                                                <i class="material-icons md-18">&#xe5d4;</i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-scale pull-right">
-                                                <a class="dropdown-item" href>This week</a>
-                                                <a class="dropdown-item" href>This month</a>
-                                                <a class="dropdown-item" href>This week</a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item">Today</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="box-body">
-                                    <div class="text-center m-b">
-                                        <div class="btn-group" data-toggle="buttons">
-                                            <label class="btn btn-sm white">
-                                                <input type="radio" name="options" autocomplete="off"> Month
-                                            </label>
-                                            <label class="btn btn-sm white">
-                                                <input type="radio" name="options" autocomplete="off"> Day
-                                            </label>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="chart-responsive">
+                                            <canvas id="pieChart" height="150"></canvas>
                                         </div>
+                                        <!-- ./chart-responsive -->
                                     </div>
-                                    <div ui-jp="plot" ui-refresh="app.setting.color" ui-options="
-	              [
-	                { data: [[1, 3.6], [2, 3.5], [3, 6], [4, 4], [5, 4.3], [6, 3.5], [7, 3.6]],
-	                  points: { show: true, radius: 0},
-                  	  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 1 }
-	                },
-	                { data: [[1, 3], [2, 2.6], [3, 3.2], [4, 3], [5, 3.5], [6, 3], [7, 3.5]],
-	                  points: { show: true, radius: 0},
-                  	  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 1 }
-	                },
-	                { data: [[1, 2], [2, 1.6], [3, 2.4], [4, 2.1], [5, 1.7], [6, 1.5], [7, 1.7]],
-	                  points: { show: true, radius: 0},
-                  	  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 1 }
-	                }
-	              ],
-	              {
-	                colors: ['#a88add','#0cc2aa','#fcc100'],
-	                series: { shadowSize: 3 },
-	                xaxis: { show: true, font: { color: '#ccc' }, position: 'bottom' },
-	                yaxis:{ show: true, font: { color: '#ccc' }},
-	                grid: { hoverable: true, clickable: true, borderWidth: 0, color: 'rgba(120,120,120,0.5)' },
-	                tooltip: true,
-	                tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
-	              }
-	            " style="height:188px" >
+                                    <!-- /.col -->
+                                    <div class="col-md-4">
+                                        <ul class="chart-legend clearfix">
+                                            <li><i class="fa fa-circle-o text-danger"></i> Chrome</li>
+                                            <li><i class="fa fa-circle-o text-success"></i> IE</li>
+                                            <li><i class="fa fa-circle-o text-warning"></i> FireFox</li>
+                                            <li><i class="fa fa-circle-o text-info"></i> Safari</li>
+                                            <li><i class="fa fa-circle-o text-primary"></i> Opera</li>
+                                            <li><i class="fa fa-circle-o text-secondary"></i> Navigator</li>
+                                        </ul>
                                     </div>
+                                    <!-- /.col -->
                                 </div>
+                                <!-- /.row -->
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="box">
-                                <div class="box-header">
-                                    <h3>Tasks</h3>
-                                    <small>Calculated in last 7 days</small>
-                                </div>
-                                <div class="box-tool">
-                                    <ul class="nav">
-                                        <li class="nav-item inline">
-                                            <a class="nav-link">
-                                                <i class="material-icons md-18">&#xe863;</i>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item inline dropdown">
-                                            <a class="nav-link" data-toggle="dropdown">
-                                                <i class="material-icons md-18">&#xe5d4;</i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-scale pull-right">
-                                                <a class="dropdown-item" href>This week</a>
-                                                <a class="dropdown-item" href>This month</a>
-                                                <a class="dropdown-item" href>This week</a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item">Today</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="box-body">
-                                    <div class="text-center m-b">
-                                        <div class="btn-group" data-toggle="buttons">
-                                            <label class="btn btn-sm rounded white">
-                                                <input type="radio" name="options" autocomplete="off"> This Month
-                                            </label>
-                                            <label class="btn btn-sm rounded white">
-                                                <input type="radio" name="options" autocomplete="off"> This Week
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div ui-jp="plot" ui-refresh="app.setting.color" ui-options="
-	              [
-	                { data: [[1, 2], [2, 4], [3, 5], [4, 7], [5, 6], [6, 4], [7, 5], [8, 4]] }
-	              ],
-	              {
-	                bars: { show: true, fill: true,  barWidth: 0.25, lineWidth: 1, fillColor: { colors: [{ opacity: 0.8 }, { opacity: 1}] }, align: 'center' },
-	                colors: ['#a88add'],
-	                series: { shadowSize: 3 },
-	                xaxis: { show: true, font: { color: '#ccc' }, position: 'bottom' },
-	                yaxis:{ show: true, font: { color: '#ccc' }},
-	                grid: { hoverable: true, clickable: true, borderWidth: 0, color: 'rgba(120,120,120,0.5)' },
-	                tooltip: true,
-	                tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
-	              }
-	            " style="height:188px" >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4">
-                            <div class="box">
-                                <div class="box-header">
-                                    <h3>Sales</h3>
-                                    <small>Calculated in last 7 days</small>
-                                </div>
-                                <div class="box-tool">
-                                    <ul class="nav">
-                                        <li class="nav-item inline">
-                                            <a class="nav-link">
-                                                <i class="material-icons md-18">&#xe863;</i>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item inline dropdown">
-                                            <a class="nav-link" data-toggle="dropdown">
-                                                <i class="material-icons md-18">&#xe5d4;</i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-scale pull-right">
-                                                <a class="dropdown-item" href>This week</a>
-                                                <a class="dropdown-item" href>This month</a>
-                                                <a class="dropdown-item" href>This week</a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item">Today</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="box-body">
-                                    <div class="text-center m-b">
-                                        <div class="btn-group" data-toggle="buttons">
-                                            <label class="btn btn-sm rounded white">
-                                                <input type="radio" name="options" autocomplete="off"> Market
-                                            </label>
-                                            <label class="btn btn-sm rounded white">
-                                                <input type="radio" name="options" autocomplete="off"> Referral
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div ui-jp="plot" ui-refresh="app.setting.color" ui-options="
-	              [
-	                { data: [[3, 1], [2, 2], [6, 3], [5, 4], [7, 5]] }
-	              ],
-	              {
-	                bars: { horizontal: true, show: true, fill: true,  barWidth: 0.3, lineWidth: 1, fillColor: { colors: [{ opacity: 0.8 }, { opacity: 1}] }, align: 'center' },
-	                colors: ['#0cc2aa'],
-	                series: { shadowSize: 3 },
-	                xaxis: { show: true, font: { color: '#ccc' }, position: 'bottom' },
-	                yaxis:{ show: true, font: { color: '#ccc' }},
-	                grid: { hoverable: true, clickable: true, borderWidth: 0, color: 'rgba(120,120,120,0.5)' },
-	                tooltip: true,
-	                tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
-	              }
-	            " style="height:188px" >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            <div class="box">
-                                <div class="box-header">
-                                    <h3>Open Projects <span class="label warning">9</span></h3>
-                                    <small>Your data status</small>
-                                </div>
-                                <ul class="list inset">
-                                    <li class="list-item">
-                                        <a herf class="list-left">
-			          	<span class="w-40 r-2x _600 text-lg accent">
-			            	B
-                            </apan>
+                            <!-- /.card-body -->
+                            <div class="card-footer bg-white p-0">
+                                <ul class="nav nav-pills flex-column">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            United States of America
+                                            <span class="float-right text-danger">
+                        <i class="fa fa-arrow-down text-sm"></i>
+                        12%</span>
                                         </a>
-                                        <div class="list-body">
-                                            <div class="m-y-sm pull-right">
-                                                <a href class="btn btn-xs white">Manage</a>
-                                                <a href class="btn btn-xs white btn-icon"><i class="fa fa-pencil"></i></a>
-                                            </div>
-                                            <div><a href>Broadcast web app mockup</a></div>
-                                            <div class="text-sm">
-                                                <span class="text-muted"><strong>5</strong> tasks, <strong>3</strong> issues</span>
-                                                <span class="label"></span>
-                                            </div>
-                                        </div>
                                     </li>
-                                    <li class="list-item">
-                                        <a herf class="list-left">
-			          	<span class="w-40 r-2x _600 text-lg success">
-			            	G
-                            </apan>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            India
+                                            <span class="float-right text-success">
+                        <i class="fa fa-arrow-up text-sm"></i> 4%
+                      </span>
                                         </a>
-                                        <div class="list-body">
-                                            <div class="m-y-sm pull-right">
-                                                <a href class="btn btn-xs white">Manage</a>
-                                                <a href class="btn btn-xs white btn-icon"><i class="fa fa-pencil"></i></a>
-                                            </div>
-                                            <div><a href>GoodDesign Bootstrap 4 migration</a></div>
-                                            <div class="text-sm">
-                                                <span class="text-muted"><strong>35</strong> tasks, <strong>6</strong> issues</span>
-                                                <span class="label"></span>
-                                            </div>
-                                        </div>
                                     </li>
-                                    <li class="list-item">
-                                        <a herf class="list-left">
-			          	<span class="w-40 r-2x _600 text-lg purple">
-			            	#
-                            </apan>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            China
+                                            <span class="float-right text-warning">
+                        <i class="fa fa-arrow-left text-sm"></i> 0%
+                      </span>
                                         </a>
-                                        <div class="list-body">
-                                            <div class="m-y-sm pull-right">
-                                                <a href class="btn btn-xs white">Manage</a>
-                                                <a href class="btn btn-xs white btn-icon"><i class="fa fa-pencil"></i></a>
-                                            </div>
-                                            <div><a href>#Hashtag android app develop</a></div>
-                                            <div class="text-sm">
-                                                <span class="text-muted"><strong>52</strong> tasks, <strong>13</strong> issues</span>
-                                                <span class="label"></span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-item">
-                                        <a herf class="list-left">
-			          	<span class="w-40 r-2x _600 blue">
-			            	<i class="fa fa-lg fa-google"></i>
-                            </apan>
-                                        </a>
-                                        <div class="list-body">
-                                            <div class="m-y-sm pull-right">
-                                                <a href class="btn btn-xs white">Manage</a>
-                                                <a href class="btn btn-xs white btn-icon"><i class="fa fa-pencil"></i></a>
-                                            </div>
-                                            <div><a href>Google material design application</a></div>
-                                            <div class="text-sm">
-                                                <span class="text-muted"><strong>15</strong> tasks, <strong>3</strong> issues</span>
-                                                <span class="label"></span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-item">
-                                        <a herf class="list-left">
-			          	<span class="w-40 r-2x _600 blue-800">
-			            	<i class="fa fa-lg fa-facebook"></i>
-                            </apan>
-                                        </a>
-                                        <div class="list-body">
-                                            <div class="m-y-sm pull-right">
-                                                <a href class="btn btn-xs white">Manage</a>
-                                                <a href class="btn btn-xs white btn-icon"><i class="fa fa-pencil"></i></a>
-                                            </div>
-                                            <div><a href>Facebook connection web application</a></div>
-                                            <div class="text-sm">
-                                                <span class="text-muted"><strong>30</strong> tasks, <strong>5</strong> issues</span>
-                                                <span class="label"></span>
-                                            </div>
-                                        </div>
                                     </li>
                                 </ul>
                             </div>
+                            <!-- /.footer -->
                         </div>
-                        <div class="col-sm-12 col-md-6">
-                            <div class="box">
-                                <div class="box-header">
-                                    <h3>Stats</h3>
-                                    <small>Your data status</small>
+                        <!-- /.card -->
+
+                        <!-- PRODUCT LIST -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Recently Added Products</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-widget="collapse">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-tool" data-widget="remove">
+                                        <i class="fa fa-times"></i>
+                                    </button>
                                 </div>
-                                <div class="box-tool">
-                                    <ul class="nav">
-                                        <li class="nav-item inline">
-                                            <a class="nav-link">
-                                                <i class="material-icons md-18">&#xe863;</i>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item inline dropdown">
-                                            <a class="nav-link" data-toggle="dropdown">
-                                                <i class="material-icons md-18">&#xe5d4;</i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-scale pull-right">
-                                                <a class="dropdown-item" href>This week</a>
-                                                <a class="dropdown-item" href>This month</a>
-                                                <a class="dropdown-item" href>This week</a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item">Today</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th style="width:60px;" class="text-center">Graph</th>
-                                        <th>Item</th>
-                                        <th style="width:70px;"></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <div ui-jp="sparkline" ui-refresh="app.setting.color" ui-options="[ 16,15,15,14,17,18,16,15,16 ], {type:'bar', height:19, barWidth:4, barSpacing:2, barColor:'#0cc2aa'}" class="sparkline inline">loading...</div>
-                                        </td>
-                                        <td>App downloads</td>
-                                        <td class="text-success">
-                                            <i class="fa fa-level-up"></i> 40%
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">
-                                            <div ui-jp="sparkline" ui-refresh="app.setting.color" ui-options="[ 60,30,10 ], {type:'pie', height:19, sliceColors:['#fcc100','#fff','#0cc2aa']}" class="sparkline inline">loading...</div>
-                                        </td>
-                                        <td>Social connection</td>
-                                        <td class="text-success">
-                                            <i class="fa fa-level-up"></i> 20%
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div ui-jp="sparkline" ui-refresh="app.setting.color" ui-options="[ 16,15,15,14,17,18,16,15,16 ], {type:'line', height:19, width:60, lineColor:'#0cc2aa', fillColor:'transparent'}" class="sparkline inline">loading...</div>
-                                        </td>
-                                        <td>Revenue</td>
-                                        <td class="text-warning">
-                                            <i class="fa fa-level-down"></i> 5%
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div ui-jp="sparkline" ui-refresh="app.setting.color" ui-options="[ 16,15,15,14,17,18,16,15,16 ], {type:'discrete', height:19, width:60, lineColor:'#6cc788'}" class="sparkline inline">loading...</div>
-                                        </td>
-                                        <td>Customer increase</td>
-                                        <td class="text-danger">
-                                            <i class="fa fa-level-down"></i> 20%
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div ui-jp="sparkline" ui-refresh="app.setting.color" ui-options="[ 16,15,15,14,17,18,16,15,16 ], {type:'line', height:19, width:60, lineColor:'#fcc100', fillColor:'#fcc100'}" class="sparkline inline">loading...</div>
-                                        </td>
-                                        <td>Order placed</td>
-                                        <td class="text-warning">
-                                            <i class="fa fa-level-down"></i> 5%
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div ui-jp="sparkline" ui-refresh="app.setting.color" ui-options="[ 16,15,15,16,15,16,14,17,18 ], {type:'line', height:19, width:60, lineColor:'#fcc100', fillColor:'transparent'}" class="sparkline inline">loading...</div>
-                                        </td>
-                                        <td>Visitors</td>
-                                        <td class="text-warning">
-                                            <i class="fa fa-level-down"></i> 8%
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4">
-                            <div class="box">
-                                <div class="box-header">
-                                    <h3>Members</h3>
-                                </div>
-                                <ul class="list no-border p-b">
-                                    <li class="list-item">
-                                        <a herf class="list-left">
-	                	<span class="w-40 avatar">
-		                  <img src="assets/images/a4.jpg" alt="...">
-		                  <i class="on b-white bottom"></i>
-	                    </span>
-                                        </a>
-                                        <div class="list-body">
-                                            <div><a href>Chris Fox</a></div>
-                                            <small class="text-muted text-ellipsis">Designer, Blogger</small>
+                            <!-- /.card-header -->
+                            <div class="card-body p-0">
+                                <ul class="products-list product-list-in-card pl-2 pr-2">
+                                    <li class="item">
+                                        <div class="product-img">
+                                            <img src="{{ asset("admin/dist/img/default-150x150.png") }}" alt="Product Image" class="img-size-50">
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="javascript:void(0)" class="product-title">Samsung TV
+                                                <span class="badge badge-warning float-right">$1800</span></a>
+                                            <span class="product-description">
+                        Samsung 32" 1080p 60Hz LED Smart HDTV.
+                      </span>
                                         </div>
                                     </li>
-                                    <li class="list-item">
-                                        <a herf class="list-left">
-	                  <span class="w-40 avatar">
-		                  <img src="assets/images/a5.jpg" alt="...">
-		                  <i class="on b-white bottom"></i>
-	                  </span>
-                                        </a>
-                                        <div class="list-body">
-                                            <div><a href>Mogen Polish</a></div>
-                                            <small class="text-muted text-ellipsis">Writter, Mag Editor</small>
+                                    <!-- /.item -->
+                                    <li class="item">
+                                        <div class="product-img">
+                                            <img src="{{ asset("admin/dist/img/default-150x150.png") }}" alt="Product Image" class="img-size-50">
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="javascript:void(0)" class="product-title">Bicycle
+                                                <span class="badge badge-info float-right">$700</span></a>
+                                            <span class="product-description">
+                        26" Mongoose Dolomite Men's 7-speed, Navy Blue.
+                      </span>
                                         </div>
                                     </li>
-                                    <li class="list-item">
-                                        <a herf class="list-left">
-	                  <span class="w-40 avatar">
-		                  <img src="assets/images/a6.jpg" alt="...">
-		                  <i class="away b-white bottom"></i>
-	                  </span>
-                                        </a>
-                                        <div class="list-body">
-                                            <div><a href>Joge Lucky</a></div>
-                                            <small class="text-muted text-ellipsis">Art director, Movie Cut</small>
+                                    <!-- /.item -->
+                                    <li class="item">
+                                        <div class="product-img">
+                                            <img src="{{ asset("admin/dist/img/default-150x150.png") }}" alt="Product Image" class="img-size-50">
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="javascript:void(0)" class="product-title">
+                                                Xbox One <span class="badge badge-danger float-right">
+                        $350
+                      </span>
+                                            </a>
+                                            <span class="product-description">
+                        Xbox One Console Bundle with Halo Master Chief Collection.
+                      </span>
                                         </div>
                                     </li>
-                                    <li class="list-item">
-                                        <a herf class="list-left">
-	                  <span class="w-40 avatar">
-		                  <img src="assets/images/a7.jpg" alt="...">
-		                  <i class="busy b-white bottom"></i>
-	                  </span>
-                                        </a>
-                                        <div class="list-body">
-                                            <div><a href>Folisise Chosielie</a></div>
-                                            <small class="text-muted text-ellipsis">Musician, Player</small>
+                                    <!-- /.item -->
+                                    <li class="item">
+                                        <div class="product-img">
+                                            <img src="{{ asset("admin/dist/img/default-150x150.png") }}" alt="Product Image" class="img-size-50">
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="javascript:void(0)" class="product-title">PlayStation 4
+                                                <span class="badge badge-success float-right">$399</span></a>
+                                            <span class="product-description">
+                        PlayStation 4 500GB Console (PS4)
+                      </span>
                                         </div>
                                     </li>
-                                    <li class="list-item">
-                                        <a herf class="list-left">
-	                	<span class="w-40 avatar success">
-		                  <span>P</span>
-		                  <i class="away b-white bottom"></i>
-		                </span>
-                                        </a>
-                                        <div class="list-body">
-                                            <div><a href>Peter</a></div>
-                                            <small class="text-muted text-ellipsis">Musician, Player</small>
-                                        </div>
-                                    </li>
+                                    <!-- /.item -->
                                 </ul>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="box">
-                                <div class="box-header">
-                                    <h3>Tasks</h3>
-                                    <small>20 finished, 5 remaining</small>
-                                </div>
-                                <div class="box-tool">
-                                    <ul class="nav">
-                                        <li class="nav-item inline dropdown">
-                                            <a class="nav-link text-muted p-x-xs" data-toggle="dropdown">
-                                                <i class="fa fa-ellipsis-v"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-scale pull-right">
-                                                <a class="dropdown-item" href>New task</a>
-                                                <a class="dropdown-item" href>Make all finished</a>
-                                                <a class="dropdown-item" href>Make all unfinished</a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item">Settings</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="box-body">
-                                    <div class="streamline b-l m-l">
-                                        <div class="sl-item b-success">
-                                            <div class="sl-icon">
-                                                <i class="fa fa-check"></i>
-                                            </div>
-                                            <div class="sl-content">
-                                                <div class="sl-date text-muted">8:30</div>
-                                                <div>Call to customer <a href class="text-info">Jacob</a> and discuss the detail about the AP project.</div>
-                                            </div>
-                                        </div>
-                                        <div class="sl-item b-info">
-                                            <div class="sl-content">
-                                                <div class="sl-date text-muted">Sat, 5 Mar</div>
-                                                <div>Prepare for presentation</div>
-                                            </div>
-                                        </div>
-                                        <div class="sl-item b-warning">
-                                            <div class="sl-content">
-                                                <div class="sl-date text-muted">Sun, 11 Feb</div>
-                                                <div><a href class="text-info">Jessi</a> assign you a task <a href class="text-info">Mockup Design</a>.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box-footer">
-                                    <a href class="btn btn-sm warn text-u-c pull-right">Add one</a>
-                                    <a href class="btn btn-sm white text-u-c">More</a>
-                                </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer text-center">
+                                <a href="javascript:void(0)" class="uppercase">View All Products</a>
                             </div>
+                            <!-- /.card-footer -->
                         </div>
-                        <div class="col-sm-12 col-md-4">
-                            <div class="box">
-                                <div class="box-header">
-                                    <span class="label success pull-right">5</span>
-                                    <h3>Activity</h3>
-                                    <small>10 members update their activies.</small>
-                                </div>
-                                <div class="box-body">
-                                    <div class="streamline b-l m-b m-l">
-                                        <div class="sl-item">
-                                            <div class="sl-left">
-                                                <img src="assets/images/a2.jpg" class="img-circle">
-                                            </div>
-                                            <div class="sl-content">
-                                                <a href class="text-info">Louis Elliott</a><span class="m-l-sm sl-date">5 min ago</span>
-                                                <div>assign you a task <a href class="text-info">Mockup Design</a>.</div>
-                                            </div>
-                                        </div>
-                                        <div class="sl-item">
-                                            <div class="sl-left">
-                                                <img src="assets/images/a5.jpg" class="img-circle">
-                                            </div>
-                                            <div class="sl-content">
-                                                <a href class="text-info">Terry Moore</a><span class="m-l-sm sl-date">10 min ago</span>
-                                                <div>Follow up to close deal</div>
-                                            </div>
-                                        </div>
-                                        <div class="sl-item">
-                                            <div class="sl-left">
-                                                <img src="assets/images/a8.jpg" class="img-circle">
-                                            </div>
-                                            <div class="sl-content">
-                                                <a href class="text-info">Walter Paler</a><span class="m-l-sm sl-date">1 hour ago</span>
-                                                <div>was added to Repo</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href class="btn btn-sm white text-u-c m-y-xs">Load More</a>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- /.card -->
                     </div>
+                    <!-- /.col -->
                 </div>
-
-                <!-- ############ PAGE END-->
-
-            </div>
-        </div>
-        <!-- / -->
-
-        <!-- theme switcher -->
-        <div id="switcher">
-            <div class="switcher box-color dark-white text-color" id="sw-theme">
-                <a href ui-toggle-class="active" target="#sw-theme" class="box-color dark-white text-color sw-btn">
-                    <i class="fa fa-gear"></i>
-                </a>
-                <div class="box-header">
-                    <a href="https://themeforest.net/item/flatkit-app-ui-kit/13231484?ref=flatfull" class="btn btn-xs rounded danger pull-right">BUY</a>
-                    <h2>Theme Switcher</h2>
-                </div>
-                <div class="box-divider"></div>
-                <div class="box-body">
-                    <p class="hidden-md-down">
-                        <label class="md-check m-y-xs"  data-target="folded">
-                            <input type="checkbox">
-                            <i class="green"></i>
-                            <span class="hidden-folded">Folded Aside</span>
-                        </label>
-                        <label class="md-check m-y-xs" data-target="boxed">
-                            <input type="checkbox">
-                            <i class="green"></i>
-                            <span class="hidden-folded">Boxed Layout</span>
-                        </label>
-                        <label class="m-y-xs pointer" ui-fullscreen>
-                            <span class="fa fa-expand fa-fw m-r-xs"></span>
-                            <span>Fullscreen Mode</span>
-                        </label>
-                    </p>
-                    <p>Colors:</p>
-                    <p data-target="themeID">
-                        <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'primary', accent:'accent', warn:'warn'}">
-                            <input type="radio" name="color" value="1">
-                            <i class="primary"></i>
-                        </label>
-                        <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'accent', accent:'cyan', warn:'warn'}">
-                            <input type="radio" name="color" value="2">
-                            <i class="accent"></i>
-                        </label>
-                        <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'warn', accent:'light-blue', warn:'warning'}">
-                            <input type="radio" name="color" value="3">
-                            <i class="warn"></i>
-                        </label>
-                        <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'success', accent:'teal', warn:'lime'}">
-                            <input type="radio" name="color" value="4">
-                            <i class="success"></i>
-                        </label>
-                        <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'info', accent:'light-blue', warn:'success'}">
-                            <input type="radio" name="color" value="5">
-                            <i class="info"></i>
-                        </label>
-                        <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'blue', accent:'indigo', warn:'primary'}">
-                            <input type="radio" name="color" value="6">
-                            <i class="blue"></i>
-                        </label>
-                        <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'warning', accent:'grey-100', warn:'success'}">
-                            <input type="radio" name="color" value="7">
-                            <i class="warning"></i>
-                        </label>
-                        <label class="radio radio-inline m-0 ui-check ui-check-color ui-check-md" data-value="{primary:'danger', accent:'grey-100', warn:'grey-300'}">
-                            <input type="radio" name="color" value="8">
-                            <i class="danger"></i>
-                        </label>
-                    </p>
-                    <p>Themes:</p>
-                    <div data-target="bg" class="row no-gutter text-u-c text-center _600 clearfix">
-                        <label class="p-a col-sm-6 light pointer m-0">
-                            <input type="radio" name="theme" value="" hidden>
-                            Light
-                        </label>
-                        <label class="p-a col-sm-6 grey pointer m-0">
-                            <input type="radio" name="theme" value="grey" hidden>
-                            Grey
-                        </label>
-                        <label class="p-a col-sm-6 dark pointer m-0">
-                            <input type="radio" name="theme" value="dark" hidden>
-                            Dark
-                        </label>
-                        <label class="p-a col-sm-6 black pointer m-0">
-                            <input type="radio" name="theme" value="black" hidden>
-                            Black
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="switcher box-color black lt" id="sw-demo">
-                <a href ui-toggle-class="active" target="#sw-demo" class="box-color black lt text-color sw-btn">
-                    <i class="fa fa-list text-white"></i>
-                </a>
-                <div class="box-header">
-                    <h2>Demos</h2>
-                </div>
-                <div class="box-divider"></div>
-                <div class="box-body">
-                    <div class="row no-gutter text-u-c text-center _600 clearfix">
-                        <a href="dashboard.html"
-                           class="p-a col-sm-6 primary">
-                            <span class="text-white">Default</span>
-                        </a>
-                        <a href="dashboard.0.html"
-                           class="p-a col-sm-6 success">
-                            <span class="text-white">Zero</span>
-                        </a>
-                        <a href="dashboard.1.html"
-                           class="p-a col-sm-6 blue">
-                            <span class="text-white">One</span>
-                        </a>
-                        <a href="dashboard.2.html"
-                           class="p-a col-sm-6 warn">
-                            <span class="text-white">Two</span>
-                        </a>
-                        <a href="dashboard.3.html"
-                           class="p-a col-sm-6 danger">
-                            <span class="text-white">Three</span>
-                        </a>
-                        <a href="dashboard.4.html"
-                           class="p-a col-sm-6 green">
-                            <span class="text-white">Four</span>
-                        </a>
-                        <a href="dashboard.5.html"
-                           class="p-a col-sm-6 info">
-                            <span class="text-white">Five</span>
-                        </a>
-                        <div
-                                class="p-a col-sm-6 lter">
-                            <span class="text">...</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- / -->
-
-        <!-- ############ LAYOUT END-->
-
+                <!-- /.row -->
+            </div><!--/. container-fluid -->
+        </section>
+        <!-- /.content -->
     </div>
+    <!-- /.content-wrapper -->
 
-<script src="{{ asset('admin/libs/jquery/jquery/dist/jquery.js') }}"></script>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <!-- To the right -->
+        <div class="float-right d-sm-none d-md-block">
+            Anything you want
+        </div>
+        <!-- Default to the left -->
+        <strong>Copyright &copy; 2014-2018 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="{{ asset("admin/plugins/jquery/jquery.min.js") }}"></script>
 <!-- Bootstrap -->
-<script src="{{ asset('admin/libs/jquery/tether/dist/js/tether.min.js') }}"></script>
-<script src="{{ asset('admin/libs/jquery/bootstrap/dist/js/bootstrap.js') }}"></script>
-<!-- core -->
-<script src="{{ asset('admin/libs/jquery/underscore/underscore-min.js') }}"></script>
-<script src="{{ asset('admin/libs/jquery/jQuery-Storage-API/jquery.storageapi.min.js') }}"></script>
-<script src="{{ asset('admin/libs/jquery/PACE/pace.min.js') }}"></script>
+<script src="{{ asset("admin/plugins/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset("admin/dist/js/adminlte.js") }}"></script>
 
-<script src="{{ asset('admin/scripts/config.lazyload.js') }}"></script>
+<!-- OPTIONAL SCRIPTS -->
+<script src="{{ asset("admin/dist/js/demo.js") }}"></script>
 
-<script src="{{ asset('admin/scripts/palette.js') }}"></script>
-<script src="{{ asset('admin/scripts/ui-load.js') }}"></script>
-<script src="{{ asset('admin/scripts/ui-jp.js') }}"></script>
-<script src="{{ asset('admin/scripts/ui-include.js') }}"></script>
-<script src="{{ asset('admin/scripts/ui-device.js') }}"></script>
-<script src="{{ asset('admin/scripts/ui-form.js') }}"></script>
-<script src="{{ asset('admin/scripts/ui-nav.js') }}"></script>
-<script src="{{ asset('admin/scripts/ui-screenfull.js') }}"></script>
-<script src="{{ asset('admin/scripts/ui-scroll-to.js') }}"></script>
-<script src="{{ asset('admin/scripts/ui-toggle-class.js') }}"></script>
+<!-- PAGE PLUGINS -->
+<!-- SparkLine -->
+<script src="{{ asset("admin/plugins/sparkline/jquery.sparkline.min.js") }}"></script>
+<!-- jVectorMap -->
+<script src="{{ asset("admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js") }}"></script>
+<script src="{{ asset("admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js") }}"></script>
+<!-- SlimScroll 1.3.0 -->
+<script src="{{ asset("admin/plugins/slimScroll/jquery.slimscroll.min.js") }}"></script>
+<!-- ChartJS 1.0.2 -->
+<script src="{{ asset("admin/plugins/chartjs-old/Chart.min.js") }}"></script>
 
-<script src="{{ asset('admin/scripts/app.js') }}"></script>
-
-<!-- ajax -->
-<script src="{{ asset('admin/libs/jquery/jquery-pjax/jquery.pjax.js') }}"></script>
-<script src="{{ asset('admin/scripts/ajax.js') }}"></script>
-<script src="{{ asset('/assets/default/packages/sweetalert/sweetalert.js') }}"></script>
-@include('sweet::alert')
+<!-- PAGE SCRIPTS -->
+<script src="{{ asset("admin/dist/js/pages/dashboard2.js") }}"></script>
 </body>
 </html>
