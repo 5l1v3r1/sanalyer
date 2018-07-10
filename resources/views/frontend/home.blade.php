@@ -6,7 +6,6 @@
 
 @section('content')
     @include('layouts.partials.slider')
-
     <div class="global-container container">
         <div class="content">
 

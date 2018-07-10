@@ -18,6 +18,27 @@ function numberFormat($number){
     return number_format($number, 2, ',', '.');
 }
 
+function number_hit($var)
+{
+    if(($var/1000000000)>1)
+    {
+        $retVal=round($var/1000000000,1).'ym';
+    }
+    else if(($var/1000000)>1)
+    {
+        $retVal=round($var/1000000,1).'m';
+    }
+    else if(($var/1000)>1)
+    {
+        $retVal=round($var/1000,1).'b';
+    }
+    else
+    {
+        $retVal=$var;
+    }
+    return $retVal;
+}
+
 function YoutubeID($url)
 {
     if(strlen($url) > 11)

@@ -190,14 +190,6 @@
                                 {!! $postDesc !!}
                             </div>
 
-                            <div class="hide-mobile" style="margin: 10px 0px">
-                                <a href="https://goo.gl/AmmZCx" target="_blank"><img src="https://www.sanalyer.com/resimler/G9W0zy.gif"  width="760" height="90"></a>
-                            </div>
-
-
-                            <div class="visible-mobile">
-                                <a href="https://goo.gl/AmmZCx" target="_blank"><img src="https://www.sanalyer.com/resimler/G9W0zy.gif"  style="width: 100%;"></a>
-                            </div>
 
                             <div id="vidout_inread"></div>
                             <div class="content-body__detail" itemprop="articleBody">
@@ -229,9 +221,23 @@
                                         <a href="{{ route("tag",$info) }}" title="{{ $info }}">{{ $info }}</a>,
                                     @endforeach
                                 </div>
+                            <br>
                         @endif
 
-                        <!-- publisher -->
+                            "<b>{{ $posts->title }}</b> konulu haberimizde
+                            <b><a href="{{ route("home") }}" title="{{ env("APP_SEO") }}">{{ env("APP_SEO") }}</a></b>
+                            olarak sizlere
+                            <b>
+                                <a href="{{ route('show_post',str_slug($posts->title).'-'.$posts->id) }}" title="{{ $posts->title }}">
+                                    {{ $posts->title }}
+                                </a>
+                            </b> ile ilgili son gelişmeleri aktarmak istedik.
+                            Hemen yukarıda <b>{{ $posts->title }}</b> ile ilgili yorum ve görüşleri
+                            inceleyerek sizlerde yorum bırakabilirsiniz. "
+
+
+
+                            <!-- publisher -->
                             <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
                                 <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
                                     <meta itemprop="url" content="{{ asset('icon-logo.png') }}"/>
@@ -411,7 +417,12 @@
             $(function () {
                 $(".news").wtScroll({item: ".news__item"});
             });
+        }else{
+            $(function () {
+                $(".news").wtScroll({item: ".news__item"});
+            });
         }
+
         {{--
                 $(function () {
                     var limit = $('.gallery-widget__container__item').length;

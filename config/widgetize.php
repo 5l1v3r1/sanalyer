@@ -8,7 +8,7 @@ return [
     | You can Globally turn caching on and off for all widgets from here
     |
     */
-    'enable_cache' => false,
+    'enable_cache' => true,
     /*
     |--------------------------------------------------------------------------
     | Default Cache Lifetime
@@ -18,7 +18,7 @@ return [
     | on each and every widget class in your application.
     |
     */
-    'default_cache_lifetime' => 2, //(minutes)
+    'default_cache_lifetime' => 3, //(minutes)
     /*
     |--------------------------------------------------------------------------
     | Minify Widget HTML

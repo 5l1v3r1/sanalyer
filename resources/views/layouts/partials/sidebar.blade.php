@@ -1,7 +1,7 @@
 <div class="sidebar hide-mobile">
-    <div class="ads ads-300x250-sidebar">
-        Sidebar Reklam
-    </div>
+    <a href="https://www.radkod.com" target="_blank" title="Freelance Web Tasarım">
+        <img src="https://www.sanalyer.com/resimler/radkod_freelance_ekibi.png" alt="RadKod">
+    </a>
 {{--
     <div class="sidebar-block">
         <div class="sidebar-teknostore">
@@ -103,9 +103,9 @@
     </div>
 
     <div class="sidebar-sticky">
-        <div class="ads ads-300x250-sidebar">
-            Sağ Reklam Bottom
-        </div>
+        <a href="https://www.radkod.com" target="_blank" title="Freelance Web Tasarım">
+            <img src="https://www.sanalyer.com/resimler/radkod_freelance_ekibi.png" alt="RadKod">
+        </a>
     </div>
 
 </div>

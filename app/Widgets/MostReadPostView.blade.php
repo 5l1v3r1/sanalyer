@@ -9,7 +9,7 @@
                     <h3 class="sidebar-mosts__item__title"><span class="underline">{{ $post->title }}</span></h3>
                 </a>
                 <span class="sidebar-mosts__item__icon"><i class="material-icons">&#xE8E5;</i></span>
-                <span class="sidebar-mosts__item__count">{{ \App\numberFormat($post->views) }}</span>
+                <span class="sidebar-mosts__item__count">{{ \App\number_hit($post->views*10) }}</span>
             </div>
         </div>
     </li>
