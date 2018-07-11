@@ -220,7 +220,8 @@ class HomeAjaxController extends Controller
     {
         $date = date('Y-m-d H:i:s');
         $id = $request->id;
-        $posts = Posts::where('status', 1)->where('location', '!=', 5)->where('id', $id)->where('type', 0)->where('created_at', '<=', $date)->first();
+        $posts = Posts::where('status', 1)->where('id', $id)->where('type', 0)->where('created_at', '<=', $date)->first();
+        // $posts = Posts::where('status', 1)->where('location', '!=', 5)->where('id', $id)->where('type', 0)->where('created_at', '<=', $date)->first();
         $postDescEx = explode('----------------------', $posts->content);
         $postDesc = $postDescEx[0];
         $postContent = $postDescEx[1];

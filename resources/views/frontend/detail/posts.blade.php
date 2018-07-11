@@ -3,6 +3,69 @@
 @section('css')
     <link href="{{ asset('/assets/default/css/news-detail.css?v=2.3.4') }}" rel="stylesheet" media="all"/>
     <link rel="amphtml" href="{{ route('show_post_amp',str_slug($posts->title).'-'.$posts->id) }}">
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "NewsArticle",
+            "inLanguage": "tr-TR",
+            "genre":"news",
+            "articleSection": "{{ $posts->category()->first()->title }}",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "{{ route('show_post_amp',str_slug($posts->title).'-'.$posts->id) }}"
+            },
+            "headline": "{{ $posts->title }}",
+            "alternativeHeadline": "{{ $posts->title }}",
+            "keywords": "{{ $posts->tag }}",
+                              "image": {
+                      "@type": "ImageObject",
+                      "url": "{{ \App\checkImage($posts->image), asset("rk_content/preview.png") }}",
+                      "width": "580",
+                      "height": "330"
+                  },
+            "datePublished": "{{ $posts->created_at->toW3CString() }}",
+            "dateModified": "{{ $posts->created_at->toW3CString() }}",
+            "description": "{{ $postDesc }}",
+            "articleBody": "{{ $postContent }}",
+            "author": {
+                "@type": "Person",
+                "name": "sanalyer"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "sanalyer",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.sanalyer.com/resimler/siyah_logo.png",
+                    "width": 250,
+                    "height": 40
+                }
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+          {
+              "@context": "http://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [{
+                      "@type": "ListItem",
+                      "position": 1,
+                      "item": {
+                          "@id": "{{ env("APP_URL") }}",
+                          "name": "{{ env("APP_SEO") }}"
+                      }
+                  },
+                  {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "item": {
+                          "@id": "{{ route('show_category',str_slug($posts->category()->first()->title).'-'.$posts->category()->first()->id) }}",
+                          "name": "{{ $posts->category()->first()->title }}"
+                      }
+                  }
+              ]
+          }
+      </script>
 @endsection
 
 @php
@@ -70,11 +133,13 @@
                             <time class="content-info__date" itemprop="datePublished"
                             datetime="{{ $posts->created_at->format(DateTime::ATOM) }}">{{ $posts->created_at->diffForHumans() }}
                             </time>&nbsp;
-                            @if($posts->user->rank == 1 || $posts->user->rank == 2)
-                                <span><a href="{{ route('edit_post',$posts->id) }}">Düzenle</a></span>
-                            @elseif($posts->user->id == $posts->author)
-                                <span><a href="{{ route('edit_post',$posts->id) }}">Düzenle</a></span>
-                            @endif
+                            @auth
+                                @if($posts->user->rank == 1 || $posts->user->rank == 2)
+                                    <span><a href="{{ route('edit_post',$posts->id) }}">Düzenle</a></span>
+                                @elseif($posts->user->id == $posts->author)
+                                    <span><a href="{{ route('edit_post',$posts->id) }}">Düzenle</a></span>
+                                @endif
+                            @endauth
 
                         </div>
                         <div class="content-esimited-read">
