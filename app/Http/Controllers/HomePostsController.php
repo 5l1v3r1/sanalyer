@@ -42,6 +42,7 @@ class HomePostsController extends Controller
         $prev = Posts::where('created_at', '<', $posts->created_at)
             ->where('created_at', '<=', $date)
             ->where('type', 0)
+            ->where('location', '!=', 5)
             ->orderBy('created_at', 'DESC')
             ->first();
         $prevDescEx = explode('----------------------', $prev->content);
@@ -188,7 +189,7 @@ class HomePostsController extends Controller
             ->paginate(10);
         SEO::setTitle($category->title);
         SEO::setDescription($category->content);
-        SEO::setCanonical(route('show_category',str_slug($category-> title).'-'.$category->id));
+        SEO::setCanonical(route('show_category',str_slug($category->title).'-'.$category->id));
         SEO::opengraph()->setTitle($category->title)
             ->setDescription($category->content)
             ->setUrl(route('show_category',str_slug($category-> title).'-'.$category->id));
