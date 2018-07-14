@@ -51,11 +51,11 @@ class HomePostsController extends Controller
         $postTag = explode(',', $posts->tag);
         SEO::setTitle($posts->title);
         SEO::setDescription($postDesc);
-        SEO::setCanonical(route('show_post', str_slug($posts->title) . '-' . $posts->id));
+        SEO::setCanonical(route('show_post', $posts->full_url));
         SEO::metatags()->addKeyword($postTag);
         SEO::opengraph()->setTitle($posts->title)
             ->setDescription($postDesc)
-            ->setUrl(route('show_post', str_slug($posts->title) . '-' . $posts->id))
+            ->setUrl(route('show_post', $posts->full_url))
             ->addImages([checkImage($posts->image)])
             ->setType('article')
             ->setArticle([
@@ -104,11 +104,11 @@ class HomePostsController extends Controller
         $postTag = explode(',', $posts->tag);
         SEO::setTitle($posts->title);
         SEO::setDescription($postDesc);
-        SEO::setCanonical(route('show_post', str_slug($posts->title) . '-' . $posts->id));
+        SEO::setCanonical(route('show_post', $posts->full_url));
         SEO::metatags()->addKeyword($postTag);
         SEO::opengraph()->setTitle($posts->title)
             ->setDescription($postDesc)
-            ->setUrl(route('show_post', str_slug($posts->title) . '-' . $posts->id))
+            ->setUrl(route('show_post', $posts->full_url))
             ->addImages([checkImage($posts->image)])
             ->setType('article')
             ->setArticle([
@@ -148,11 +148,11 @@ class HomePostsController extends Controller
         $postTag = explode(',', $posts->tag);
         SEO::setTitle($posts->title);
         SEO::setDescription($postDesc);
-        SEO::setCanonical(route('show_video', str_slug($posts->title) . '-' . $posts->id));
+        SEO::setCanonical(route('show_video', $posts->full_url));
         SEO::metatags()->addKeyword($postTag);
         SEO::opengraph()->setTitle($posts->title)
             ->setDescription($postDesc)
-            ->setUrl(route('show_video', str_slug($posts->title) . '-' . $posts->id))
+            ->setUrl(route('show_video', $posts->full_url))
             ->addImages([checkImage($posts->image)])
             ->setType('video')
             ->setArticle([

@@ -67,12 +67,12 @@ class HomeController extends Controller
             ->where('author',$user->id)
             ->orderBy('created_at', 'DESC')
             ->paginate(10);
-        SEO::setTitle($user->firstname.' '.$user->lastname.' adlı editörün tüm yazıları');
-        SEO::setDescription($user->firstname.' '.$user->lastname.' adlı editörün tüm yazıları');
-        SEO::setCanonical(route('show_profile',str_slug($user->name).'-'.$user->id));
-        SEO::opengraph()->setTitle($user->firstname.' '.$user->lastname.' adlı editörün tüm yazıları')
-            ->setDescription($user->firstname.' '.$user->lastname.' adlı editörün tüm yazıları')
-            ->setUrl(route('show_profile',str_slug($user->name).'-'.$user->id));
+        SEO::setTitle($user->fullname.' adlı editörün tüm yazıları');
+        SEO::setDescription($user->fullname.' adlı editörün tüm yazıları');
+        SEO::setCanonical($user->profileUrl());
+        SEO::opengraph()->setTitle($user->fullname.' adlı editörün tüm yazıları')
+            ->setDescription($user->fullname.' adlı editörün tüm yazıları')
+            ->setUrl($user->profileUrl());
         return view('auth.profile',compact('posts','user'));
     }
 

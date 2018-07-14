@@ -7,11 +7,11 @@
         <div class="content">
             <h1 class="global-title mt0 mb0">Editör Hakkında</h1>
             <div class="content-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                <div class="content-author__image" style="background-image: url('{{ Image::url(asset($user->photo ? '/rk_content/images/user-profile/' . $user->photo : '/rk_content/images/noavatar.png'), 72, 72, array('crop')) }}')"></div>
+                <div class="content-author__image" style="background-image: url('{{ $user->profilePhoto() }}')"></div>
                 <div class="content-author__detail">
-                    <a href="{{ route('show_profile',$user->name.'-'.$user->id) }}" itemprop="name" class="content-author__detail__name">
+                    <a href="{{ $user->profileUrl() }}" itemprop="name" class="content-author__detail__name">
                         <span class="underline">
-                            {{ $user->firstname.' '.$user->lastname }}
+                            {{ $user->fullname }}
                         </span>
                     </a> ({{ $posts->total() }} Adet İçeriğe Sahip)
                     <div class="content-author__detail__social-media">

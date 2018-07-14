@@ -79,7 +79,7 @@
                         <ul class="video-showcase__content--right__video-list">
                             <li class="video-showcase__content--right__video-list__item active"
                                 id="video-{{ $posts->id }}">
-                                <a href="{{ route('show_video',str_slug($posts->title).'-'.$posts->id) }}">
+                                <a href="{{ route('show_video',$posts->full_url) }}">
                                     <figure class="video-showcase__content--right__video-list__item__image">
                                         <img src="{{ Image::url(\App\checkImage($posts->image), 100, 56, array('crop')) }}"
                                              alt="{{ $posts->title }}">
@@ -121,9 +121,9 @@
             <article role="main" itemscope itemtype="http://schema.org/VideoObject" class="video" data-type="video"
                      data-id="{{ $posts->id }}">
                 <meta itemprop="mainEntityOfPage"
-                      content="{{ route('show_video',str_slug($posts->title).'-'.$posts->id) }}">
+                      content="{{ route('show_video',$posts->full_url) }}">
                 <meta itemprop="url"
-                      content="{{ route('show_video',str_slug($posts->title).'-'.$posts->id) }}"/>
+                      content="{{ route('show_video',$posts->full_url) }}"/>
                 <meta itemprop="thumbnailUrl"
                       content="{{ Image::url(\App\checkImage($posts->image), 788, 443, array('crop')) }}"/>
                 <meta itemprop="thumbnail"
@@ -144,7 +144,7 @@
 
                 <div class="content-info">
                    <span itemprop="author" itemscope itemtype="http://schema.org/Person"><a
-                               href="{{ route('show_profile',str_slug($posts->user->name).'-'.$posts->user->id) }}" itemprop="name"
+                               href="{{ $posts->user->profileUrl() }}" itemprop="name"
                                class="content-info__author">{{ $posts->user->firstname }}</a></span>
                     <span class="content-info__line">—</span>
                     <time class="content-info__date" itemprop="datePublished"
@@ -159,7 +159,7 @@
                                 <a class="content-share__item facebook wt-share-button" data-share-type="facebook"
                                    data-type="news" data-id="{{ $posts->id }}" data-post-url="/update-share"
                                    data-title="{{ $posts->title }}"
-                                   data-sef="{{ route('show_video',str_slug($posts->title).'-'.$posts->id) }}">
+                                   data-sef="{{ route('show_video',$posts->full_url) }}">
                                     <div class="content-share__icon facebook-white"></div>
                                     <div class="content-share__badge wt-share-badge-facebok  hide-phone"></div>
                                 </a>
@@ -171,21 +171,21 @@
                                     <ul>
                                         <li class="dropdown-container__item">
                                             <div class="fb-save"
-                                                 data-uri="{{ route('show_video',str_slug($posts->title).'-'.$posts->id) }}"></div>
+                                                 data-uri="{{ route('show_video',$posts->full_url) }}"></div>
                                         </li>
                                     </ul>
                                 </div>
                                 <a class="content-share__item twitter wt-share-button" data-share-type="twitter"
                                    data-type="news" data-id="{{ $posts->id }}" data-post-url="/update-share"
                                    data-title="{{ $posts->title }}"
-                                   data-sef="{{ route('show_video',str_slug($posts->title).'-'.$posts->id) }}">
+                                   data-sef="{{ route('show_video',$posts->full_url) }}">
                                     <div class="content-share__icon twitter-white"></div>
                                     <div class="content-share__badge wt-share-badge-twitter  hide-phone"></div>
                                 </a>
                                 <a class="content-share__item whatsapp wt-share-button visible-phone"
                                    data-type="news" data-id="{{ $posts->id }}" data-share-type="whatsapp"
                                    data-post-url="/update-share" data-title="{{ $posts->title }}"
-                                   data-sef="{{ route('show_video',str_slug($posts->title).'-'.$posts->id) }}">
+                                   data-sef="{{ route('show_video',$posts->full_url) }}">
                                     <div class="content-share__icon whatsapp-white"></div>
                                 </a>
                             </div>
@@ -249,7 +249,7 @@
                                 <a class="content-share__item facebook wt-share-button"
                                    data-share-type="facebook" data-type="news" data-id="{{ $posts->id }}"
                                    data-post-url="/update-share" data-title="{{ $posts->title }}"
-                                   data-sef="{{ route('show_video',str_slug($posts->title).'-'.$posts->id) }}">
+                                   data-sef="{{ route('show_video',$posts->full_url) }}">
                                     <div class="content-share__icon facebook-white"></div>
                                     <div class="content-share__badge wt-share-badge-facebok  hide-phone"></div>
                                 </a>
@@ -262,21 +262,21 @@
                                     <ul>
                                         <li class="dropdown-container__item">
                                             <div class="fb-save"
-                                                 data-uri="{{ route('show_video',str_slug($posts->title).'-'.$posts->id) }}"></div>
+                                                 data-uri="{{ route('show_video',$posts->full_url) }}"></div>
                                         </li>
                                     </ul>
                                 </div>
                                 <a class="content-share__item twitter wt-share-button" data-share-type="twitter"
                                    data-type="news" data-id="{{ $posts->id }}" data-post-url="/update-share"
                                    data-title="{{ $posts->title }}"
-                                   data-sef="{{ route('show_video',str_slug($posts->title).'-'.$posts->id) }}">
+                                   data-sef="{{ route('show_video',$posts->full_url) }}">
                                     <div class="content-share__icon twitter-white"></div>
                                     <div class="content-share__badge wt-share-badge-twitter  hide-phone"></div>
                                 </a>
                                 <a class="content-share__item whatsapp wt-share-button visible-phone"
                                    data-type="news" data-id="{{ $posts->id }}" data-share-type="whatsapp"
                                    data-post-url="/update-share" data-title="{{ $posts->title }}"
-                                   data-sef="{{ route('show_video',str_slug($posts->title).'-'.$posts->id) }}">
+                                   data-sef="{{ route('show_video',$posts->full_url) }}">
                                     <div class="content-share__icon whatsapp-white"></div>
                                 </a>
                             </div>

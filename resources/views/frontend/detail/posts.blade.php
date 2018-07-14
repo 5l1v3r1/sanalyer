@@ -2,7 +2,7 @@
 
 @section('css')
     <link href="{{ asset('/assets/default/css/news-detail.css?v=2.3.4') }}" rel="stylesheet" media="all"/>
-    <link rel="amphtml" href="{{ route('show_post_amp',str_slug($posts->title).'-'.$posts->id) }}">
+    <link rel="amphtml" href="{{ route('show_post_amp',$posts->full_url) }}">
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -12,7 +12,7 @@
             "articleSection": "{{ $posts->category()->first()->title }}",
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "{{ route('show_post_amp',str_slug($posts->title).'-'.$posts->id) }}"
+                "@id": "{{ route('show_post_amp',$posts->full_url) }}"
             },
             "headline": "{{ $posts->title }}",
             "alternativeHeadline": "{{ $posts->title }}",
@@ -102,7 +102,7 @@
                          data-prevTitle="{{ $prev->title }}"
                          data-prevImage="{{ Image::url(\App\checkImage($prev->image), 96, 96, array('crop')) }}"
                          data-type="news" data-id="{{ $prev->id }}"
-                         data-url="{{ route('show_post',str_slug($posts->title).'-'.$posts->id) }}"
+                         data-url="{{ route('show_post',$posts->full_url) }}"
                          data-title="{{ $posts->title }}"
                          data-description="{{ $postDesc }}"
                          data-keywords="" data-share="0" data-amp="http://www.sanalyer.com/haber/amp/{{ $prev->id }}">
@@ -120,14 +120,14 @@
 
                     <div class="content-title">
                         <h1 itemprop="headline"><a
-                                    href="{{ route('show_post',str_slug($posts->title).'-'.$posts->id) }}"
+                                    href="{{ route('show_post',$posts->full_url) }}"
                                     title="{{ $posts->title }}">{{ $posts->title }}</a></h1>
                     </div>
 
                     <div class="content-info clearfix">
                         <div class="content-author">
                             <span itemprop="author" itemscope itemtype="http://schema.org/Person"><a
-                                        href="{{ route('show_profile',str_slug($posts->user->name).'-'.$posts->user->id) }}" itemprop="name"
+                                        href="{{ $posts->user->profileUrl() }}" itemprop="name"
                                         class="content-info__author">{{ $posts->user->firstname }}</a></span>
                             <span class="content-info__line">—</span>
                             <time class="content-info__date" itemprop="datePublished"
@@ -163,7 +163,7 @@
                                     <a class="content-share__item facebook wt-share-button" data-share-type="facebook"
                                        data-type="news" data-id="{{ $posts->id }}" data-post-url="/update-share"
                                        data-title="{{ $posts->title }}"
-                                       data-sef="{{ route('show_post',str_slug($posts->title).'-'.$posts->id) }}">
+                                       data-sef="{{ route('show_post',$posts->full_url) }}">
                                         <div class="content-share__icon facebook-white"></div>
                                         <div class="content-share__badge wt-share-badge-facebok  hide-phone"></div>
                                     </a>
@@ -175,21 +175,21 @@
                                         <ul>
                                             <li class="dropdown-container__item">
                                                 <div class="fb-save"
-                                                     data-uri="{{ route('show_post',str_slug($posts->title).'-'.$posts->id) }}"></div>
+                                                     data-uri="{{ route('show_post',$posts->full_url) }}"></div>
                                             </li>
                                         </ul>
                                     </div>
                                     <a class="content-share__item twitter wt-share-button" data-share-type="twitter"
                                        data-type="news" data-id="{{ $posts->id }}" data-post-url="/update-share"
                                        data-title="{{ $posts->title }}"
-                                       data-sef="{{ route('show_post',str_slug($posts->title).'-'.$posts->id) }}">
+                                       data-sef="{{ route('show_post',$posts->full_url) }}">
                                         <div class="content-share__icon twitter-white"></div>
                                         <div class="content-share__badge wt-share-badge-twitter  hide-phone"></div>
                                     </a>
                                     <a class="content-share__item whatsapp wt-share-button visible-phone"
                                        data-type="news" data-id="{{ $posts->id }}" data-share-type="whatsapp"
                                        data-post-url="/update-share" data-title="{{ $posts->title }}"
-                                       data-sef="{{ route('show_post',str_slug($posts->title).'-'.$posts->id) }}">
+                                       data-sef="{{ route('show_post',$posts->full_url) }}">
                                         <div class="content-share__icon whatsapp-white"></div>
                                     </a>
                                 </div>
@@ -293,7 +293,7 @@
                             <b><a href="{{ route("home") }}" title="{{ env("APP_SEO") }}">{{ env("APP_SEO") }}</a></b>
                             olarak sizlere
                             <b>
-                                <a href="{{ route('show_post',str_slug($posts->title).'-'.$posts->id) }}" title="{{ $posts->title }}">
+                                <a href="{{ route('show_post',$posts->full_url) }}" title="{{ $posts->title }}">
                                     {{ $posts->title }}
                                 </a>
                             </b> ile ilgili son gelişmeleri aktarmak istedik.
@@ -318,7 +318,7 @@
                                         <a class="content-share__item facebook wt-share-button"
                                            data-share-type="facebook" data-type="news" data-id="{{ $posts->id }}"
                                            data-post-url="/update-share" data-title="{{ $posts->title }}"
-                                           data-sef="{{ route('show_post',str_slug($posts->title).'-'.$posts->id) }}">
+                                           data-sef="{{ route('show_post',$posts->full_url) }}">
                                             <div class="content-share__icon facebook-white"></div>
                                             <div class="content-share__badge wt-share-badge-facebok  hide-phone"></div>
                                         </a>
@@ -331,21 +331,21 @@
                                             <ul>
                                                 <li class="dropdown-container__item">
                                                     <div class="fb-save"
-                                                         data-uri="{{ route('show_post',str_slug($posts->title).'-'.$posts->id) }}"></div>
+                                                         data-uri="{{ route('show_post',$posts->full_url) }}"></div>
                                                 </li>
                                             </ul>
                                         </div>
                                         <a class="content-share__item twitter wt-share-button" data-share-type="twitter"
                                            data-type="news" data-id="{{ $posts->id }}" data-post-url="/update-share"
                                            data-title="{{ $posts->title }}"
-                                           data-sef="{{ route('show_post',str_slug($posts->title).'-'.$posts->id) }}">
+                                           data-sef="{{ route('show_post',$posts->full_url) }}">
                                             <div class="content-share__icon twitter-white"></div>
                                             <div class="content-share__badge wt-share-badge-twitter  hide-phone"></div>
                                         </a>
                                         <a class="content-share__item whatsapp wt-share-button visible-phone"
                                            data-type="news" data-id="{{ $posts->id }}" data-share-type="whatsapp"
                                            data-post-url="/update-share" data-title="{{ $posts->title }}"
-                                           data-sef="{{ route('show_post',str_slug($posts->title).'-'.$posts->id) }}">
+                                           data-sef="{{ route('show_post',$posts->full_url) }}">
                                             <div class="content-share__icon whatsapp-white"></div>
                                         </a>
                                     </div>

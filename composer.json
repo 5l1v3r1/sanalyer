@@ -7,6 +7,7 @@
     "require": {
         "php": ">=7.0.0",
         "artesaos/seotools": "^0.11.1",
+        "barryvdh/laravel-cors": "^0.11.0",
         "davejamesmiller/laravel-breadcrumbs": "^4.2",
         "fideloper/proxy": "~3.3",
         "folklore/image": "0.3.*",
@@ -17,6 +18,7 @@
         "lullabot/amp": "^1.0.0",
         "roumen/feed": "^2.11",
         "roumen/sitemap": "^2.7",
+        "tymon/jwt-auth": "^0.5.12",
         "urb/xenforobridge": "dev-master",
         "uxweb/sweet-alert": "^1.4",
         "yajra/laravel-datatables-oracle": "~8.0"
