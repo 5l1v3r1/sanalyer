@@ -32,6 +32,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('iceriklerim', 'HomePostsController@threads')->name('threads');
 });
 
+Route::group(['prefix' => '/developer'], function () {
+    Route::get('/api/docs', function(){
+        return view("api.docs");
+    });
+});
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,7 +56,6 @@ $homeRoute = function () {
         XF::loginAsUser(1);
         echo 'başarılı!';
     });
-
 
     Route::get('composer-dumpload', function (){
         system('composer dump-autoload');

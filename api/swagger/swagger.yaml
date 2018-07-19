@@ -1,0 +1,383 @@
+swagger: "2.0"
+info:
+  description: "API and SDK Documentation"
+  version: "1.0.0"
+  title: "Sanalyer Api"
+  x-logo:
+      url: 'https://www.sanalyer.com/assets/swagger/sanalyer_api.png'
+  termsOfService: "https://www.sanalyer.com/gizlilik"
+  contact:
+    email: "info@sanalyer.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "www.sanalyer.com"
+basePath: "/api/v1"
+tags:
+- name: "post"
+  description: "Access to posts"
+- name: "category"
+  description: "Access to categories"
+- name: "user"
+  description: "Operations about user"
+produces:
+- "application/json"
+consumes:
+- "application/json"
+schemes:
+- "https"
+- "http"
+paths:
+  /post:
+    get:
+      tags:
+      - "post"
+      summary: "Posts List"
+      description: ""
+      operationId: "getPosts"
+      responses:
+        200:
+          schema:
+            $ref: '#/definitions/Post'
+          description: "Successful Operation"
+  /post/{id}:
+    get:
+      tags:
+      - "post"
+      summary: "Posts Detail"
+      description: ""
+      operationId: "getPostDetail"
+      parameters:
+        - in: "path"
+          name: "id"
+          required: true
+          type: integer
+          description: "The Post ID"
+      responses:
+        200:
+          schema:
+            $ref: '#/definitions/PostDetail'
+          description: "Successful Operation"
+        500:
+          description: "Post Not Found"
+  /category:
+    get:
+      tags:
+      - "category"
+      summary: "Category List"
+      description: ""
+      operationId: "getCategories"
+      responses:
+        200:
+          schema:
+            $ref: '#/definitions/Category'
+          description: "Successful Operation"
+  /category/{id}:
+    get:
+      tags:
+      - "category"
+      summary: "Category Detail"
+      description: ""
+      operationId: "getCategoryDetail"
+      parameters:
+        - in: "path"
+          name: "id"
+          required: true
+          type: integer
+          description: "Category ID"
+      responses:
+        200:
+          schema:
+            $ref: '#/definitions/Post'
+          description: "Successful Operation"
+        500:
+          description: "Post Not Found"
+  /user/login:
+      post:
+        tags:
+        - "user"
+        summary: "User Login"
+        description: ""
+        operationId: "userLogin"
+        parameters:
+        - in: "query"
+          name: "email"
+          required: true
+          type: string
+          description: "User Email"
+        - in: "query"
+          name: "password"
+          required: true
+          type: string
+          description: "User Password"
+        responses:
+          200:
+            description: "Successful Operation"
+          422:
+            description: "Fields Validation Failed"
+          401:
+            description: "Invalid Email or Password"
+  /user/register:
+      post:
+        tags:
+        - "user"
+        summary: "User Register"
+        description: ""
+        operationId: "userRegister"
+        parameters:
+        - in: "query"
+          name: "name"
+          required: true
+          type: string
+          description: "User Name"
+        - in: "query"
+          name: "firstname"
+          required: true
+          type: string
+          description: "User Firstname"
+        - in: "query"
+          name: "lastname"
+          required: true
+          type: string
+          description: "User Lastname"
+        - in: "query"
+          name: "email"
+          required: true
+          type: string
+          description: "User Email"
+        - in: "query"
+          name: "password"
+          required: true
+          type: string
+          description: "User Password"
+        - in: "query"
+          name: "password_confirmation"
+          required: true
+          type: string
+          description: "User Password Confirmation"
+        responses:
+          200:
+            description: "Successful Operation"
+          422:
+            description: "Fields Validation Failed"
+          401:
+            description: "Invalid Email or Password"
+  /user/logout/{api_token}:
+      get:
+        tags:
+        - "user"
+        summary: "User Logout"
+        description: ""
+        operationId: "userLogout"
+        parameters:
+          - in: "path"
+            name: "api_token"
+            required: true
+            type: string
+            description: "The API Token"
+        responses:
+          200:
+            description: "Successful Operation"
+
+definitions:
+  Post:
+    description: "Post object"
+    properties:
+      status:
+        description: 'Status Info'
+        type: string
+      status_code:
+        description: "Status Code"
+        type: integer
+      message:
+        description: "Request Info"
+        type: string
+      data:
+        $ref: '#/definitions/PostData'
+      paginator:
+        $ref: '#/definitions/Paginator'
+    type: object
+
+  Category:
+    description: "Category object"
+    properties:
+      status:
+        description: 'Status Info'
+        type: string
+      status_code:
+        description: "Status Code"
+        type: integer
+      message:
+        description: "Request Info"
+        type: string
+      data:
+        $ref: '#/definitions/CategoryData'
+
+  CategoryData:
+    description: "Category Data"
+    properties:
+      id:
+        description: 'Category Id'
+        type: integer
+      parent_id:
+        description: "Category Parent Id"
+        type: integer
+      title:
+        description: "Category Name"
+        type: string
+      full_url:
+        description: "Category Url Slug"
+        type: string
+
+  Paginator:
+    description: "Paginator"
+    properties:
+      total_count:
+        description: 'Total Post Count'
+        type: integer
+      total_pages:
+        description: 'Total Page'
+        type: integer
+      current_page:
+        description: 'Current Page'
+        type: integer
+      limit:
+        description: 'Post Limit'
+        type: integer
+      next_page_url:
+        description: 'Next Page Url'
+        type: string
+      prev_page_url:
+        description: 'Prev Page Url'
+        type: string
+      last_page_url:
+        description: 'Last Page Url'
+        type: string
+
+  PostDetail:
+    description: "Post Detail"
+    properties:
+      status:
+        description: 'Status Info'
+        type: string
+      status_code:
+        description: "Status Code"
+        type: integer
+      message:
+        description: "Request Info"
+        type: string
+      post:
+        $ref: '#/definitions/PostDetailData'
+    type: object
+
+  PostData:
+    description: "Post Data"
+    properties:
+      headline:
+        $ref: '#/definitions/PostSmall'
+      posts:
+        $ref: '#/definitions/PostSmall'
+    type: object
+
+  PostSmall:
+    description: "Small Post Detail"
+    properties:
+      id:
+        description: 'Post ID'
+        type: integer
+      title:
+        description: 'Post Title'
+        type: string
+      image:
+        description: 'Post Image'
+        type: string
+      description:
+        description: 'Post Description'
+        type: string
+      tags:
+        description: 'Post Tags'
+        type: string
+      type:
+        description: 'If type = 0 : news else type = 1 : video'
+        type: integer
+      video:
+        description: 'If type = 1 : YouTube Video Id Else NULL'
+        type: string
+      views:
+        description: 'Post Views'
+        type: integer
+      headline:
+        description: 'Post Headline Status'
+        type: integer
+      categoryId:
+        description: 'Post of category id'
+        type: integer
+      categoryName:
+        description: 'Post of category name'
+        type: string
+      author:
+        description: 'Post Author Name'
+        type: string
+      authorPhoto:
+        description: 'Post Author Photo'
+        type: string
+      created_at:
+        description: 'Post Created At'
+        type: string
+      updated_at:
+        description: 'Post Updated At'
+        type: string
+    type: object
+
+  PostDetailData:
+    description: "Post Detail Data"
+    properties:
+      id:
+        description: 'Post ID'
+        type: integer
+      title:
+        description: 'Post Title'
+        type: string
+      image:
+        description: 'Post Image'
+        type: string
+      description:
+        description: 'Post Description'
+        type: string
+      content:
+        description: 'Post Content'
+        type: string
+      tags:
+        description: 'Post Tags'
+        type: string
+      type:
+        description: 'If type = 0 : news else type = 1 : video'
+        type: integer
+      video:
+        description: 'If type = 1 : YouTube Video Id Else NULL'
+        type: string
+      views:
+        description: 'Post Views'
+        type: integer
+      headline:
+        description: 'Post Headline Status'
+        type: integer
+      categoryId:
+        description: 'Post of category id'
+        type: integer
+      categoryName:
+        description: 'Post of category name'
+        type: string
+      author:
+        description: 'Post Author Name'
+        type: string
+      authorPhoto:
+        description: 'Post Author Photo'
+        type: string
+      created_at:
+        description: 'Post Created At'
+        type: string
+      updated_at:
+        description: 'Post Updated At'
+        type: string
+    type: object

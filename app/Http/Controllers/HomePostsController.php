@@ -86,6 +86,7 @@ class HomePostsController extends Controller
         $postDescEx = explode('----------------------', $posts->content);
         $postDesc = $postDescEx[0];
         $postContent = $postDescEx[1];
+        $postContent = str_replace('src="resimler/', 'src="'.env("APP_URL").'/resimler/', $postContent);
         $posts->hitUpdate();
 
         $amp->loadHtml($postContent);

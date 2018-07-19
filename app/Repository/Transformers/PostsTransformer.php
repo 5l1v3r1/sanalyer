@@ -3,19 +3,29 @@
 namespace App\Repository\Transformers;
 
 use function App\checkImage;
+use function App\YoutubeID;
 
 class PostsTransformer extends Transformer{
     public function transform($post){
         $postDescEx = explode('----------------------', $post->content);
         $postDesc = $postDescEx[0];
+        if($post->type == 1){
+            $video = YoutubeID($post->video);
+        }else{
+            $video = NULL;
+        }
         return [
             'id' => $post->id,
             'title' => $post->title,
             'image' => checkImage($post->image),
             'description' => $postDesc,
             'tags' => $post->tag,
+            'type' => $post->type,
+            'video' => $video,
             'views' => $post->views,
             'headline' => $post->location,
+            "categoryId" => $post->category,
+            "categoryName" => $post->category()->first()->title,
             "author" => $post->user->fullname,
             "authorPhoto" => $post->user->profilePhoto(),
             "created_at" => $post->created_at,

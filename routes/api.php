@@ -18,11 +18,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware' => 'cors', 'prefix' => '/v1'], function () {
-    Route::post('/login', 'UserController@authenticate');
-    Route::post('/register', 'UserController@register');
-    Route::get('/logout/{api_token}', 'UserController@logout');
+    Route::post('/user/login', 'Api\UserController@authenticate');
+    Route::post('/user/register', 'Api\UserController@register');
+    Route::get('/user/logout/{api_token}', 'Api\UserController@logout');
 });
 Route::group(['prefix' => '/v1'], function () {
-    Route::get('/posts', 'Api\PostsController@posts');
+    Route::get('/post', 'Api\PostsController@posts');
     Route::get('/post/{id}', 'Api\PostsController@post');
+
+    Route::get('/category', 'Api\CategoryController@categories');
+    Route::get('/category/{id}', 'Api\CategoryController@category');
 });

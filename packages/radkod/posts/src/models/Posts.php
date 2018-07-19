@@ -1,7 +1,8 @@
 <?php
 namespace Radkod\Posts\Models;
+
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Validator;
+
 class Posts extends Model{
     protected $collection = "posts";
     protected $hidden = ['content'];
@@ -19,7 +20,6 @@ class Posts extends Model{
     {
         return $this->hasMany('Radkod\Posts\Models\Comments','id' ,'post_id');
     }
-
 
     public function user(){
         return $this->belongsTo("App\User","author", 'id');

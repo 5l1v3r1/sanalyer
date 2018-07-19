@@ -32,7 +32,7 @@ class HomeAjaxController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function commentsSend(Request $request){
-        $content = $request->content;
+        $content = $request['content'];
         $posts_id = $request->thread_id;
 
         $comment = new Comments();

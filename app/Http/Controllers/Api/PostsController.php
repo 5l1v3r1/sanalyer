@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\ApiController;
 use App\Repository\Transformers\PostsTransformer;
 use App\Repository\Transformers\PostTransformer;
 use Radkod\Posts\Models\Posts;
@@ -22,9 +21,9 @@ class PostsController extends ApiController
 
     public function posts(){
         $date = date('Y-m-d H:i:s');
-        $posts = Posts::where('type', 0)->where('status', 1)->where('location', '!=', 5)
+        $posts = Posts::where('status', 1)->where('location', '!=', 5)
             ->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->paginate(10);
-        $post = Posts::where('type', 0)->where('status', 1)->where('location', '!=', 5)
+        $post = Posts::where('status', 1)->where('location', '!=', 5)
             ->where('location', '=', 1)
             ->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->limit(5)->get();
         return $this->respondWithPagination($posts, [
@@ -36,6 +35,9 @@ class PostsController extends ApiController
     public function post(Request $request){
         $id = $request->id;
         $post = Posts::find($id);
+        if($post == NULL){
+            return $this->respondInternalError('Post Not Found');
+        }
         return $this->respond([
             'status' => 'success',
             'status_code' => $this->getStatusCode(),
