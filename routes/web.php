@@ -138,6 +138,8 @@ $homeRoute = function () {
     Route::get('kategori/{slug}.html', 'HomePostsController@showCategory')->name('show_category');
     Route::get('/ara', 'HomeController@search')->name("search");
     Route::get('/etiket/{q}', 'HomeController@search')->name("tag");
+
+
     Route::get('/bot/sdn',function() {
         $array =  array();
         $detailContent = array();

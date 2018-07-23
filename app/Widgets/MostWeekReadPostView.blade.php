@@ -1,7 +1,7 @@
 @foreach($data["posts"] as $post)
     <li class="sidebar-mosts__item sidebar-mosts__item--1">
         <div class="sidebar-mosts__item__body">
-            <a class="sidebar-mosts__item__link" href="{{ route('show_post', str_slug($post->title) . '-' . $post->id) }}" title="Başlık" >
+            <a class="sidebar-mosts__item__link" href="{{ route('show_post', str_slug($post->title) . '-' . $post->id) }}" title="{{ $post->title }}" >
                 <div class="sidebar-mosts__item__image lazy" data-original="{{ Image::url(\App\checkImage($post->image), 96, 96, array('crop')) }}"></div>
             </a>
             <div class="sidebar-mosts__item__content">

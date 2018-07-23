@@ -1,4 +1,5 @@
 <div class="sidebar hide-mobile">
+
     <a href="https://www.radkod.com" target="_blank" title="Freelance Web Tasarım">
         <img src="https://www.sanalyer.com/resimler/radkod_freelance_ekibi.png" alt="RadKod">
     </a>
@@ -106,6 +107,22 @@
         <a href="https://www.radkod.com" target="_blank" title="Freelance Web Tasarım">
             <img src="https://www.sanalyer.com/resimler/radkod_freelance_ekibi.png" alt="RadKod">
         </a>
+        <div style="width: 125px !important;height: 80px !important;">
+            <div style="display: block;padding-left: 65px;">
+                <a href="http://yazarkafe.hurriyet.com.tr" class="BoomadsButtonLink144" target="_blank" rel="nofollow">
+                    <img src="https://www.sanalyer.com/upload/upload/bumerang-yazarkafe-yazarlari-12580-oval.png"
+                         alt="Bumerang - Yazarkafe"/>
+                </a>
+            </div>
+        </div>
+        <script type="text/javascript">
+            boomads_widget_client = "3a93ef16265747eebde71dcdd122d546";
+            boomads_widget_id = "144";
+            boomads_widget_width = "0";
+            boomads_widget_height = "0";
+            boomads_widget_trackingparameter = "https://yazarkafe.hurriyet.com.tr";
+        </script>
+        <script type="text/javascript" src="https://widget.boomads.com/scripts/widget.js"></script>
     </div>
 
 </div>

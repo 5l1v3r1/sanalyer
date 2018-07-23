@@ -95,6 +95,63 @@ if ( ! function_exists('trans'))
 }
 
 /**
+* Delete file
+*
+* @param  string  $path
+* @param  string $path_thumb
+* @param  string $config
+*
+* @return  nothing
+*/
+function deleteFile($path,$path_thumb,$config){
+	if ($config['delete_files']){
+		$ftp = ftp_con($config);
+		if($ftp){
+			try{
+				$ftp->delete("/".$path);
+				@$ftp->delete("/".$path_thumb);
+			}catch(FtpClient\FtpException $e){
+				return;
+			}
+		}else{
+			if (file_exists($path)){
+				unlink($path);
+			}
+			if (file_exists($path_thumb)){
+				unlink($path_thumb);
+			}
+		}
+
+		$info=pathinfo($path);
+		if (!$ftp && $config['relative_image_creation']){
+			foreach($config['relative_path_from_current_pos'] as $k=>$path)
+			{
+				if ($path!="" && $path[strlen($path)-1]!="/") $path.="/";
+
+				if (file_exists($info['dirname']."/".$path.$config['relative_image_creation_name_to_prepend'][$k].$info['filename'].$config['relative_image_creation_name_to_append'][$k].".".$info['extension']))
+				{
+					unlink($info['dirname']."/".$path.$config['relative_image_creation_name_to_prepend'][$k].$info['filename'].$config['relative_image_creation_name_to_append'][$k].".".$info['extension']);
+				}
+			}
+		}
+
+		if (!$ftp && $config['fixed_image_creation'])
+		{
+			foreach($config['fixed_path_from_filemanager'] as $k=>$path)
+			{
+				if ($path!="" && $path[strlen($path)-1] != "/") $path.="/";
+
+				$base_dir=$path.substr_replace($info['dirname']."/", '', 0, strlen($current_path));
+				if (file_exists($base_dir.$config['fixed_image_creation_name_to_prepend'][$k].$info['filename'].$config['fixed_image_creation_to_append'][$k].".".$info['extension']))
+				{
+					unlink($base_dir.$config['fixed_image_creation_name_to_prepend'][$k].$info['filename'].$config['fixed_image_creation_to_append'][$k].".".$info['extension']);
+				}
+			}
+		}
+	}
+}
+
+/**
 * Delete directory
 *
 * @param  string  $dir
@@ -462,10 +519,13 @@ function create_folder($path = null, $path_thumbs = null,$ftp = null,$config = n
 		$ftp->mkdir($path);
 		$ftp->mkdir($path_thumbs);
 	}else{
+		if(file_exists($path)){
+			return false;
+		}
 		$oldumask = umask(0);
-		if ($path && ! file_exists($path))
+		if ($path && !file_exists($path))
 		{
-			$permission = 0755;
+			$permission = $config['folderPermission'];
 			if(isset($config['folderPermission'])){
 				$permission = $config['folderPermission'];
 			}
@@ -473,9 +533,10 @@ function create_folder($path = null, $path_thumbs = null,$ftp = null,$config = n
 		} // or even 01777 so you get the sticky bit set
 		if ($path_thumbs && ! file_exists($path_thumbs))
 		{
-			mkdir($path_thumbs, 0755, true) or die("$path_thumbs cannot be found");
+			mkdir($path_thumbs, $config['folderPermission'], true) or die("$path_thumbs cannot be found");
 		} // or even 01777 so you get the sticky bit set
 		umask($oldumask);
+		return true;
 	}
 }
 
@@ -723,18 +784,6 @@ function image_check_memory_usage($img, $max_breedte, $max_hoogte)
 	return false;
 }
 
-/**
-* Check is string is ended with needle
-*
-* @param  string  $haystack
-* @param  string  $needle
-*
-* @return  bool
-*/
-function endsWith($haystack, $needle)
-{
-	return $needle === "" || substr($haystack, -strlen($needle)) === $needle;
-}
 
 /**
 * TODO REFACTOR THIS!
@@ -780,7 +829,7 @@ function new_thumbnails_creation($targetPath, $targetFile, $name, $current_path,
 			{
 				create_folder($targetPath . $path, false);
 			}
-			if ( ! endsWith($targetPath, $path))
+			if ( ! ends_with($targetPath, $path))
 			{
 				if ( ! create_img($targetFile, $targetPath . $path . $config['relative_image_creation_name_to_prepend'][ $k ] . $info['filename'] . $config['relative_image_creation_name_to_append'][ $k ] . "." . $info['extension'], $config['relative_image_creation_width'][ $k ], $config['relative_image_creation_height'][ $k ], $config['relative_image_creation_option'][ $k ]))
 				{

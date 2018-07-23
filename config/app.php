@@ -219,7 +219,6 @@ return [
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         Radkod\Posts\PostsServiceProvider::class,
         Radkod\Admin\AdminServiceProvider::class,
-        Folklore\Image\ImageServiceProvider::class,
         Roumen\Sitemap\SitemapServiceProvider::class,
         Roumen\Feed\FeedServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
@@ -229,7 +228,11 @@ return [
         Urb\XenforoBridge\XenforoBridgeServiceProvider::class,
 
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
-        Barryvdh\Cors\ServiceProvider::class
+        Barryvdh\Cors\ServiceProvider::class,
+
+        UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Folklore\Image\ImageServiceProvider::class,
     ],
 
     /*
@@ -279,13 +282,14 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
-        'Image' => Folklore\Image\Facades\Image::class,
         'Feed' => Roumen\Feed\Feed::class,
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'XF' => 'Urb\XenforoBridge\Facades\XenforoBridge',
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+        'ImageInter' => Intervention\Image\Facades\Image::class,
+        'Image' => Folklore\Image\Facades\Image::class,
     ],
 
 ];

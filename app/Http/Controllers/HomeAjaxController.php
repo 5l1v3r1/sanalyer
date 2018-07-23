@@ -177,7 +177,7 @@ class HomeAjaxController extends Controller
 
 
             $imageName = str_slug(Auth::user()->name) . '-' . Auth::user()->id . '.' . request()->photo->getClientOriginalExtension();
-            request()->photo->move(public_path('rk_content/images/user-profile'), $imageName);
+            request()->photo->move('../public_html/rk_content/images/user-profile', $imageName);
 
             $user = User::find(Auth::user()->id);
             $user->photo = $imageName;
