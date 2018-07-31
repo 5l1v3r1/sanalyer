@@ -17,11 +17,19 @@ class User extends Authenticatable
      */
     protected $collection = "users";
     protected $fillable = ['name', 'email', 'password', 'firstname', 'lastname', 'biography',];
-    protected $appends = ['fullname'];
+    protected $appends = ['fullname', 'pp'];
 
-    public function getFullnameAttribute()
-    {
+    public function getFullnameAttribute(){
         return $this->firstname . " " . $this->lastname;
+    }
+
+    public function userPp($size = null){
+        if($size == null){
+            return asset($this->photo ? '/rk_content/images/user-profile/' . $this->photo : '/rk_content/images/noavatar.png');
+        }else{
+            $size = explode(',', $size);
+            return Image::url(asset($this->photo ? '/rk_content/images/user-profile/' . $this->photo : '/rk_content/images/noavatar.png'), $size[0], $size[1], array('crop'));
+        }
     }
 
     public function profileUrl(){

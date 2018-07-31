@@ -59,7 +59,7 @@ class HomeAjaxController extends Controller
         if (Auth::check() == false) {
             $pp = asset('/rk_content/images/noavatar.png');
         } else {
-            $pp = Image::url(asset(Auth::user()->photo ? '/rk_content/images/user-profile/' . Auth::user()->photo : '/rk_content/images/noavatar.png'), 48, 48, array('crop'));
+            $pp = Auth::user()->userPp('48,48');
         }
         $commentsTotal = Comments::where('status', 1)
             ->where('posts_id', $thread)
@@ -79,7 +79,7 @@ class HomeAjaxController extends Controller
         if (Auth::check() == false) {
             $pp = asset('/rk_content/images/noavatar.png');
         } else {
-            $pp = Image::url(asset(Auth::user()->photo ? '/rk_content/images/user-profile/' . Auth::user()->photo : '/rk_content/images/noavatar.png'), 48, 48, array('crop'));
+            $pp = Auth::user()->userPp('48,48');
         }
 
         $comments = Comments::select('comments.*')->where('posts_id', $thread)

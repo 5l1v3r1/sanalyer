@@ -1,9 +1,6 @@
-<!-- HTML for static distribution bundle build -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Sanalyer API</title>
+@extends('layouts.master')
+@section('css')
+    <link href="{{ asset('/assets/default/css/home.css?v=2.3.4') }}" rel="stylesheet" media="all"/>
     <link rel="stylesheet" type="text/css" href="{{ asset("assets/swagger/swagger-ui.css") }}" >
     <style>
         html
@@ -24,9 +21,8 @@
             background: #fafafa;
         }
     </style>
-</head>
-
-<body>
+@endsection
+@section('content')
 <div id="swagger-ui"></div>
 
 <script src="{{ asset("assets/swagger/swagger-ui-bundle.js") }}"> </script>
@@ -56,5 +52,4 @@
         window.ui = ui
     }
 </script>
-</body>
-</html>
+@endsection

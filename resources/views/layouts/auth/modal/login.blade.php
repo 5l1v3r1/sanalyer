@@ -2,7 +2,7 @@
     <div class="header__appbar--right__user header__appbar--right__user--avatar has-dropdown" data-target="user-dropdown" data-align="right-bottom">
         <div class="header__appbar--right__user__button material-button material-button--icon ripple">
             <img class="avatar avatar-image"
-                 src="{{ Image::url(asset(Auth::user()->photo ? '/rk_content/images/user-profile/' . Auth::user()->photo : '/rk_content/images/noavatar.png'), 48, 48, array('crop')) }}"
+                 src="{{ Auth::user()->userPp('48,48') }}"
                  title="{{ Auth::user()->firstname }}">
         </div>
         <div class="user-dropdown dropdown-container">
@@ -28,7 +28,7 @@
                 <div class="login__avatar">
                         <span class="login__avatar__image">
                                 <img class="avatar-image"
-                                     src="{{ asset(Auth::user()->photo ? '/rk_content/images/user-profile/' . Auth::user()->photo : '/rk_content/images/noavatar.png') }}">
+                                     src="{{ Auth::user()->userPp() }}">
                         </span>
                     <span class="login__avatar__edit">
                             <form method="POST" enctype="multipart/form-data" id="fileUploadForm">

@@ -1,7 +1,7 @@
 <?php
 try{
 	if (!isset($config)){
-	  $config = include 'config/config.php';
+	  $config = include 'config/config1.php';
 	}
 
 	include 'include/utils.php';
@@ -52,9 +52,9 @@ try{
 	{
 		$i++;
 		if ($path == $config['current_path']) $cycle = FALSE;
-		if (file_exists($path."config.php"))
+		if (file_exists($path."config1.php"))
 		{
-			$configTemp = include $path.'config.php';
+			$configTemp = include $path.'config1.php';
 			$config = array_merge($config,$configTemp);
 			//TODO switch to array
 			$cycle = FALSE;

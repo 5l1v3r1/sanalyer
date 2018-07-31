@@ -33,9 +33,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::group(['prefix' => '/developer'], function () {
-    Route::get('/api/docs', function(){
-        return view("api.docs");
-    });
+    Route::get('/api/docs', 'Developer\DeveloperController@docs')->name('docs');
 });
 
 

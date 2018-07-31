@@ -1,25 +1,6 @@
 <?php
 
-/*
- |-------------------------------------------------------------------------
- | Adding laravel authentication
- |--------------------------------------------------------------------------
- */
-require_once __DIR__.'/../../../laravel/vendor/autoload.php';
-$app = require_once __DIR__ . '/../../../laravel/bootstrap/app.php';
-$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-$response = $kernel->handle(
-    $request = Illuminate\Http\Request::capture()
-);
-//
-if(!\Illuminate\Support\Facades\Auth::check()) 	die('Access Denied!');
-
-$user = \Illuminate\Support\Facades\Auth::user();
-if($user->rank == 1){
-    $confirmation = True;
-}else{
-	$confirmation = False;
-}
+$confirmation = True;
 
 $version = "9.13.0";
 if (session_id() == '') session_start();

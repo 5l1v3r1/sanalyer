@@ -8,8 +8,12 @@ class AdminController extends Controller {
 
     public static function home()
     {
-        $tests = 'Admin Selam';
-        return view('admin.index',compact('tests'));
+        return view('admin.index');
+    }
+
+    public function posts(){
+        $posts = Posts::orderBy('id','desc')->paginate(10);
+        return view('admin.posts.index', compact('posts'));
     }
 
 }

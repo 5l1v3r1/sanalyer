@@ -1,7 +1,3 @@
-@php
-    $categoryJson = \App\vendorBladeTemplate(\Radkod\Posts\Models\Category::where('parent_id',0)->get(),[]);
-    $categoryArray = json_decode($categoryJson, true);
-@endphp
 <div class="login modal no-enter" id="modal-signin">
     <div class="modal-overlay"></div>
     <div class="login__container">
@@ -209,14 +205,7 @@
                             KATEGORİLER <i class="material-icons">&#xE5C5;</i>
 
                             <div class="category-dropdown dropdown-container">
-                                <ul>
-                                    @foreach($categoryArray as $cat)
-                                        <li class="dropdown-container__item ripple">
-                                            <a href="{{ route('show_category',$cat['full_url']) }}"
-                                               title="{{ $cat['title'] }}">{{ $cat['title'] }}</a>
-                                        </li>
-                                    @endforeach
-                                </ul>
+                                @widget('HeaderCategories')
                             </div>
                         </a>
                     </li>
@@ -272,7 +261,7 @@
 </header>
 
 {{--<div class="banner" style="height:80px; background: #000000 url({{ asset("assets/default/images/black-friday-bg.jpg") }}) no-repeat top center;">
-<a href="https://www.teknostore.com/collections/black-friday" target="_blank" title="Black Friday" style="display:block;position:relative;height:80px">
+<a href="{{ route('home') }}" target="_blank" title="Black Friday" style="display:block;position:relative;height:80px">
     <div class="container">
         <div id="counter-black-friday">
             <div id="counter-numbers">
@@ -345,6 +334,11 @@
         <li class="drawer__menu__item">
             <a href="{{ env('APP_URL') }}/iletisim" title="Sanalyer İletişim" class="drawer__menu__item__link">
                 <span class="drawer__menu__item__title pl0">İletişim</span>
+            </a>
+        </li>
+        <li class="drawer__menu__item drawer__menu__item--border">
+            <a href="{{ route('docs') }}" title="API Documentation" class="drawer__menu__item__link">
+                <span class="drawer__menu__item__title pl0">API Documentation</span>
             </a>
         </li>
 
