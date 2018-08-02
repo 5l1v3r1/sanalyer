@@ -16,6 +16,6 @@ class Comments extends Model{
     }
 
     public function posts(){
-        return $this->belongsTo('Radkod\Posts\Models\Category','posts_id','id');
+        return $this->belongsTo('Radkod\Posts\Models\Posts','posts_id', 'id');
     }
 }
