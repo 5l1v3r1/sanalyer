@@ -20,20 +20,22 @@
             <div class="content-body">
                 <div class="content-body__detail">
                     @if (count($errors) > 0)
-                    @foreach ($errors->all() as $error)
+                        @foreach ($errors->all() as $error)
 
-                        <li>{{ $error }}</li>
+                            <li>{{ $error }}</li>
 
-                    @endforeach
+                        @endforeach
                     @endif
-                    <form name="sanalyer_client_bundle_contact_type" method="post" class="material" enctype="multipart/form-data">
+                    <form name="sanalyer_client_bundle_contact_type" method="post" class="material"
+                          enctype="multipart/form-data" accept-charset="UTF-8">
                         <input type="hidden" value="{{ csrf_token() }}" name="_token">
                         <div>
                             <input type="text" name="title" required="required"
                                    placeholder="Başlık" value="{{ old('title') }}"/>
                         </div>
                         <div>
-                            <input type="text" value="{{ old('date') }}" class="material" name="date" placeholder="Tarih" id="datetimepicker1"/>
+                            <input type="text" value="{{ old('date') }}" class="material" name="date"
+                                   placeholder="Tarih" id="datetimepicker1"/>
                         </div>
                         <div>
                             <input type="file" name="image"/>
@@ -53,7 +55,8 @@
                         </div>
 
                         <div>
-                            <textarea name="content_full" class="ckeditor " id="editor-ckeditor">{!! old('content_full') !!}</textarea>
+                            <textarea name="content_full" class="ckeditor "
+                                      id="editor-ckeditor">{!! old('content_full') !!}</textarea>
                         </div>
 
                         <div>
@@ -110,10 +113,10 @@
     </script>
     <script type="text/javascript">
         $('#datetimepicker1').datetimepicker({
-            value:new Date(),
-            datepicker:true,
-            format:'d-m-Y H:i:s',
-            step:5
+            value: new Date(),
+            datepicker: true,
+            format: 'd-m-Y H:i:s',
+            step: 5
         });
     </script>
 @endsection

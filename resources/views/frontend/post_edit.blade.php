@@ -30,7 +30,7 @@ $newDate = date("d-m-Y H:i:s", strtotime($post->created_at));
                         @endforeach
                     @endif
                     <form name="sanalyer_client_bundle_contact_type" method="post" class="material"
-                          enctype="multipart/form-data">
+                          enctype="multipart/form-data" accept-charset="UTF-8">
                         <input type="hidden" value="{{ csrf_token() }}" name="_token">
                         <div>
                             <input type="text" name="title" required="required"
