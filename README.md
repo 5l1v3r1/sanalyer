@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/RadKod/sanalyer.svg?branch=master)](https://travis-ci.org/RadKod/sanalyer) [![GitHub issues](https://img.shields.io/github/issues/RadKod/sanalyer.svg)](https://github.com/RadKod/sanalyer/issues) [![GitHub forks](https://img.shields.io/github/forks/RadKod/sanalyer.svg)](https://github.com/RadKod/sanalyer/network) [![GitHub stars](https://img.shields.io/github/stars/RadKod/sanalyer.svg)](https://github.com/RadKod/sanalyer/stargazers) [![GitHub license](https://img.shields.io/github/license/RadKod/sanalyer.svg)](https://github.com/RadKod/sanalyer/blob/master/LICENSE) [![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)](https://github.com/RadKod/sanalyer) [![Twitter](https://img.shields.io/twitter/url/https/github.com/RadKod/sanalyer.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FRadKod%2Fsanalyer)
-
 
 ## sanalyer.com
 
