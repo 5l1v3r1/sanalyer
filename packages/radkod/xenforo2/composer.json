@@ -1,0 +1,32 @@
+{
+    "name": "RadKod/xenforo2",
+    "description": "Laravel Auth Bridge Xenforo2",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abdullah Bozdağ",
+            "email": "abdullah@radkod.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php" : ">=5.4.0",
+        "illuminate/support": "~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "radkod\\XenforoBridge\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "radkod\\XenforoBridge\\ServiceProvider"
+            ],
+            "aliases": {
+                "XenforoBridge": "radkod\\Hello\\Facade"
+            }
+        }
+    }
+}

@@ -101,6 +101,11 @@ $homeRoute = function () {
         return '<h1>Clear Config cleared</h1>';
     });
 
+    Route::get('/db-clear', function () {
+        $exitCode = Artisan::call('modelCache:clear');
+        return '<h1>Db cleared</h1>';
+    });
+
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/home', 'HomeController@index')->name('homeEn');
 
@@ -138,34 +143,12 @@ $homeRoute = function () {
     Route::get('/etiket/{q}', 'HomeController@search')->name("tag");
 
 
-    Route::get('/bot/sdn',function() {
-        $array =  array();
-        $detailContent = array();
-        $link = 'https://shiftdelete.net';
-        $site = \App\curlConnect($link);
-        preg_match_all('@<div class="title"><a href="(.*?)" class="u-url p-name">(.*?)<br>@si',$site, $array[]);
-        $post = new \Radkod\Posts\Models\Posts();
-        foreach($array[0][1] as $i => $url)
-        {
-            $title = $array[0][2][$i];
-            $detailUrl = \App\curlConnect($url);
-            preg_match_all('@<h1>(.*?)</h1>@si',$detailUrl, $detailContent[]);
-            preg_match_all('@<div class="img"><a href="(.*?)"><img src="(.*?)" width="580" height="330" alt="(.*?)"></a></div>@si',$detailUrl, $detailContent[]);
-            preg_match_all('@<div id="post_detail_content">(.*?)</div>@si',$detailUrl, $detailContent[]);
-            preg_match_all('@<meta name="news_keywords" content="(.*?)"/>@si',$detailUrl, $detailContent[]);
-            $title = $detailContent[0][1];
-            $image = $detailContent[1][2];
-            $content = $detailContent[2][1];
-            $keyw = $detailContent[3][1];
-            return response()->json(['title'=>$title,'content'=>$content,'key'=>$keyw]);
-            /*$post->title = $title;
-            $post->content = $content;
-            $post->tag = $keyw;
-            $post->author = number_format(1);
-            $post->save();*/
-            //dd($title,$image,$content,$keyw);
-        }
+    Route::get('/forum-test', function(){
+        $asdasd = new \Radkod\Xenforo2\XenforoBridge\XenforoBridge();
+        dd($asdasd->user());
+
     });
+
     Route::get('/spintest',function() {
         echo \App\articleRewriter('merhaba');
     });

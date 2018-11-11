@@ -1,9 +1,11 @@
 <?php
 namespace Radkod\Posts\Models;
+
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Validator;
+
 class Comments extends Model{
-    protected $collection = "comments";
+    protected $table = "comments";
+
     protected $hidden = ['content'];
 
 

@@ -11,6 +11,7 @@
         "davejamesmiller/laravel-breadcrumbs": "^4.2",
         "fideloper/proxy": "~3.3",
         "folklore/image": "0.3.*",
+        "genealabs/laravel-model-caching": "^0.3.3",
         "imanghafoori/laravel-widgetize": "^1.8",
         "laravel/framework": "5.5.*",
         "laravel/socialite": "^3.0",
@@ -41,6 +42,7 @@
         "psr-4": {
             "App\\": "app/",
             "Radkod\\Posts\\": "packages/radkod/posts/src",
+            "Radkod\\Xenforo2\\": "packages/radkod/xenforo2/src",
             "Radkod\\Admin\\": "packages/radkod/admin/src"
         }
     },

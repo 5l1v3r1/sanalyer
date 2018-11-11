@@ -4,7 +4,8 @@ namespace Radkod\Posts\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Posts extends Model{
-    protected $collection = "posts";
+    protected $table = "posts";
+
     protected $hidden = ['content'];
     protected $appends = array('full_url');
 
