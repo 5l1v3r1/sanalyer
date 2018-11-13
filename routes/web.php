@@ -95,6 +95,17 @@ $homeRoute = function () {
         return '<h1>View cache cleared</h1>';
     });
 
+    Route::get('/facebook_post', function () {
+        \Toolkito\Larasap\SendTo::Facebook(
+            'photo',
+            [
+                'photo' => asset('resimler/akilli-telefonlarin-sonu-metre-geliyor.jpg'),
+                'message' => 'Teknoloji Haberleri https://www.sanalyer.com/haber/akilli-telefonlarin-sonu-geliyor-1519.html'
+            ]
+        );
+    });
+
+
     //Clear Config cache:
     Route::get('/config-cache', function () {
         $exitCode = Artisan::call('config:cache');

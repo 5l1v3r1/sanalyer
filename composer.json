@@ -19,6 +19,7 @@
         "lullabot/amp": "^1.0.0",
         "roumen/feed": "^2.11",
         "roumen/sitemap": "^2.7",
+        "toolkito/larasap": "^1.2",
         "tymon/jwt-auth": "^0.5.12",
         "unisharp/laravel-filemanager": "~1.8",
         "urb/xenforobridge": "dev-master",
