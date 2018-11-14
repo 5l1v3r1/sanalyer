@@ -247,25 +247,31 @@ class HomePostsController extends Controller
             $post->created_at = $date;
             $post->save();
 
-            $tags = explode(',', $post->tag);
 
-            $tag = "";
 
-            foreach ($tags as $item){
-                $tag .= '#'.str_slug($item). ' ';
+            // share social media
+            if($post->status == 1){
+                $tags = explode(',', $post->tag);
+
+                $tag = "";
+
+                foreach ($tags as $item){
+                    $tag .= '#'.str_slug($item). ' ';
+                }
+
+                SendTo::Twitter(
+                    $post->title.' '.route('show_post',$post->full_url). ' '.$tag
+                );
+
+                SendTo::Facebook(
+                    'photo',
+                    [
+                        'photo' => asset('resimler/'.$post->image),
+                        'message' => $post->title.' '.route('show_post',$post->full_url). ' '.$tag
+                    ]
+                );
             }
 
-            SendTo::Twitter(
-                $post->title.' '.route('show_post',$post->full_url). ' '.$tag
-            );
-
-            SendTo::Facebook(
-                'photo',
-                [
-                    'photo' => asset('resimler/'.$post->image),
-                    'message' => $post->title.' '.route('show_post',$post->full_url). ' '.$tag
-                ]
-            );
 
             alert()->success($responseText);
             return redirect('home');
@@ -323,6 +329,30 @@ class HomePostsController extends Controller
             $post->created_at = $date;
             $post->created_at = $date;
             $post->save();
+
+            // share social media
+            if($post->status == 1){
+                $tags = explode(',', $post->tag);
+
+                $tag = "";
+
+                foreach ($tags as $item){
+                    $tag .= '#'.str_slug($item). ' ';
+                }
+
+                SendTo::Twitter(
+                    $post->title.' '.route('show_post',$post->full_url). ' '.$tag
+                );
+
+                SendTo::Facebook(
+                    'photo',
+                    [
+                        'photo' => asset('resimler/'.$post->image),
+                        'message' => $post->title.' '.route('show_post',$post->full_url). ' '.$tag
+                    ]
+                );
+            }
+
             alert()->success($responseText);
             return redirect('home');
         }
