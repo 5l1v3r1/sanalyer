@@ -300,10 +300,8 @@
                             Hemen yukarıda <b>{{ $posts->title }}</b> ile ilgili yorum ve görüşleri
                             inceleyerek sizlerde yorum bırakabilirsiniz. "
 
-
-
                             <!-- publisher -->
-                            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                            <div itemprop="publisher" id="commentArea" itemscope itemtype="https://schema.org/Organization">
                                 <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
                                     <meta itemprop="url" content="{{ asset('icon-logo.png') }}"/>
                                     <meta itemprop="width" content="256"/>

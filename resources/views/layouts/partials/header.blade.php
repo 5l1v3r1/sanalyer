@@ -200,6 +200,10 @@
                            class="ripple {{ url()->full() == route('video') ? "is-active" : "" }}">VİDEO</a>
                     </li>
                     <li class="header__appbar--left__menu__list__item">
+                        <a href="{{ route('home') }}/forum"
+                           class="ripple">FORUM</a>
+                    </li>
+                    <li class="header__appbar--left__menu__list__item">
                         <a class="category-dropdown ripple has-dropdown" data-target="category-dropdown"
                            data-align="left-bottom">
                             KATEGORİLER <i class="material-icons">&#xE5C5;</i>

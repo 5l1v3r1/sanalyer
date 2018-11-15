@@ -110,6 +110,10 @@ $homeRoute = function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/home', 'HomeController@index')->name('homeEn');
 
+    Route::get('/kanallar.php', function () {
+        return response()->redirectToRoute('home');
+    });
+
     Route::get('/haber', 'HomeController@news')->name('news');
     Route::get('/video', 'HomeController@video')->name('video');
 
