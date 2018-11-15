@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="{{ asset('assets/default/packages/sweetalert/sweetalert.css') }}">
         <script src="{{ asset("js/tinymce/tinymce.min.js") }}"></script>
         <script src="{{ asset("js/tinymce/init-tinymce-radkodV5.js") }}"></script>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </head>
 <body>
 @include('layouts.partials.header')
