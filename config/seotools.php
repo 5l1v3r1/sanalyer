@@ -9,7 +9,8 @@ return [
             'title'        => env("APP_TITLE"),
             'description'  => env("APP_DESC"), // set false to total remove
             'separator'    => ' - ',
-            'keywords'     => [env("APP_KEYW")],
+            # 'keywords'     => [env("APP_KEYW")],
+            'keywords'     => null,
             'canonical'    => env("APP_URL"), // Set null for using Url::current(), set false to total remove
         ],
 
@@ -42,8 +43,8 @@ return [
          * The default values to be used by the twitter cards generator.
          */
         'defaults' => [
-          //'card'        => 'summary',
-          //'site'        => '@LuizVinicius73',
+            'card'        => 'summary',
+            'site'        => '@sanalyer',
         ],
     ],
 ];

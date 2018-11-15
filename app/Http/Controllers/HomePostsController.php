@@ -53,7 +53,7 @@ class HomePostsController extends Controller
         SEO::setTitle($posts->title);
         SEO::setDescription($postDesc);
         SEO::setCanonical(route('show_post', $posts->full_url));
-        SEO::metatags()->addKeyword($postTag);
+        # SEO::metatags()->addKeyword($postTag);
         SEO::opengraph()->setTitle($posts->title)
             ->setDescription($postDesc)
             ->setUrl(route('show_post', $posts->full_url))
@@ -107,7 +107,7 @@ class HomePostsController extends Controller
         SEO::setTitle($posts->title);
         SEO::setDescription($postDesc);
         SEO::setCanonical(route('show_post', $posts->full_url));
-        SEO::metatags()->addKeyword($postTag);
+        # SEO::metatags()->addKeyword($postTag);
         SEO::opengraph()->setTitle($posts->title)
             ->setDescription($postDesc)
             ->setUrl(route('show_post', $posts->full_url))
@@ -151,7 +151,7 @@ class HomePostsController extends Controller
         SEO::setTitle($posts->title);
         SEO::setDescription($postDesc);
         SEO::setCanonical(route('show_video', $posts->full_url));
-        SEO::metatags()->addKeyword($postTag);
+        # SEO::metatags()->addKeyword($postTag);
         SEO::opengraph()->setTitle($posts->title)
             ->setDescription($postDesc)
             ->setUrl(route('show_video', $posts->full_url))

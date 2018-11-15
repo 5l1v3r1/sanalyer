@@ -217,8 +217,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
-        Radkod\Posts\PostsServiceProvider::class,
-        Radkod\Admin\AdminServiceProvider::class,
         Roumen\Sitemap\SitemapServiceProvider::class,
         Roumen\Feed\FeedServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider::class,
@@ -233,6 +231,9 @@ return [
         UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Folklore\Image\ImageServiceProvider::class,
+
+        Radkod\Posts\PostsServiceProvider::class,
+        Radkod\Admin\AdminServiceProvider::class,
     ],
 
     /*
