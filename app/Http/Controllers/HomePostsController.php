@@ -31,9 +31,9 @@ class HomePostsController extends Controller
 
     public function showPost($slug)
     {
-        $date = date('Y-m-d H:i:s');
         $data = explode("-", $slug);
         $id = $data[count($data) - 1];
+        $date = date('Y-m-d H:i:s');
         $posts = Posts::where('id', $id)
             ->where('created_at', '<=', $date)
             ->where('type', 0)
