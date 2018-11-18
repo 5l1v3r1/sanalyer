@@ -2,15 +2,26 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Radkod\Xenforo2\XenforoBridge\XenforoBridge;
+use Radkod\Xenforo2\XenforoBridge\Contracts\Factory as AuthFactory;
 
 class Admin
 {
-    protected $user;
+    /**
+     * The guard factory instance.
+     *
+     * @var \Radkod\Xenforo2\XenforoBridge\Contracts\Factory
+     */
+    protected $auth;
 
-    public function __construct()
+    /**
+     * Create a new middleware instance.
+     *
+     * @param  \Radkod\Xenforo2\XenforoBridge\Contracts\Factory $auth
+     * @return void
+     */
+    public function __construct(AuthFactory $auth)
     {
-        $this->user = new XenforoBridge();
+        $this->auth = $auth;
     }
 
     /**
@@ -22,7 +33,7 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if ($this->user->check() &&  $this->user->user()->is_admin == 1) {
+        if ($this->auth->check() &&  $this->auth->user()->is_admin == 1) {
             return $next($request);
         }
         alert()->error('Yönetici Değilsin Maykıl!');

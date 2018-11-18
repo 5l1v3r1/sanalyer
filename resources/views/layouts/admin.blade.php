@@ -87,11 +87,11 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="{{ Auth::user()->userPp('48,48') }}" class="img-circle elevation-2"
-                         alt="{{ Auth::user()->fullname }}">
+                    <img src="{{ \App\forumAuth()->photo() }}" class="img-circle elevation-2"
+                         alt="{{ \App\forumAuth()->user()->username }}">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">{{ Auth::user()->fullname }}</a>
+                    <a href="#" class="d-block">{{ \App\forumAuth()->user()->username }}</a>
                 </div>
             </div>
 
