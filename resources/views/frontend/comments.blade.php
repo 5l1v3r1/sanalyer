@@ -1,7 +1,7 @@
 <div class="content-comments" data-thread="{{ $thread }}">
     <meta itemprop="commentCount" content="{{ $commentsTotal }}"/>
     <div class="content-comments__title global-title">Yorumlar ({{ $commentsTotal }})</div>
-    @if(Auth::check())
+    @if($userCheck)
         <div class="content-comments__form clearfix is-active" id="form-thread-0" data-login="yes">
             <div class="content-comments__item__avatar">
                 <img src="{{ $pp }}">

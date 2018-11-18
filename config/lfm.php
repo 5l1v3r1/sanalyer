@@ -50,7 +50,7 @@ return [
     'files_folder_name'  => 'resimler/files',
 
     'shared_folder_name' => 'shares',
-    'thumb_folder_name'  => 'thumbs',
+    'thumb_folder_name'  => '.thumbs',
 
     /*
     |--------------------------------------------------------------------------

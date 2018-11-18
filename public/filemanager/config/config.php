@@ -12,13 +12,17 @@ $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
 //
-if(!\Illuminate\Support\Facades\Auth::check()) 	die('Access Denied!');
 
-$user = \Illuminate\Support\Facades\Auth::user();
-if($user->rank == 1){
+
+$newForumUser = new \Radkod\Xenforo2\XenforoBridge\XenforoBridge();
+//
+if(!$newForumUser->check())die('Access Denied!');
+
+$user = $newForumUser->user();
+if($user->is_admin == 1){
     $confirmation = True;
 }else{
-	$confirmation = False;
+    $confirmation = False;
 }
 
 $version = "9.13.0";

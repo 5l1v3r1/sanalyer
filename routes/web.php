@@ -18,8 +18,8 @@ Route::group(['middleware' => ['App\Http\Middleware\Cors']], function () {
 });
 
 Route::group(['middleware' => 'forum.login'], function () {
-    Route::get('/sanalyer-filemanager', '\Unisharp\Laravelfilemanager\controllers\LfmController@show');
-    Route::post('/sanalyer-filemanager/upload', '\Unisharp\Laravelfilemanager\controllers\UploadController@upload');
+    Route::get('/sanalyer-filemanager', 'App\Http\Controllers\Filemanager\LfmController@show');
+    Route::post('/sanalyer-filemanager/upload', 'App\Http\Controllers\Filemanager\UploadController@upload');
     Route::get('yeni-yazi', 'HomePostsController@newPost')->name('new_post');
     Route::post('yeni-yazi', 'HomePostsController@newPostPost');
     Route::get('yeni-video', 'HomePostsController@newVideo')->name('new_video');
@@ -90,7 +90,6 @@ $homeRoute = function () {
         return '<h1>View cache cleared</h1>';
     });
 
-
     //Clear Config cache:
     Route::get('/config-cache', function () {
         $exitCode = Artisan::call('config:cache');
@@ -117,6 +116,9 @@ $homeRoute = function () {
     Route::get('/sitemap_{page}.xml', 'HomeController@sitemapDetail')->name("sitemap");
     Route::get('/sitemap.xml', 'HomeController@sitemap')->name("sitemapindex");
 
+    Route::get('/giris', function () {
+        return redirect(env('FORUM_URL').'/login');
+    })->name('login');
     /* Old User Route
     Route::get('giris', 'Auth\LoginController@showLoginForm')->name("login");
     Route::post('giris', 'Auth\LoginController@login')->name("loginPost");

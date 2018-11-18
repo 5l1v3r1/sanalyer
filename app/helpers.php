@@ -4,6 +4,12 @@ namespace App;
 
 use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Illuminate\Support\Facades\Blade;
+use Radkod\Xenforo2\XenforoBridge\Contracts\Factory as ForumAuthFactory;
+
+function forumAuth()
+{
+    return app(ForumAuthFactory::class);
+}
 
 /**
  * @param $image

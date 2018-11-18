@@ -83,10 +83,10 @@ class HomeAjaxController extends Controller
             ->with('children')
             ->orderBy('created_at', 'DESC')
             ->paginate(10);
-        return view('frontend.comments', compact('pp','comments','thread','commentsTotal'));
+        $userCheck = $this->user->check();
+        return view('frontend.comments', compact('pp','comments','thread','commentsTotal', 'userCheck'));
     }
 
-    // TODO comment user edit
     public function commentsLoad(Request $request)
     {
         $thread = $request['thread_id'];
@@ -102,8 +102,8 @@ class HomeAjaxController extends Controller
             ->with('children')
             ->orderBy('created_at', 'DESC')
             ->paginate(10);
-
-        return view('frontend.commentsLoad', compact('pp','comments','thread'));
+        $userCheck = $this->user->check();
+        return view('frontend.commentsLoad', compact('pp','comments','thread', 'userCheck'));
     }
 
     public function favorite_check()

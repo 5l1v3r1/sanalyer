@@ -2,7 +2,7 @@
     @if($comment->user_id == null)
         <img src="{{ asset('rk_content/images/guest.png') }}">
     @else
-        <img src="{{ $child->user->photo }}">
+        <img src="{{ $comment->user->photo }}">
     @endif
 </div>
 <div class="content-comments__item__content">
@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-    @if(Auth::check())
+    @if($userCheck)
         <div class="content-comments__form clearfix content-comments__form--sub" id="form-thread-{{ $comment->id }}"
              data-login="yes">
             <div class="content-comments__item__avatar"><img src="{{ $pp }}"></div>
