@@ -1,13 +1,18 @@
 <?php
 namespace App\Http\Middleware;
 
-use Carbon\Carbon;
-use App\User;
 use Closure;
-use Illuminate\Support\Facades\Auth;
+use Radkod\Xenforo2\XenforoBridge\XenforoBridge;
 
 class Admin
 {
+    protected $user;
+
+    public function __construct()
+    {
+        $this->user = new XenforoBridge();
+    }
+
     /**
      * Handle an incoming request.
      *
@@ -17,7 +22,7 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user() &&  Auth::user()->rank == 1) {
+        if ($this->user->check() &&  $this->user->user()->is_admin == 1) {
             return $next($request);
         }
         alert()->error('Yönetici Değilsin Maykıl!');

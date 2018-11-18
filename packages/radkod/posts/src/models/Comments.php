@@ -3,6 +3,13 @@ namespace Radkod\Posts\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property int|null user_id
+ * @property int status
+ * @property int parent_id
+ * @property int posts_id
+ * @property string content
+ */
 class Comments extends Model{
     protected $table = "comments";
 
@@ -14,7 +21,7 @@ class Comments extends Model{
     }
 
     public function user(){
-        return $this->belongsTo("App\User","user_id", 'id');
+        return $this->belongsTo("App\Forum\User","user_id", 'user_id');
     }
 
     public function posts(){

@@ -99,8 +99,8 @@
         <div class="content">
             <div class="news content-detail-page">
                 <article role="main" itemscope itemtype="http://schema.org/NewsArticle" class="news__item"
-                         data-prevTitle="{{ $prev->title }}"
-                         data-prevImage="{{ Image::url(\App\checkImage($prev->image), 96, 96, array('crop')) }}"
+                         data-prevTitle="{{ $prev!=null ? $prev->title : '' }}"
+                         data-prevImage="{{ $prev!=null ? Image::url(\App\checkImage($prev->image), 96, 96, array('crop')) : '' }}"
                          data-type="news" data-id="{{ $prev->id }}"
                          data-url="{{ route('show_post',$posts->full_url) }}"
                          data-title="{{ $posts->title }}"

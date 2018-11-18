@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\User;
 use function App\checkImage;
-use Folklore\Image\Facades\Image;
+use GuzzleHttp\Client;
 use Radkod\Posts\Models\Comments;
 use Radkod\Posts\Models\Posts;
+use Radkod\Xenforo2\XenforoBridge\Contracts\Factory as ForumUser;
 use Yajra\DataTables\DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -17,13 +18,25 @@ use SEO;
 class HomeAjaxController extends Controller
 {
 
+    public $user;
 
+    public function __construct(ForumUser $user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function header()
     {
-        if (Auth::check() == false) {
-            return view('layouts.auth.modal.signIn');
+        if ($this->user->check()) {
+            $user = $this->user->user();
+            $userPhoto = $this->user->photo('s');
+            $logout = $this->user->logout();
+            return view('layouts.auth.modal.login', compact('user', 'userPhoto', 'logout'));
         } else {
-            return view('layouts.auth.modal.login');
+            return view('layouts.auth.modal.signIn');
         }
     }
 
@@ -33,19 +46,19 @@ class HomeAjaxController extends Controller
      */
     public function commentsSend(Request $request){
         $content = $request['content'];
-        $posts_id = $request->thread_id;
+        $posts_id = $request['thread_id'];
 
         $comment = new Comments();
-        if (Auth::check() == true) {
-            $comment->user_id = Auth::id();
+        if ($this->user->check()) {
+            $comment->user_id = $this->user->id();
         }
-        if (Auth::check() == true && Auth::user()->rank == 1) {
+        if ($this->user->check() == true && $this->user->user()->is_moderator == 1) {
             $comment->status = intval(1);
         }else{
             $comment->status = intval(0);
         }
         if (isset($request->comment_id)){
-            $comment->parent_id = $request->comment_id;
+            $comment->parent_id = $request['comment_id'];
         }
         $comment->posts_id = $posts_id;
         $comment->content = $content;
@@ -55,11 +68,11 @@ class HomeAjaxController extends Controller
 
     public function comments(Request $request)
     {
-        $thread = $request->thread_id;
-        if (Auth::check() == false) {
+        $thread = $request['thread_id'];
+        if (!$this->user->check()) {
             $pp = asset('/rk_content/images/noavatar.png');
         } else {
-            $pp = Auth::user()->userPp('48,48');
+            $pp = $this->user->photo();
         }
         $commentsTotal = Comments::where('status', 1)
             ->where('posts_id', $thread)
@@ -73,13 +86,14 @@ class HomeAjaxController extends Controller
         return view('frontend.comments', compact('pp','comments','thread','commentsTotal'));
     }
 
+    // TODO comment user edit
     public function commentsLoad(Request $request)
     {
-        $thread = $request->thread_id;
-        if (Auth::check() == false) {
+        $thread = $request['thread_id'];
+        if (!$this->user->check()) {
             $pp = asset('/rk_content/images/noavatar.png');
         } else {
-            $pp = Auth::user()->userPp('48,48');
+            $pp = $this->user->photo();
         }
 
         $comments = Comments::select('comments.*')->where('posts_id', $thread)
@@ -92,22 +106,27 @@ class HomeAjaxController extends Controller
         return view('frontend.commentsLoad', compact('pp','comments','thread'));
     }
 
-    public function favorite_check(Request $request)
+    public function favorite_check()
     {
-        if (Auth::check() == false) {
+        if (!$this->user->check()) {
             return 'false';
         } else {
             return 'true';
         }
     }
 
-    public function favorite_check_post(Request $request)
+    public function favorite_check_post()
     {
         return 'İs Coming :)';
     }
 
-    public function ping(Request $request)
+    public function ping()
     {
+        $client = new Client();
+        $result = $client->post('http://www.google.com/ping', [
+            'sitemap' => request()->url()
+        ]);
+        dd($result);
         return 'Done';
     }
 
@@ -226,9 +245,11 @@ class HomeAjaxController extends Controller
         $postDesc = $postDescEx[0];
         $postContent = $postDescEx[1];
         $prev = Posts::where('status', 1)->where('location', '!=', 5)->where('type', 0)->where('created_at', '<', $posts->created_at)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->first();
-        $prevDescEx = explode('----------------------', $prev->content);
-        $prevDesc = $prevDescEx[0];
-        $prevContent = $prevDescEx[1];
+        if($prev){
+            $prevDescEx = explode('----------------------', $prev->content);
+            $prevDesc = $prevDescEx[0];
+            $prevContent = $prevDescEx[1];
+        }
         $postTag = explode(',', $posts->tag);
         SEO::setTitle($posts->title);
         SEO::setDescription($postDesc);
@@ -251,14 +272,13 @@ class HomeAjaxController extends Controller
     }
 
     public function ajaxThreads(){
-        $user = Auth::user();
-        if($user == null){
+        if(!$this->user->check()){
             alert()->error('Giriş Yapınız');
             return redirect(route('home'));
         }
        /* $post = Posts::where('author',$user->id)->orderBy('id','desc')->select(['id','title','created_at'])->get();
         return ['data'=>$post];*/
-        $posts = Posts::where('author',$user->id)->get();
+        $posts = Posts::where('author',$this->user->id())->get();
 
         return DataTables::of($posts)->make();
     }

@@ -23,7 +23,7 @@ class Posts extends Model{
     }
 
     public function user(){
-        return $this->belongsTo("App\User","author", 'id');
+        return $this->belongsTo("App\Forum\User","author", 'user_id');
     }
 
     public function category(){

@@ -3,22 +3,31 @@
 namespace App\Http\Controllers;
 
 use function App\checkImage;
-use function App\img_amp;
 use Lullabot\AMP\AMP;
 use function App\YoutubeID;
 use Carbon\Carbon;
 use Radkod\Posts\Models\Category;
 use Radkod\Posts\Models\Posts;
+use Radkod\Xenforo2\XenforoBridge\Contracts\Factory as User;
 use Toolkito\Larasap\SendTo;
 use Illuminate\Routing\Controller as Controller;
 use SEO;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Validator;
 
 class HomePostsController extends Controller
 {
+
+    public $user;
+
+    /**
+     * HomePostsController constructor.
+     * @param User $user
+     */
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
 
     public function showPost($slug)
     {
@@ -46,9 +55,11 @@ class HomePostsController extends Controller
             ->where('location', '!=', 5)
             ->orderBy('created_at', 'DESC')
             ->first();
-        $prevDescEx = explode('----------------------', $prev->content);
-        $prevDesc = $prevDescEx[0];
-        $prevContent = $prevDescEx[1];
+        if($prev){
+            $prevDescEx = explode('----------------------', $prev->content);
+            $prevDesc = $prevDescEx[0];
+            $prevContent = $prevDescEx[1];
+        }
         $postTag = explode(',', $posts->tag);
         SEO::setTitle($posts->title);
         SEO::setDescription($postDesc);
@@ -206,7 +217,6 @@ class HomePostsController extends Controller
     }
 
     public function newPostPost(Request $request){
-        $user = Auth::user();
         $validator = Validator::make($request->all(), [
             'image' => 'image|mimes:jpeg,png,jpg|max:2048',
             'title' => 'required|min:6',
@@ -218,7 +228,7 @@ class HomePostsController extends Controller
             'date' => 'required'
         ]);
         $contents = $request->short_desc."----------------------".$request->content_full;
-        if($user->rank == 1 || $user->rank == 2){
+        if($this->user->user()->is_admin == 1 || $this->user->user()->is_moderator == 1){
             $status = 1;
             $responseText = 'İçerik Başarıyla Oluşturuldu.';
         }else{
@@ -237,17 +247,15 @@ class HomePostsController extends Controller
             $date = Carbon::createFromFormat('d-m-Y H:i:s', $request->date)->toDateTimeString();
             $post->title = $request->title;
             $post->content = $contents;
-            $post->author = $user->id;
+            $post->author = $this->user->id();
             $post->status = $status;
             $post->type = 0;
             $post->category = $request->category;
             $post->location = $request->location;
             $post->tag = $request->tag;
             $post->created_at = $date;
-            $post->created_at = $date;
+            $post->updated_at = $date;
             $post->save();
-
-
 
             // share social media
             if($post->status == 1){
@@ -287,7 +295,6 @@ class HomePostsController extends Controller
     }
 
     public function newVideoPost(Request $request){
-        $user = Auth::user();
         $validator = Validator::make($request->all(), [
             'image' => 'image|mimes:jpeg,png,jpg|max:2048',
             'title' => 'required|min:6',
@@ -300,7 +307,7 @@ class HomePostsController extends Controller
             'date' => 'required'
         ]);
         $contents = $request->short_desc."----------------------".$request->content_full;
-        if($user->rank == 1 || $user->rank == 2){
+        if($this->user->user()->is_admin == 1 || $this->user->user()->is_moderator == 1){
             $status = 1;
             $responseText = 'İçerik Başarıyla Oluşturuldu.';
         }else{
@@ -319,7 +326,7 @@ class HomePostsController extends Controller
             $date = Carbon::createFromFormat('d-m-Y H:i:s', $request->date)->toDateTimeString();
             $post->title = $request->title;
             $post->content = $contents;
-            $post->author = $user->id;
+            $post->author = $this->user->id();
             $post->status = $status;
             $post->type = 1;
             $post->category = $request->category;
@@ -327,7 +334,7 @@ class HomePostsController extends Controller
             $post->location = $request->location;
             $post->tag = $request->tag;
             $post->created_at = $date;
-            $post->created_at = $date;
+            $post->updated_at = $date;
             $post->save();
 
             // share social media
@@ -372,10 +379,9 @@ class HomePostsController extends Controller
         }
         $category = Category::get();
         $type = 0;
-        $user = Auth::user();
-        if($user->rank == 1 || $user->rank == 2){
+        if($this->user->user()->is_admin == 1 || $this->user->user()->is_moderator == 1){
 
-        }elseif($user->id !== $post->author){
+        }elseif($this->user->id() != $post->author){
             alert()->error('Bu içerik size ait değil');
             return redirect(route('home'));
         }else{
@@ -393,10 +399,9 @@ class HomePostsController extends Controller
         }
         $category = Category::get();
         $type = 1;
-        $user = Auth::user();
-        if($user->rank == 1 || $user->rank == 2){
+        if($this->user->user()->is_admin == 1 || $this->user->user()->is_moderator == 1){
 
-        }elseif($user->id !== $post->author){
+        }elseif($this->user->id() != $post->author){
             alert()->error('Bu içerik size ait değil');
             return redirect(route('home'));
         }else{
@@ -422,16 +427,14 @@ class HomePostsController extends Controller
             alert()->error('İçerik bulunamadı')->persistent("Kapat");
             return redirect(route('threads'));
         }
-        $user = Auth::user();
         $contents = $request->short_desc."----------------------".$request->content_full;
-        if($user->rank == 1 || $user->rank == 2){
+        if($this->user->user()->is_admin == 1 || $this->user->user()->is_moderator == 1){
             $status = 1;
             $responseText = 'İçerik Başarıyla Güncelleştirildi.';
         }else{
             $status = 0;
             $responseText = 'İçerik Onaya Sunuldu.';
         }
-        $date = Carbon::createFromFormat('d-m-Y H:i:s', $request->date)->toDateTimeString();
         if ($validator->passes()) {
             if ($request->file('image')) {
                 $imageName = str_slug($request->title) . '.' . request()->image->getClientOriginalExtension();
@@ -446,7 +449,6 @@ class HomePostsController extends Controller
             $post->video = $request->video;
             $post->location = $request->location;
             $post->tag = $request->tag;
-            $post->created_at = $date;
             $post->save();
             alert()->success($responseText);
             return redirect(route('threads'));
@@ -471,16 +473,14 @@ class HomePostsController extends Controller
             alert()->error('İçerik bulunamadı')->persistent("Kapat");
             return redirect(route('threads'));
         }
-        $user = Auth::user();
         $contents = $request->short_desc."----------------------".$request->content_full;
-        if($user->rank == 1 || $user->rank == 2){
+        if($this->user->user()->is_admin == 1 || $this->user->user()->is_moderator == 1){
             $status = 1;
             $responseText = 'İçerik Başarıyla Güncelleştirildi.';
         }else{
             $status = 0;
             $responseText = 'İçerik Onaya Sunuldu.';
         }
-        $date = Carbon::createFromFormat('d-m-Y H:i:s', $request->date)->toDateTimeString();
         if ($validator->passes()) {
             if ($request->file('image')) {
                 $imageName = str_slug($request->title) . '.' . request()->image->getClientOriginalExtension();
@@ -495,7 +495,6 @@ class HomePostsController extends Controller
             $post->video = $request->video;
             $post->location = $request->location;
             $post->tag = $request->tag;
-            $post->created_at = $date;
             $post->save();
             alert()->success($responseText);
             return redirect(route('threads'));
@@ -509,8 +508,7 @@ class HomePostsController extends Controller
             alert()->error('İçerik bulunamadı')->persistent("Kapat");
             return redirect(route('threads'));
         }
-        $user = Auth::user();
-        if($user->rank == 1){
+        if($this->user->user()->is_admin == 1){
             $post->delete();
             alert()->success('İçerik Silindi');
             return redirect(route('threads'));

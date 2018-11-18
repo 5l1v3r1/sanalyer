@@ -13,7 +13,7 @@ class CreateAdvert extends Migration
      */
     public function up()
     {
-        Schema::create('advert', function (Blueprint $table) {
+        Schema::create('site_advert', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->text('content');

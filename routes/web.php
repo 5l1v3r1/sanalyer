@@ -17,7 +17,7 @@ Route::group(['middleware' => ['App\Http\Middleware\Cors']], function () {
     Route::get('/ajax/threads','HomeAjaxController@ajaxThreads')->name('ajax::threads');
 });
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'forum.login'], function () {
     Route::get('/sanalyer-filemanager', '\Unisharp\Laravelfilemanager\controllers\LfmController@show');
     Route::post('/sanalyer-filemanager/upload', '\Unisharp\Laravelfilemanager\controllers\UploadController@upload');
     Route::get('yeni-yazi', 'HomePostsController@newPost')->name('new_post');
@@ -50,11 +50,6 @@ Route::group(['prefix' => '/developer'], function () {
 */
 
 $homeRoute = function () {
-    Route::get('/example', function(){
-        XF::loginAsUser(1);
-        echo 'başarılı!';
-    });
-
     Route::get('composer-dumpload', function (){
         system('composer dump-autoload');
     });
@@ -122,6 +117,7 @@ $homeRoute = function () {
     Route::get('/sitemap_{page}.xml', 'HomeController@sitemapDetail')->name("sitemap");
     Route::get('/sitemap.xml', 'HomeController@sitemap')->name("sitemapindex");
 
+    /* Old User Route
     Route::get('giris', 'Auth\LoginController@showLoginForm')->name("login");
     Route::post('giris', 'Auth\LoginController@login')->name("loginPost");
     Route::get('cikis', 'Auth\LoginController@logout')->name("logout");
@@ -131,6 +127,10 @@ $homeRoute = function () {
     Route::get('sifre/sifirla/{token}', 'Auth\ResetPasswordController@showResetForm')->name("password.reset");
     Route::get('kayit', 'Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('kayit', 'Auth\RegisterController@register');
+    */
+
+    Route::post('kayit', 'Forum\UserController@register')->name('register');
+
 
     Route::get('uye/{slug}', 'HomeController@showProfile')->name('show_profile');
     Route::get('hakkimizda', 'HomePageController@abouts')->name('abouts');
@@ -150,8 +150,8 @@ $homeRoute = function () {
 
     Route::get('/forum-test', function(){
         $asdasd = new \Radkod\Xenforo2\XenforoBridge\XenforoBridge();
-        dd($asdasd->user());
-
+        $findForumUser = \App\Forum\User::where('user_id',1)->first();
+        dd($asdasd->user(), $findForumUser, request()->url());
     });
 
     Route::get('/spintest',function() {

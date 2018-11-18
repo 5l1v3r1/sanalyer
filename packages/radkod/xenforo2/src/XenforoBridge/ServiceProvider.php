@@ -2,7 +2,9 @@
 
 namespace Radkod\Xenforo2\XenforoBridge;
 
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+use Illuminate\Support\ServiceProvider as Provider;
+
+class ServiceProvider extends Provider
 {
     public function boot()
     {
@@ -20,6 +22,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
     public function register()
     {
+        $this->app->bind('Radkod\Xenforo2\XenforoBridge\Contracts\Factory', 'Radkod\Xenforo2\XenforoBridge\XenforoBridge');
         $this->mergeConfigFrom(
             __DIR__ .'/../config/xenforobridge.php', 'xenforobridge'
         );

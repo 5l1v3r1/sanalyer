@@ -19,13 +19,21 @@ class PostsController extends ApiController
         $this->postTransformer = $postTransformer;
     }
 
-    public function posts(){
+    public function posts(Request $request){
         $date = date('Y-m-d H:i:s');
-        $posts = Posts::where('status', 1)->where('location', '!=', 5)
-            ->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->paginate(10);
-        $post = Posts::where('status', 1)->where('location', '!=', 5)
-            ->where('location', '=', 1)
-            ->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->limit(5)->get();
+        if($request['type']){
+            $posts = Posts::where('status', 1)->where('location', '!=', 5)->where('type', $request['type'])
+                ->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->paginate(10);
+            $post = Posts::where('status', 1)->where('location', '!=', 5)->where('type', $request['type'])
+                ->where('location', '=', 1)
+                ->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->limit(5)->get();
+        }else{
+            $posts = Posts::where('status', 1)->where('location', '!=', 5)
+                ->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->paginate(10);
+            $post = Posts::where('status', 1)->where('location', '!=', 5)
+                ->where('location', '=', 1)
+                ->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->limit(5)->get();
+        }
         return $this->respondWithPagination($posts, [
             'headline' => $this->postsTransformer->transformCollection($post->all()),
             'posts' => $this->postsTransformer->transformCollection($posts->all())

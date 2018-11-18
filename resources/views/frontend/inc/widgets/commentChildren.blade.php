@@ -6,7 +6,7 @@
                     @if($child->user_id == null)
                         <img src="{{ asset('rk_content/images/guest.png') }}">
                     @else
-                        <img src="{{ Image::url(asset($child->user->photo ? '/rk_content/images/user-profile/' . $child->user->photo : '/rk_content/images/noavatar.png'), 48, 48, array('crop')) }}">
+                        <img src="{{ $child->user->photo }}">
                     @endif
                 </div>
                 <div class="content-comments__item__content">

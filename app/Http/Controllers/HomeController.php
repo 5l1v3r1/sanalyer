@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use function App\checkImage;
-use App\User;
+use App\Forum\User;
 use Carbon\Carbon;
 use Radkod\Posts\Models\Posts;
 use Illuminate\Http\Request;
@@ -64,7 +64,7 @@ class HomeController extends Controller
         }
         $posts = Posts::where('created_at', '<=', $date)
             ->where('status', 1)
-            ->where('author',$user->id)
+            ->where('author',$user->user_id)
             ->orderBy('created_at', 'DESC')
             ->paginate(10);
         SEO::setTitle($user->fullname.' adlı editörün tüm yazıları');
@@ -207,6 +207,10 @@ class HomeController extends Controller
         }
 
         return $rss->render('atom');
+    }
+
+    public function memberAgree(){
+        echo 'Yakında';
     }
 
 }

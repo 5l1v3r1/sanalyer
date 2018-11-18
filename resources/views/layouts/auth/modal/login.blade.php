@@ -2,24 +2,27 @@
     <div class="header__appbar--right__user header__appbar--right__user--avatar has-dropdown" data-target="user-dropdown" data-align="right-bottom">
         <div class="header__appbar--right__user__button material-button material-button--icon ripple">
             <img class="avatar avatar-image"
-                 src="{{ Auth::user()->userPp('48,48') }}"
-                 title="{{ Auth::user()->firstname }}">
+                 src="{{ $userPhoto }}"
+                 title="{{ $user->username }}">
         </div>
         <div class="user-dropdown dropdown-container">
             <ul>
                 <li class="dropdown-container__item ripple"><a class="modal-button" href="{{ route('new_post') }}" title="Yazı Ekle">Yazı Ekle</a></li>
                 <li class="dropdown-container__item ripple"><a class="modal-button" href="{{ route('new_video') }}" title="Video Ekle">Video Ekle</a></li>
                 <li class="dropdown-container__item ripple"><a class="modal-button" href="{{ route('threads') }}" title="İçeriklerim">İçeriklerim</a></li>
-                <li class="dropdown-container__item ripple"><a class="modal-button" data-modal="modal-edit-profile" title="Profilimi Düzenle">Profilimi Düzenle</a></li>
-                @if(Auth::user()->rank == 1)
-                <li class="dropdown-container__item ripple"><a class="modal-button" href="{{ route('admin::index') }}" target="_blank">Admin</a></li>
+                {{--<li class="dropdown-container__item ripple"><a class="modal-button" data-modal="modal-edit-profile" title="Profilimi Düzenle">Profilimi Düzenle</a></li>--}}
+                <li class="dropdown-container__item ripple"><a class="modal-button" href="{{ env('FORUM_URL').'/account/account-details' }}" title="Profilimi Düzenle">Profilimi Düzenle</a></li>
+                @if($user->is_admin)
+                    <li class="dropdown-container__item ripple"><a class="modal-button" href="{{ route('admin::index') }}" target="_blank">Admin</a></li>
                 @endif
-                <li class="dropdown-container__item ripple"><a href="{{ route("logout") }}" title="Çıkış Yap">Çıkış Yap</a></li>
+                <li class="dropdown-container__item ripple"><a href="{{ $logout }}" title="Çıkış Yap">Çıkış Yap</a></li>
             </ul>
         </div>
-        <span class="header__appbar--right__user__text hide-mobile"><i class="username-text">{{ Auth::user()->firstname }}</i> <i class="material-icons">&#xE5C5;</i></span>
+        <span class="header__appbar--right__user__text hide-mobile">
+            <i class="username-text">{{ $user->username }}</i> <i class="material-icons">&#xE5C5;</i>
+        </span>
     </div>
-    <div class="login modal" id="modal-edit-profile">
+    {{--<div class="login modal" id="modal-edit-profile">
         <div class="modal-overlay"></div>
         <div class="login__container">
             <div class="login__header">
@@ -60,5 +63,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--}}
 </div>

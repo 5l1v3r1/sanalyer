@@ -7,13 +7,13 @@
             <div class="login__notice"></div>
         </div>
         <div class="login__form">
-            <form id="modal-signin-form" method="post" action="{{ route('loginPost') }}">
+            <form id="modal-signin-form" method="post" action="{{ env('FORUM_URL').'/login/login' }}">
                 {{ csrf_field() }}
 
                 <div class="login__form-element">
-                    <input name="email" placeholder="E-Posta Adresi" value="{{ old('email') }}">
-                    @if ($errors->has('email'))
-                        <span class="help-block"> <strong>{{ $errors->first('email') }}</strong></span>
+                    <input name="login" placeholder="Kullanıcı adı veya Şifre" value="{{ old('login') }}">
+                    @if ($errors->has('login'))
+                        <span class="help-block"> <strong>{{ $errors->first('login') }}</strong></span>
                     @endif
                 </div>
 
@@ -27,7 +27,8 @@
                         Beni Hatırla
                     </label>
                 </div>
-                <div class="login__form-element"><a href="{{ route('password.request') }}">Şifremi unuttum</a></div>
+                <div class="login__form-element"><a href="{{ env('FORUM_URL').'/lost-password/' }}">Şifremi unuttum</a>
+                </div>
                 <div class="login__form-element">
                     <button class="login__form-button login__form-button--signin ripple" type="submit">GİRİŞ YAP
                     </button>
@@ -60,8 +61,8 @@
                             <script src="{{ asset('assets/default/packages/sweetalert/sweetalert.js') }}"></script>
 
                             <script>
-                               swal ( "Oops" , "{{ $error }}" ,  "error" );
-                           </script>
+                                swal("Oops", "{{ $error }}", "error");
+                            </script>
                         @endforeach
                     </ul>
                 </div>
@@ -70,33 +71,15 @@
                 {{ csrf_field() }}
 
                 <div class="login__form-element required">
-                    <input type="text" name="firstname" placeholder="İsim" data-validation="required"
-                           value="{{ old('firstname') }}">
-                    @if ($errors->has('firstname'))
+                    <input type="text" name="username" placeholder="Üye Adı" data-validation="required"
+                           value="{{ old('username') }}">
+                    @if ($errors->has('username'))
                         <span class="help-block">
-                                        <strong>{{ $errors->first('firstname') }}</strong>
+                                        <strong>{{ $errors->first('username') }}</strong>
                                     </span>
                     @endif
                 </div>
-                <div class="login__form-element required">
-                    <input type="text" name="lastname" placeholder="Soy İsim" data-validation="required"
-                           value="{{ old('lastname') }}">
-                    @if ($errors->has('lastname'))
-                        <span class="help-block">
-                                        <strong>{{ $errors->first('lastname') }}</strong>
-                                    </span>
-                    @endif
-                </div>
-                <div class="login__form-element required">
-                    <input class="username" type="text" name="name" placeholder="Kullanıcı adı"
-                           data-validation="server required length" data-validation-length="max15"
-                           value="{{ old('name') }}" data-validation-url="{{ route('ajax::username_check') }}">
-                    @if ($errors->has('name'))
-                        <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                    @endif
-                </div>
+
                 <div class="login__form-element required">
                     <input class="email" type="text" name="email" placeholder="E-posta adresi"
                            data-validation="server required email" value="{{ old('email') }}"
@@ -116,15 +99,32 @@
                                     </span>
                     @endif
                 </div>
-
                 <div class="login__form-element required">
-                    <input type="password" name="password_confirmation" placeholder="Şifreyi Tekrarla"
-                           data-validation="required length" data-validation-length="min6">
-
+                    Doğum Tarihi
+                    <hr>
+                    <select name="dob_month" class="input" style="width: 100%;padding: 12px 16px;background-color: transparent;border-radius: 3px;color: #333;font-size: 13px;border: 1px solid #ddd;font-family: Roboto;outline: 0;background-clip: padding-box;">
+                        <option value="0" selected="selected">Ay Seçin</option>
+                        <option value="1">Ocak</option>
+                        <option value="2">Şubat</option>
+                        <option value="3">Mart</option>
+                        <option value="4">Nisan</option>
+                        <option value="5">Mayıs</option>
+                        <option value="6">Haziran</option>
+                        <option value="7">Temmuz</option>
+                        <option value="8">Ağustos</option>
+                        <option value="9">Eylül</option>
+                        <option value="10">Ekim</option>
+                        <option value="11">Kasım</option>
+                        <option value="12">Aralık</option>
+                    </select>
+                    <input type="text" class="input" name="dob_day" pattern="\d*" size="4" maxlength="2"
+                           placeholder="Gün">
+                    <input type="text" class="input" name="dob_year" pattern="\d*" size="6" maxlength="4"
+                           placeholder="Yıl">
                 </div>
 
                 <div class="login__form-element login__form-agreement required">
-                    <input type="checkbox" id="user-agreement" data-validation="required">
+                    <input type="checkbox" id="user-agreement" name="accept" data-validation="required">
                     <label for="user-agreement"><a href="{{ route('memberAgree') }}" target="_blank">Üyelik
                             sözleşmesini</a> kabul ediyorum.</label>
                 </div>
@@ -283,10 +283,10 @@
 </a>
 </div>--}}
 
-<div class="banner" style="height:65px; background: #007EE7 url(https://www.sanalyer.com/resimler/sanalyer_app.jpg) no-repeat top center;    background-size: 780px !important;background-position: center -15px !important;">
+{{--<div class="banner" style="height:65px; background: #007EE7 url(https://www.sanalyer.com/resimler/sanalyer_app.jpg) no-repeat top center;    background-size: 780px !important;background-position: center -15px !important;">
     <a href="https://play.google.com/store/apps/details?id=com.radkod.sanalyer" target="_blank" title="Teknoloji Haberleri" style="display:block;position:relative;height:65px">
     </a>
-</div>
+</div>--}}
 
 <div class="drawer">
     <div class="drawer__header clearfix">

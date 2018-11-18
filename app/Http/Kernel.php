@@ -59,7 +59,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         "cors" => \Barryvdh\Cors\HandleCors::class,
         'admin' => \App\Http\Middleware\Admin::class,
-        'xen.auth' => \Urb\XenforoBridge\Middleware\XenAuthMiddleware::class,
-        'xen.auth.admin' => \Urb\XenforoBridge\Middleware\XenAuthAdminMiddleware::class,
+        'forum.login' => \App\Http\Middleware\ForumLogin::class,
     ];
 }

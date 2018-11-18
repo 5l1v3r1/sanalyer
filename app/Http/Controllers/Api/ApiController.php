@@ -54,6 +54,7 @@ class ApiController extends Controller {
      * @return mixed
      */
     protected function respondWithPagination(Paginator $paginate, $data, $message){
+        $paginate = $paginate->appends(request()->input());
         $totalPages = ceil($paginate->total() / $paginate->perPage());
         $data = array_merge($data, [
             'paginator' => [

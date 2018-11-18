@@ -13,7 +13,7 @@ class AddParentIdToComments extends Migration
      */
     public function up()
     {
-        Schema::table('comments', function($table) {
+        Schema::table('site_comments', function($table) {
             $table->integer('parent_id')->nullable();
         });
     }
