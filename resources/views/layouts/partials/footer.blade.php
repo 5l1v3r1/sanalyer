@@ -337,7 +337,8 @@
 
 
     }(jQuery, window, document));
-</script><script>
+</script>
+<script>
     /*
     $('.sidebar').wtStickyScroll({
         container: '.global-container',

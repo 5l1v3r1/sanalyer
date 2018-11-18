@@ -292,9 +292,9 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'ImageInter' => Intervention\Image\Facades\Image::class,
-        'Images' => Folklore\Image\Facades\Image::class,
+        'Image' => Folklore\Image\Facades\Image::class,
 
-        'Image' => Intervention\Image\Facades\Image::class,
+        // 'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

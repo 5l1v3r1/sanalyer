@@ -12,6 +12,8 @@
         <script src="{{ asset("js/tinymce/tinymce.min.js") }}"></script>
         <script src="{{ asset("js/tinymce/init-tinymce-radkodV5.js") }}"></script>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <link rel="dns-prefetch" href="https://cdn.sanalyer.com"/>
+        <link rel="preconnect" href="https://cdn.sanalyer.com"/>
     </head>
 <body>
 @include('layouts.partials.header')

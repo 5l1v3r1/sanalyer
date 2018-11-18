@@ -6,6 +6,11 @@ use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Illuminate\Support\Facades\Blade;
 use Radkod\Xenforo2\XenforoBridge\Contracts\Factory as ForumAuthFactory;
 
+function cdnAsset($path)
+{
+    return "https://cdn.".env('PURE_URL').'/'.$path;
+}
+
 function forumAuth()
 {
     return app(ForumAuthFactory::class);
@@ -18,9 +23,9 @@ function forumAuth()
 function checkImage($image)
 {
     if (file_exists('resimler/' . $image)) {
-        $image = asset('resimler/' . $image);
+        $image = 'https://cdn.'.env('PURE_URL').'/resimler/' . $image;
     } else {
-        $image = asset('rk_content/images/no-img.png');
+        $image = 'https://cdn.'.env('PURE_URL').'/resimler/rk_content/images/no-img.png';
     }
     return $image;
 }
