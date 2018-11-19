@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('css')
-    <link href="{{ \App\cdnAsset('/assets/default/css/other-pages.css?v=2.3.4') }}" rel="stylesheet" media="all"/>
+    <link href="{{ asset('/assets/default/css/other-pages.css?v=2.3.4') }}" rel="stylesheet" media="all"/>
 @endsection
 
 @section('content')
