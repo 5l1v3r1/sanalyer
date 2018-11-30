@@ -9,7 +9,7 @@
                     <news:language>{{ $channel['lang'] }}</news:language>
                 </news:publication>
                 <news:genres>{{ $item['category']['category'] }}</news:genres>
-                <news:publication_date>{{ $item['pubdate'] }}</news:publication_date>
+                <news:publication_date>{{ $item['category']['date_format'] }}</news:publication_date>
                 <news:title>{!! $item['title'] !!}</news:title>
                 <news:keywords>{{ $item['category']['tags'] }}</news:keywords>
             </news:news>

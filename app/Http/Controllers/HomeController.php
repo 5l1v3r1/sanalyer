@@ -204,7 +204,7 @@ class HomeController extends Controller
                 } else {
                     $url = route('show_video', str_slug($p->title) . '-' . $p->id);
                 }
-                $feed->add($p->title, $p->user->firstname . ' ' . $p->user->lastname, $url, $p->updated_at, $postDesc, $postContent, $image, ['category'=>$category, 'tags'=>$tags]);
+                $feed->add($p->title, $p->user->firstname . ' ' . $p->user->lastname, $url, $p->updated_at, $postDesc, $postContent, $image, ['category'=>$category, 'tags'=>$tags, 'date_format' => date('c', strtotime($date))]);
             }
         }
 
