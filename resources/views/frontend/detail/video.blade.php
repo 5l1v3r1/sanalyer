@@ -206,19 +206,19 @@
                     <div class="content-body__detail" itemprop="articleBody">
                         <!-- content-ads -->
                         <div class="ads ads-300x250-content visible-mobile">
-                            Mobil Reklam
+                            @include('ads.post_mobile_300_250')
                         </div>
                         {!! $postContent !!}
                         <div class="bottom-new-video"></div>
 
 
                         <div class="hide-mobile" style="margin: 10px 0px">
-                            reklalm
+                            @include('ads.video_footer_728_90')
                         </div>
 
 
                         <div class="visible-mobile">
-                            reklam mobil
+                            @include('ads.video_footer_728_90')
                         </div>
 
                     </div>

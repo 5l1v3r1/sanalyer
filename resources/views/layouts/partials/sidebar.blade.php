@@ -1,8 +1,6 @@
 <div class="sidebar hide-mobile">
 
-    <a href="https://www.radkod.com" target="_blank" title="Freelance Web Tasarım">
-        <img src="https://www.sanalyer.com/resimler/radkod_freelance_ekibi.png" alt="RadKod">
-    </a>
+    @include('ads.sidebar_top_300_250')
 {{--
     <div class="sidebar-block">
         <div class="sidebar-teknostore">
@@ -104,9 +102,8 @@
     </div>
 
     <div class="sidebar-sticky">
-        <a href="https://www.radkod.com" target="_blank" title="Freelance Web Tasarım">
-            <img src="https://www.sanalyer.com/resimler/radkod_freelance_ekibi.png" alt="RadKod">
-        </a>
+        @include('ads.sidebar_footer_300_250')
+
         <div style="width: 125px !important;height: 80px !important;">
             <div style="display: block;padding-left: 65px;">
                 <a href="http://yazarkafe.hurriyet.com.tr" class="BoomadsButtonLink144" target="_blank" rel="nofollow">

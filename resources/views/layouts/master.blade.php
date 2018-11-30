@@ -14,6 +14,16 @@
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <link rel="dns-prefetch" href="https://cdn.sanalyer.com"/>
         <link rel="preconnect" href="https://cdn.sanalyer.com"/>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+        <!-- global reklam -->
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-2344798961183900",
+                enable_page_level_ads: true
+            });
+        </script>
+
     </head>
 <body>
 @include('layouts.partials.header')

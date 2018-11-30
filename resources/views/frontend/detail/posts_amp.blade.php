@@ -23,6 +23,9 @@
     <script async custom-element="amp-vimeo" src="https://cdn.ampproject.org/v0/amp-vimeo-0.1.js"></script>
     <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
     <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async></script>
+    <script async custom-element="amp-auto-ads"
+            src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
     <script src="https://cdn.ampproject.org/v0.js" async></script>
     <style amp-custom>
         body {
@@ -2031,6 +2034,9 @@
             <div class="amp-wp-article-content">
                 <div class="amp-wp-content the_content">
                    <h3> {!! $postDesc !!}</h3>
+                    <amp-auto-ads type="adsense"
+                                  data-ad-client="ca-pub-2344798961183900">
+                    </amp-auto-ads>
                     {!! $postContent !!}
                 </div>
                 <div class="amp-wp-content amp-wp-article-tags amp-wp-article-category ampforwp-meta-taxonomy">

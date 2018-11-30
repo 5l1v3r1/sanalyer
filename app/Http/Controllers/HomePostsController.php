@@ -264,7 +264,7 @@ class HomePostsController extends Controller
                 $tag = "";
 
                 foreach ($tags as $item){
-                    $tag .= '#'.str_slug($item). ' ';
+                    $tag .= '#'.str_replace('-', '_', str_slug($item)). ' ';
                 }
 
                 SendTo::Twitter(
@@ -344,7 +344,7 @@ class HomePostsController extends Controller
                 $tag = "";
 
                 foreach ($tags as $item){
-                    $tag .= '#'.str_slug($item). ' ';
+                    $tag .= '#'.str_replace('-', '_', str_slug($item)). ' ';
                 }
 
                 SendTo::Twitter(

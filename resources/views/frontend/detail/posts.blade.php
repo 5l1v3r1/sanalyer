@@ -258,15 +258,20 @@
 
                             <div id="vidout_inread"></div>
                             <div class="content-body__detail" itemprop="articleBody">
-                               {{-- <!-- content-ads -->
+                                <!-- content-ads -->
                                 <div class="ads ads-300x250-content visible-mobile">
-                                    Mobil Reklam
-                                </div>--}}
+                                    @include('ads.post_mobile_300_250')
+                                </div>
                                 {!! $postContent !!}
                                 <div class="bottom-new-video"></div>
+                                <div class="hide-mobile" style="margin: 10px 0px">
+                                    @include('ads.post_footer_728_90')
+                                </div>
 
 
-
+                                <div class="visible-mobile">
+                                    @include('ads.post_footer_728_90')
+                                </div>
                             </div>
 
                         {{--

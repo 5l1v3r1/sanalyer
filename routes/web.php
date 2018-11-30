@@ -113,6 +113,7 @@ $homeRoute = function () {
 
     Route::get('/rss.xml', 'HomeController@rss')->name("rss");
     Route::get('/feed', 'HomeController@feed')->name("feed");
+    Route::get('/news_feed', 'HomeController@google_rss')->name("google_rss");
     Route::get('/sitemap_{page}.xml', 'HomeController@sitemapDetail')->name("sitemap");
     Route::get('/sitemap.xml', 'HomeController@sitemap')->name("sitemapindex");
 

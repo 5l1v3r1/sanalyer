@@ -174,6 +174,43 @@ class HomeController extends Controller
         return $feed->render('rss');
     }
 
+    public function google_rss()
+    {
+        $date = date('Y-m-d H:i:s');
+        $take = 20;
+        $feed = App::make('feed');
+        $feed->setCache('feed', 60);
+        if (!$feed->isCached()) {
+            $posts = Posts::take($take)->where('status', 1)->where('location', '!=', 5)->where('created_at', '<=', $date)->orderBy('created_at', 'DESC')->get();
+            $feed->ctype = "text/xml";
+            $feed->title = env('APP_NAME');
+            $feed->description = env('APP_DESC');
+            $feed->logo = asset('rk_content/rss.png');
+            $feed->link = route('feed');
+            $feed->setDateFormat('datetime');
+            $feed->pubdate = $posts[0]->created_at;
+            $feed->lang = 'tr';
+            $feed->setShortening(true);
+            $feed->setTextLimit(200);
+            foreach ($posts as $p) {
+                $postDescEx = explode('----------------------', $p->content);
+                $postDesc = $postDescEx[0];
+                $postContent = $postDescEx[1];
+                $tags = $p->tag;
+                $category = $p->category()->first()->title;
+                $image = ['url' => checkImage($p->image), 'type' => 'image/jpeg'];
+                if ($p->type == 0) {
+                    $url = route('show_post', str_slug($p->title) . '-' . $p->id);
+                } else {
+                    $url = route('show_video', str_slug($p->title) . '-' . $p->id);
+                }
+                $feed->add($p->title, $p->user->firstname . ' ' . $p->user->lastname, $url, $p->updated_at, $postDesc, $postContent, $image, ['category'=>$category, 'tags'=>$tags]);
+            }
+        }
+
+        return $feed->render('google_news');
+    }
+
     public function feed()
     {
         $date = date('Y-m-d H:i:s');
