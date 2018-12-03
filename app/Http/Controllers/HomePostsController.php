@@ -436,6 +436,7 @@ class HomePostsController extends Controller
             $responseText = 'İçerik Onaya Sunuldu.';
         }
         if ($validator->passes()) {
+            $date = Carbon::createFromFormat('d-m-Y H:i:s', $request->date)->toDateTimeString();
             if ($request->file('image')) {
                 $imageName = str_slug($request->title) . '.' . request()->image->getClientOriginalExtension();
                 request()->image->move("../public_html/resimler", $imageName);
@@ -449,6 +450,7 @@ class HomePostsController extends Controller
             $post->video = $request->video;
             $post->location = $request->location;
             $post->tag = $request->tag;
+            $post->created_at = $date;
             $post->save();
             alert()->success($responseText);
             return redirect(route('threads'));
@@ -482,6 +484,7 @@ class HomePostsController extends Controller
             $responseText = 'İçerik Onaya Sunuldu.';
         }
         if ($validator->passes()) {
+            $date = Carbon::createFromFormat('d-m-Y H:i:s', $request->date)->toDateTimeString();
             if ($request->file('image')) {
                 $imageName = str_slug($request->title) . '.' . request()->image->getClientOriginalExtension();
                 request()->image->move("../public_html/resimler", $imageName);
@@ -495,6 +498,7 @@ class HomePostsController extends Controller
             $post->video = $request->video;
             $post->location = $request->location;
             $post->tag = $request->tag;
+            $post->created_at = $date;
             $post->save();
             alert()->success($responseText);
             return redirect(route('threads'));
