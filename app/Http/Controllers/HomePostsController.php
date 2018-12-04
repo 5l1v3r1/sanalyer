@@ -348,14 +348,14 @@ class HomePostsController extends Controller
                 }
 
                 SendTo::Twitter(
-                    $post->title.' '.route('show_post',$post->full_url). ' '.$tag
+                    $post->title.' '.route('show_video',$post->full_url). ' '.$tag
                 );
 
                 SendTo::Facebook(
                     'photo',
                     [
                         'photo' => asset('resimler/'.$post->image),
-                        'message' => $post->title.' '.route('show_post',$post->full_url). ' '.$tag
+                        'message' => $post->title.' '.route('show_video',$post->full_url). ' '.$tag
                     ]
                 );
             }
