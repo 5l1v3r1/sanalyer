@@ -91,6 +91,36 @@
         }
       }
     },
+    "/post/{id}/comments": {
+      "get": {
+        "tags": [
+          "post"
+        ],
+        "summary": "Post Comments",
+        "description": "",
+        "operationId": "getPostComments",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "description": "The Post ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/PostComments"
+            },
+            "description": "Successful Operation"
+          },
+          "500": {
+            "description": "Post Not Found"
+          }
+        }
+      }
+    },
     "/category": {
       "get": {
         "tags": [
@@ -463,6 +493,60 @@
         }
       },
       "type": "object"
+    },
+    "PostComments": {
+      "description": "Post Comments Detail",
+      "properties": {
+        "status": {
+          "description": "Status Info",
+          "type": "string"
+        },
+        "status_code": {
+          "description": "Status Code",
+          "type": "integer"
+        },
+        "message": {
+          "description": "Request Info",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/PostCommentsData"
+        }
+      },
+      "type": "object"
+    },
+    "PostCommentsData": {
+      "description": "Post Comments Data",
+      "properties": {
+        "id": {
+          "description": "Comment ID",
+          "type": "integer"
+        },
+        "user": {
+          "description": "User Name",
+          "type": "string"
+        },
+        "posts_id": {
+          "description": "Post ID",
+          "type": "integer"
+        },
+        "content": {
+          "description": "Comment content",
+          "type": "string"
+        },
+        "created_at": {
+          "description": "Post Created At",
+          "type": "string"
+        },
+        "updated_at": {
+          "description": "Post Updated At",
+          "type": "string"
+        },
+        "children": {
+          "description": "Comment child comments OR Null",
+          "type": "object"
+        }
+      }
     },
     "PostDetailData": {
       "description": "Post Detail Data",

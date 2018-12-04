@@ -4,7 +4,7 @@ info:
   version: "1.0.0"
   title: "Sanalyer Api"
   x-logo:
-      url: 'https://www.sanalyer.com/assets/swagger/sanalyer_api.png'
+    url: 'https://www.sanalyer.com/assets/swagger/sanalyer_api.png'
   termsOfService: "https://www.sanalyer.com/gizlilik"
   contact:
     email: "info@sanalyer.com"
@@ -14,24 +14,24 @@ info:
 host: "www.sanalyer.com"
 basePath: "/api/v1"
 tags:
-- name: "post"
-  description: "Access to posts"
-- name: "category"
-  description: "Access to categories"
-- name: "user"
-  description: "Operations about user"
+  - name: "post"
+    description: "Access to posts"
+  - name: "category"
+    description: "Access to categories"
+  - name: "user"
+    description: "Operations about user"
 produces:
-- "application/json"
+  - "application/json"
 consumes:
-- "application/json"
+  - "application/json"
 schemes:
-- "https"
-- "http"
+  - "https"
+  - "http"
 paths:
   /post:
     get:
       tags:
-      - "post"
+        - "post"
       summary: "Posts List"
       description: ""
       operationId: "getPosts"
@@ -43,7 +43,7 @@ paths:
   /post/{id}:
     get:
       tags:
-      - "post"
+        - "post"
       summary: "Posts Detail"
       description: ""
       operationId: "getPostDetail"
@@ -60,10 +60,30 @@ paths:
           description: "Successful Operation"
         500:
           description: "Post Not Found"
+  /post/{id}/comments:
+    get:
+      tags:
+        - "post"
+      summary: "Post Comments"
+      description: ""
+      operationId: "getPostComments"
+      parameters:
+        - in: "path"
+          name: "id"
+          required: true
+          type: integer
+          description: "The Post ID"
+      responses:
+        200:
+          schema:
+            $ref: '#/definitions/PostComments'
+          description: "Successful Operation"
+        500:
+          description: "Post Not Found"
   /category:
     get:
       tags:
-      - "category"
+        - "category"
       summary: "Category List"
       description: ""
       operationId: "getCategories"
@@ -75,7 +95,7 @@ paths:
   /category/{id}:
     get:
       tags:
-      - "category"
+        - "category"
       summary: "Category Detail"
       description: ""
       operationId: "getCategoryDetail"
@@ -93,13 +113,13 @@ paths:
         500:
           description: "Post Not Found"
   /user/login:
-      post:
-        tags:
+    post:
+      tags:
         - "user"
-        summary: "User Login"
-        description: ""
-        operationId: "userLogin"
-        parameters:
+      summary: "User Login"
+      description: ""
+      operationId: "userLogin"
+      parameters:
         - in: "query"
           name: "email"
           required: true
@@ -110,21 +130,21 @@ paths:
           required: true
           type: string
           description: "User Password"
-        responses:
-          200:
-            description: "Successful Operation"
-          422:
-            description: "Fields Validation Failed"
-          401:
-            description: "Invalid Email or Password"
+      responses:
+        200:
+          description: "Successful Operation"
+        422:
+          description: "Fields Validation Failed"
+        401:
+          description: "Invalid Email or Password"
   /user/register:
-      post:
-        tags:
+    post:
+      tags:
         - "user"
-        summary: "User Register"
-        description: ""
-        operationId: "userRegister"
-        parameters:
+      summary: "User Register"
+      description: ""
+      operationId: "userRegister"
+      parameters:
         - in: "query"
           name: "name"
           required: true
@@ -155,29 +175,29 @@ paths:
           required: true
           type: string
           description: "User Password Confirmation"
-        responses:
-          200:
-            description: "Successful Operation"
-          422:
-            description: "Fields Validation Failed"
-          401:
-            description: "Invalid Email or Password"
+      responses:
+        200:
+          description: "Successful Operation"
+        422:
+          description: "Fields Validation Failed"
+        401:
+          description: "Invalid Email or Password"
   /user/logout/{api_token}:
-      get:
-        tags:
+    get:
+      tags:
         - "user"
-        summary: "User Logout"
-        description: ""
-        operationId: "userLogout"
-        parameters:
-          - in: "path"
-            name: "api_token"
-            required: true
-            type: string
-            description: "The API Token"
-        responses:
-          200:
-            description: "Successful Operation"
+      summary: "User Logout"
+      description: ""
+      operationId: "userLogout"
+      parameters:
+        - in: "path"
+          name: "api_token"
+          required: true
+          type: string
+          description: "The API Token"
+      responses:
+        200:
+          description: "Successful Operation"
 
 definitions:
   Post:
@@ -328,6 +348,48 @@ definitions:
         description: 'Post Updated At'
         type: string
     type: object
+
+  PostComments:
+    description: "Post Comments Detail"
+    properties:
+      status:
+        description: 'Status Info'
+        type: string
+      status_code:
+        description: "Status Code"
+        type: integer
+      message:
+        description: "Request Info"
+        type: string
+      data:
+        $ref: '#/definitions/PostCommentsData'
+    type: object
+
+  PostCommentsData:
+    description: "Post Comments Data"
+    properties:
+      id:
+        description: 'Comment ID'
+        type: integer
+      user:
+        description: 'User Name'
+        type: string
+      posts_id:
+        description: 'Post ID'
+        type: integer
+      content:
+        description: 'Comment content'
+        type: string
+      created_at:
+        description: 'Post Created At'
+        type: string
+      updated_at:
+        description: 'Post Updated At'
+        type: string
+      children:
+        description: 'Comment child comments OR Null'
+        type: object
+
 
   PostDetailData:
     description: "Post Detail Data"

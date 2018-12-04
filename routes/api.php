@@ -25,6 +25,7 @@ Route::group(['middleware' => 'cors', 'prefix' => '/v1'], function () {
 Route::group(['prefix' => '/v1'], function () {
     Route::get('/post', 'Api\PostsController@posts');
     Route::get('/post/{id}', 'Api\PostsController@post');
+    Route::get('/post/{id}/comments', 'Api\PostsController@post_comments');
 
     Route::get('/category', 'Api\CategoryController@categories');
     Route::get('/category/{id}', 'Api\CategoryController@category');
