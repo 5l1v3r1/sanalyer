@@ -52,34 +52,6 @@
 @section('script')
     <script>
         $(function () {
-            {{--
-        if (!isMobile && getCookie('masthead-v2') != 'hidden') {
-
-
-            var mastheadHTML = '<div class="wt-masthead hide-mobile" id="wt-masthead">' +
-                '<div class="wt-masthead__horizontal">' +
-                '<div class="wt-masthead__vertical">' +
-                'reklam üst' +
-                '<div class="wt-masthead__close">Reklamı gizle</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>';
-
-            //$(mastheadHTML).insertAfter('.banner');
-            $('body').prepend(mastheadHTML);
-
-
-            $('.wt-container').css({
-                'margin-top': '0px',
-                'padding-top': '0px'
-            });
-            $('.headline').css({
-                'margin-top': '0px',
-                'padding-top': '0px'
-            });
-
-        }--}}
 
             $('.content-timeline__item').wtTimeline({
                 header: '.header',

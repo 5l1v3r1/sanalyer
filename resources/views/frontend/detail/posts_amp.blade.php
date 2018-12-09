@@ -7,7 +7,6 @@
     <meta name="amp-google-client-id-api" content="googleanalytics">
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
     {!! app('seotools')->generate() !!}
-    <script custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js" async></script>
     <script custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js" async></script>
     <script custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js" async></script>
     <script custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"
@@ -23,9 +22,11 @@
     <script async custom-element="amp-vimeo" src="https://cdn.ampproject.org/v0/amp-vimeo-0.1.js"></script>
     <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
     <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async></script>
-    <script async custom-element="amp-auto-ads"
-            src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
+
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    <script async custom-element="amp-sticky-ad" src="https://cdn.ampproject.org/v0/amp-sticky-ad-1.0.js"></script>
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+
     <script src="https://cdn.ampproject.org/v0.js" async></script>
     <style amp-custom>
         body {
@@ -782,6 +783,20 @@
 
         .amp-wp-byline amp-img {
             display: none
+        }
+
+        .ad-container {
+            display: flex;
+            justify-content: center;
+        }
+        .ads-300x250 {
+            width:300px;
+            height: 250px;
+            margin: 0 auto;
+            background: url({{ asset('assets/default/images/loading-gray.gif') }}) center center no-repeat #E0E0E0;
+            background-size: 45px;
+            position:relative;
+            margin-top: 16px;
         }
 
         .amp-wp-author {
@@ -2034,9 +2049,16 @@
             <div class="amp-wp-article-content">
                 <div class="amp-wp-content the_content">
                    <h3> {!! $postDesc !!}</h3>
-                    <amp-auto-ads type="adsense"
-                                  data-ad-client="ca-pub-2344798961183900">
-                    </amp-auto-ads>
+
+                    <div class="ads-300x250">
+                    <amp-ad width=300 height=250
+                            type="adsense"
+                            data-ad-client="ca-pub-2344798961183900"
+                            data-ad-slot="7263581071">
+                    </amp-ad>
+                    </div>
+
+
                     {!! $postContent !!}
                 </div>
                 <div class="amp-wp-content amp-wp-article-tags amp-wp-article-category ampforwp-meta-taxonomy">

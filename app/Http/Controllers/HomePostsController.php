@@ -271,13 +271,13 @@ class HomePostsController extends Controller
                     $post->title.' '.route('show_post',$post->full_url). ' '.$tag
                 );
 
-                SendTo::Facebook(
+                /*SendTo::Facebook(
                     'photo',
                     [
                         'photo' => asset('resimler/'.$post->image),
                         'message' => $post->title.' '.route('show_post',$post->full_url). ' '.$tag
                     ]
-                );
+                );*/
             }
 
 
@@ -351,13 +351,13 @@ class HomePostsController extends Controller
                     $post->title.' '.route('show_video',$post->full_url). ' '.$tag
                 );
 
-                SendTo::Facebook(
+                /*SendTo::Facebook(
                     'photo',
                     [
                         'photo' => asset('resimler/'.$post->image),
                         'message' => $post->title.' '.route('show_video',$post->full_url). ' '.$tag
                     ]
-                );
+                );*/
             }
 
             alert()->success($responseText);
