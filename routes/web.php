@@ -120,6 +120,7 @@ $homeRoute = function () {
     Route::get('/giris', function () {
         return redirect(env('FORUM_URL').'/login');
     })->name('login');
+
     /* Old User Route
     Route::get('giris', 'Auth\LoginController@showLoginForm')->name("login");
     Route::post('giris', 'Auth\LoginController@login')->name("loginPost");
@@ -160,6 +161,10 @@ $homeRoute = function () {
     Route::get('/spintest',function() {
         echo \App\articleRewriter('merhaba');
     });
+
+    Route::get('/phpinfo', function () {
+        phpinfo();
+    };
 
 };
 
