@@ -35,7 +35,6 @@
             -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
             animation: -amp-start 8s steps(1, end) 0s 1 normal both
         }
-
         @-webkit-keyframes -amp-start {
             from {
                 visibility: hidden
@@ -44,7 +43,6 @@
                 visibility: visible
             }
         }
-
         @-moz-keyframes -amp-start {
             from {
                 visibility: hidden
@@ -137,12 +135,6 @@
             text-align: center;
             margin: 0 auto
         }
-
-        #statcounter {
-            width: 1px;
-            height: 1px
-        }
-
         amp-anim {
             max-width: 100%
         }
@@ -158,7 +150,6 @@
             url('{{ asset('assets/default/fonts/pt_sans-web-regular-webfont.ttf') }}') format("truetype"),
             url('{{ asset('assets/default/fonts/pt_sans-web-regular-webfont.svg#PTSans') }}') format("svg")
         }
-
         @font-face {
             font-family: PTSans;
             font-style: italic;
@@ -171,8 +162,6 @@
             url('{{ asset('assets/default/fonts/pt_sans-web-italic-webfont.ttf') }}') format("truetype"),
             url('{{ asset('assets/default/fonts/pt_sans-web-italic-webfont.svg#PTSans') }}') format("svg")
         }
-
-
         @font-face {
             font-family: TMSans;
             src: url('{{ asset('assets/default/fonts/TMSans-Regular.eot?#iefix') }}') format("embedded-opentype"),
@@ -182,7 +171,6 @@
             font-weight: 400;
             font-style: normal
         }
-
         @font-face {
             font-family: TMSans;
             src: url('{{ asset('assets/default/fonts/TMSans-Bold.eot?#iefix') }}') format("embedded-opentype"),
@@ -192,9 +180,6 @@
             font-weight: 700;
             font-style: normal
         }
-
-
-
         .amp-wp-content, .amp-wp-title-bar div {
             max-width: 1000px;
             margin: 0 auto
@@ -205,18 +190,6 @@
             background: #131313;
             font-family: 'TMSans', serif
         }
-
-        .amp-sidebar-image {
-            line-height: 100px;
-            vertical-align: middle
-        }
-
-        .amp-close-image {
-            top: 15px;
-            left: 225px;
-            cursor: pointer
-        }
-
         .navigation_heading {
             padding: 20px 20px 15px 20px;
             color: #aaa;
@@ -228,7 +201,6 @@
             display: inline-block;
             width: 100%
         }
-
         .toggle-navigationv2 ul {
             list-style-type: none;
             margin: 15px 0 0 0;
@@ -242,11 +214,9 @@
             color: #eee;
             width: 94%
         }
-
         .amp-menu li {
             position: relative
         }
-
         .toggle-navigationv2 ul li a:hover {
             background: #666;
             color: #fff
@@ -269,7 +239,6 @@
         .amp-menu li.menu-item-has-children:hover > ul {
             display: block
         }
-
         .amp-menu li.menu-item-has-children:after {
             content: '\25be';
             position: absolute;
@@ -289,38 +258,6 @@
             color: #fff;
             width: 100%
         }
-
-        .menu-all-pages-container:after {
-            content: "";
-            clear: both
-        }
-
-        .toggle-text {
-            color: #fff;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            display: inherit;
-            text-align: center
-        }
-
-        .toggle-text:before {
-            content: "...";
-            font-size: 32px;
-            font-family: georgia;
-            line-height: 0px;
-            margin-left: 0px;
-            letter-spacing: 1px;
-            top: -3px;
-            position: relative;
-            padding-right: 10px
-        }
-
-        .toggle-navigation:hover, .toggle-navigation:active, .toggle-navigation:focus {
-            display: inline-block;
-            width: 100%
-        }
-
         .sticky_social {
             width: 100%;
             bottom: 0;
@@ -334,7 +271,6 @@
             z-index: 10;
             text-align: center
         }
-
         .amp-social-icon {
             width: 50px;
             height: 28px;
@@ -348,11 +284,6 @@
         .amp-social-icon amp-img {
             top: 4px
         }
-
-        .custom-amp-socialsharing-line {
-            background: #00b900
-        }
-
         .sticky_social .whatsapp-share-icon {
             padding: 4px 0px 14px 0px;
             height: 28px;
@@ -366,25 +297,21 @@
             top: -4px;
             position: relative
         }
-
         #header {
             background: #fff;
             text-align: center;
             height: 50px;
             box-shadow: 0 0 32px rgba(0, 0, 0, .15)
         }
-
         header {
             padding-bottom: 50px
         }
-
         #headerwrap {
             position: fixed;
             z-index: 1000;
             width: 100%;
             top: 0
         }
-
         #header h1 {
             text-align: center;
             font-size: 16px;
@@ -411,15 +338,6 @@
             margin: 0px 0px 5px 0px;
             line-height: 1.6
         }
-
-        .home-post_image {
-            float: left;
-            width: 33%;
-            padding-right: 2%;
-            overflow: hidden;
-            max-height: 225px
-        }
-
         .amp-wp-title {
             margin-top: 0px
         }
@@ -435,14 +353,6 @@
         h2.amp-wp-title a {
             color: #000
         }
-
-        .amp-wp-tags {
-            list-style-type: none;
-            padding: 0;
-            margin: 0 0 9px 0;
-            display: inline-flex
-        }
-
         .amp-wp-tags li {
             display: inline;
             background: #F6F6F6;
@@ -454,12 +364,6 @@
             margin-right: 8px;
             top: -3px;
             position: relative
-        }
-
-        .amp-loop-list {
-            position: relative;
-            border-bottom: 1px solid #ededed;
-            padding: 25px 15px 25px 15px
         }
 
         body .amp-loop-list-noimg .amp-wp-post-content {
@@ -512,18 +416,10 @@
             margin: 0
         }
 
-        .back-to-top {
-            padding-bottom: 8px
-        }
 
         .rightslink, #footer .rightslink a {
             font-size: 13px;
             color: #999
-        }
-
-        .poweredby {
-            padding-top: 10px;
-            font-size: 10px
         }
 
         #footer .poweredby a {
@@ -1713,79 +1609,6 @@
         .amp-wp-article-content img {
             max-width: 100%;
         }
-
-
-
-        .icon-twitter:before {
-            content: "\f099";
-            background: #1da1f2
-        }
-
-        .icon-facebook:before {
-            content: "\f09a";
-            background: #3b5998
-        }
-
-        .icon-facebook-f:before {
-            content: "\f09a";
-            background: #3b5998
-        }
-
-        .icon-pinterest:before {
-            content: "\f0d2";
-            background: #bd081c
-        }
-
-        .icon-google-plus:before {
-            content: "\f0d5";
-            background: #dd4b39
-        }
-
-        .icon-linkedin:before {
-            content: "\f0e1";
-            background: #0077b5
-        }
-
-        .icon-youtube-play:before {
-            content: "\f16a";
-            background: #cd201f
-        }
-
-        .icon-instagram:before {
-            content: "\f16d";
-            background: #c13584
-        }
-
-        .icon-tumblr:before {
-            content: "\f173";
-            background: #35465c
-        }
-
-        .icon-vk:before {
-            content: "\f189";
-            background: #45668e
-        }
-
-        .icon-whatsapp:before {
-            content: "\f232";
-            background: #075e54
-        }
-
-        .icon-reddit-alien:before {
-            content: "\f281";
-            background: #ff4500
-        }
-
-        .icon-snapchat-ghost:before {
-            content: "\f2ac";
-            background: #fffc00
-        }
-
-        .social_icons {
-            font-size: 15px;
-            display: inline-block
-        }
-
         .social_icons ul {
             list-style-type: none;
             padding: 0;
@@ -1833,11 +1656,6 @@
 
         #pagination .next a, #pagination .prev a, #pagination .next a, #pagination .prev a, .comment-button-wrapper a {
             color: #fff
-        }
-
-        .breadcrumb {
-            line-height: 1;
-            margin-bottom: 6px
         }
 
         .breadcrumb ul, .category-single ul {
@@ -2051,11 +1869,7 @@
                    <h3> {!! $postDesc !!}</h3>
 
                     <div class="ads-300x250">
-                    <amp-ad width=300 height=250
-                            type="adsense"
-                            data-ad-client="ca-pub-2344798961183900"
-                            data-ad-slot="7263581071">
-                    </amp-ad>
+                    @include('ads.amp_300_250')
                     </div>
 
 

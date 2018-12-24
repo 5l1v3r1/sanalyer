@@ -239,7 +239,7 @@ class HomePostsController extends Controller
         if ($validator->passes()) {
             if($request->file('image')){
                 $imageName = str_slug($request->title) .'.' . request()->image->getClientOriginalExtension();
-                request()->image->move("../public_html/resimler", $imageName);
+                request()->image->move("resimler", $imageName);
                 $post->image = $imageName;
             }else{
                 $post->image = 'yok.png';
@@ -318,7 +318,7 @@ class HomePostsController extends Controller
         if ($validator->passes()) {
             if($request->file('image')){
                 $imageName = str_slug($request->title) .'.' . request()->image->getClientOriginalExtension();
-                request()->image->move("../public_html/resimler", $imageName);
+                request()->image->move("resimler", $imageName);
                 $post->image = $imageName;
             }else{
                 $post->image = 'yok.png';
@@ -439,7 +439,7 @@ class HomePostsController extends Controller
             $date = Carbon::createFromFormat('d-m-Y H:i:s', $request->date)->toDateTimeString();
             if ($request->file('image')) {
                 $imageName = str_slug($request->title) . '.' . request()->image->getClientOriginalExtension();
-                request()->image->move("../public_html/resimler", $imageName);
+                request()->image->move("resimler", $imageName);
                 $post->image = $imageName;
             }
             $post->title = $request->title;
@@ -487,7 +487,7 @@ class HomePostsController extends Controller
             $date = Carbon::createFromFormat('d-m-Y H:i:s', $request->date)->toDateTimeString();
             if ($request->file('image')) {
                 $imageName = str_slug($request->title) . '.' . request()->image->getClientOriginalExtension();
-                request()->image->move("../public_html/resimler", $imageName);
+                request()->image->move("resimler", $imageName);
                 $post->image = $imageName;
             }
             $post->title = $request->title;
