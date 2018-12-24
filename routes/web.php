@@ -161,10 +161,6 @@ $homeRoute = function () {
     Route::get('/spintest',function() {
         echo \App\articleRewriter('merhaba');
     });
-
-    Route::get('/phpinfo', function () {
-        phpinfo();
-    });
 };
 
 
