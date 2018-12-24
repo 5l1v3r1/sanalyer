@@ -44,7 +44,7 @@ return [
 
     // Which folder to store files in project, fill in 'public', 'resources', 'storage' and so on.
     // You should create routes to serve images if it is not set to public.
-    'base_directory' => '../public_html',
+    'base_directory' => '/',
 
     'images_folder_name' => 'resimler',
     'files_folder_name'  => 'resimler/files',
