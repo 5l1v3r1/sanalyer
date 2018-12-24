@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+  <template type="admin" title="XGT_istatistik_acp_tab_menu" version_id="2000250" version_string="2.0.5"><![CDATA[<xf:macro name="option_form_block" arg-group="" arg-options="!" arg-containerBeforeHtml="">
+    <xf:if is="$options is not empty">
+        <xf:form action="{{ link('options/update') }}" ajax="true" class="block">
+            {$containerBeforeHtml|raw}
+            <div class="block-container">
+                <h2 class="block-tabHeader tabs" data-xf-init="tabs" role="tablist">
+                    <a class="tabs-tab is-active" 
+					 role="tab" tabindex="0" aria-controls="XGTistatiksecenekler">{{ phrase('XGT_istatistik_acp_tab_secenekler') }}</a>
+					<xf:if is="{{ $xf.options.XGT_istatistik_yeniMesaj_kapat_ac }}">
+					    <a class="tabs-tab" role="tab" tabindex="0" aria-controls="XGTistatikTab1">
+							{{ phrase('XGT_istatistik_acp_tab_yenimesajlar') }}</a>
+					</xf:if>
+					<xf:if is="{{ $xf.options.XGT_istatistik_yeniKonu_kapat_ac }}">
+					   <a class="tabs-tab" role="tab" tabindex="0" aria-controls="XGTistatikTab2">
+						   {{ phrase('XGT_istatistik_acp_tab_YeniKonular') }}</a>
+					</xf:if>
+					<xf:if is="{{ $xf.options.XGT_istatistik_EnCokCevap_konu_ackapat }}">
+					   <a class="tabs-tab" role="tab" tabindex="0" aria-controls="XGTistatikTab3">
+						   {{ phrase('XGT_istatistik_acp_tab_encok_cevaplanan_Konular') }}</a>
+					</xf:if>
+					<xf:if is="{{ $xf.options.XGT_istatistik_EnCokGoruntulenen_konu_ackapat }}">
+					  <a class="tabs-tab" role="tab" tabindex="0" aria-controls="XGTistatikTab4">
+						  {{ phrase('XGT_istatistik_acp_tab_encok_goruntulenen_Konular') }}</a>
+					</xf:if>
+					<xf:if is="{{ $xf.options.XGT_istatistik_EnCokBegenilen_konu_ackapat }}">
+						<a class="tabs-tab" role="tab" tabindex="0" aria-controls="XGTistatikTab5">
+							{{ phrase('XGT_istatistik_acp_tab_en_begenilen_Konular') }}</a>
+					</xf:if>
+				</h2>
+                <ul class="tabPanes">
+					<h3 class="block-header">
+					{{ phrase('XGT_istatistik_acp_tab_bilgilendirme_mesaji') }}
+					</h3>
+                    <li class="is-active" role="tabpanel" id="XGTistatiksecenekler">
+                        <div class="block-body">
+                            <xf:foreach loop="$options" value="$option">
+                            <xf:if is="$option.Relations.XGT_istatistik_secenekleri.display_order < 99">
+                                <xf:macro template="option_macros" name="option_row" arg-group="{$group}" arg-option="{$option}" />
+                            </xf:if>
+                            </xf:foreach>
+                        </div>
+                    </li>
+				<xf:if is="{{ $xf.options.XGT_istatistik_yeniMesaj_kapat_ac }}">
+                    <li role="tabpanel" id="XGTistatikTab1">
+                        <div class="block-body">
+                            <xf:foreach loop="$options" value="$option">
+                            <xf:if is="$option.Relations.XGT_istatistik_secenekleri.display_order >= 100 AND $option.Relations.XGT_istatistik_secenekleri.display_order < 199">
+                                <xf:macro template="option_macros" name="option_row" arg-group="{$group}" arg-option="{$option}" />
+                            </xf:if>	
+                            </xf:foreach>	
+                        </div>
+                    </li>
+				</xf:if>
+				<xf:if is="{{ $xf.options.XGT_istatistik_yeniKonu_kapat_ac }}">
+					<li role="tabpanel" id="XGTistatikTab2">
+                        <div class="block-body">
+                            <xf:foreach loop="$options" value="$option">
+                            <xf:if is="$option.Relations.XGT_istatistik_secenekleri.display_order >= 200 AND $option.Relations.XGT_istatistik_secenekleri.display_order < 299">
+                                <xf:macro template="option_macros" name="option_row" arg-group="{$group}" arg-option="{$option}" />
+                            </xf:if>
+                            </xf:foreach>
+                        </div>
+                    </li>
+				</xf:if>
+				<xf:if is="{{ $xf.options.XGT_istatistik_EnCokCevap_konu_ackapat }}">
+					<li role="tabpanel" id="XGTistatikTab3">
+                        <div class="block-body">
+                            <xf:foreach loop="$options" value="$option">
+                            <xf:if is="$option.Relations.XGT_istatistik_secenekleri.display_order >= 300 AND $option.Relations.XGT_istatistik_secenekleri.display_order < 399">
+                                <xf:macro template="option_macros" name="option_row" arg-group="{$group}" arg-option="{$option}" />
+                            </xf:if>
+                            </xf:foreach>
+                        </div>
+                    </li>
+				</xf:if>
+				<xf:if is="{{ $xf.options.XGT_istatistik_EnCokGoruntulenen_konu_ackapat }}">
+					<li role="tabpanel" id="XGTistatikTab4">
+                        <div class="block-body">
+                            <xf:foreach loop="$options" value="$option">
+                            <xf:if is="$option.Relations.XGT_istatistik_secenekleri.display_order >= 400 AND $option.Relations.XGT_istatistik_secenekleri.display_order < 499">
+                                <xf:macro template="option_macros" name="option_row" arg-group="{$group}" arg-option="{$option}" />
+                            </xf:if>
+                            </xf:foreach>
+                        </div>
+                    </li>
+				</xf:if>
+				  <xf:if is="{{ $xf.options.XGT_istatistik_EnCokBegenilen_konu_ackapat }}">
+					 <li role="tabpanel" id="XGTistatikTab5">
+                        <div class="block-body">
+                            <xf:foreach loop="$options" value="$option">
+                            <xf:if is="$option.Relations.XGT_istatistik_secenekleri.display_order >= 500 AND $option.Relations.XGT_istatistik_secenekleri.display_order < 599">
+                                <xf:macro template="option_macros" name="option_row" arg-group="{$group}" arg-option="{$option}" />
+                            </xf:if>
+                            </xf:foreach>
+                        </div>
+                      </li>
+				    </xf:if>
+                </ul>
+                <xf:submitrow sticky="true" icon="save" />
+            </div>
+        </xf:form>
+	</xf:if>
+</xf:macro>]]></template>
+  <template type="admin" title="widget_def_options_XGT_EnCokBegenKonu_widget" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[]]></template>
+  <template type="admin" title="widget_def_options_XGT_EnCokCevapKonu_widget" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[]]></template>
+  <template type="admin" title="widget_def_options_XGT_EnCokGrtKonu_widget" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[]]></template>
+  <template type="admin" title="widget_def_options_XGT_YeniKonular_widget" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[]]></template>
+  <template type="admin" title="widget_def_options_XGT_YeniMesajlar_widget" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[]]></template>
+  <template type="admin" title="widget_def_options_XGT_encokmesaj_kullanici" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[<hr class="formRowSep" />
+<xf:selectrow name="options[member_stat_key]" 
+			  value="{$options.member_stat_key}"
+	          label="{{ phrase('member_stat_to_display') }}">
+	<xf:options source="{$memberStats}" />
+</xf:selectrow>]]></template>
+  <template type="public" title="XGT_istatistik" version_id="2000250" version_string="2.0.5"><![CDATA[<xf:if is="{{ $xf.visitor.hasPermission('XGT_istatistik_izin_grubu','XGT_istatistik_gor') }}"> 
+ <xf:css src="XGT_istatistik.less" /> 
+ <div class="XGT-istatistik-genel--govde">
+	<div class="XGT-istatistik-govde--kolon forumStatsContainer {{ $showStats ? 'forumStats-shown' : 'forumStats-hidden' }}">
+		<div class="XGT-istatistik-govde--blok">
+			<h2 class="widget-tabs block-tabHeader tabs hScroller XGT-istatistik-tab-header 
+			   <xf:if is="{{ !$xf.visitor.hasPermission('XGT_istatistik_izin_grubu','XGT_istatistik_kullanici') }}">XGT-istatistik-radius"</xf:if>
+			   <xf:if is="!$xf.options.XGT_istatistik_Kullanici_kapat">XGT-istatistik-radius"</xf:if>																							   " 
+			data-xf-init="tabs h-scroller" 
+			data-state="replace" 
+			role="tablist">
+				<span class="hScroller-scroll">
+					<xf:if is="{{ $xf.options.XGT_istatistik_yeniMesaj_kapat_ac }}">	
+						<a href=""
+						class="tabs-tab is-active"
+						tabindex="0" 
+						role="tab"
+						aria-controls="XGT_istatistik_yenimesajlar_widget">
+						  {{ $xf.options.XGT_istatistik_yeniMesaj_baslik }}
+						</a>
+					</xf:if>
+					<xf:if is="{{ $xf.options.XGT_istatistik_yeniKonu_kapat_ac }}">
+						<a href=""
+						class="tabs-tab"
+						tabindex="0" 
+						id=""
+						role="tab">
+						  {{ $xf.options.XGT_istatistik_yeniKonu_baslik }}
+						</a>
+					</xf:if>
+					<xf:if is="{{ $xf.options.XGT_istatistik_EnCokCevap_konu_ackapat }}">
+						<a href=""
+						class="tabs-tab"
+						tabindex="0" 
+						id=""
+						role="tab">
+						  {{ $xf.options.XGT_istatistik_EnCokCevap_konubaslik }}
+						</a>
+					</xf:if>
+					<xf:if is="{{ $xf.options.XGT_istatistik_EnCokGoruntulenen_konu_ackapat }}">
+						<a href=""
+						class="tabs-tab"
+						tabindex="0" 
+						id=""
+						role="tab">
+						   {{ $xf.options.XGT_istatistik_EnCokGoruntulenen_konubaslik }}
+						</a>
+					</xf:if>
+					<xf:if is="{{ $xf.options.XGT_istatistik_EnCokBegenilen_konu_ackapat }}">
+						<a href=""
+						class="tabs-tab"
+						tabindex="0" 
+						id=""
+						role="tab">
+						   {{ $xf.options.XGT_istatistik_EnCokBegeni_konubaslik }}
+						</a>
+					</xf:if>
+				</span>
+			</h2>
+			
+			<ul class="tabPanes">
+				<div class="XGT-istatistik-blok">
+					<div class="XGT-istatistik-altheader">
+						<div class="XGT-istatistik-satir">	 					
+							<div class="XGT-istatistik-hucre XGT-istatistik-avatar"></div>	
+							<div class="XGT-istatistik-hucre">
+								{{ phrase('XGT_Konu') }}
+							</div>
+							<div class="XGT-istatistik-hucre XGT-istatistik-forum">
+								{{ phrase('XGT_forum') }}
+							</div>
+							<div class="XGT-istatistik-hucre XGT-istatistik-yanit">
+								{{ phrase('XGT_cevap') }}
+							</div>
+							<div class="XGT-istatistik-hucre XGT-istatistik--goruntuleme">
+								{{ phrase('XGT_Gosterim') }}
+							</div>
+							<div class="XGT-istatistik-hucre XGT-istatistik-zaman">
+								{{ phrase('XGT_zaman') }}
+							</div>				
+							<div class="XGT-istatistik-hucre XGT-istatistik-son--yazar">
+								{{ phrase('XGT_son_yazan') }}
+							</div>	
+						</div>		  
+					</div>
+				</div>
+				
+				<xf:if is="{{ $xf.options.XGT_istatistik_yeniMesaj_kapat_ac }}">	
+					<li class="is-active" role="tabpanel" id="XGT_istatistik_yenimesajlar_widget">
+						<div class="XGT-istatistik-govde">
+							<xf:widget key="XGT_istatistik_yenimesajlar_widget" />		
+						</div>
+					</li> 
+				</xf:if>
+				  
+				<xf:if is="{{ $xf.options.XGT_istatistik_yeniKonu_kapat_ac }}">
+					<li role="tabpanel" aria-labelledby="XGT_istatistik_sonkonular_widget">
+						<xf:widget key="XGT_istatistik_sonkonular_widget" />
+					</li>
+				</xf:if>
+				  
+				<xf:if is="{{ $xf.options.XGT_istatistik_EnCokCevap_konu_ackapat }}">
+					<li role="tabpanel" aria-labelledby="XGT_istatistik_encokcevap_konular_widget">
+						<xf:widget key="XGT_istatistik_encokcevap_konular_widget" />
+					</li> 
+				</xf:if>
+				  
+				<xf:if is="{{ $xf.options.XGT_istatistik_EnCokGoruntulenen_konu_ackapat }}">
+					<li role="tabpanel" aria-labelledby="XGT_istatistik_encokgrtkonular_widget">
+						<xf:widget key="XGT_istatistik_encokgrtkonular_widget" />
+					</li> 
+				</xf:if>
+					 
+				<xf:if is="{{ $xf.options.XGT_istatistik_EnCokBegenilen_konu_ackapat }}">
+					<li role="tabpanel" aria-labelledby="XGT_istatistik_encoklike_konular_widget">
+						<xf:widget key="XGT_istatistik_encoklike_konular_widget" />
+					</li> 
+				</xf:if>
+			</ul>
+		</div>
+			
+		<xf:if is="{{ $xf.options.XGT_istatistik_Kullanici_kapat &&  
+				     $xf.visitor.hasPermission('XGT_istatistik_izin_grubu','XGT_istatistik_kullanici') }}">	
+			<div class="XGT-istatistik-blok">
+				<div class="XGT-istatistik-govde--blok XGT-istatistik-kullanici--kolon">
+					<div class="XGT-istatistik-Header--kullanici">
+						{{ phrase('XGT_istatistik_encok_mesaj') }}
+					</div>
+					<div class="XGT-istatistik-altheader">
+						<div class="XGT-istatistik-satir">	 					
+							<div class="XGT-istatistik-hucre XGT-istatistik-kullanici-adi">
+								{{ phrase('XGT_istatistik_Kullanici') }} 
+							</div>
+							<div class="XGT-istatistik-hucre XGT-istatistik-kullanici-sayisal">
+								{{ phrase('XGT_istatistik_mesaj_sayisi') }} 
+							</div>
+						</div>		  
+					</div>
+					<div class="XGT-istatistik-kullanici--icerik">  
+						<xf:widget key="XGT_istatistik_encokmesaj_kullanici" />
+					</div>	
+				</div>
+			</div>	
+		</xf:if>	
+	</div>
+	 <div class="XGT-istatistik-footer"></div>
+  </div>
+</xf:if>]]></template>
+  <template type="public" title="XGT_istatistik.less" version_id="2000200" version_string="2.0.2"><![CDATA[/*******************************************
+* XenGenTr istatistik CSS                  *
+* Powered eTiKeT™ 2018                     *
+* www.xenforo.gen.tr                       *
+*******************************************/
+
+.XGT-istatistik-genel--govde {
+	margin: 10px 0px;
+
+	.XGT-istatistik-govde--kolon {
+		display: flex;
+		
+		.XGT-istatistik-govde--blok {
+	         flex: 1 1 0;
+	         overflow: hidden;
+             }	
+			
+	     .XGT-istatistik-kullanici--kolon {
+			 	<xf:if is="{$xf.options.XGT_istatistik_Konum} == 'icerikustu' or 
+						   {$xf.options.XGT_istatistik_Konum} == 'Kendikonumum'">
+	     		    max-width: 200px;
+				<xf:else />
+				    max-width: 150px;
+				</xf:if>
+                @media (max-width: 650px) {
+                     display:none;
+                     }
+              }	
+		
+		  .XGT-istatistik-Header--kullanici {
+		      background-color: @xf-XGT_istatistik_tab_header;
+              border-top-right-radius: 4px;
+			  color:@xf-XGT_istatistik_tab_header_yazi;
+			  padding: @xf-blockPaddingV 0px ; 
+              }
+		
+		  .XGT-istatistik-kullanici--icerik {
+		      border-left: solid 1px @xf-XGT_istatistik_satir_sinir_renk;
+					
+          .XGT-istatistik-kullanici-satir {
+			  display: table;
+			  table-layout: fixed;
+			  border-collapse: collapse;
+			  list-style: none;
+			  margin: 0;
+			  padding: 0;
+			  width: 100%;
+			  background-color: @xf-XGT_istatistik_satir;
+              border-bottom: solid 1px @xf-XGT_istatistik_satir_sinir_renk;
+			
+		      .XGT-istatistik-sayi-renk {
+			      color: @xf-XGT_istatistik_sayi_renk;
+			      }
+	
+    	      .XGT-istatistik-kullanici-hucre {
+	    	      display: table-cell;
+	    	      vertical-align: top;
+			      overflow: hidden;
+        	      text-overflow: ellipsis;
+        	      white-space: nowrap;
+			      font-size: 13px;
+			      padding: 2px 4px;
+        	      }
+
+    	      .XGT-istatistik-kullanici-avatar {
+	    	      width: 30px;
+	    	      position: relative;
+				
+			      .avatar.avatar--xs {
+	                   width: 22px;
+                       height: 22px;
+                       font-size: 14px;
+                       }
+			       }
+
+                  .XGT-istatistik-kullanici-adi {
+	     		      width: auto;
+
+				     a  {
+		                 color:@xf-XGT_istatistik_baglanti_renkleri;
+	                     }
+         		      }
+	         
+	 		  .XGT-istatistik-kullanici-sayisal {
+	     		   width: 40px;
+		 		   text-align: right;
+		 		   border-left: solid 1px @xf-XGT_istatistik_satir_sinir_renk;
+         		   }
+  	          }			
+	    }
+			
+	.block-tabHeader {  border-bottom: none;}
+		
+	
+	 .XGT-istatistik-radius {
+		  border-top-right-radius: 4px;
+          }
+
+    .XGT-istatistik-tab-header {	
+         background-color: @xf-XGT_istatistik_tab_header;
+		 border-top-left-radius: 4px;
+           @media (max-width: 650px) {
+                     border-top-right-radius: 4px;
+                     }
+	
+	        a {
+		      color:@xf-XGT_istatistik_tab_header_yazi;
+	          }
+	
+	     .tabs-tab.is-active {
+	          background-color: @xf-XGT_istatistik_aktif_buton;
+		      border-color: @xf-XGT_istatistik_aktif_buton_sinir;
+              }	
+         }
+
+	
+    .XGT-istatistik-blok { 
+		 background-color: @xf-XGT_istatistik_arkaplan;
+         color:@xf-XGT_istatistik_baglanti_renkleri;
+		 border-radius:4px;
+		.XGT-istatistik-altheader {
+			 background-color: @xf-XGT_istatistik_alt_header;
+			 color:@xf-XGT_istatistik_alt_header_yazi;
+		
+			 .XGT-istatistik-satir {
+
+		    	  &:nth-child(n) { 
+					 border: none;
+					 background-color: transparent;
+			    	 }
+		    	  &:nth-child(2n) { 
+                     background-color: transparent;
+                     }
+			
+				  .XGT-istatistik-forum, 
+				  .XGT-istatistik--goruntuleme,
+				  .XGT-istatistik-zaman  {
+			    	  border-color: transparent;
+			    	  }
+	        	   }
+			 }
+
+		.XGT-istatistik-satir {
+			display: table;
+			table-layout: fixed;
+			border-collapse: collapse;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			background-color: @xf-XGT_istatistik_satir;
+			border-bottom: solid 1px @xf-XGT_istatistik_satir_sinir_renk;
+			
+                    
+			.XGT-istatistik-sayi-renk {
+				color: @xf-XGT_istatistik_sayi_renk;
+				
+				}
+
+    		.XGT-istatistik-hucre {
+	    		display: table-cell;
+	    		vertical-align: top;
+				overflow: hidden;
+        		text-overflow: ellipsis;
+        		white-space: nowrap;
+				font-size: 13px;
+				padding: 2px 4px;	
+
+                  a { 
+                     color:@xf-XGT_istatistik_baglanti_renkleri;
+                    } 
+         
+        		}
+
+    		.XGT-istatistik-sira {
+	    		width: 25px;
+	    		position: relative;
+				text-align: center;
+
+	    		&:before {
+	        		counter-increment: steps;
+	        		content: "" counter(steps) "";
+		    		}		 
+        		}
+			/* Henuz gelistiriliyor
+			.XGT-istatistik-okunmamis {  
+			       &:before { color:red;}
+		       }
+		   */	
+				
+
+    		.XGT-istatistik-avatar {
+	    		width: 30px;
+	    		position: relative;
+		
+				.avatar.avatar--s {
+	         		width: 22px;
+	         		height: 22px;
+	         		font-size: 14px;
+             		}
+
+				.XGT-istatistik-avatar--mini { 
+
+				      .XGT-istatistik-avatar--xs {
+	                       position: absolute;
+	                       right: 0;
+	                       bottom: 0;
+	                       width: 16px;
+	                       height: 16px;
+	                       font-size: 12px;
+                           }
+				       }
+        		}
+	
+     		.XGT-istatistik-baslik {
+		 		height: 20px;
+				overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+				color:@xf-XGT_istatistik_baglanti_renkleri;
+				
+				.Google-Arat {         
+					background-color: rgb(66, 133, 244);
+                    border-radius: 2px;
+                    display: inline-block;
+                    font-size: 11px;
+                    padding: 2px 2px 2px 3px;
+                    color: #fff;
+				    }
+         		 }
+			
+
+
+    		.XGT-istatistik-baslik--okunmamis .XGT-istatistik-baslik { 
+				font-weight: 700; 
+			    }
+
+		
+		
+			.XGT-istatistik-forum {
+				<xf:if is="{$xf.options.XGT_istatistik_Konum} == 'icerikustu'or 
+						   {$xf.options.XGT_istatistik_Konum} == 'Kendikonumum'">
+	     		   width: 150px;
+				<xf:else />
+				   width: 100px;
+				</xf:if>		
+		 		border-right: solid 1px @xf-XGT_istatistik_satir_sinir_renk;
+		 		border-left: solid 1px @xf-XGT_istatistik_satir_sinir_renk;
+                @media (max-width: 1100px)  {
+                       display:none;
+                       }
+         		}
+
+     		.XGT-istatistik-yanit {
+	     		width: 60px;
+		 		text-align: center;
+                 @media (max-width: 1000px)  {
+                       display:none;
+                       }
+         		}
+	
+	 		.XGT-istatistik--goruntuleme {
+	     		width: 80px;
+		 		text-align: center;
+		 		border-left: solid 1px @xf-XGT_istatistik_satir_sinir_renk;
+                 @media (max-width: 1000px)  {
+                       display:none;
+                       }
+         		}
+	
+     		.XGT-istatistik-zaman {
+			   <xf:if is="{$xf.options.XGT_istatistik_Konum} == 'icerikustu'or 
+						   {$xf.options.XGT_istatistik_Konum} == 'Kendikonumum'">
+	     		   width: 100px;
+				<xf:else />
+				   width: 80px;
+				</xf:if>
+				border-right: solid 1px @xf-XGT_istatistik_satir_sinir_renk;
+				border-left: solid 1px @xf-XGT_istatistik_satir_sinir_renk;
+                @media (max-width: 500px) {
+                     display:none;
+                     }
+        		}
+	
+	 		.XGT-istatistik-son--yazar {
+	    		<xf:if is="{$xf.options.XGT_istatistik_Konum} == 'icerikustu'or 
+						   {$xf.options.XGT_istatistik_Konum} == 'Kendikonumum'">
+	     		   width: 100px;
+				<xf:else />
+				   width: 80px;
+				</xf:if>
+				text-align: right;
+        		padding-right: 5px;
+				overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                @media (max-width: 500px) {
+                     display:none;
+                     }
+        		}
+			
+			.XGT-istatistik-kullanici-sayisal {
+				text-align: right;
+			    }
+  		    }
+	      }	
+       }	
+	
+		.XGT-istatistik-footer {	
+            width: 100%;
+            height: 10px;
+            background-color: @xf-XGT_istatistik_footer_renk;
+		    border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+		    display: block;
+            }   	
+	    //### Soru konular entegresi
+	    .QT_question_mark_shape.QT_solved {
+           background: #00CD18;
+           border-color: #009a12;
+           }
+	
+       .QT_question_mark_shape.QT_unsolved {
+          background: #f00;
+          border-color: #c00;
+          }
+	
+       .QT_question_mark_shape {
+           display: inline-block;
+           width: 10px;
+           height: 10px;
+           border-width: 1px;
+           border-style: solid;
+           border-radius: 50%;
+           }
+        .QT_question_mark {
+           margin-right: 3px;
+           }
+	
+        .QT_best_answer_mark_icon {
+           color: #00b500;
+           font-size: 90%;
+          }	
+	    //### Soru konular entegresi
+}
+
+body {
+	 counter-reset: steps !important;
+     }]]></template>
+  <template type="public" title="XGT_istatistik_encokcevap_konular" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[<xf:if is="$threads is not empty">
+	<div class="XGT-istatistik-blok">		
+		<xf:if is="$threads is not empty">
+			<xf:foreach loop="$threads" value="$thread">
+				<xf:macro template="XGT_istatistik_macros" name="item"
+				          arg-allowInlineMod="{{ false }}"
+				          arg-thread="{$thread}" />
+				</xf:foreach>
+			<xf:elseif is="$filter == 'unread'" />
+				<div class="block-row">
+					{{ phrase('no_unread_posts_view_latest', {'link': link('whats-new/posts', null, {'skip': 1})}) }}
+				</div>
+			<xf:else />
+			<div class="block-row">
+				{{ phrase('no_results_found') }}
+			</div>
+		</xf:if>
+	</div>
+</xf:if>]]></template>
+  <template type="public" title="XGT_istatistik_encokcevap_kullanici" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[<xf:if contentcheck="true">
+	<xf:contentcheck>
+		<xf:foreach loop="$results" key="$userId" value="$data">
+			<xf:macro template="XGT_istatistik_kullanici_macros" name="overview_row" arg-data="{$data}" />
+		</xf:foreach>
+	</xf:contentcheck>
+</xf:if>]]></template>
+  <template type="public" title="XGT_istatistik_encokgrt_konular" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[<xf:if is="$threads is not empty">
+	<div class="XGT-istatistik-blok">				
+		<xf:if is="$threads is not empty">
+			<xf:foreach loop="$threads" value="$thread">
+				<xf:macro template="XGT_istatistik_macros" name="item"
+			          	arg-allowInlineMod="{{ false }}"
+			          	arg-thread="{$thread}" />
+				</xf:foreach>
+			<xf:elseif is="$filter == 'unread'" />
+				<div class="block-row">
+					{{ phrase('no_unread_posts_view_latest', {'link': link('whats-new/posts', null, {'skip': 1})}) }}
+				</div>
+			<xf:else />
+				<div class="block-row">
+					{{ phrase('no_results_found') }}
+				</div>
+		</xf:if>
+	</div>
+</xf:if>]]></template>
+  <template type="public" title="XGT_istatistik_encoklike_konular" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[<xf:if is="$threads is not empty">
+	<div class="XGT-istatistik-blok">				
+		<xf:if is="$threads is not empty">
+			<xf:foreach loop="$threads" value="$thread">
+				<xf:macro template="XGT_istatistik_macros" name="item"
+				          arg-allowInlineMod="{{ false }}"
+				          arg-thread="{$thread}" />
+				</xf:foreach>
+			<xf:elseif is="$filter == 'unread'" />
+				<div class="block-row">
+					{{ phrase('no_unread_posts_view_latest', {'link': link('whats-new/posts', null, {'skip': 1})}) }}
+				</div>
+			<xf:else />
+				<div class="block-row">
+					{{ phrase('no_results_found') }}
+				</div>
+		</xf:if>
+	</div>
+</xf:if>]]></template>
+  <template type="public" title="XGT_istatistik_kullanici_macros" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[<xf:macro name="overview_row" arg-data="!">	
+	<div class="XGT-istatistik-kullanici-satir">	 					
+		<div class="XGT-istatistik-kullanici-hucre XGT-istatistik-kullanici-avatar">
+			<xf:avatar user="$data.user" size="xs" />
+		</div>
+		<div class="XGT-istatistik-kullanici-hucre XGT-istatistik-kullanici-adi">
+			<xf:username user="$data.user" rich="true" />
+		</div>
+		<xf:if is="$data.value">
+			<div class="XGT-istatistik-kullanici-hucre XGT-istatistik-kullanici-sayisal XGT-istatistik-sayi-renk">
+				{$data.value}
+			</div>
+		</xf:if>
+	</div>		  
+</xf:macro>]]></template>
+  <template type="public" title="XGT_istatistik_macros" version_id="2000240" version_string="2.0.4"><![CDATA[<xf:macro name="item"
+	 arg-thread="!"
+	 arg-forum=""
+	 arg-forceRead="{{ false }}"
+	 arg-showWatched="{{ true }}"
+	 arg-allowInlineMod="{{ true }}"
+	 arg-chooseName=""
+	 arg-extraInfo=""
+	 arg-allowEdit="{{ true }}">
+	
+	<xf:css src="XGT_istatistik.less" />
+	
+	<div class="XGT-istatistik-satir">
+		<div class="XGT-istatistik-hucre XGT-istatistik-sira XGT-istatistik-sayi-renk
+					{{ ($thread.isUnread() AND !$forceRead) ? ' XGT-istatistik-okunmamis' : '' }}" >
+		</div>
+			<div class="XGT-istatistik-hucre XGT-istatistik-avatar" data-author="{{ $thread.User.username ?: $thread.username }}">
+					<xf:avatar user="$thread.User" size="s" defaultname="{$thread.username}" />
+					<xf:if is="$thread.getUserPostCount()">
+				<div class="XGT-istatistik-avatar--mini">
+					<xf:avatar user="$xf.visitor" size="s"
+					href=""
+					class="avatar--separated XGT-istatistik-avatar--xs"
+					title="{{ phrase('you_have_posted_x_messages_in_this_thread', {'count': $thread.getUserPostCount() })|for_attr }}" />
+				</div>
+			</xf:if>
+		</div>
+		
+		<div class="XGT-istatistik-hucre structItem--thread{{ $thread.prefix_id ? ' is-prefix' . $thread.prefix_id : '' }}
+					{{ $thread.isIgnored() ? ' is-ignored' : '' }}
+					{{ ($thread.isUnread() AND !$forceRead) ? ' XGT-istatistik-baslik--okunmamis' : '' }}
+					{{ $thread.discussion_state == 'moderated' ? ' is-moderated' : '' }}
+					{{ $thread.discussion_state == 'deleted' ? ' is-deleted' : '' }} js-inlineModContainer js-threadListItem-{$thread.thread_id}" 
+			 data-author="{{ $thread.User.username ?: $thread.username }}">
+			<div class="XGT-istatistik-baslik">
+				<xf:if is="$xf.options.XGT_istatistik_google_arat">
+				    <a href="http://www.google.com/search?hl=tr&amp;q={$thread.title}" 
+				       title="{$thread.title}" 
+				       target="_blank">
+					  <i class="fa fa-google Google-Arat" title="{{ phrase('XGT_istatistik_google_ara_title') }}"></i>
+				   </a>
+				</xf:if>
+				<xf:set var="$canPreview" value="{{ $thread.canPreview() }}" />
+				 <xf:if is="$xf.options.XGT_istatistik_question_Threads">
+				   <!-- Soru konular entegresi-->
+				      <xf:if is="$thread.QT_question">    
+                         <xf:macro template="QT_macros" name="question_mark" arg-thread="{$thread}" />
+                         <xf:if is="$thread.QT_best_answer_id">
+                               <xf:macro template="QT_macros" name="best_answer_mark" arg-thread="{$thread}" />
+                            </xf:if>
+                      </xf:if>
+				 </xf:if>
+				 <!--/ Soru konular entegresi-->
+				
+				<xf:if is="$thread.prefix_id">
+					<xf:if is="$forum">
+						<a href="{{ link('forums', $forum, {'prefix_id': $thread.prefix_id}) }}" class="labelLink" rel="nofollow">{{ prefix('thread', $thread, 'html', '') }}</a>
+					<xf:else />
+						{{ prefix('thread', $thread, 'html', '') }}
+					</xf:if>
+				</xf:if>
+					<a href="<xf:if is="{{ $xf.options.XGT_istatistik_Last_Post_Jump && $xf.options.mrLastPostJump.thread }}">
+							       {{ link('threads' . (($xf.options.mrLastPostJump.thread ? $xf.visitor.user_id : ($thread.isUnread() AND !$forceRead)) ? '/unread' : ''), $thread) }}
+						         <xf:else />															
+							        {{ link('threads' . (($thread.isUnread() AND !$forceRead) ? '/unread' : ''), $thread) }}
+							     </xf:if>"															
+                       class="" 
+					   data-tp-primary="on"  
+					   data-xf-init="{{ $canPreview ? 'preview-tooltip' : '' }}" 
+					   data-preview-url="{{ $canPreview ? link('threads/preview', $thread) : '' }}">{$thread.title}</a>
+			</div>
+		</div>
+		
+		<div class="XGT-istatistik-hucre XGT-istatistik-forum">
+			<a href="{{ link('forums', $thread.Forum) }}" title="{$thread.Forum.title}">{$thread.Forum.title}</a>
+		</div>
+		
+		<div class="XGT-istatistik-hucre XGT-istatistik-yanit XGT-istatistik-sayi-renk">
+			{{ $thread.discussion_type == 'redirect' ? '&ndash;' : $thread.reply_count|number }}
+		</div>
+		
+		<div class="XGT-istatistik-hucre XGT-istatistik--goruntuleme XGT-istatistik-sayi-renk">
+			{{ $thread.discussion_type == 'redirect' ? '&ndash;' : ($thread.view_count > $thread.reply_count ? $thread.view_count|number : number($thread.reply_count+1)) }}
+		</div>
+
+		<div class="XGT-istatistik-hucre XGT-istatistik-zaman">
+			<xf:if is="$thread.discussion_type == 'redirect'">
+				{{ phrase('n_a') }}
+			<xf:else />
+				<a href="{{ link('threads/latest', $thread) }}" rel="nofollow"><xf:date time="{$thread.last_post_date}" class="structItem-latestDate" /></a>
+			</xf:if>
+		</div>
+		
+		<div class="XGT-istatistik-hucre XGT-istatistik-son--yazar">
+			<xf:if is="$thread.discussion_type == 'redirect'">
+			{{ phrase('n_a') }}
+			<xf:else />
+				<xf:if is="$xf.visitor.isIgnoring($thread.last_post_user_id)">
+					{{ phrase('ignored_member') }}
+				<xf:else />
+					<xf:username user="{$thread.last_post_cache}" />
+				</xf:if>
+			</xf:if>
+		</div>
+	</div>
+</xf:macro>]]></template>
+  <template type="public" title="XGT_istatistik_ozel_konum" version_id="2000250" version_string="2.0.5"><![CDATA[<xf:if is="{$xf.options.XGT_istatistik_Konum} == 'kendikonumum' && {$xf.options.XGT_istatistik_sayfalar} == 'anasayfada' && $template == 'forum_list'">
+             <xf:include template="XGT_istatistik" />     
+</xf:if> 
+
+<xf:if is="{$xf.options.XGT_istatistik_Konum} == 'kendikonumum' && {$xf.options.XGT_istatistik_sayfalar} == 'tumsayfalarda'">
+           <xf:include template="XGT_istatistik" />  
+</xf:if>]]></template>
+  <template type="public" title="XGT_istatistik_yenikonular" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[<xf:if is="$threads is not empty OR ($threads is empty AND $filter != 'latest')">
+	<xf:if is="$style == 'full'">	  
+			<div class="XGT-istatistik-blok">		
+			<xf:if is="$threads is not empty">
+				<xf:foreach loop="$threads" value="$thread">
+					<xf:macro template="XGT_istatistik_macros" name="item"
+					arg-allowInlineMod="{{ false }}"
+					arg-thread="{$thread}" />
+					</xf:foreach>
+
+				<xf:elseif is="$filter == 'unread'" />
+					<div class="block-row">
+						{{ phrase('no_unread_posts_view_latest', {'link': link('whats-new/posts', null, {'skip': 1})}) }}
+					</div>
+				<xf:else />
+					<div class="block-row">
+						{{ phrase('no_results_found') }}
+					</div>
+				</xf:if>
+			</div>
+	</xf:if>
+</xf:if>]]></template>
+  <template type="public" title="XGT_istatistik_yenimesajlar" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[<xf:if is="$threads is not empty OR ($threads is empty AND $filter != 'latest')">
+	<div class="XGT-istatistik-blok">					
+		<xf:if is="$threads is not empty">
+			<xf:foreach loop="$threads" value="$thread">
+				<xf:macro template="XGT_istatistik_macros" name="item"
+						 	arg-allowInlineMod="{{ false }}"
+					    	arg-thread="{$thread}" />
+			</xf:foreach>
+			<xf:elseif is="$filter == 'unread'" />
+				<div class="block-row">
+					{{ phrase('no_unread_posts_view_latest', {'link': link('whats-new/posts', null, {'skip': 1})}) }}
+				</div>
+			<xf:else />
+			<div class="block-row">
+				{{ phrase('no_results_found') }}
+			</div>
+		</xf:if>
+	</div>
+</xf:if>]]></template>
+</templates>

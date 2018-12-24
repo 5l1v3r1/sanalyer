@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+  <permission permission_group_id="ResimliKonular_izinler" permission_id="modFeatures" permission_type="flag" interface_group_id="EWRporta" display_order="9"/>
+  <permission permission_group_id="ResimliKonular_izinler" permission_id="resimlionecikan_gonder" permission_type="flag" interface_group_id="ResimliKonular_izinler" display_order="2"/>
+  <permission permission_group_id="ResimliKonular_izinler" permission_id="resimlionecikan_gor" permission_type="flag" interface_group_id="ResimliKonular_izinler" display_order="50"/>
+  <permission permission_group_id="ResimliKonular_izinler" permission_id="resimlionecikan_yonet" permission_type="flag" interface_group_id="ResimliKonular_izinler" display_order="1"/>
+  <permission permission_group_id="ResimliKonular_izinler" permission_id="submitFeatures" permission_type="flag" interface_group_id="EWRporta" display_order="2"/>
+</permissions>

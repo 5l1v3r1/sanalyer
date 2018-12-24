@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<options>
+  <option option_id="tl_ProfileCover_defaultCover" edit_format="textbox" data_type="string">
+    <default_value/>
+    <relation group_id="tl_ProfileCover" display_order="220"/>
+  </option>
+  <option option_id="tl_ProfileCover_maxSize" edit_format="spinbox" data_type="integer">
+    <default_value>100</default_value>
+    <edit_format_params>min=1
+step=1</edit_format_params>
+    <relation group_id="tl_ProfileCover" display_order="150"/>
+  </option>
+  <option option_id="tl_ProfileCover_minHeight" edit_format="spinbox" data_type="integer">
+    <default_value>315</default_value>
+    <edit_format_params>min=150
+step=1</edit_format_params>
+    <relation group_id="tl_ProfileCover" display_order="55"/>
+  </option>
+  <option option_id="tl_ProfileCover_minWidth" edit_format="spinbox" data_type="integer">
+    <default_value>945</default_value>
+    <edit_format_params>min=815
+step=1</edit_format_params>
+    <relation group_id="tl_ProfileCover" display_order="50"/>
+  </option>
+</options>

@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+  <template type="public" title="XenGenTr_ResimliKonular_duzenle" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:if is="!$resimlionecikan">
+	<xf:title>{{ phrase('XenGenTr_ResimliOnecikanlar_one_cikar_baslik') }}</xf:title>
+<xf:else />
+	<xf:title>{{ phrase('XenGenTr_ResimliOnecikanlar_duzenle_baslik') }}</xf:title>
+</xf:if>
+
+<xf:breadcrumb source="$thread.getBreadcrumbs()" />
+<xf:css src="XenGenTr_ResimliKonular.less" />
+
+<xf:form action="{{ link('threads/resimlionecikan-duzenle', $thread) }}) }}"
+		 class="block" 
+		 upload="true" 
+		 ajax="true">
+
+	<div class="block-container">
+		<xf:macro name="edit_block"
+			      arg-resimlionecikan="{$resimlionecikan}" 
+				  arg-thread="{$thread}" />
+		
+		<xf:submitrow icon="save" sticky="true">
+			<xf:html>
+				<xf:if is="$resimlionecikan AND {{ $xf.visitor.hasPermission('ResimliKonular_izinler', 'resimlionecikan_yonet') }}">
+					<xf:button href="{{ link('threads/resimlionecikan/sil', $thread) }}"icon="delete"overlay="true">{{ phrase('delete...') }}</xf:button>
+				</xf:if>
+			</xf:html>
+		</xf:submitrow>
+	</div>
+</xf:form>
+
+<xf:macro name="edit_block" 
+		  arg-resimlionecikan="!" 
+		  arg-thread="!">
+	
+	<div class="block-body">
+		<xf:uploadrow 
+			name="upload" 
+		    accept=".gif,.jpeg,.jpg,.jpe,.png"
+			label="{{ phrase('XenGenTr_ResimliKonular_ikon_yukle') }}"
+			explain="{{ phrase('XenGenTr_ResimliKonular_ikon_sinir_bilgisi', {
+					'width': $xf.options.XenGenTr_ResimliKonular_Boyutlari.width,
+					'height': $xf.options.XenGenTr_ResimliKonular_Boyutlari.height
+				     }) }} "/>
+		
+		<xf:if is="{$resimlionecikan.image}">
+			<xf:formrow label="{{ phrase('XenGenTr_ResimliKonular_mevcut_ikon') }}" rowtype="input">
+			<div class="inputGroup">
+			<xf:formrow rowtype="fullWidth noLabel">
+				<img src="{{ base_url($resimlionecikan.image) }}" />
+			</xf:formrow>
+			</div>
+		</xf:formrow>
+		</xf:if>
+		
+    <div style="display:none;">
+		<xf:formrow label="{{ phrase('date') }}" rowtype="input">
+			<div class="inputGroup">
+				<xf:dateinput name="date"
+					value="{{ date($resimlionecikan ? $resimlionecikan.resimlionecikan_tarih : $thread.post_date, 'picker') }}" />
+				<span class="inputGroup-splitter"></span>
+				<xf:textbox 
+				    type="time" 
+					name="time"
+					value="{{ date($resimlionecikan ? $resimlionecikan.resimlionecikan_tarih : $thread.post_date, 'H:i') }}" />
+			  </div>
+		   </xf:formrow>
+		</div>	
+	 </div>
+</xf:macro>]]></template>
+  <template type="public" title="XenGenTr_ResimliKonular_js" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[$(document).ready(function(){	
+			$('#image_slider').everslider({
+				mode: 'normal',
+				maxVisible: 1,
+				slideEasing: 'easeInOutQuart',
+				slideDuration: 500
+			});
+				
+			$('#featured_slider').everslider({
+				mode: 'circular',
+				itemKeepRatio: false,
+				navigation: false,
+				mouseWheel: true
+			});
+			
+			$('#fullwidth_slider').everslider({
+				mode: 'carousel',
+				moveSlides: {{$xf.options.XenGenTr_ResimliKonular_slider_gecis_bloklari}},
+				slideEasing: 'easeInOutCubic',
+				slideDuration: {{$xf.options.XenGenTr_ResimliKonular_slider_gecis_hizi}},
+				navigation: true,
+				keyboard: true,
+				nextNav: '<span class="alt-arrow"><i class="fa fa-step-forward"></i></span>',
+				prevNav: '<span class="alt-arrow"><i class="fa fa-step-backward"></i></span>',
+				ticker: true,
+				tickerAutoStart: true,
+				tickerHover: true,
+				tickerTimeout: {{$xf.options.XenGenTr_ResimliKonular_Sileder_gecis_zamani}}
+			});
+			
+			$('#fullwidth_slider_fade').everslider({
+				mode: 'carousel',
+				effect: 'fade',
+				moveSlides: 1,
+				fadeEasing: 'linear',
+				fadeDuration: 500,
+				fadeDelay: 200,
+				fadeDirection: 1,
+				navigation: true,
+				keyboard: true,
+				swipeThreshold: 10,
+				nextNav: '<span class="alt-arrow"><i class="fa fa-step-forward"></i></span>',
+				prevNav: '<span class="alt-arrow"><i class="fa fa-step-backward"></i></span>',
+				ticker: true,
+				tickerAutoStart: false,
+				tickerTimeout: 2000
+			});
+   });]]></template>
+  <template type="public" title="XenGenTr_ResimliKonular_slider.less" version_id="1000050" version_string="1.0.0"><![CDATA[/********************************************
+* XenForo.Gen.TR                            *
+* Xenistatistik Slider LESS                 *
+* eTiKeT 2018                               *
+********************************************/
+
+.XenSlider--Govde { 
+	margin-bottom:10px;
+
+
+    .XGT-SliderV1-Header {
+        background: @xf-XGTResimliKonular_Header;
+        color: @xf-XGTResimliKonular_Header_Metin;
+     }
+
+    .XGT-SliderV1-Body {
+       background: @xf-XGTResimliKonular_body;
+     }
+
+	 .block-body {
+		 padding: 5PX;
+		  }
+
+
+	.XenSlider--Avatar {
+		border-radius: 50%;
+		margin-top: -10px;
+		margin-right: 5px;
+		}
+
+	.XenOneCikan--tarih { float: right;}
+	
+	.everslider {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+
+		.es-slides {
+			position: relative;
+			width: 100000px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			-webkit-transform: translate3d(0,0,0);
+  
+			> img {
+				width: 100%;
+				height: auto;
+				max-width: none;
+				}
+
+			> li {
+				position: relative;
+				float: left;
+				padding: 0!important;
+				border: 0!important;
+				width: 500px;
+				height: 300px;
+				margin: 0 10px 0 0;
+				cursor: default; 
+				cursor: -webkit-grab; 
+				cursor: -moz-grab;
+				-webkit-transform: translate3d(0,0,0);
+				}
+	     }	
+    }
+
+	.es-swipe-grab .es-slides {
+		> li {
+			cursor: default; 
+			cursor: -webkit-grabbing; 
+			cursor: -moz-grabbing; 
+			}
+	}
+
+    .everslider {
+	      background: url("images/preload.gif") no-repeat center;
+          }
+
+    .everslider.es-slides-ready {
+	        background: none;
+            }
+
+    .es-slides { visibility: hidden; }
+
+    .es-slides-ready .es-slides { visibility: visible; }
+	
+	.es-navigation {
+	
+		> a {
+			position: absolute;
+			top: 40%;
+			padding: 7px;
+			background-color: #eeeeee;
+			}
+    
+		.es-prev { 
+			left: 0;
+			border-top-right-radius: 6px;
+			border-bottom-right-radius: 6px;
+		    }
+	
+		.es-next { 
+			right: 0; 
+			border-top-left-radius: 6px;
+			border-bottom-left-radius: 6px;
+	        } 
+       
+		.es-first,
+		.es-last {
+			opacity: 0.5;
+			filter: alpha(opacity=50);
+			cursor: default;
+			}
+		}
+
+		.es-pagination {
+			position: absolute;
+			left: 50%;
+			bottom: 10px;
+    
+			> a {
+				position: relative;
+				right: 50%;
+				float: left;
+				width: 13px;
+				height: 13px;
+				overflow: hidden;
+				background: url(../images/bullets.png) no-repeat 0 0;
+				margin: 0 5px 0;
+	    		}
+
+			.es-active {
+				background: url(../images/bullets.png) no-repeat -13px 0;
+				}
+		   }/* es-pagination */
+ 
+
+		.image-slider .es-slides {
+    		  > li { position: relative;}
+    		 }
+
+		.image-caption {
+			position: absolute;
+			top: 8%;
+			right: 5%;
+			height: 35px;
+			overflow: hidden;
+
+			> span {
+				display: block;
+				line-height: 15px;
+				padding: 10px;
+				color: #ddd;
+				text-transform: uppercase;
+				font-weight: bold;
+				background: #222;
+				opacity: 0;
+				-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+				-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+				-o-transition: -o-transform 0.3s, opacity 0.3s;
+				transition: transform 0.3s, opacity 0.3s;	
+				}
+		 }
+
+	.image-slider {
+	
+		.es-before-slide .image-caption span {
+			opacity: 0;
+			-webkit-transform: translate(0, -35px);
+			-moz-transform: translate(0, -35px);
+			-o-transform: translate(0, -35px);
+			transform: translate(0, -35px);
+			-webkit-transition-duration: 0;
+			-moz-transition-duration: 0;
+			-o-transition-duration: 0;
+			transition-duration: 0;
+			}
+
+		.image-slider .es-after-slide .image-caption span {
+			opacity: 1;
+			-webkit-transform: translate(0, 0);
+			-moz-transform: translate(0, 0);
+			-o-transform: translate(0, 0);
+			transform: translate(0, 0);
+			}
+  	}/* image-slider  */
+
+
+	.featured-slider {
+		padding-top: 20px;
+	
+			.es-pagination {
+				left: 0;
+				top: 0;
+				bottom: auto;
+	   
+				> a {
+					right: auto;
+					margin: 0 10px 0 0;
+				   }
+		 	}
+
+		.es-slides > li {
+			width: 200px;
+			margin-right: 5px;
+			}
+
+		.featured-pic {
+			position: relative;
+			background: #fff;
+        
+			> img  {
+				opacity: 1;
+				-webkit-transition: opacity .3s;
+				-moz-transition: opacity .3s;
+				-o-transition: opacity .3s;
+				transition: opacity .3s;
+				}
+		 
+				&:hover img {
+					opacity: 0.7;
+				   }
+
+			> a {
+				position: absolute;
+				visibility: hidden;
+				top: 50%;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				width: 65px;
+				padding: 5px 0;
+				margin-top: -15px;
+				text-align: center;
+				text-decoration: none;
+				font-style: italic;
+				line-height: 20px;
+				color: #fff;
+				background: #ff5452;
+				z-index: 1;
+			 
+				&hover {visibility: visible;}
+				}
+	      }/* featured-pic */
+	  }/* featured-slider */
+
+	.featured-title {
+		padding: 8px 15px 8px;
+		color: #666;
+		background: #eee;
+		border-top: 2px solid #ccc;
+		border-bottom: 2px solid #ddd;
+     
+
+			> a {
+				display: block;
+				text-decoration: none;
+				font-style: normal;
+				font-weight: bold;
+				color: #444;
+				font-size: 13px;
+				line-height: 15px;
+				margin-bottom: 3px;
+				text-shadow: 0 1px 0 #fff;
+		
+				> a:hover {	color: #666;}
+	      	}
+
+	
+			> span {
+				font-size: 11px;
+				font-style: italic;
+				line-height: 15px;
+				color: #666;
+				}
+	  } /* featured-title */
+
+	.fullwidth-slider {
+
+			.es-slides > li {
+				width: 300px;	
+				height: 187px;
+				overflow: hidden;
+				border-radius: 4px;
+		 
+					> img  {
+						opacity: 1;
+						-webkit-transition: opacity .3s;
+						-moz-transition: opacity .3s;
+						-o-transition: opacity .3s;
+						transition: opacity .3s;
+
+			   	         &:hover { opacity: 0.8; }
+						} 
+     		 	 }
+
+				.es-navigation a {
+					background: rgba(0, 0, 0,0.5);
+					color: #fff;
+					width: 30px;
+					height: 30px;
+					text-align: center;
+					line-height: 13px;
+   
+						&:hover { 
+                          background: rgba(0, 0, 0,0.9); 
+                          width: 40px;
+                          }
+	   			}
+
+          }
+
+	.fullwidth-title {
+		background: rgbA(0, 0, 0,0.7);
+		border-bottom: 2px solid #000000;
+		box-sizing: border-box;
+		box-shadow: 0px -5px 10px 5px rgba(0, 0, 0, 0.7);
+		bottom: 0;
+		color: #FFFFFF;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		padding:  0px 10px 10px 10px;
+		-moz-box-sizing: border-box;
+		font-size: 11px;
+		line-height: 15px;
+
+		.XenOneCikanKonu--Baslik { 
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+
+			> a {
+				display: block;
+				color: rgba(255, 255, 255,0.8);
+				font-style: normal;
+				text-decoration: none;
+				font-size: 13px;
+    
+					&:after {
+						content: "\2192";
+						margin-left: 5px;
+						}
+
+		 				&:hover {
+							color: rgb(255, 255, 255);
+				            text-decoration: underline;
+				             }
+	  	 		}
+			}
+
+		> span {
+			display: none;
+			margin-top: 5px;
+			color: rgba(255, 255, 255,0.7);
+			}
+
+		.fullwidth-title-detay {
+			color: #FFF;
+			background: rgba(0, 0, 0, 0.5);
+			padding: 2px 5px;
+			border-radius: 2px;
+			border: solid 1px rgba(255, 255, 255, 0.1);
+			height: 20px;
+			padding: 0px 5px;
+			}
+    
+	}/* fullwidth-title  */
+
+	.fullwidth-slider .es-slides > li:hover .fullwidth-title span {
+		display: block;
+		height: auto;
+		max-height: 65px;
+		}
+
+} /*** XenSlider-Govde Sonu ***/]]></template>
+  <template type="public" title="XenGenTr_ResimliKonular_widget" version_id="1000050" version_string="1.0.0"><![CDATA[<xf:if is="$resimlionecikanlar is not empty && $xf.visitor.hasPermission('ResimliKonular_izinler','resimlionecikan_gor')">
+	<xf:css src="XenGenTr_ResimliKonular_slider.less" />
+	<xf:js src="XenGenTr/XenOneCikanKonular/jquery.easing.1.3.js">
+	<xf:js src="XenGenTr/XenOneCikanKonular/jquery.mousewheel.js" />
+	<xf:js src="XenGenTr/XenOneCikanKonular/jquery.everslider.min.js" />
+		{{ include('XenGenTr_ResimliKonular_js') }}
+	</xf:js>
+	    <div class="block-container XenSlider--Govde">
+	        <xf:if is="{$xf.options.XenGenTr_ResimliKonular_header_gizle}">	
+		        <h3 class="XGT-SliderV1-Header block-header">{{$xf.options.XenGenTr_ResimliKonular_baslik}}</h3>	
+		    </xf:if>
+		    <div class="XGT-SliderV1-Body block-body">
+			    <div class="grid_12">	
+				    <div id="fullwidth_slider" class="everslider fullwidth-slider">
+					    <ul class="es-slides">
+					        <xf:foreach loop="$resimlionecikanlar" value="$resimlionecikan" i="$key">
+						        <li>
+							        <a href="{{ link('threads', $resimlionecikan.Thread) }}">
+							            <img src="{{ base_url($resimlionecikan.image) }}" 
+									         alt="{{ $resimlionecikan.resimlionecikan_baslik ? $resimlionecikan.resimlionecikan_baslik : $resimlionecikan.Thread.title }}" 
+									         title="{{ $resimlionecikan.resimlionecikan_baslik ? $resimlionecikan.resimlionecikan_baslik : $resimlionecikan.Thread.title }}">	
+							        </a>
+							        <div class="fullwidth-title">
+								        <div class="fullwidth-title-detay">	
+								            <xf:avatar user="$resimlionecikan.Thread.User" size="xxs"class="XenSlider--Avatar " defaultname="{$fallbackName}" itemprop="image" />	
+									        {{ $resimlionecikan.Thread.User ? $resimlionecikan.Thread.User.username : $resimlionecikan.Thread.username }}
+									        <xf:date time="$resimlionecikan.resimlionecikan_tarih" class="XenOneCikan--tarih" data-full-old-date="true" />
+								        </div>
+								        <div class="XenOneCikanKonu--Baslik">	
+									        <a href="{{ link('threads', $resimlionecikan.Thread) }}" title="{{ $resimlionecikan.resimlionecikan_baslik ? $resimlionecikan.resimlionecikan_baslik : $resimlionecikan.Thread.title }}">{{ $resimlionecikan.resimlionecikan_baslik ? $resimlionecikan.resimlionecikan_baslik : $resimlionecikan.Thread.title }}</a>
+								        </div>	
+								        <span>{$resimlionecikan.resimlionecikan_icerik}</span>
+								    </div>
+						         </li>
+					        </xf:foreach>
+					    </ul>
+				    </div>
+			    </div>
+		    </div>
+	    </div>		
+</xf:if>]]></template>
+  <template type="public" title="XenGenTr_ResimliKonulari_sil" version_id="1000020" version_string="1.0.0 Beta 2"><![CDATA[<xf:title>{{ phrase('confirm_action') }}</xf:title>
+<xf:form action="{{ link('threads/resimlionecikan-sil', $resimlionecikan.Thread) }}" ajax="true" class="block">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:inforow rowtype="confirm">
+				{{ phrase('XenGenTr_ResimliOnecikanlar_one_cikani_silmek_istedigini_onayla') }}
+				<strong><a href="{{ link('threads', $resimlionecikan.Thread) }}">{$resimlionecikan.Thread.title}</a></strong>
+			</xf:inforow>
+		</div>
+		<xf:submitrow rowtype="simple" icon="delete" />
+	</div>
+</xf:form>]]></template>
+  <template type="admin" title="widget_def_options_ResimliOneCikanWidget" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></template>
+</templates>

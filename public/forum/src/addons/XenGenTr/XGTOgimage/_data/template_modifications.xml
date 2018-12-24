@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template_modifications>
+  <modification type="public" template="thread_edit" modification_key="xgt_ogimage_thread_view_degistir" description="XGT- Og:images konu duzenleme alani" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:macro template="helper_thread_options" name="thread_status" arg-thread="{$thread}" />]]></find>
+    <replace><![CDATA[$0
+<xf:include template="xgt_konu_ogimage" />]]></replace>
+  </modification>
+  <modification type="public" template="thread_view" modification_key="xgt_ogimage_thread_view_1" description="XGT- Og:images meta degisimi" execution_order="1" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:macro template="metadata_macros" name="metadata"]]></find>
+    <replace><![CDATA[<xf:if is="{$thread.xgt_ogdb.xgtog_yol} AND $xf.options.xgt_OgSistemKapat ">
+	<xf:macro template="metadata_macros" 
+			  name="image_url" 
+			  arg-imageUrl="{$thread.xgt_ogdb.xgtog_yol}" />
+</xf:if>
+$0]]></replace>
+  </modification>
+  <modification type="public" template="thread_view" modification_key="xgt_ogimage_thread_view_buton_ekle" description="XGT- Og:images kontrol butonu" execution_order="1" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:if is="$thread.canEdit()">]]></find>
+    <replace><![CDATA[<xf:include template="xgt_konu_ogimage_buton" />
+$0]]></replace>
+  </modification>
+</template_modifications>

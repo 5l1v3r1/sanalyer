@@ -1,0 +1,23 @@
+{
+    "src/addons/XenGenTr/ResimliOneCikanKonular/addon.json": "08d6f3f595624c68451bc388db16c45add82b16029f5710a5410148f916bd118",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/Entity/ResimliOnecikan.php": "871daca3466186dd991c89582c19fc68b0c7cb65d0396beafcc63bdc16fb7c60",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/Entity/Thread.php": "2455b026385067df9902f25d9c3e0492f2da9a377038687a2c2b5424b03a0716",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/Finder/ResimliOnecikan.php": "e6980b0709284dd4260959ab177d89bc3f385aad4a6f3089193d36db4649518d",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/Pub/Controller/Thread.php": "9f5da02d442cbae76cc04c7d226579c3c7ad1f5bfa79a9eeb5a486336b049147",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/Repository/ResimliOnecikan.php": "9f65303f1059d3a0a946feefd3aac592d880ad8ba0cb1e64ad923f3d28919350",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/Setup.php": "becc4f82ba31dc2071e65b0fdf0107ffdd3d664edc2369a8e4dc0c5aa4074f30",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/Widget/ResimliOnecikanlar.php": "ee560114c2ae488ba401592d08c355942ad4d4e3a2e8749d6f318e87b0ec8380",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/XenGenTr.png": "5df3d002f2f49ec8c5a40694b33e706ddab657bdae6de93f48f9d59559c31000",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/_data/admin_permission.xml": "33a3d447ec175b4c6771937bd031e07882c52e3725ad0056ef331f45946badd3",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/_data/class_extensions.xml": "be713820eafdd2780262647b144dcdcfcf9be850107d2d145718e11670b60a83",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/_data/options.xml": "d982784166c65366f486bb86e5ae337bdb4d6464b226a1cd5fae7756a3e624b0",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/_data/option_groups.xml": "b432810dff7794e19d2695e8bcbcf7b1b5356af504c8a1b78bca30b19e107dbf",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/_data/permissions.xml": "4d7e0fd601345f4730ce9d25c4b08092d7e198aa7ad07a38e1a684b5c57a082b",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/_data/permission_interface_groups.xml": "91fbf7c73bcdb3ef1d51f34292d1b1f44f1e2b031b34f56370d604e04b8e5b47",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/_data/phrases.xml": "06e3717e4ae28bc841244b50dd0fd661357b53439a5ed2fb75f9e8a1aa52eeb6",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/_data/style_properties.xml": "8d2060328836afae7da172639ede09d1f3ee5f6388f0ec6ff205248dca0b967f",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/_data/style_property_groups.xml": "ae3b9c05587c039eb0f97ae3bb1415dfb6ba03be3079316cf12014b63b4ecdaf",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/_data/templates.xml": "d0eb6a5bfa957276b5106d90f3c1ee845064afaed723697f676284dcd327fd0b",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/_data/template_modifications.xml": "857a50343b24fb3218830c41464ed89aa3f060dc7c48fec1d3c2b30451b0d067",
+    "src/addons/XenGenTr/ResimliOneCikanKonular/_data/widget_definitions.xml": "8bd2d699e4a3ed00c85ae03bda3d488bb090c7a6766594baad62935e915ec09e"
+}

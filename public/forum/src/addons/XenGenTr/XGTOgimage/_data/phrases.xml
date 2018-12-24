@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="XGT_ogBaglanti" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[Dışarıdan bir resim ekle]]></phrase>
+  <phrase title="XGT_ogBaglanti_aciklama" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[Dilerseniz bir resim yüklemeden bir bağlatı ekleyerek dışarıdan resim alabilirsiniz.]]></phrase>
+  <phrase title="XGT_ogSil" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[Og:image sil]]></phrase>
+  <phrase title="XGT_ogSil_aciklama" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[Sil alanını işaretleyin ve aşağıda bulunan "Kaydet" butonuna basın.]]></phrase>
+  <phrase title="XGT_ogYukle" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[OG:Image için bir resim yükle]]></phrase>
+  <phrase title="XGT_ogYukle_aciklama" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[Kendi sisteminize bir resim yüklemek için kullanabilirsiniz.]]></phrase>
+  <phrase title="option.xgt_OgHaricForumlar" version_id="1000003" version_string="1.0.0 Beta 3"><![CDATA[Hariç tutulacak forumlar]]></phrase>
+  <phrase title="option.xgt_OgSistemKapat" version_id="1000003" version_string="1.0.0 Beta 3"><![CDATA[OG:Images sistemi etkin]]></phrase>
+  <phrase title="option.xgt_VarsayilanOg" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[Varsayilan og:image]]></phrase>
+  <phrase title="option_explain.xgt_OgHaricForumlar" version_id="1000003" version_string="1.0.0 Beta 3"><![CDATA[Seçili forumlarda og:image yönetim sistemi kullanılmayacaktır. Ancak var ise varsayılan og:image resminiz etkin olacaktır.]]></phrase>
+  <phrase title="option_explain.xgt_OgSistemKapat" version_id="1000005" version_string="1.0.0 Beta 5"><![CDATA[OG:Images sistemini açıp/kapatabilirsiniz.]]></phrase>
+  <phrase title="option_explain.xgt_VarsayilanOg" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[]]></phrase>
+  <phrase title="option_group.xgt_ogimage_secenek_grubu" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[[XenGenTr] OG:Images Seçenekleri]]></phrase>
+  <phrase title="option_group_description.xgt_ogimage_secenek_grubu" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[Open Graph image sistemi kullanım seçenekleri.]]></phrase>
+  <phrase title="permission.general_canSetOgDuzenler" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[XGT- OG:Images yönetebilir mi?]]></phrase>
+  <phrase title="permission.general_xgtOgUrlEkleyebilir" version_id="1000005" version_string="1.0.0 Beta 5"><![CDATA[XGT- OG:Images URL ekleyebilir mi]]></phrase>
+  <phrase title="xgt_OgYukle_yonet" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[OG:Image yönetimi]]></phrase>
+  <phrase title="xgt_OgYukle_yonet_aciklama" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[OG:image yönetimi sağlayabilirsiniz. Sisteminize bir resim yükleyebilir yada dışarıdan bir bağlantı ekleyerek tanımalma yapabilirsiniz.]]></phrase>
+  <phrase title="xgt_ogDuzenle_buton" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[OG:Image Düzenle]]></phrase>
+  <phrase title="xgt_ogFacebook_hata_buton" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[Facebok hataları]]></phrase>
+  <phrase title="xgt_secenek_varsayilan_ogimage" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[Varsayılan OG:Images]]></phrase>
+  <phrase title="xgt_secenek_varsayilan_ogimage_aciklama" version_id="1000005" version_string="1.0.0 Beta 5"><![CDATA[Eğer varsayılan bir og:image kullanmak isterseniz bu alandan URL belirtebilirsiniz.]]></phrase>
+  <phrase title="xgt_secenek_varsayilan_ogimage_url" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[Varsayılan og:image için resim bağlantısı]]></phrase>
+</phrases>

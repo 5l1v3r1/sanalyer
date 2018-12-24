@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template_modifications>
+  <modification type="admin" template="index" modification_key="th_index_admin_notice_uix" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:if is="{{ $xf.visitor.hasAdminPermission('user') }}">]]></find>
+    <replace><![CDATA[<xf:include template="th_index_admin_notice_uix" />
+$0]]></replace>
+  </modification>
+  <modification type="admin" template="style_property_macros" modification_key="th_style_property_macros_documentation_uix" description="Adds documentation URL to style property description" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:if is="$xf.debug">]]></find>
+    <replace><![CDATA[<xf:if is="$property.property_type !== 'css'">
+	{{ uix_style_property_documentation($property) }}
+</xf:if>
+$0]]></replace>
+  </modification>
+  <modification type="admin" template="style_property_macros" modification_key="th_style_property_macros_brandmark_uix" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[{$property.title}]]></find>
+    <replace><![CDATA[{{ uix_style_property_prefix($property) }}$0]]></replace>
+  </modification>
+</template_modifications>

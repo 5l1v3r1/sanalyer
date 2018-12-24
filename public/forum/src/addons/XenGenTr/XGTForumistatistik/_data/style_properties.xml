@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style_properties>
+  <style_property property_name="XGT_istatistik_aktif_buton" group_name="XGT_istatistik_tasarim" title="Tab butonlar - Aktif buton" description="Tab headerda bulunan aktif buton için arka plan rengi." property_type="value" value_type="color" value_group="header_tab" display_order="320">
+    <value>"@xf-paletteColor5"</value>
+  </style_property>
+  <style_property property_name="XGT_istatistik_aktif_buton_sinir" group_name="XGT_istatistik_tasarim" title="Tab butonla - Aktif buton sınır" description="Aktif olan tab buton için alt kenarındaki sınır rengi." property_type="value" value_type="color" value_group="header_tab" display_order="330">
+    <value>"@xf-linkColor"</value>
+  </style_property>
+  <style_property property_name="XGT_istatistik_alt_header" group_name="XGT_istatistik_tasarim" title="Alt header - Arka plan rengi" property_type="value" value_type="color" value_group="altheader_kontrol" display_order="800">
+    <value>"@xf-linkColor"</value>
+  </style_property>
+  <style_property property_name="XGT_istatistik_alt_header_yazi" group_name="XGT_istatistik_tasarim" title="Alt header - Yazı rengi" property_type="value" value_type="color" value_group="altheader_kontrol" display_order="810">
+    <value>"@xf-paletteColor2"</value>
+  </style_property>
+  <style_property property_name="XGT_istatistik_arkaplan" group_name="XGT_istatistik_tasarim" title="Arka plan rengi" description="İstatistik için bir arka plan rengi seçebilirsiniz." property_type="value" value_type="color" display_order="100">
+    <value>"@xf-contentBg"</value>
+  </style_property>
+  <style_property property_name="XGT_istatistik_baglanti_renkleri" group_name="XGT_istatistik_tasarim" title="Bağlantı rengi" description="istatistiklerde görünecek bağlantı,link rengini belirtebilirsiniz. Kullanıcılar bağlı oldukları grup renginde görünecektir." property_type="value" value_type="color" display_order="120">
+    <value>"@xf-linkColor"</value>
+  </style_property>
+  <style_property property_name="XGT_istatistik_footer_renk" group_name="XGT_istatistik_tasarim" title="Footer - Arka plan rengi" description="Footer alanı için renk seçimi yapabilirsiniz." property_type="value" value_type="color" value_group="xgt_footer" display_order="2000">
+    <value>"@xf-linkHoverColor"</value>
+  </style_property>
+  <style_property property_name="XGT_istatistik_satir" group_name="XGT_istatistik_tasarim" title="Konu listesi -  satır rengi" description="Konu listesinde iki ayrı renkte görünen satır için renk seçimi yapabilirsiniz." property_type="value" value_type="color" value_group="Satir_ozellestirme" display_order="1000">
+    <value>"@xf-contentBg"</value>
+  </style_property>
+  <style_property property_name="XGT_istatistik_satir_sinir_renk" group_name="XGT_istatistik_tasarim" title="Konu listesi - Sınır rengi" description="Konu listesi satırları için sınır çizgi rengi" property_type="value" value_type="color" value_group="Satir_ozellestirme" display_order="1300">
+    <value>"@xf-pageBg"</value>
+  </style_property>
+  <style_property property_name="XGT_istatistik_sayi_renk" group_name="XGT_istatistik_tasarim" title="Sayısal değerlerin renkleri" property_type="value" value_type="color" display_order="110">
+    <value>"@xf-textColorMuted"</value>
+  </style_property>
+  <style_property property_name="XGT_istatistik_tab_header" group_name="XGT_istatistik_tasarim" title="Tab butonlar - Header rengi" description="Butonların dizildiği header alanı için bir renk seçimi yapınız." property_type="value" value_type="color" value_group="header_tab" display_order="300">
+    <value>"@xf-linkHoverColor"</value>
+  </style_property>
+  <style_property property_name="XGT_istatistik_tab_header_yazi" group_name="XGT_istatistik_tasarim" title="Tab butonlar - Header metin rengi" description="Headerda bulunan tab butonlar için yazı rengi." property_type="value" value_type="color" value_group="header_tab" display_order="310">
+    <value>"@xf-borderColorHighlight"</value>
+  </style_property>
+</style_properties>

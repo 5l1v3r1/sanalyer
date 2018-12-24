@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+  <template type="public" title="HosgeldinPaneli" version_id="1010000" version_string="1.1.0"><![CDATA[<xf:if is="{{ $xf.options.HosgeldinpanelAcKapat && 
+		      $xf.options.XenHgPanel_Konum == 'forumustu' &&
+			  $xf.visitor.hasPermission('XenHosGeldinPanelYetki','XenHhGorebilirmi') }}">
+
+ <xf:css src="HosgeldinPaneli.less" />
+ <div class="block">
+		<div class="block-container">
+			<h3 class="XenHosgeldinHeader">{{ phrase('HosgeldinPaneli_kullaniciadi', {'username': $xf.visitor.username}) }}</h3>
+				<div class="XenHosgeldinBox">
+						<xf:if is="{{ $xf.options.XenHgPanel_Show_avatar}}">
+				     		<div class="XenHosgeldinKolon XenHgSolKolon">
+							  <xf:avatar user="{$xf.visitor}" class="XenPanelAvatar" size="l" href="" update="{{ link('account/avatar', $user) }}" />
+					        </div>					
+						</xf:if>
+
+						<xf:if is="{{ $xf.options.XenHgPanel_Show_username}}"> 
+								<div class="XenHosgeldinKolon XenHguserSolKolon">
+									<div class="XenPanelusername">
+										<xf:username user="$xf.visitor" rich="true" notooltip="true" />
+											<xf:if contentcheck="true">
+												<div class="memberHeader-banners">
+												<xf:contentcheck><xf:userbanners user="$xf.visitor" /></xf:contentcheck>
+												</div>
+											</xf:if>
+									</div>
+								</div>
+						</xf:if>
+						 
+					<div class="XenHosgeldinKolon XenHgMerkezKolon">		
+						<dl class="XenHgTanimlar">
+							<dt>{{ phrase('GecerliSaat') }}</dt> 
+							<dd> {{ date($xf.time ) }} - {{ date($xf.time, 'g:i A') }}</dd>
+						</dl>
+	
+						<dl class="XenHgTanimlar">
+							<dt>{{ phrase('joined') }}</dt> 
+							<dd><xf:date time="{$xf.visitor.register_date}" /></dd>	
+						</dl>
+							
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('last_activity') }}</dt>  
+							<dd> <xf:date time="{$xf.visitor.last_activity}" /></dd> 
+						</dl>
+						
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('your_email_address') }}</dt> 
+							<dd>{$xf.visitor.email} </dd>
+						</dl>	
+						
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('date_of_birth') }}</dt>
+							<dd><xf:set var="$birthday" value="{{ $xf.visitor.Profile.getBirthday(true) }}" />
+							{{ date($birthday.timeStamp, $birthday.format) }}
+							</dd>
+						</dl>
+					</div>								 
+
+					<div class="XenHosgeldinKolon XenHgSagKolon">
+						<dl class="XenHgTanimlar">	
+							<dt> {{ phrase('conversations') }}</dt>
+							<dd><a href="{{ link('conversations') }}">{$xf.visitor.conversations_unread|number}</a> {{ phrase('okunmamis_mesajlar') }}</dd>
+						</dl>
+						
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('alerts') }}</dt> 
+							<dd><a href="{{ link('account/alerts') }}">{$xf.visitor.alerts_unread|number}</a> {{ phrase('yeni_bildirim') }}</dd>
+						</dl>
+						
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('messages') }}</dt>
+							<dd>{$xf.visitor.message_count|number}</dd>
+						</dl>	
+		 
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('likes_received') }}</dt>
+							<dd>{$xf.visitor.like_count|number}</dd>
+						</dl>
+		 
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('trophy_points') }}</dt>
+							<dd>{$xf.visitor.trophy_points|number}</dd>
+						</dl>
+		 
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('warning_points') }}</dt>
+							<dd> {$warning.points|number}</dd>
+						</dl>
+					</div> <!--Sag kolon sonu-->
+				</div> <!--Hosgeldin Box Sonu-->			   
+		<xf:if is="{{ $xf.options.XenHgPanel_Show_statistics}}">
+			
+		    <div class="XenAltSatirBaslik">{{ phrase('HosgeldinPaneli_Forum_istatistikleri') }}</div>
+			
+				<div class="XenAltSatir">	
+					<dl class="XenAltTanimlar">
+						<dt>{{ phrase('threads') }}</dt>
+						<dd>{$threadsTotal|number}</dd>
+					</dl>
+
+					<dl class="XenAltTanimlar">
+						<dt>{{ phrase('posts') }}</dt>
+						<dd>{$postsTotal|number}</dd>
+					</dl>
+			
+					<dl class="XenAltTanimlar">
+						<dt>{{ phrase('members') }}</dt>
+						<dd>{$usersTotal|number}</dd>
+					</dl>
+					
+					<dl class="XenAltTanimlar">
+						<dt>{{ phrase('latest_member') }}</dt>
+						<dd><xf:username user="{$userLatest}" /></dd>
+					</dl>
+				</div>	
+			</xf:if>
+		</div>
+   </div>
+</xf:if>]]></template>
+  <template type="public" title="HosgeldinPaneli.less" version_id="1000300" version_string="1.0.3"><![CDATA[@media (min-width:651px) {
+	.XenHosgeldinBox, .XenAltSatir {display: flex;}
+	}
+@media (max-width:650px) {
+   .XenHosgeldinBox,
+   .XenAltSatirBaslik,
+   .XenAltSatir,
+   .XenHosgeldinHeader
+	{display: none;}
+	}
+
+.XenHosgeldinBoxSidebar {
+       margin-bottom:20px;
+
+       .block-container { 
+           margin-top: 30px;
+
+		   .XenPanelAvatar { 
+			   text-align: center;
+               margin-top: -30px;
+                }
+		   
+           .XenPanelusername {
+              text-align: center;
+             
+               .username {
+                   font-size: 24px;
+                   font-weight: 600;
+                   }
+              }
+
+       .XenPanelBilgiler { 
+             padding: 4px;
+
+             .XenHgTanimlar {
+                 padding: 0;
+		         margin: 0;
+		         overflow: hidden;
+		         font-size: 12px;
+		         height: 20px;
+                 color: #505050;
+ 
+             dt {
+				float: left;
+				max-width: 100%;
+				margin-right: 6px;             
+				}
+			
+			dt::after {
+				content: " : ";
+				}
+
+			dd {
+				text-align: right;
+				max-width: 100%;
+				overflow: hidden;
+				}  
+
+           }
+        }
+
+    }
+}
+
+.XenHosgeldinHeader {
+    .xf-XenHg_Header()
+
+	padding: 6px 10px;
+	margin: 0;
+	text-decoration: none;
+    }
+
+.XenHosgeldinBox {
+    .xf-XenHg_blok()
+
+	padding: 10px 0 0;
+
+	.XenHosgeldinKolon {
+		flex: 1 1 0;
+		overflow: hidden;
+		padding: 0 5px 0px;
+		}
+		
+	.XenHgSolKolon {
+		font-size: 13px;
+		margin: 1px;
+        max-width: 140px;
+		
+		.XenPanelAvatar { 
+			width: 130px;
+			height: 130px;
+
+			float: left;
+			margin: 0px 10px 10px 0px;
+			
+			>span {	line-height: 130px;}
+
+		img { 
+			width: 130px;
+			height: 130px;
+			margin: auto;
+			}
+		  }
+       .avatar--updateLink {
+	        line-height: 25px;
+            }
+        }
+
+    .XenHguserSolKolon {
+	     font-size: 13px;
+	     margin: 1px;
+         max-width: 150px;
+        
+	.XenPanelusername { 
+		overflow: hidden;
+		}
+
+	.username  { 
+		font-size: 24px;
+		font-weight: 600;
+		}
+     }
+      
+	.XenHgMerkezKolon {
+		font-size: 13px;
+		margin: 1px;
+		}
+
+	.XenHgSagKolon {
+		font-size: 13px;
+		margin: 1px;    
+		}	
+
+	.XenHgTanimlar {
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+		font-size: 14px;
+		height: 20px;
+
+
+			dt {
+				float: left;
+				max-width: 100%;
+				margin-right: 6px;             
+				}
+			
+			dt::after {
+				content: " : ";
+				}
+
+			dd {
+				text-align: right;
+				max-width: 100%;
+				overflow: hidden;
+				}  
+		}
+
+}                  
+
+.XenAltSatirBaslik {
+	.xf-blockTabHeader();
+	
+	text-align: center;
+	margin-top: -22px;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	border-top-right-radius: 2px;
+	border-top-left-radius: 2px;
+	border:none;
+    }
+
+	.XenAltSatir {
+        .xf-XenHg_footer()
+		
+		flex-wrap: wrap;
+		justify-content: space-between;
+        padding: 0px 10px;
+		
+		.XenAltTanimlar {
+                padding: 0;
+                margin: 3px;
+
+			dt {
+				display: table-row;
+				font-size: 80%;
+				text-align: center;
+				color: #8c8c8c;}
+ 
+			dd {
+				display: table-row;
+				text-align: center;
+			   }
+	   }
+  	}]]></template>
+  <template type="public" title="HosgeldinPaneliSidebar" version_id="1010000" version_string="1.1.0"><![CDATA[<xf:if is="{{ $xf.options.HosgeldinpanelAcKapat && 
+		      $xf.options.XenHgPanel_Konum == 'sidebarda' && 
+			  $xf.visitor.hasPermission('XenHosGeldinPanelYetki','XenHhGorebilirmi') }}">
+<xf:css src="HosgeldinPaneli.less" />
+ <div class="block">	
+   <div class="XenHosgeldinBoxSidebar">
+	   <div class="block-container">
+			<xf:if is="{{ $xf.options.XenHgPanel_Show_avatar}}">
+				   <div class="XenPanelAvatar">
+							  <xf:avatar user="{$xf.visitor}" size="m" href="" update="{{ link('account/avatar', $user) }}" />
+					        </div>					
+						</xf:if>
+		   
+		     	<div class="XenPanelusername">
+					<xf:username user="$xf.visitor" rich="true" notooltip="true" />
+						 <xf:if contentcheck="true">
+							 <div class="memberHeader-banners">
+								 <xf:contentcheck><xf:userbanners user="$xf.visitor" /></xf:contentcheck>
+							 </div>
+						</xf:if>
+				</div>
+		
+		  			 <div class="XenPanelBilgiler">		
+						<dl class="XenHgTanimlar">
+							<dt>{{ phrase('GecerliSaat') }}</dt> 
+							<dd> {{ date($xf.time ) }} - {{ date($xf.time, 'g:i A') }}</dd>
+						</dl>
+	
+						<dl class="XenHgTanimlar">
+							<dt>{{ phrase('joined') }}</dt> 
+							<dd><xf:date time="{$xf.visitor.register_date}" /></dd>	
+						</dl>
+							
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('last_activity') }}</dt>  
+							<dd> <xf:date time="{$xf.visitor.last_activity}" /></dd> 
+						</dl>
+						
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('your_email_address') }}</dt> 
+							<dd>{$xf.visitor.email} </dd>
+						</dl>	
+						
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('date_of_birth') }}</dt>
+							<dd><xf:set var="$birthday" value="{{ $xf.visitor.Profile.getBirthday(true) }}" />
+							{{ date($birthday.timeStamp, $birthday.format) }}
+							</dd>
+						</dl>
+					</div>	 
+		   
+		   			<div class="XenPanelBilgiler">
+						<dl class="XenHgTanimlar">	
+							<dt> {{ phrase('conversations') }}</dt>
+							<dd><a href="{{ link('conversations') }}">{$xf.visitor.conversations_unread|number}</a> {{ phrase('okunmamis_mesajlar') }}</dd>
+						</dl>
+						
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('alerts') }}</dt> 
+							<dd><a href="{{ link('account/alerts') }}">{$xf.visitor.alerts_unread|number}</a> {{ phrase('yeni_bildirim') }}</dd>
+						</dl>
+						
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('messages') }}</dt>
+							<dd>{$xf.visitor.message_count|number}</dd>
+						</dl>	
+		 
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('likes_received') }}</dt>
+							<dd>{$xf.visitor.like_count|number}</dd>
+						</dl>
+		 
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('trophy_points') }}</dt>
+							<dd>{$xf.visitor.trophy_points|number}</dd>
+						</dl>
+		 
+						<dl class="XenHgTanimlar">	
+							<dt>{{ phrase('warning_points') }}</dt>
+							<dd> {$warning.points|number}</dd>
+						</dl>
+					</div> <!--XenPanelBilgiler-->	   
+	   </div>
+	</div>
+	</div>
+  </xf:if>]]></template>
+</templates>

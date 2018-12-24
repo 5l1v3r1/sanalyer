@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style_properties>
+  <style_property property_name="XenHg_Header" group_name="XenHosgeldinPanelDesing" title="Welcome - Header" property_type="css" display_order="10" css_components="text,background,border,border_radius,border_color_simple,border_radius_simple,extra">
+    <value>{
+    "font-size": "@xf-fontSizeLarger",
+    "color": "@xf-textColorEmphasized",
+    "font-weight": "@xf-fontWeightNormal",
+    "background-color": "@xf-contentHighlightBg",
+    "border-bottom-width": "@xf-borderSize",
+    "border-bottom-color": "@xf-borderColorLight",
+    "extra": "background: linear-gradient(0deg, @xf-contentHighlightBg, mix(@xf-contentHighlightBg, @xf-contentBg, 50%));"
+}</value>
+  </style_property>
+  <style_property property_name="XenHg_blok" group_name="XenHosgeldinPanelDesing" title="Welcome - Block" property_type="css" display_order="20" css_components="text,background,extra">
+    <value>{
+    "color": "@xf-textColorDimmed",
+    "background-color": "@xf-contentAltBg"
+}</value>
+  </style_property>
+  <style_property property_name="XenHg_footer" group_name="XenHosgeldinPanelDesing" title="Welcome - Footer" property_type="css" display_order="21" css_components="text,background,border,border_color_simple,border_radius_simple,extra">
+    <value>{
+    "font-size": "15px",
+    "color": "@xf-textColorDimmed",
+    "background-color": "@xf-contentAltBg",
+    "border-top-width": "@xf-borderSize",
+    "border-top-color": "RGBa(37, 119, 177,0.5)",
+    "extra": "background: linear-gradient(180deg, @xf-contentAltBg, mix(@xf-contentAltBg, @xf-contentBg, 50%));"
+}</value>
+  </style_property>
+</style_properties>

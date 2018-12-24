@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<code_event_listeners>
+  <listener event_id="app_pub_render_page" execute_order="10" callback_class="\ThemeHouse\UIX\Listener\App" callback_method="pubRenderPage" active="1"/>
+  <listener event_id="entity_structure" execute_order="10" callback_class="\ThemeHouse\UIX\Listener\EntityStructure" callback_method="style" active="1" hint="XF\Entity\Style" description="XF\Entity\Style"/>
+  <listener event_id="entity_structure" execute_order="10" callback_class="\ThemeHouse\UIX\Listener\EntityStructure" callback_method="userOption" active="1" hint="XF\Entity\UserOption" description="XF\Entity\UserOption"/>
+  <listener event_id="templater_setup" execute_order="10" callback_class="\ThemeHouse\UIX\Listener\TemplaterSetup" callback_method="run" active="1"/>
+</code_event_listeners>

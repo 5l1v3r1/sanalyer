@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template_modifications>
+  <modification type="public" template="PAGE_CONTAINER" modification_key="XenGenTr_ResimliKonular_konum_icerikustu" description="One çikan resimli konu konum - 1" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[		<xf:ad position="container_breadcrumb_top_above" />]]></find>
+    <replace><![CDATA[             <xf:if is="{$xf.options.XenGenTr_ResimliKonular_konum} == 'enust' &&
+						{$xf.options.XenGenTr_ResimliKonular_kapat} &&
+					    $template == 'forum_list'">
+                 <xf:widget key="XenGenTr_ResimliOneCikan_Widget" />
+            </xf:if>  
+
+
+$0]]></replace>
+  </modification>
+  <modification type="public" template="forum_list" modification_key="XenGenTr_ResimliKonular_konum_forumustu" description="One çikan resimli konu konum - 2" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:widgetpos id="forum_list_above_nodes" />
+]]></find>
+    <replace><![CDATA[             <xf:if is="{$xf.options.XenGenTr_ResimliKonular_konum} == 'frmustu' &&
+						{$xf.options.XenGenTr_ResimliKonular_kapat}">
+                 <xf:widget key="XenGenTr_ResimliOneCikan_Widget" /> 
+            </xf:if>
+$0   
+]]></replace>
+  </modification>
+  <modification type="public" template="forum_list" modification_key="XenGenTr_ResimliKonular_konum_forumalti" description="One çikan resimli konu konum - 3" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:widgetpos id="forum_list_below_nodes" />]]></find>
+    <replace><![CDATA[$0  
+           <xf:if is="{$xf.options.XenGenTr_ResimliKonular_konum} == 'frmalti' &&
+					  {$xf.options.XenGenTr_ResimliKonular_kapat}">
+                 <xf:widget key="XenGenTr_ResimliOneCikan_Widget" />
+            </xf:if>
+ ]]></replace>
+  </modification>
+  <modification type="public" template="post_macros" modification_key="ResimliOneCikanKonu_onecikan_uyari" description="One cikan resimli konu - One cıkan uyarı" execution_order="3" enabled="1" action="str_replace">
+    <find><![CDATA[						<div class="message-attribution-opposite">]]></find>
+    <replace><![CDATA[$0	                       
+                           <xf:if is="$thread.ResimliOnecikan && $xf.options.XenGenTr_ResimliKonular_kapat && $post.position % $xf.options.messagesPerPage == 0">
+								 <span class="message-newIndicator">{{ phrase('XenGenTr_ResimliKonular_onecikan_konu') }}</span>
+							</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="thread_list_macros" modification_key="ResimliOneCikanKonu_liste_onecikan_uyari" description="One cikan resimli konu - Konu listesi,one cıkan uyarı" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[				</xf:contentcheck>
+				</ul>
+			</xf:if>]]></find>
+    <replace><![CDATA[				     <xf:if is="$thread.ResimliOnecikan && {$xf.options.XenGenTr_ResimliKonular_kapat}">
+				         <li> 
+				           <i class="structItem-status fa-thumbs-up" aria-hidden="true" title="{{ phrase('XenGenTr_ResimliKonular_onecikan_konu') }}"></i>
+			               <span class="u-srOnly">{{ phrase('XenGenTr_ResimliKonular_onecikan_konu') }}</span>
+				         </li>
+			          </xf:if>
+$0]]></replace>
+  </modification>
+  <modification type="public" template="thread_view" modification_key="ResimliOneCikanKonu_ustu_buton" description="One çıkan resimli konular için yönetim butonu" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[					<xf:if is="$thread.canApproveUnapprove() AND $thread.discussion_state == 'moderated'">
+						<xf:button href="{{ link('threads/approve', $thread) }}" class="button--link" overlay="true">
+							{{ phrase('approve') }}
+						</xf:button>
+					</xf:if>]]></find>
+    <replace><![CDATA[$0
+<xf:if contentcheck="true">
+	<xf:contentcheck>
+		<xf:if is="$xf.visitor.hasPermission('ResimliKonular_izinler', 'resimlionecikan_gonder') && 
+				   $xf.options.XenGenTr_ResimliKonular_kapat">
+			<xf:button href="{{ link('threads/resimlionecikan-duzenle', $thread) }}"
+					class="button--link"
+					 data-xf-click="overlay">
+				<xf:if is="{$resimlionecikan}">
+					{{ phrase('XenGenTr_ResimliOnecikanlar_duzenle') }}
+				<xf:else />
+					{{ phrase('XenGenTr_ResimliOnecikanlar_one_cikar') }}
+				</xf:if>
+			</xf:button>
+		</xf:if>
+	</xf:contentcheck>
+</xf:if>
+					]]></replace>
+  </modification>
+</template_modifications>

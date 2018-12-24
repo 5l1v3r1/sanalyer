@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<code_event_listeners>
+  <listener event_id="entity_structure" execute_order="10" callback_class="XenGenTr\XGTOgimage\Listener" callback_method="entity_structur" active="1" description="entity_structur"/>
+</code_event_listeners>

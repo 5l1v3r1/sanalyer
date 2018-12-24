@@ -1,0 +1,22 @@
+{
+    "js/Truonglv/ProfileCover/cover.js": "75ea2cc194afe3f33b0e7d20c4b95b5f923465302bbb7f836a758487f009ff1c",
+    "js/Truonglv/ProfileCover/cover.min.js": "4e18502cf412995471b6c9e134281a5c9627bf360ed54faf215df644fba8e112",
+    "js/Truonglv/ProfileCover/cropper.min.js": "f5429e161f7f467e36f544a67122895e68afd91339102559d4987a08ef64c79b",
+    "src/addons/Truonglv/ProfileCover/addon.json": "9b03fad63d5bb9046e3f925073007de7b61be547f2a9aed071c00f0a6678d26b",
+    "src/addons/Truonglv/ProfileCover/Helpers/Callback.php": "a4cfd5a1e3d62e84b33cbecebb9aea46f6bb7acf1366c835e0b1536506038cd6",
+    "src/addons/Truonglv/ProfileCover/Helpers/Option.php": "2dd47d89cf233c644b6a80f1dadbd6ec6a7ac00512ef2c16c7cb043d1cfdac1c",
+    "src/addons/Truonglv/ProfileCover/Observer/UserField.php": "890880176db24e71f0307dbc042dc009cd00a59d787bb1043fdea0ec38bc7393",
+    "src/addons/Truonglv/ProfileCover/Service/Cover.php": "f2e0febf6d9f1381983762e3ce1a281a9d646d1e897ef10423c54cf287b946de",
+    "src/addons/Truonglv/ProfileCover/Setup.php": "da699d0ec9cf6d883e60e572ddf6dda3efc2c11dc09c008e5ee3f87f313562af",
+    "src/addons/Truonglv/ProfileCover/XF/Pub/Controller/Account.php": "f0deaedcd0aeba5d834df9a14f176a9815eb6f525795662083f2786b1633ac57",
+    "src/addons/Truonglv/ProfileCover/XF/Pub/Controller/Member.php": "79ecbaf56a26c225288cad1cd58d43e442f43d6d93a3cb53ddf1c27eedff51b9",
+    "src/addons/Truonglv/ProfileCover/_data/class_extensions.xml": "ef51ccf86e6be53a324f19d480c37d8d15c8ea17ded9ba5fde2f15a1143a7b20",
+    "src/addons/Truonglv/ProfileCover/_data/code_event_listeners.xml": "6327b599dd0a248f2904dd882a49f78b4f065ef48b4f82b28d06bc19c286389c",
+    "src/addons/Truonglv/ProfileCover/_data/options.xml": "2f3ccde91d8074243e0a8674f399cc239a6a48d311c4aaeb6571542733a7a58a",
+    "src/addons/Truonglv/ProfileCover/_data/option_groups.xml": "48ceedad1b0ca9b909c535206eed941d4fbc9f4f0a6e2faa12ca8c4ddc44738c",
+    "src/addons/Truonglv/ProfileCover/_data/permissions.xml": "12236d4ff3f03b7325d4a39189b58c91ab845f45515e8d42f55a7f8ee34cca26",
+    "src/addons/Truonglv/ProfileCover/_data/permission_interface_groups.xml": "9ac9f6f160a9567ed41b364f21f17222c6c28fa2309ef318323538778e089124",
+    "src/addons/Truonglv/ProfileCover/_data/phrases.xml": "5fb6c4ab02027bfadc8f8f4bb06d58a8f8f7a9ccaa375c8eedd55f55c97cfe80",
+    "src/addons/Truonglv/ProfileCover/_data/templates.xml": "d05009668948a32174f8c4420ccd10a6c0fae5ff3c77d5faa82c51d4188102f1",
+    "src/addons/Truonglv/ProfileCover/_data/template_modifications.xml": "4da65d3a59dec49da01e02ead6bd0af63c19e927f3ba4cca224b1ad29527c369"
+}

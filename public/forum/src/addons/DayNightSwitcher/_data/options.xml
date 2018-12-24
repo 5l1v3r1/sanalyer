@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<options>
+  <option option_id="daynightswitcher_dayTheme" edit_format="callback" data_type="integer" validation_class="DayNightSwitcher\Option\StyleChooser" validation_method="verifyOption">
+    <default_value>1</default_value>
+    <edit_format_params>DayNightSwitcher\Option\StyleChooser::renderOption</edit_format_params>
+    <relation group_id="daynightswitcher" display_order="10"/>
+  </option>
+  <option option_id="daynightswitcher_dayTime" edit_format="template" data_type="array" validation_class="DayNightSwitcher\Option\DayTime" validation_method="verifyOption">
+    <default_value>{"start":"09:00","end":"18:00"}</default_value>
+    <edit_format_params>template=daynightswitcher_option_template_dayTime
+units=Часов:Минут</edit_format_params>
+    <sub_options>start
+end</sub_options>
+    <relation group_id="daynightswitcher" display_order="100"/>
+  </option>
+  <option option_id="daynightswitcher_globalEnabled" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="daynightswitcher" display_order="0"/>
+  </option>
+  <option option_id="daynightswitcher_guestsEnabled" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="daynightswitcher" display_order="5"/>
+  </option>
+  <option option_id="daynightswitcher_nightTheme" edit_format="callback" data_type="integer" validation_class="DayNightSwitcher\Option\StyleChooser" validation_method="verifyOption">
+    <default_value>1</default_value>
+    <edit_format_params>DayNightSwitcher\Option\StyleChooser::renderOption</edit_format_params>
+    <relation group_id="daynightswitcher" display_order="50"/>
+  </option>
+</options>

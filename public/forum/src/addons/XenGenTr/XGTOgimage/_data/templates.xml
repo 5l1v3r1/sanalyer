@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+  <template type="admin" title="xgt_ogimages_macro" version_id="1000002" version_string="1.0.0 Beta 2"><![CDATA[<xf:macro name="xgt_konu_ogimage" arg-option="!" arg-inputName="!">		
+    <xf:checkbox label="{{ phrase('xgt_secenek_varsayilan_ogimage') }}" explain="xgt_secenek_varsayilan_ogimage">
+		
+         <xf:option name="{$inputName}[ogimage]" 
+					selected="$option.option_value.ogimage" 
+				    label="{{ phrase('xgt_secenek_varsayilan_ogimage') }}" 
+					data-hide="true">
+				
+              <xf:dependent>
+                    <xf:textbox name="{$inputName}[xgtog_baglanti]" 
+								value="{$option.option_value.xgtog_baglanti}" 
+								label="{{ phrase('xgt_secenek_varsayilan_ogimage_url') }}" />
+                         <span class="formRow-explain">
+							{{ phrase('xgt_secenek_varsayilan_ogimage_aciklama') }}
+					    </span>
+              </xf:dependent>
+        </xf:option>
+   </xf:checkbox>
+</xf:macro>]]></template>
+  <template type="admin" title="xgt_secenek_ogimages" version_id="1000001" version_string="1.0.0 Beta 1"><![CDATA[<xf:formrow rowtype="inputLabelPair" label="{$option.title}" hint="{$hintHtml}" explain="{$explainHtml}" html="{$listedHtml}">
+   <xf:macro template="xgt_ogimages_macro" name="xgt_konu_ogimage" arg-option="{$option}" arg-inputName="{$inputName}"/>
+</xf:formrow>]]></template>
+  <template type="public" title="xgt_konu_ogimage" version_id="1000005" version_string="1.0.0 Beta 5"><![CDATA[<xf:if is="$xf.visitor.canSetOgDuzenler() AND ! in_array($forum.node_id,$xf.options.xgt_OgHaricForumlar)">
+	<xf:macro template="xgt_konu_ogimage_duzenle" name="xgtog_duzenle" arg-thread="{$thread}" arg-forum="{$forum}" />
+</xf:if>]]></template>
+  <template type="public" title="xgt_konu_ogimage_buton" version_id="1000006" version_string="1.0.0 Beta 5"><![CDATA[<xf:css src="xgt_konu_ogimage_buton.less" />
+<xf:if is="$thread.canEdit() && $xf.visitor.canSetOgDuzenler() AND ! in_array($forum.node_id,$xf.options.xgt_OgHaricForumlar)">
+	<div class="XGT-OgImage-Buton">
+     	<a href="{{ link('threads/edit', $thread) }}" data-xf-click="overlay" class="menu-linkRow">
+		 	{{ phrase('xgt_ogDuzenle_buton') }} 
+		 	<div class="XGT-OgImage-bilgi">
+             	<xf:if is="{$thread.xgt_ogdb.xgtOg_yukle}"><i class="fa fa-image" aria-hidden="true"></i></xf:if>
+		     	<xf:if is="{$thread.xgt_ogdb.xgtog_baglanti}"><i class="fa fa-link" aria-hidden="true"></i></xf:if>
+			</div>
+     	</a>
+     	<xf:set var="$testUrl" value="{{ link('full:threads', $thread)|urlencode }}" />
+     	<a href="https://developers.facebook.com/tools/debug/og/object?q={$testUrl}" class="menu-linkRow" target="_blank">
+          	{{ phrase('xgt_ogFacebook_hata_buton') }}
+     	</a>	
+	</div> 
+</xf:if>]]></template>
+  <template type="public" title="xgt_konu_ogimage_buton.less" version_id="1000006" version_string="1.0.0 Beta 5"><![CDATA[.XGT-OgImage-Buton {
+	background-color: @xf-paletteColor1;
+	border-bottom:solid 1px xf-intensify(@xf-borderColor, 5%);
+	
+	.XGT-OgImage-bilgi {
+		float: right;
+		background-color: @xf-paletteAccent2 ;
+		text-align: center;
+		color: @xf-paletteNeutral1;
+		border-radius:4px;
+		} 
+	}]]></template>
+  <template type="public" title="xgt_konu_ogimage_duzenle" version_id="1000005" version_string="1.0.0 Beta 5"><![CDATA[<xf:macro name="xgtog_duzenle" arg-thread="!" arg-forum="!">
+	<hr class="formRowSep" />
+	<xf:formrow label="{{ phrase('xgt_OgYukle_yonet') }}" explain="{{ phrase('xgt_OgYukle_yonet_aciklama') }}">
+		<xf:set var="$xgtOgKonum">{{ $forum.Node.getXgtOgImageBaglanti($thread.xgt_ogdb, 'thread') }}</xf:set>	
+		<xf:if is="{$xgtOgKonum} != ''">
+			<img src="{$xgtOgKonum}" alt="" class="avatar">
+			<xf:if is="!{$thread.xgt_ogdb.xgtog_baglanti} && {$thread.xgt_ogdb.xgtOg_yukle}">
+				<xf:hiddenval name="xgtog_mevcut" value="{$thread.xgt_ogdb.xgtOg_yukle}" />
+				<div>				
+					<xf:checkbox standalone="true">
+						<xf:option name="xgtog_sil" label="{{ phrase('XGT_ogSil') }}" />
+					</xf:checkbox>
+					<dfn class="inputChoices-explain">
+						{{ phrase('XGT_ogSil_aciklama') }}
+					</dfn>			
+				</div>
+			</xf:if>
+		</xf:if>
+		<p>			
+		   <xf:if is="{{$xf.visitor.hasPermission('general','xgtOgUrlEkleyebilir') }}">
+			    <xf:textbox name="xgt_ogdb[xgtog_baglanti]" value="{$thread.xgt_ogdb.xgtog_baglanti}" label="{{ phrase('XGT_ogBaglanti') }}" />
+			     <dfn class="inputChoices-explain">
+				    {{ phrase('XGT_ogBaglanti_aciklama') }}
+			     </dfn>
+		   </xf:if>
+		</p>
+		<p>
+			<xf:upload name="xgtOg_yukle" accept=".gif,.jpeg,.jpg,.jpe,.png" label="{{ phrase('XGT_ogYukle') }}" />
+			<dfn class="inputChoices-explain">
+				{{ phrase('XGT_ogYukle_aciklama') }}
+			</dfn>
+		</p>		   
+	</xf:formrow>
+</xf:macro>]]></template>
+</templates>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style_properties>
+  <style_property property_name="XGTResimliKonular_Header" group_name="XenGenTr_OneCikan_Resimli_konular" title="Resimli konular header rengi" property_type="value" value_type="color" display_order="100">
+    <value>""</value>
+  </style_property>
+  <style_property property_name="XGTResimliKonular_Header_Metin" group_name="XenGenTr_OneCikan_Resimli_konular" title="Resimli konular header mentin rengi" property_type="value" value_type="color" display_order="200">
+    <value>""</value>
+  </style_property>
+  <style_property property_name="XGTResimliKonular_body" group_name="XenGenTr_OneCikan_Resimli_konular" title="Resimli konular arka plan rengi" property_type="value" value_type="color" display_order="300">
+    <value>""</value>
+  </style_property>
+</style_properties>

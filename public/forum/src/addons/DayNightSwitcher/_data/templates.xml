@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+  <template type="admin" title="daynightswitcher_option_template_dayTime" version_id="1000070" version_string="1.0.0"><![CDATA[<xf:formrow rowtype="input"
+	label="{$option.title}"
+	hint="{$hintHtml}"
+	explain="{$explainHtml}"
+	html="{$listedHtml}">
+
+	<div class="inputGroup inputGroup--dayTime">
+		<input type="text" class="input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" name="{$inputName}[start]" value="{$option.option_value.start}" placeholder="{{ phrase('minimum') }}" maxlength="5" />
+		<span class="inputGroup-text">{{ $formatParams.between ? $formatParams.between : '-' }}</span>
+		<input type="text" class="input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" name="{$inputName}[end]" value="{$option.option_value.end}" placeholder="{{ phrase('maximum') }}" maxlength="5" />
+	</div>
+</xf:formrow>]]></template>
+  <template type="admin" title="daynightswitcher_style_chooser" version_id="1000070" version_string="1.0.0"><![CDATA[<xf:formrow rowtype="input"
+	label="{$option.title}"
+	hint="{$hintHtml}"
+	explain="{$explainHtml}"
+	html="{$listedHtml}">
+
+	<xf:radio name="{$inputName}" id="{$option.option_id}">
+		<xf:foreach loop="$styles" key="$counter" value="$style">
+			<xf:if is="{{ $option.option_id === 'daynightswitcher_dayTheme' }}">
+				<xf:option value="{$style.style_id}" selected="{{ $style.style_id == $xf.options.daynightswitcher_dayTheme }}" label="{$style.title}" />
+			<xf:else />
+				<xf:option value="{$style.style_id}" selected="{{ $style.style_id == $xf.options.daynightswitcher_nightTheme }}" label="{$style.title}" />
+			</xf:if>
+		</xf:foreach>
+	</xf:radio>
+</xf:formrow>]]></template>
+  <template type="public" title="daynightswitcher_style_chooser_disabled" version_id="1000070" version_string="1.0.0"><![CDATA[<xf:title>{{ phrase('daynightswitcher_style_chooser_disabled') }}</xf:title>
+
+<xf:head option="metaNoindex"><meta name="robots" content="noindex" /></xf:head>
+
+<div class="blockMessage">
+	<xf:if is="$xf.visitor.hasPermission('general', 'daynightswitcher_disable')">
+		{{ phrase('daynightswitcher_style_chooser_yes') }}
+	<xf:else />
+		{{ phrase('daynightswitcher_style_chooser_no') }}
+	</xf:if>
+</div>]]></template>
+  <template type="admin" title="daynightswitcher_style_list.less" version_id="1000070" version_string="1.0.0"><![CDATA[.daynightswitcher-theme-label {	
+	padding: 1px .35em;
+	
+	border: 1px solid transparent;
+	
+	border-radius: @xf-borderRadiusMedium;
+	
+	font-size: 80%;
+	font-weight: normal;
+	line-height: ((@xf-lineHeightDefault) * .9);
+	text-decoration: none;
+	
+	margin-left: 5px;
+
+	i {
+		font-size: 120%;
+		padding-right: 3px;
+		display: inline;
+	}
+	
+	&.daynightswitcher-day {
+		border-color: #f3e9c3;
+		background: #fdfaed;
+		color: #8b7d5a;
+	}
+	
+	&.daynightswitcher-night {
+		border-color: #D6C3F3;
+		background: #F1EDFD;
+		color: #665A8B;
+	}
+}]]></template>
+</templates>

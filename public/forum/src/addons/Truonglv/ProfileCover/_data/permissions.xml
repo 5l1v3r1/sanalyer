@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+  <permission permission_group_id="general" permission_id="profileCover_deleteAny" permission_type="flag" interface_group_id="profileCover" display_order="130"/>
+  <permission permission_group_id="general" permission_id="profileCover_deleteSelf" permission_type="flag" interface_group_id="profileCover" display_order="15"/>
+  <permission permission_group_id="general" permission_id="profileCover_uploadAny" permission_type="flag" interface_group_id="profileCover" display_order="120"/>
+  <permission permission_group_id="general" permission_id="profileCover_uploadSelf" permission_type="flag" interface_group_id="profileCover" display_order="10"/>
+</permissions>

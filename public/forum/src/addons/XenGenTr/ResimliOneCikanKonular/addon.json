@@ -1,0 +1,14 @@
+{
+    "legacy_addon_id": "",
+    "title": "[XenGenTr] One cikan resimli konular V1 ",
+    "description": "[XenGenTr] Dilediginiz forum konularini arka plan resmi yukleyerek one cikararak kullanicilarin daha fazla dikkatini cekebilirsiniz. ",
+    "version_id": 1000050,
+    "version_string": "1.0.0",
+    "dev": "eTiKeT",
+    "dev_url": "https://xenforo.gen.tr/",
+    "faq_url": "https://xenforo.gen.tr/",
+    "support_url": "https://xenforo.gen.tr/xenforo-kaynaklari/xengentr-one-cikan-konular.400/",
+    "extra_urls": [],
+    "require": [],
+    "icon": "XenGenTr.png"
+}

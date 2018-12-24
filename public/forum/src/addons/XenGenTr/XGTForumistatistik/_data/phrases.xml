@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="XGT_Gosterim" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Gösterim]]></phrase>
+  <phrase title="XGT_Konu" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Konu]]></phrase>
+  <phrase title="XGT_cevap" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Cevap]]></phrase>
+  <phrase title="XGT_forum" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Forum]]></phrase>
+  <phrase title="XGT_istatistik_EnCokCevap_konu_ackapat" version_id="2000240" version_string="2.0.4"><![CDATA[En çok cevap alan konular - Etkin]]></phrase>
+  <phrase title="XGT_istatistik_EnCokGoruntulenen_konu_ackapat" version_id="2000240" version_string="2.0.4"><![CDATA[En çok görüntülenen konular - Etkin]]></phrase>
+  <phrase title="XGT_istatistik_Kullanici" version_id="100000" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Kullanıcı]]></phrase>
+  <phrase title="XGT_istatistik_acp_tab_YeniKonular" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Yeni konular]]></phrase>
+  <phrase title="XGT_istatistik_acp_tab_bilgilendirme_mesaji" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[<div style="font-size:13px;">
+	[XenGenTr] Forum istatistik sistemi,bu eklenti ve daha fazla için <a href="https://xenforo.gen.tr/">XenForo Türkçe destek </a>forumumuz ziyaret edebilirsiniz.
+</div>
+
+]]></phrase>
+  <phrase title="XGT_istatistik_acp_tab_en_begenilen_Konular" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En beğenilen konular]]></phrase>
+  <phrase title="XGT_istatistik_acp_tab_encok_cevaplanan_Konular" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En çok cevaplanan konular]]></phrase>
+  <phrase title="XGT_istatistik_acp_tab_encok_goruntulenen_Konular" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En çok görüntülenen konular]]></phrase>
+  <phrase title="XGT_istatistik_acp_tab_secenekler" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Genel seçenekler]]></phrase>
+  <phrase title="XGT_istatistik_acp_tab_yenimesajlar" version_id="100000" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Yeni mesajlar]]></phrase>
+  <phrase title="XGT_istatistik_encok_mesaj" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En çok mesaj]]></phrase>
+  <phrase title="XGT_istatistik_google_ara_title" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Bu konuyu google üzerinde arat]]></phrase>
+  <phrase title="XGT_istatistik_google_arat" version_id="2000240" version_string="2.0.4"><![CDATA[Google arat butonu - Etkin]]></phrase>
+  <phrase title="XGT_istatistik_konum_icerik_ustu" version_id="2000240" version_string="2.0.4"><![CDATA[İçeriklerin üstünde]]></phrase>
+  <phrase title="XGT_istatistik_konum_ozel" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Özel konum]]></phrase>
+  <phrase title="XGT_istatistik_mesaj_sayisi" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Mesaj]]></phrase>
+  <phrase title="XGT_istatistik_sayfalar_anasayfa" version_id="2000240" version_string="2.0.4" global_cache="1"><![CDATA[Sadece ana sayfada]]></phrase>
+  <phrase title="XGT_istatistik_sayfalar_tumu" version_id="2000240" version_string="2.0.4"><![CDATA[Tüm sayfalarda]]></phrase>
+  <phrase title="XGT_istatistik_yeniKonu_kapat_ac" version_id="2000240" version_string="2.0.4"><![CDATA[Yeni konular - Etkin]]></phrase>
+  <phrase title="XGT_istatistik_yeniMesaj_kapat_ac" version_id="2000240" version_string="2.0.4"><![CDATA[Yeni mesajlar - Etkin]]></phrase>
+  <phrase title="XGT_son_yazan" version_id="100000" version_string="1.0.0 Alpha" global_cache="1"><![CDATA[Son yazan]]></phrase>
+  <phrase title="XGT_zaman" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Gönderim]]></phrase>
+  <phrase title="option.XGT_istatistik_EnCokBegeni_konu_forumlari" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Sadece seçili forumlardan içerik al]]></phrase>
+  <phrase title="option.XGT_istatistik_EnCokBegeni_konu_limiti" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En çok begenilen konu için gösterim limiti]]></phrase>
+  <phrase title="option.XGT_istatistik_EnCokBegeni_konubaslik" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En çok begenilen konu başlığınız]]></phrase>
+  <phrase title="option.XGT_istatistik_EnCokBegenilen_konu_ackapat" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En çok begenilen konular - Etkin]]></phrase>
+  <phrase title="option.XGT_istatistik_EnCokCevap_konu_ackapat" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En çok cevap alan konular - Etkin]]></phrase>
+  <phrase title="option.XGT_istatistik_EnCokCevap_konu_forumlari" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Sadece seçili forumlardan içerik al]]></phrase>
+  <phrase title="option.XGT_istatistik_EnCokCevap_konu_limiti" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En çok cevap alan konu için gösterim limiti]]></phrase>
+  <phrase title="option.XGT_istatistik_EnCokCevap_konubaslik" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En çok cevaplanan konu başlığınız]]></phrase>
+  <phrase title="option.XGT_istatistik_EnCokGoruntulenen_konu_ackapat" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En çok görüntülenen konular - Etkin]]></phrase>
+  <phrase title="option.XGT_istatistik_EnCokGoruntulenen_konu_forumlari" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Sadece seçili forumlardan içerik al]]></phrase>
+  <phrase title="option.XGT_istatistik_EnCokGoruntulenen_konu_limiti" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En çok görüntülenen konu için gösterim limiti]]></phrase>
+  <phrase title="option.XGT_istatistik_EnCokGoruntulenen_konubaslik" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En çok görüntülene konu başlığınız]]></phrase>
+  <phrase title="option.XGT_istatistik_Konum" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[XGT istatistik konumunu seçiniz]]></phrase>
+  <phrase title="option.XGT_istatistik_Kullanici_kapat" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Kullanıcı istatistikleri - Etkin]]></phrase>
+  <phrase title="option.XGT_istatistik_Kullanici_limiti" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Gösterilecek olan kullanıcı sayısı]]></phrase>
+  <phrase title="option.XGT_istatistik_Last_Post_Jump" version_id="2000210" version_string="2.0.3"><![CDATA[Last Post Jump - Eklentisi kullanıyorum]]></phrase>
+  <phrase title="option.XGT_istatistik_google_arat" version_id="2000240" version_string="2.0.4"><![CDATA[Google arat butonu - Etkin]]></phrase>
+  <phrase title="option.XGT_istatistik_kullanici_gruprengi" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Kullanıcı grup renkler]]></phrase>
+  <phrase title="option.XGT_istatistik_question_Threads" version_id="2000210" version_string="2.0.3"><![CDATA[Question Threads - eklentisi kullanıyorum]]></phrase>
+  <phrase title="option.XGT_istatistik_sayfalar" version_id="2000240" version_string="2.0.4"><![CDATA[Gösterilecek sayfalar]]></phrase>
+  <phrase title="option.XGT_istatistik_yeniKonu_Limit" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Yeni konular için gösterim limiti]]></phrase>
+  <phrase title="option.XGT_istatistik_yeniKonu_baslik" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Yeni konular başlığınız]]></phrase>
+  <phrase title="option.XGT_istatistik_yeniKonu_kapat_ac" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Yeni konular - Etkin]]></phrase>
+  <phrase title="option.XGT_istatistik_yeniKonular_forumlari" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Sadece seçili forumlardan içerik al]]></phrase>
+  <phrase title="option.XGT_istatistik_yeniMesaj_Limit" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Yeni mejsajlar için gösterim limiti]]></phrase>
+  <phrase title="option.XGT_istatistik_yeniMesaj_baslik" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Yeni mesajlar başlığınız]]></phrase>
+  <phrase title="option.XGT_istatistik_yeniMesaj_forumlari" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Sadece seçili forumlardan içerik al]]></phrase>
+  <phrase title="option.XGT_istatistik_yeniMesaj_kapat_ac" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Yeni mesajlar - Etkin]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_EnCokBegeni_konu_forumlari" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Yalnızca seçim yapılmış forumlardan içerik alınır. Eğer seçim yapılmadı ise tüm forumda içerik alınacaktır.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_EnCokBegeni_konu_limiti" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En çok begenilen konular için bir gösterim limiti belirleyebilirsiniz.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_EnCokBegeni_konubaslik" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_EnCokBegenilen_konu_ackapat" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[XGT - istatistik en çok begenilen sekmesi etkin.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_EnCokCevap_konu_ackapat" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[XGT - istatistik en çok cevap alan konular sekmesi etkin.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_EnCokCevap_konu_forumlari" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Yalnızca seçim yapılmış forumlardan içerik alınır. Eğer seçim yapılmadı ise tüm forumda içerik alınacaktır.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_EnCokCevap_konu_limiti" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En çok cevap alan konular için bir gösterim limiti belirleyebilirsiniz.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_EnCokCevap_konubaslik" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_EnCokGoruntulenen_konu_ackapat" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[XGT - istatistik en çok görüntülenen konular sekmesi etkin.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_EnCokGoruntulenen_konu_forumlari" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Yalnızca seçim yapılmış forumlardan içerik alınır. Eğer seçim yapılmadı ise tüm forumda içerik alınacaktır.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_EnCokGoruntulenen_konu_limiti" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[En çok görüntülenen konular için bir gösterim limiti belirleyebilirsiniz.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_EnCokGoruntulenen_konubaslik" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_Konum" version_id="2000250" version_string="2.0.5"><![CDATA[XGT istatistik sisteminizi burada belirtilen konumlar içinden seçebilirbilirsiniz.<br /> Eğer özel bir konum belirlemek istiyorsanız "Özel konum" seçin ve şu kodu istediğiniz şablona ekleyiniz:
+<textarea class="input input--fitHeight" rows="1" readonly="readonly" data-xf-init="textarea-handler"> &nbsp;&lt;xf:include template="XGT_istatistik_ozel_konum" /&gt; </textarea>]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_Kullanici_kapat" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[XGT - istatistik en çok mesaj atan kullanıcı sekmesi etkin.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_Kullanici_limiti" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[XGT - istatistik en çok mesaj atan kullanıcı sekmesinde gösterilecek olan kullanıcı sayısını belirtiniz.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_Last_Post_Jump" version_id="2000210" version_string="2.0.3"><![CDATA[]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_google_arat" version_id="2000240" version_string="2.0.4"><![CDATA[Konu bağlantıların yanında çıakcak bir google ikonu ile konuları google üzerinde aratabilirsiniz.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_kullanici_gruprengi" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Kullanıcı isimlerinin kullanıcı grup renklerinde görünmesi için etkinleştirmelisiniz. Bu uygulama tüm forumda,tüm alanlarda kullanıcı adlarını grup renklerinde gösterecektir.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_question_Threads" version_id="2000210" version_string="2.0.3"><![CDATA[]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_sayfalar" version_id="2000250" version_string="2.0.5"><![CDATA[Ana sayfa yada tüm sayfalar olarak gösterim sağlayabilirsiniz. Bu fonksiyon sadece "İçeriklerin üstünde"  ve "Özel konum" seçeneklerinde kullanılabilir.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_yeniKonu_Limit" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Yeni konularda gösterilecek olan en fazla mesaj sayısını belirtebilirsiniz.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_yeniKonu_baslik" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_yeniKonu_kapat_ac" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[XGT - istatistik yeni konular sekmesi etkin.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_yeniKonular_forumlari" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Yalnızca seçim yapılmış forumlardan içerik alınır. Eğer seçim yapılmadı ise tüm forumda içerik alınacaktır.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_yeniMesaj_Limit" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Yeni mesajlarda gösterilecek olan en fazla mesaj sayısını belirtebilirsiniz.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_yeniMesaj_baslik" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_yeniMesaj_forumlari" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Yalnızca seçim yapılmış forumlardan içerik alınır. Eğer seçim yapılmadı ise tüm forumda içerik alınacaktır.]]></phrase>
+  <phrase title="option_explain.XGT_istatistik_yeniMesaj_kapat_ac" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[XGT - istatistik yeni mesajlar sekmesi etkin.]]></phrase>
+  <phrase title="option_group.XGT_istatistik_secenekleri" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] Forum istatistik - Seçenekler]]></phrase>
+  <phrase title="option_group_description.XGT_istatistik_secenekleri" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Forum istatistikleri için bazı seçenekler içerir.]]></phrase>
+  <phrase title="permission.XGT_istatistik_izin_grubu_XGT_istatistik_gor" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Forum istatistiklerini görebilir mi?]]></phrase>
+  <phrase title="permission.XGT_istatistik_izin_grubu_XGT_istatistik_kullanici" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[İstatistiklerde kullanıcı istatistiklerini görebilir mi?]]></phrase>
+  <phrase title="permission.XGT_istatistik_izin_grubu_XGT_istatistikgor" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Forum istatistiklerini görebilir mi?]]></phrase>
+  <phrase title="permission_interface.XGT_istatistik_izin_grubu" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] Forum istatistik izinleri]]></phrase>
+  <phrase title="style_prop.XGT_istatistik_aktif_buton" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Tab butonlar - Aktif buton]]></phrase>
+  <phrase title="style_prop.XGT_istatistik_aktif_buton_sinir" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Tab butonla - Aktif buton sınır]]></phrase>
+  <phrase title="style_prop.XGT_istatistik_alt_header" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Alt header - Arka plan rengi]]></phrase>
+  <phrase title="style_prop.XGT_istatistik_alt_header_yazi" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Alt header - Yazı rengi]]></phrase>
+  <phrase title="style_prop.XGT_istatistik_arkaplan" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Arka plan rengi]]></phrase>
+  <phrase title="style_prop.XGT_istatistik_baglanti_renkleri" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Bağlantı rengi]]></phrase>
+  <phrase title="style_prop.XGT_istatistik_footer_renk" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Footer - Arka plan rengi]]></phrase>
+  <phrase title="style_prop.XGT_istatistik_satir" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Konu listesi -  satır rengi]]></phrase>
+  <phrase title="style_prop.XGT_istatistik_satir_sinir_renk" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Konu listesi - Sınır rengi]]></phrase>
+  <phrase title="style_prop.XGT_istatistik_sayi_renk" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Sayısal değerlerin renkleri]]></phrase>
+  <phrase title="style_prop.XGT_istatistik_tab_header" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Tab butonlar - Header rengi]]></phrase>
+  <phrase title="style_prop.XGT_istatistik_tab_header_yazi" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Tab butonlar - Header metin rengi]]></phrase>
+  <phrase title="style_prop_desc.XGT_istatistik_aktif_buton" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Tab headerda bulunan aktif buton için arka plan rengi.]]></phrase>
+  <phrase title="style_prop_desc.XGT_istatistik_aktif_buton_sinir" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Aktif olan tab buton için alt kenarındaki sınır rengi.]]></phrase>
+  <phrase title="style_prop_desc.XGT_istatistik_alt_header" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="style_prop_desc.XGT_istatistik_alt_header_yazi" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="style_prop_desc.XGT_istatistik_arkaplan" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[İstatistik için bir arka plan rengi seçebilirsiniz.]]></phrase>
+  <phrase title="style_prop_desc.XGT_istatistik_baglanti_renkleri" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[istatistiklerde görünecek bağlantı,link rengini belirtebilirsiniz. Kullanıcılar bağlı oldukları grup renginde görünecektir.]]></phrase>
+  <phrase title="style_prop_desc.XGT_istatistik_footer_renk" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Footer alanı için renk seçimi yapabilirsiniz.]]></phrase>
+  <phrase title="style_prop_desc.XGT_istatistik_satir" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Konu listesinde iki ayrı renkte görünen satır için renk seçimi yapabilirsiniz.]]></phrase>
+  <phrase title="style_prop_desc.XGT_istatistik_satir_sinir_renk" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Konu listesi satırları için sınır çizgi rengi]]></phrase>
+  <phrase title="style_prop_desc.XGT_istatistik_sayi_renk" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="style_prop_desc.XGT_istatistik_tab_header" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Butonların dizildiği header alanı için bir renk seçimi yapınız.]]></phrase>
+  <phrase title="style_prop_desc.XGT_istatistik_tab_header_yazi" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[Headerda bulunan tab butonlar için yazı rengi.]]></phrase>
+  <phrase title="style_prop_group.XGT_istatistik_tasarim" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] istatistik - Tasarım]]></phrase>
+  <phrase title="style_prop_group_desc.XGT_istatistik_tasarim" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[XGT istatistik için bazı alanlar için renk değişim alanı.]]></phrase>
+  <phrase title="widget_def.XGT_EnCokBegenKonu_widget" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] İstatistik - En çok beğeni alan konular]]></phrase>
+  <phrase title="widget_def.XGT_EnCokCevapKonu_widget" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] İstatistik - En çok cevaplanan konular]]></phrase>
+  <phrase title="widget_def.XGT_EnCokGrtKonu_widget" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] İstatistik - En çok görüntülenen konular]]></phrase>
+  <phrase title="widget_def.XGT_YeniKonular_widget" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] İstatistik - Yeni Konular]]></phrase>
+  <phrase title="widget_def.XGT_YeniMesajlar_widget" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] İstatistik - Yeni Mesajlar]]></phrase>
+  <phrase title="widget_def.XGT_encokmesaj_kullanici" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] İstatistik - Kullanıcı en çok mesaj]]></phrase>
+  <phrase title="widget_def_desc.XGT_EnCokBegenKonu_widget" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] İstatistik - En çok beğeni alan  konular widget]]></phrase>
+  <phrase title="widget_def_desc.XGT_EnCokCevapKonu_widget" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] İstatistik - En çok cevaplanan konular widget]]></phrase>
+  <phrase title="widget_def_desc.XGT_EnCokGrtKonu_widget" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] İstatistik - En çok görüntülenen konular Widget]]></phrase>
+  <phrase title="widget_def_desc.XGT_YeniKonular_widget" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] İstatistik - Yeni Konular Widget]]></phrase>
+  <phrase title="widget_def_desc.XGT_YeniMesajlar_widget" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] İstatistik - Yeni Mesajlar Widget]]></phrase>
+  <phrase title="widget_def_desc.XGT_encokmesaj_kullanici" version_id="100000" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] İstatistik - Kullanıcı en çok mesaj widget]]></phrase>
+</phrases>

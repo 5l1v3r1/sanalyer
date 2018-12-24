@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="daynightswitcher_account_preferences_checkbox" version_id="1000070" version_string="1.0.0"><![CDATA[Automatically set light style for day and dark style for night]]></phrase>
+  <phrase title="daynightswitcher_can_not_change_style" version_id="1000070" version_string="1.0.0"><![CDATA[You can't change the style because it is changing automatically depending on current time.]]></phrase>
+  <phrase title="daynightswitcher_day_style" version_id="1000070" version_string="1.0.0"><![CDATA[Day style]]></phrase>
+  <phrase title="daynightswitcher_night_style" version_id="1000070" version_string="1.0.0"><![CDATA[Night style]]></phrase>
+  <phrase title="daynightswitcher_style_chooser_disabled" version_id="1000070" version_string="1.0.0"><![CDATA[Style is changing automatically]]></phrase>
+  <phrase title="daynightswitcher_style_chooser_no" version_id="1000070" version_string="1.0.0"><![CDATA[This forum automatically change themes depending on current time.]]></phrase>
+  <phrase title="daynightswitcher_style_chooser_yes" version_id="1000070" version_string="1.0.0"><![CDATA[This forum automatically change themes depending on current time. You can change this behavior in your account preferences.]]></phrase>
+  <phrase title="option.daynightswitcher_dayTheme" version_id="1000070" version_string="1.0.0"><![CDATA[Day style]]></phrase>
+  <phrase title="option.daynightswitcher_dayTime" version_id="1000070" version_string="1.0.0"><![CDATA[Day time]]></phrase>
+  <phrase title="option.daynightswitcher_globalEnabled" version_id="1000070" version_string="1.0.0"><![CDATA[Enable addon functionality]]></phrase>
+  <phrase title="option.daynightswitcher_guestsEnabled" version_id="1000070" version_string="1.0.0"><![CDATA[Enable addon functionality for guests]]></phrase>
+  <phrase title="option.daynightswitcher_nightTheme" version_id="1000070" version_string="1.0.0"><![CDATA[Night style]]></phrase>
+  <phrase title="option_explain.daynightswitcher_dayTheme" version_id="1000070" version_string="1.0.0"><![CDATA[Style that will be displayed at day. It is better to use light styles with prevailing <strong>white</strong> color. Default xenForo theme is an example of a light theme.]]></phrase>
+  <phrase title="option_explain.daynightswitcher_dayTime" version_id="1000070" version_string="1.0.0"><![CDATA[Set day start time and day end time in 24 hours format.]]></phrase>
+  <phrase title="option_explain.daynightswitcher_globalEnabled" version_id="1000070" version_string="1.0.0"><![CDATA[]]></phrase>
+  <phrase title="option_explain.daynightswitcher_guestsEnabled" version_id="1000070" version_string="1.0.0"><![CDATA[Forum timezone for guests will be used. If uncheked default forum style will be used.]]></phrase>
+  <phrase title="option_explain.daynightswitcher_nightTheme" version_id="1000070" version_string="1.0.0"><![CDATA[Style that will be displayed at night. It is better to use dark styles with prevailing <strong>black</strong> color.]]></phrase>
+  <phrase title="option_group.daynightswitcher" version_id="1000070" version_string="1.0.0"><![CDATA[Day Night Switcher]]></phrase>
+  <phrase title="option_group_description.daynightswitcher" version_id="1000070" version_string="1.0.0"><![CDATA[Day and night styles and other settings]]></phrase>
+  <phrase title="permission.general_daynightswitcher_disable" version_id="1000070" version_string="1.0.0"><![CDATA[Disable Day Night Switcher]]></phrase>
+</phrases>

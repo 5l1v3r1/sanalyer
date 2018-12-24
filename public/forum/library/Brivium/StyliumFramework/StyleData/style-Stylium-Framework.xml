@@ -1,0 +1,3284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style title="Stylium Framework" description="Stylium Framework by Brivium LLC" user_selectable="1">
+  <properties>
+    <property property_name="stylium_advancedFooter" property_type="scalar" definition="1" group_name="stylium_footer" title="Enable Advanced Footer" description="Display advanced footer for adding descriptions and menus." css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group=""><![CDATA[1]]></property>
+    <property property_name="stylium_footerFirstCol" property_type="scalar" definition="1" group_name="stylium_footer" title="Enable Footer First Column" description="" css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group="footer_first_col"><![CDATA[1]]></property>
+    <property property_name="stylium_footerFirstColTitle" property_type="scalar" definition="1" group_name="stylium_footer" title="Footer First Column Title" description="" css_components="" scalar_type="longstring" scalar_parameters="" display_order="20" sub_group="footer_first_col"><![CDATA[About Us]]></property>
+    <property property_name="stylium_footerFirstColIcon" property_type="scalar" definition="1" group_name="stylium_footer" title="Footer First Column Icon" description="" css_components="" scalar_type="" scalar_parameters="" display_order="30" sub_group="footer_first_col"><![CDATA[fa-info-circle]]></property>
+    <property property_name="stylium_footerFirstColContent" property_type="scalar" definition="1" group_name="stylium_footer" title="Footer First Column Content" description="" css_components="" scalar_type="longstring" scalar_parameters="" display_order="40" sub_group="footer_first_col"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in porttitor nulla, et lobortis diam. Vestibulum sed dapibus neque. Morbi tincidunt eu velit vitae venenatis. Quisque id ultrices ante. Nulla sed gravida nisl. Morbi interdum gravida pulvinar. Proin posuere diam at auctor iaculis. Morbi ac faucibus ante.]]></property>
+    <property property_name="stylium_footerSecondCol" property_type="scalar" definition="1" group_name="stylium_footer" title="Enable Footer Second Column" description="" css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group="footer_second_col"><![CDATA[1]]></property>
+    <property property_name="stylium_footerSecondColTitle" property_type="scalar" definition="1" group_name="stylium_footer" title="Footer Second Column Title" description="" css_components="" scalar_type="longstring" scalar_parameters="" display_order="20" sub_group="footer_second_col"><![CDATA[Related Link]]></property>
+    <property property_name="stylium_footerSecondColIcon" property_type="scalar" definition="1" group_name="stylium_footer" title="Footer Second Column Icon" description="" css_components="" scalar_type="" scalar_parameters="" display_order="30" sub_group="footer_second_col"><![CDATA[fa-external-link-square]]></property>
+    <property property_name="stylium_footerSecondColContent" property_type="scalar" definition="1" group_name="stylium_footer" title="Footer Second Column Content" description="" css_components="" scalar_type="longstring" scalar_parameters="" display_order="40" sub_group="footer_second_col"><![CDATA[<ul>
+	<li><a href="#">Related Link 1</a></li>
+	<li><a href="#">Related Link 2</a></li>
+	<li><a href="#">Related Link 3</a></li>
+	<li><a href="#">Related Link 4</a></li>
+	<li><a href="#">Related Link 5</a></li>
+</ul>]]></property>
+    <property property_name="stylium_footerThirdCol" property_type="scalar" definition="1" group_name="stylium_footer" title="Enable Footer Third Column" description="" css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group="footer_third_col"><![CDATA[1]]></property>
+    <property property_name="stylium_footerThirdColTitle" property_type="scalar" definition="1" group_name="stylium_footer" title="Footer Third Column Title" description="" css_components="" scalar_type="longstring" scalar_parameters="" display_order="20" sub_group="footer_third_col"><![CDATA[Related Link]]></property>
+    <property property_name="stylium_footerThirdColIcon" property_type="scalar" definition="1" group_name="stylium_footer" title="Footer Third Column Icon" description="" css_components="" scalar_type="" scalar_parameters="" display_order="30" sub_group="footer_third_col"><![CDATA[fa-external-link-square]]></property>
+    <property property_name="stylium_footerThirdColContent" property_type="scalar" definition="1" group_name="stylium_footer" title="Footer First Column Content" description="" css_components="" scalar_type="longstring" scalar_parameters="" display_order="40" sub_group="footer_third_col"><![CDATA[<ul>
+	<li><a href="#">Related Link 1</a></li>
+	<li><a href="#">Related Link 2</a></li>
+	<li><a href="#">Related Link 3</a></li>
+	<li><a href="#">Related Link 4</a></li>
+	<li><a href="#">Related Link 5</a></li>
+</ul>]]></property>
+    <property property_name="stylium_footerFourthCol" property_type="scalar" definition="1" group_name="stylium_footer" title="Enable Footer Fourth Column" description="" css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group="footer_fourth_col"><![CDATA[1]]></property>
+    <property property_name="stylium_footerFourthColTitle" property_type="scalar" definition="1" group_name="stylium_footer" title="Footer Fourth Column Title" description="" css_components="" scalar_type="longstring" scalar_parameters="" display_order="20" sub_group="footer_fourth_col"><![CDATA[Contact Us]]></property>
+    <property property_name="stylium_footerFourthColIcon" property_type="scalar" definition="1" group_name="stylium_footer" title="Footer Fourth Column Icon" description="" css_components="" scalar_type="" scalar_parameters="" display_order="30" sub_group="footer_fourth_col"><![CDATA[fa-envelope]]></property>
+    <property property_name="stylium_footerFourthColContent" property_type="scalar" definition="1" group_name="stylium_footer" title="Footer Fourth Column Content" description="" css_components="" scalar_type="longstring" scalar_parameters="" display_order="40" sub_group="footer_fourth_col"><![CDATA[<ul>
+	<li>15 Str., 4844, Ipsum, State, UK</li>
+	<li>+1-234-567-1011</li>
+	<li>support@brivium.com</li>
+	<li>www.brivium.com</li>
+</ul>]]></property>
+    <property property_name="stylium_footerDebug" property_type="scalar" definition="1" group_name="stylium_footer" title="Display Debug Informations" description="Display debug informations to specific usergroups ID. Separated by ','. Example: 3,4" css_components="" scalar_type="" scalar_parameters="" display_order="10" sub_group="footer_debug"><![CDATA[3,4]]></property>
+    <property property_name="stylium_footerGoToTop" property_type="scalar" definition="1" group_name="stylium_footer" title="Enable Go To Top Button" description="Display a go to top button on the right of the screen when scroll toward the bottom of the site." css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group="footer_go_to_top"><![CDATA[1]]></property>
+    <property property_name="stylium_footerGoToTopStyle" property_type="scalar" definition="1" group_name="stylium_footer" title="Go To Top Style" description="Style used in the go to top button. You may use HTML" css_components="" scalar_type="" scalar_parameters="" display_order="20" sub_group="footer_go_to_top"><![CDATA[<i class="fa fa-angle-double-up"></i>]]></property>
+    <property property_name="stylium_footerGoToTopSpeed" property_type="scalar" definition="1" group_name="stylium_footer" title="Scroll Speed" description="This controls the scroll speed effect when the button is clicked." css_components="" scalar_type="" scalar_parameters="" display_order="30" sub_group="footer_go_to_top"><![CDATA[1000]]></property>
+    <property property_name="stylium_footerRSSIcon" property_type="scalar" definition="1" group_name="stylium_footer" title="Enable RSS Icon" description="Display or hide the RSS icon in the footer." css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group="footer_rss_icon"><![CDATA[1]]></property>
+    <property property_name="stylium_footerFacebookLink" property_type="scalar" definition="1" group_name="stylium_social" title="Facebook Link" description="Facebook Link on Footer (Example: http://facebook.com/briviumllc)" css_components="" scalar_type="" scalar_parameters="" display_order="30" sub_group="footer_social"><![CDATA[http://facebook.com/briviumllc]]></property>
+    <property property_name="stylium_footerTwitterLink" property_type="scalar" definition="1" group_name="stylium_social" title="Twitter Link" description="Twitter Link on Footer (Example: http://twitter.com/briviumllc)" css_components="" scalar_type="" scalar_parameters="" display_order="40" sub_group="footer_social"><![CDATA[http://twitter.com/briviumllc]]></property>
+    <property property_name="stylium_footerYoutubeLink" property_type="scalar" definition="1" group_name="stylium_social" title="Youtube Link" description="Youtube Link on Footer (Example: http://www.youtube.com/user/brivium)" css_components="" scalar_type="" scalar_parameters="" display_order="50" sub_group="footer_social"><![CDATA[http://www.youtube.com/user/brivium]]></property>
+    <property property_name="stylium_footerGooglePlusLink" property_type="scalar" definition="1" group_name="stylium_social" title="Google + Link" description="Google Plus Link on Footer (Example: http://plus.google.com/+BriviumLLC)" css_components="" scalar_type="" scalar_parameters="" display_order="60" sub_group="footer_social"><![CDATA[http://plus.google.com/+BriviumLLC]]></property>
+    <property property_name="stylium_footerDribbbleLink" property_type="scalar" definition="1" group_name="stylium_social" title="Dribbble Link" description="Dribbble Link on Footer (Example: http://dribbble.com/brivium)" css_components="" scalar_type="" scalar_parameters="" display_order="70" sub_group="footer_social"><![CDATA[http://dribbble.com/brivium]]></property>
+    <property property_name="stylium_footerFlickrLink" property_type="scalar" definition="1" group_name="stylium_social" title="Flickr Link" description="Flickr Link on Footer (Example: http://www.flickr.com/photos/brivium)" css_components="" scalar_type="" scalar_parameters="" display_order="70" sub_group="footer_social"><![CDATA[http://www.flickr.com/photos/brivium]]></property>
+    <property property_name="stylium_footerLinkedInLink" property_type="scalar" definition="1" group_name="stylium_social" title="Linkedin Link" description="Linkedin Link on Footer (Example: http://linkedin.com/in/brivium)" css_components="" scalar_type="" scalar_parameters="" display_order="80" sub_group="footer_social"><![CDATA[http://linkedin.com/in/brivium]]></property>
+    <property property_name="stylium_footerPinterestLink" property_type="scalar" definition="1" group_name="stylium_social" title="Pinterest Link" description="Pinterest Link on Footer (Example: http://www.pinterest.com/brivium)" css_components="" scalar_type="" scalar_parameters="" display_order="90" sub_group="footer_social"><![CDATA[http://www.pinterest.com/brivium]]></property>
+    <property property_name="stylium_footerVimeoLink" property_type="scalar" definition="1" group_name="stylium_social" title="Vimeo Link" description="Vimeo Link on Footer (Example: https://vimeo.com/brivium)" css_components="" scalar_type="" scalar_parameters="" display_order="100" sub_group="footer_social"><![CDATA[https://vimeo.com/brivium]]></property>
+    <property property_name="stylium_footerDeviantArtLink" property_type="scalar" definition="1" group_name="stylium_social" title="Deviant Art Link" description="Twitter Link on Footer (Example: http://briviumllc.deviantart.com)" css_components="" scalar_type="" scalar_parameters="" display_order="110" sub_group="footer_social"><![CDATA[http://briviumllc.deviantart.com]]></property>
+    <property property_name="stylium_footerAdvancedContainer" property_type="css" definition="1" group_name="stylium_footer" title="Advanced Footer Container" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="1" sub_group=""><![CDATA[{"color":"@primaryLighterStill"}]]></property>
+    <property property_name="stylium_footerFirstColumn" property_type="css" definition="1" group_name="stylium_footer" title="Footer First Column" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="4" sub_group=""><![CDATA[{"extra":"*width: 48.98%;","width":"49%"}]]></property>
+    <property property_name="stylium_footerSecondColumn" property_type="css" definition="1" group_name="stylium_footer" title="Footer Second Column" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="4" sub_group=""><![CDATA[{"extra":"*width: 16.97%;","width":"17%"}]]></property>
+    <property property_name="stylium_footerThirdColumn" property_type="css" definition="1" group_name="stylium_footer" title="Footer Third Column" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="5" sub_group=""><![CDATA[{"extra":"*width: 16.97%;","width":"17%"}]]></property>
+    <property property_name="stylium_footerFourthColumn" property_type="css" definition="1" group_name="stylium_footer" title="Footer Fourth Column" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="6" sub_group=""><![CDATA[{"extra":"*width: 16.97%;","width":"17%"}]]></property>
+    <property property_name="stylium_footerHeading" property_type="css" definition="1" group_name="stylium_footer" title="Footer Heading" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="7" sub_group=""><![CDATA[{"color":"@primaryLightest","extra":"text-transform: uppercase;","font-weight":"bold","padding-bottom":"5px","padding-top":"5px"}]]></property>
+    <property property_name="stylium_footerLink" property_type="css" definition="1" group_name="stylium_footer" title="Footer Link" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="9" sub_group=""><![CDATA[{"color":"@primaryLighterStill"}]]></property>
+    <property property_name="stylium_footerLinkHover" property_type="css" definition="1" group_name="stylium_footer" title="Footer Link Hover" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="10" sub_group=""><![CDATA[{"text-decoration":{"none":"none"}}]]></property>
+    <property property_name="stylium_footerAdvancedColumn" property_type="css" definition="1" group_name="stylium_footer" title="Advanced Footer Column" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="3" sub_group=""><![CDATA[{"extra":"float: left;\nbox-sizing: border-box;\n*display: block;"}]]></property>
+    <property property_name="stylium_footerHeadingIcon" property_type="css" definition="1" group_name="stylium_footer" title="Footer Heading Icon" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="8" sub_group=""><![CDATA[{"extra":"display: inline-block;","margin-right":"@stylium_gapWidthSmall"}]]></property>
+    <property property_name="stylium_footerAdvancedContent" property_type="css" definition="1" group_name="stylium_footer" title="Advanced Footer Content" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="2" sub_group=""><![CDATA[{"background-color":"@primaryLightish"}]]></property>
+    <property property_name="stylium_footerRSSLink" property_type="scalar" definition="1" group_name="stylium_social" title="RSS Link" description="RSS Link on Footer (Example: http://brivium.com/index.php?forums/-/index.rss)" css_components="" scalar_type="" scalar_parameters="" display_order="120" sub_group="footer_social"><![CDATA[http://brivium.com/index.php?forums/-/index.rss]]></property>
+    <property property_name="stylium_footerEmail" property_type="scalar" definition="1" group_name="stylium_social" title="Email" description="Email on Footer (Example: brivium@gmail.com)" css_components="" scalar_type="" scalar_parameters="" display_order="130" sub_group="footer_social"><![CDATA[brivium@gmail.com]]></property>
+    <property property_name="stylium_footerSocial" property_type="css" definition="1" group_name="stylium_social" title="Footer Social Icons" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="500" sub_group=""><![CDATA[{"background-image":"js\/brivium\/stylium\/1000000\/img\/social-sprite.png","background-repeat":"no-repeat","extra":"opacity: 0.5;\noverflow: hidden;\ndisplay: block;\ntransition: all 0.1s linear;","height":"30px","width":"30px"}]]></property>
+    <property property_name="stylium_footerSocialHover" property_type="css" definition="1" group_name="stylium_social" title="Footer Social Icon Hover" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="510" sub_group=""><![CDATA[{"extra":"opacity: 1;\ntransition: all 0.3s linear;"}]]></property>
+    <property property_name="stylium_footerSocialMedia" property_type="scalar" definition="1" group_name="stylium_social" title="Enable Social Media" description="Display or hide the Social Media Icons in the footer." css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group="footer_social"><![CDATA[1]]></property>
+    <property property_name="stylium_footerGoToTopVisibilty" property_type="scalar" definition="1" group_name="stylium_footer" title="Button Visibilty" description="This controls the Go to Top Button will be visible." css_components="" scalar_type="" scalar_parameters="" display_order="40" sub_group="footer_go_to_top"><![CDATA[200]]></property>
+    <property property_name="stylium_goToTopButton" property_type="css" definition="1" group_name="stylium_styler" title="Go To Top Button" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="20" sub_group=""><![CDATA[{"background-color":"@mutedTextColor","border-radius":"3px","extra":"background-color: rgba(0, 0, 0, 0.4);\nposition: fixed;\nbottom: 10px;\nright: -60px;\nz-index: 100;\nopacity: 0;\ntransition: all 0.2s ease-in-out;","padding-bottom":"12px","padding-left":"14px","padding-right":"14px","padding-top":"12px"}]]></property>
+    <property property_name="stylium_responsiveSidebar" property_type="scalar" definition="1" group_name="stylium_sidebar" title="Responsive Sidebar" description="This controls the width of the sidebar in responsive." css_components="" scalar_type="template" scalar_parameters="BRSF_style_property_unit_ResponsiveSidebar" display_order="5" sub_group=""><![CDATA[wide]]></property>
+    <property property_name="stylium_collapsibleSidebar" property_type="scalar" definition="1" group_name="stylium_sidebar" title="Enable Collapsible Sidebar" description="This controls a query toggle to collapse your sidebar." css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group="sidebar_collapse"><![CDATA[1]]></property>
+    <property property_name="stylium_collapsibleSidebarBlock" property_type="scalar" definition="1" group_name="stylium_sidebar" title="Enable Collapsible Sidebar Block" description="This controls a query toggle to collapse your sidebar block." css_components="" scalar_type="boolean" scalar_parameters="" display_order="30" sub_group="sidebar_collapse"><![CDATA[1]]></property>
+    <property property_name="stylium_enableSidebar" property_type="scalar" definition="1" group_name="stylium_sidebar" title="Enable Sidebar" description="Allows you to enable/disable the sidebar." css_components="" scalar_type="boolean" scalar_parameters="" display_order="1" sub_group=""><![CDATA[0]]></property>
+    <property property_name="stylium_sidebarLeft" property_type="scalar" definition="1" group_name="stylium_sidebar" title="Change Sidebar to Left" description="Change the sidebar to the left side of the page." css_components="" scalar_type="boolean" scalar_parameters="" display_order="3" sub_group=""><![CDATA[0]]></property>
+    <property property_name="stylium_sidebarCollapseSpeed" property_type="scalar" definition="1" group_name="stylium_sidebar" title="Sidebar Collapse Speed" description="This controls the sidebar collapse speed." css_components="" scalar_type="" scalar_parameters="" display_order="40" sub_group="sidebar_collapse"><![CDATA[800]]></property>
+    <property property_name="stylium_collapseSidebar" property_type="css" definition="1" group_name="stylium_sidebar" title="Collapse Sidebar" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="1" sub_group=""><![CDATA[{"background-color":"@primaryLightest","border-color":"@stylium_primaryBorder.border-color","border-radius":"@stylium_globalBorderRadius","border-style":"solid","border-width":"1px","extra":"float: left;\nline-height: @stylium_breadcrumbHeight;\ndisplay: block;\ntext-align: center;","height":"@stylium_breadcrumbHeight","margin-right":"5px","padding-bottom":"0","padding-left":"5px","padding-right":"5px","padding-top":"0"}]]></property>
+    <property property_name="stylium_collapseSidebarHover" property_type="css" definition="1" group_name="stylium_sidebar" title="Collapse Sidebar Hover" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="1" sub_group=""><![CDATA[[]]]></property>
+    <property property_name="stylium_collapseSidebarBlock" property_type="css" definition="1" group_name="stylium_sidebar" title="Collapse Sidebar Block" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="1" sub_group=""><![CDATA[{"color":"@secondaryDarker","font-size":"12px"}]]></property>
+    <property property_name="stylium_nodeStyle" property_type="scalar" definition="1" group_name="stylium_nodes" title="Node Style" description="Select display style for forums" css_components="" scalar_type="template" scalar_parameters="BRSF_style_property_unit_NodeStyle" display_order="1" sub_group=""><![CDATA[dual]]></property>
+    <property property_name="stylium_collapsibleCategory" property_type="scalar" definition="1" group_name="stylium_nodes" title="Enable Collapsible Category" description="This controls a query toggle to collapse your category." css_components="" scalar_type="boolean" scalar_parameters="" display_order="1" sub_group="stylium_category_collapse"><![CDATA[1]]></property>
+    <property property_name="stylium_categoryCollapseSpeed" property_type="scalar" definition="1" group_name="stylium_nodes" title="Category Collapse Speed" description="This controls the category collapse speed." css_components="" scalar_type="" scalar_parameters="" display_order="1" sub_group="stylium_category_collapse"><![CDATA[800]]></property>
+    <property property_name="stylium_nodeLastPost" property_type="scalar" definition="1" group_name="stylium_nodes" title="Enable Node Last Post" description="Allows you to enable/disable the node last post." css_components="" scalar_type="boolean" scalar_parameters="" display_order="1" sub_group=""><![CDATA[1]]></property>
+    <property property_name="stylium_nodeControls" property_type="scalar" definition="1" group_name="stylium_nodes" title="Enable Node Controls" description="Allows you to enable/disable the node controls." css_components="" scalar_type="boolean" scalar_parameters="" display_order="1" sub_group=""><![CDATA[1]]></property>
+    <property property_name="stylium_categoryDescriptionTooltip" property_type="scalar" definition="1" group_name="stylium_nodes" title="Enable Category Description Tooltip" description="This controls a tooltip for the category description on hover." css_components="" scalar_type="boolean" scalar_parameters="" display_order="1" sub_group=""><![CDATA[1]]></property>
+    <property property_name="stylium_toggleCategoryHandler" property_type="css" definition="1" group_name="stylium_nodes" title="Toggle Category Handler" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="1" sub_group="nodes"><![CDATA[{"color":"@secondaryDarker","font-size":"20px"}]]></property>
+    <property property_name="stylium_homeTabIcon" property_type="scalar" definition="1" group_name="stylium_navigation" title="Replace Home Tab as Icon" description="This control your Home Tab replace with a icon." css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group="navigation_custom"><![CDATA[1]]></property>
+    <property property_name="stylium_navDropdownArrows" property_type="scalar" definition="1" group_name="stylium_navigation" title="Display Navigation Drop-down Arrows" description="This controls navigation tabs' arrows will be visible." css_components="" scalar_type="boolean" scalar_parameters="" display_order="20" sub_group="navigation_custom"><![CDATA[0]]></property>
+    <property property_name="stylium_miniAvatarVisitorTabs" property_type="scalar" definition="1" group_name="stylium_navigation" title="Enable Mini Avatar in Visitor Tabs" description="This controls a Mini Avatar will be visible next to a username in the visitor tabs." css_components="" scalar_type="boolean" scalar_parameters="" display_order="30" sub_group="navigation_custom"><![CDATA[1]]></property>
+    <property property_name="stylium_stickyNavigation" property_type="scalar" definition="1" group_name="stylium_navigation" title="Enable Sticky Navitgation" description="This controls your navigation sticks with you as you scroll." css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group="navigation_sticky"><![CDATA[1]]></property>
+    <property property_name="stylium_stickyModerator" property_type="scalar" definition="1" group_name="stylium_navigation" title="Enable Sticky Moderator Bar" description="This controls your Moderator Bar sticks with you as you scroll." css_components="" scalar_type="boolean" scalar_parameters="" display_order="20" sub_group="navigation_sticky"><![CDATA[1]]></property>
+    <property property_name="stylium_stickyNavigationHeight" property_type="scalar" definition="1" group_name="stylium_navigation" title="Sticky Navigation Height" description="" css_components="" scalar_type="" scalar_parameters="" display_order="30" sub_group="navigation_sticky"><![CDATA[36px]]></property>
+    <property property_name="stylium_stickyModeratorHeight" property_type="scalar" definition="1" group_name="stylium_navigation" title="Sticky Moderator Bar Height" description="" css_components="" scalar_type="" scalar_parameters="" display_order="40" sub_group="navigation_sticky"><![CDATA[36px]]></property>
+    <property property_name="stylium_loginHandleOverlay" property_type="scalar" definition="1" group_name="stylium_navigation" title="Enable Login Handle in Overlay" description="This will disable the normal XenForo login handle drop down and enable a overlay for logging in." css_components="" scalar_type="boolean" scalar_parameters="" display_order="1" sub_group="stylium_navigation_login"><![CDATA[0]]></property>
+    <property property_name="stylium_loginHandleNavigation" property_type="scalar" definition="1" group_name="stylium_navigation" title="Enable Navigation Bar Login" description="This display Log in or Sign up as navigation link." css_components="" scalar_type="boolean" scalar_parameters="" display_order="1" sub_group="stylium_navigation_login"><![CDATA[1]]></property>
+    <property property_name="stylium_subNavigation" property_type="scalar" definition="1" group_name="stylium_navigation" title="Enable Sub-Navigation" description="This will remove the selected sub-navigation tab links and move it into a dropdown." css_components="" scalar_type="boolean" scalar_parameters="" display_order="50" sub_group="navigation_custom"><![CDATA[1]]></property>
+    <property property_name="stylium_breadcrumbIndex" property_type="scalar" definition="1" group_name="stylium_general" title="Enable Breadcrumb on Forum Index" description="Allows you to enable/disable the breadcrumb on Forum Index." css_components="" scalar_type="boolean" scalar_parameters="" display_order="210" sub_group="stylium_breadcrumb"><![CDATA[1]]></property>
+    <property property_name="stylium_bottomBreadcrumb" property_type="scalar" definition="1" group_name="stylium_general" title="Enable Bottom Breadcrumb" description="Allows you to enable/disable the bottom breadcrumb." css_components="" scalar_type="boolean" scalar_parameters="" display_order="220" sub_group="stylium_breadcrumb"><![CDATA[1]]></property>
+    <property property_name="stylium_breadcrumbHeight" property_type="scalar" definition="1" group_name="stylium_general" title="Breadcrumb Height" description="This controls the height of the breadcrumb. Default XenForo uses 24px." css_components="" scalar_type="" scalar_parameters="" display_order="230" sub_group="stylium_breadcrumb"><![CDATA[24px]]></property>
+    <property property_name="stylium_sidebarIcons" property_type="scalar" definition="1" group_name="stylium_sidebar" title="Display Sidebar Icons" description="This controls a icon next to sidebar heading." css_components="" scalar_type="boolean" scalar_parameters="" display_order="1" sub_group=""><![CDATA[1]]></property>
+    <property property_name="stylium_titlebarIndex" property_type="scalar" definition="1" group_name="stylium_general" title="Enable Title on Forum Index &amp; Portal" description="Allows you to enable/disable the title bar on Forum Index &amp; Portal." css_components="" scalar_type="boolean" scalar_parameters="" display_order="100" sub_group="stylium_titlebar"><![CDATA[1]]></property>
+    <property property_name="stylium_avatarStyle" property_type="scalar" definition="1" group_name="stylium_general" title="Avatar Style" description="Shape of member avatar" css_components="" scalar_type="template" scalar_parameters="BRSF_style_property_unit_AvatarStyle" display_order="10" sub_group="stylium_avatar_style"><![CDATA[circle]]></property>
+    <property property_name="stylium_customFavicon" property_type="scalar" definition="1" group_name="stylium_general" title="Custom Favicon" description="URL to a 16px x 16px PNG/GIF image that will represent your website's favicon." css_components="" scalar_type="" scalar_parameters="" display_order="10" sub_group="stylium_favicon"><![CDATA[]]></property>
+    <property property_name="stylium_primaryColor" property_type="scalar" definition="1" group_name="color" title="Primary Color" description="" css_components="" scalar_type="color" scalar_parameters="" display_order="1" sub_group="Stylium Tone"><![CDATA[#176093]]></property>
+    <property property_name="stylium_secondaryColor" property_type="scalar" definition="1" group_name="color" title="Secondary Color" description="" css_components="" scalar_type="color" scalar_parameters="" display_order="2" sub_group="Stylium Tone"><![CDATA[#e68c17]]></property>
+    <property property_name="stylium_tertiaryColor" property_type="scalar" definition="1" group_name="color" title="Tertiary Color" description="" css_components="" scalar_type="color" scalar_parameters="" display_order="3" sub_group="Stylium Tone"><![CDATA[#141414]]></property>
+    <property property_name="stylium_settingEnable" property_type="scalar" definition="1" group_name="stylium_setting" title="Enable Stylium Setting" description="Turn on Stylium Setting Panel at Front-End." css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group="container"><![CDATA[1]]></property>
+    <property property_name="stylium_settingBodyBackgroundColor" property_type="scalar" definition="1" group_name="stylium_setting" title="Body Background Color" description="" css_components="" scalar_type="color" scalar_parameters="" display_order="50" sub_group="color"><![CDATA[@body.background-color]]></property>
+    <property property_name="stylium_settingPrimaryColor" property_type="scalar" definition="1" group_name="stylium_setting" title="Primary Color" description="" css_components="" scalar_type="color" scalar_parameters="" display_order="20" sub_group="color"><![CDATA[@stylium_primaryColor]]></property>
+    <property property_name="stylium_settingSecondaryColor" property_type="scalar" definition="1" group_name="stylium_setting" title="Secondary Color" description="" css_components="" scalar_type="color" scalar_parameters="" display_order="30" sub_group="color"><![CDATA[@stylium_secondaryColor]]></property>
+    <property property_name="stylium_settingTertiaryColor" property_type="scalar" definition="1" group_name="stylium_setting" title="Tertiary Color" description="" css_components="" scalar_type="color" scalar_parameters="" display_order="40" sub_group="color"><![CDATA[@stylium_tertiaryColor]]></property>
+    <property property_name="stylium_settingFont" property_type="scalar" definition="1" group_name="stylium_setting" title="Font" description="Select default font for font style selectors" css_components="" scalar_type="template" scalar_parameters="BRSF_style_property_unit_TitleFont" display_order="15" sub_group="fonts"><![CDATA[Lucida Sans Unicode]]></property>
+    <property property_name="stylium_settingBodyBackgroundSize" property_type="scalar" definition="1" group_name="stylium_setting" title="Body Background Size" description="Css3 property, list of value: auto|length|cover|contain|initial|inherit (pick one)." css_components="" scalar_type="" scalar_parameters="" display_order="55" sub_group="color"><![CDATA[auto]]></property>
+    <property property_name="stylium_settingBodyBackgroundImage" property_type="scalar" definition="1" group_name="stylium_setting" title="Body Background Image" description="Path to your background image. Path can relative with your XenForo root directory" css_components="" scalar_type="" scalar_parameters="" display_order="60" sub_group="color"><![CDATA[js/brivium/stylium/1000000/img/pattern1.png]]></property>
+    <property property_name="stylium_settingBodyBackgroundRepeat" property_type="scalar" definition="1" group_name="stylium_setting" title="Body Background Repeat" description="The background-repeat property sets if/how a background image will be repeated.&#10;List value: repeat|repeat-x|repeat-y|no-repeat|initial|inherit (pick one)." css_components="" scalar_type="" scalar_parameters="" display_order="65" sub_group="color"><![CDATA[repeat]]></property>
+    <property property_name="stylium_settingBodyBackgroundPosition" property_type="scalar" definition="1" group_name="stylium_setting" title="Body Background Position" description="The background-position property sets the starting position of a background image." css_components="" scalar_type="" scalar_parameters="" display_order="70" sub_group="color"><![CDATA[0px 0px]]></property>
+    <property property_name="stylium_layoutStyle" property_type="scalar" definition="1" group_name="stylium_general" title="Page Style" description="" css_components="" scalar_type="template" scalar_parameters="BRSF_style_property_unit_PageStyle" display_order="10" sub_group="page"><![CDATA[styliumBoxed]]></property>
+    <property property_name="stylium_boxedMaxPageWidth" property_type="scalar" definition="1" group_name="stylium_general" title="Boxed Max Page Width" description="" css_components="" scalar_type="" scalar_parameters="" display_order="20" sub_group="page"><![CDATA[1170px]]></property>
+    <property property_name="stylium_selection" property_type="css" definition="1" group_name="stylium_styler" title="Text Selection" description="When you select text, by clicking and dragging, this is how it will display.&#10;The ::selection selector matches the portion of an element that is selected by a user." css_components="text,background,extra" scalar_type="" scalar_parameters="" display_order="30" sub_group=""><![CDATA[{"background-color":"@stylium_secondaryColor","color":"#FFF"}]]></property>
+    <property property_name="breadcrumb" property_type="css"><![CDATA[{"background-color":"@primaryLightest","background-image":"@imagePath\/xenforo\/gradients\/category-23px-light.png","background-position":"top","background-repeat":"repeat-x","border-color":"@primaryLighter","border-radius":"5px","border-style":"solid","border-width":"1px","extra":"overflow: hidden;\nzoom: 1;\nmax-width: 100%;","font-size":"11px","height":"24px"}]]></property>
+    <property property_name="stylium_primaryBorder" property_type="css" definition="1" group_name="stylium_styler" title="Primary Border" description="" css_components="border,extra" scalar_type="" scalar_parameters="" display_order="10" sub_group=""><![CDATA[{"border-color":"@primaryLight","border-radius":"@stylium_globalBorderRadius","border-style":"solid","border-width":"1px"}]]></property>
+    <property property_name="stylium_globalBorderRadius" property_type="scalar" definition="1" group_name="stylium_general" title="Global Border Radius" description="" css_components="" scalar_type="" scalar_parameters="" display_order="300" sub_group="border_radius"><![CDATA[2px]]></property>
+    <property property_name="stylium_globalBigBorderRadius" property_type="scalar" definition="1" group_name="stylium_general" title="Global Big Border Radius" description="" css_components="" scalar_type="" scalar_parameters="" display_order="320" sub_group="border_radius"><![CDATA[4px]]></property>
+    <property property_name="breadcrumbTitlePrefix" property_type="css"><![CDATA[{"border-color":"black","border-radius":"0","border-style":"none","border-width":"0","extra":"display: inline;","font-style":"italic","font-weight":"bold","margin-all":"0","padding-all":"0"}]]></property>
+    <property property_name="stylium_settingEnableFont" property_type="scalar" definition="1" group_name="stylium_setting" title="Enable Font" description="Enable font chooser." css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group="fonts"><![CDATA[1]]></property>
+    <property property_name="stylium_settingEnableLayout" property_type="scalar" definition="1" group_name="stylium_setting" title="Enable Layout Change" description="Enable layout selector." css_components="" scalar_type="boolean" scalar_parameters="" display_order="20" sub_group="container"><![CDATA[1]]></property>
+    <property property_name="stylium_wrapperBoxed" property_type="css" definition="1" group_name="stylium_styler" title="Boxed Wrapper Style" description="Style for wrapper in boxed layout" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="30" sub_group="page"><![CDATA[{"background-color":"@contentBackground","border-color":"@stylium_primaryBorder.border-color","border-radius":"@stylium_globalBigBorderRadius","border-style":"solid","border-width":"1px","extra":"box-sizing: border-box;\nmax-width: @stylium_boxedMaxPageWidth;","padding-all":"10px"}]]></property>
+    <property property_name="stylium_fontSelectors" property_type="scalar" definition="1" group_name="stylium_styler" title="Font Selectors" description="Selects elements that font setting applies to. (e.g. .titleBar h1)." css_components="" scalar_type="longstring" scalar_parameters="" display_order="10" sub_group="selector"><![CDATA[body, .messageText]]></property>
+    <property property_name="stylium_bodyBgColorSelectors" property_type="scalar" definition="1" group_name="stylium_styler" title="Body Background Color Selectors" description="Selects elements that body background color applies to." css_components="" scalar_type="longstring" scalar_parameters="" display_order="15" sub_group="selector"><![CDATA[]]></property>
+    <property property_name="stylium_primaryColorSelectors" property_type="scalar" definition="1" group_name="stylium_styler" title="Primary Color Selectors" description="Selects elements that primary color applies to." css_components="" scalar_type="longstring" scalar_parameters="" display_order="20" sub_group="selector"><![CDATA[.breadcrumb .crust:last-child a.crumb, .navigationSideBar a:hover, body .xenOverlay.memberCard .userInfo h3 a, body .xenOverlay.memberCard .userLinks, .primaryContent a, .PageNav a:hover, .PageNav a:focus, .footer a:active, .navTabs .navTab.selected .navLink, .navTabs .navTab.selected .navLink:hover, .navTabs .navTab.selected .tabLinks a:hover, .navTabs .navTab.selected .tabLinks a:focus, .sidebar .visitorPanel .username, .node .unread .nodeText .nodeTitle, .node .subForumList .unread .nodeTitle, .subForumsMenu .node .unread .nodeTitle, .navTabs .navTab.selected .SplitCtrl:before, #logo .fa]]></property>
+    <property property_name="stylium_primaryColorBgSelectors" property_type="scalar" definition="1" group_name="stylium_styler" title="Primary Color Background Selectors" description="Selects elements that primary color applies to." css_components="" scalar_type="longstring" scalar_parameters="" display_order="25" sub_group="selector"><![CDATA[#header, .footer .pageContent, .resourceListItem .resourceImage .resourceIcon img, .resourceInfo .resourceImage .resourceIcon, #searchBar.hasSearchButton #QuickSearch .primaryControls .fa-search, .resourceListItem .resourceImage .resourceIcon img, .avatar img, .avatar .img, .avatarCropper, .heading, .xenForm .formHeader, .Popup .PopupControl.PopupOpen, .Popup.PopupContainerControl.PopupOpen, .navTabs .navTab.Popup.PopupContainerControl.PopupOpen, .dataTable caption, .navTabs .navTab.selected.PopupOpen .navLink, a.callToAction span, .avatarScaler img, .xenOverlay .formOverlay .avatar img, .xenOverlay .formOverlay .avatar .img, .xenOverlay .formOverlay .avatarCropper, .styliumBoxedCover #navigation.activeSticky .styliumStickyWrapper, .styliumWide #navigation.activeSticky .styliumStickyWrapper]]></property>
+    <property property_name="stylium_primaryColorBorderSelectors" property_type="scalar" definition="1" group_name="stylium_styler" title="Primary Color Border Selectors" description="Selects elements that primary color applies to." css_components="" scalar_type="longstring" scalar_parameters="" display_order="30" sub_group="selector"><![CDATA[.textCtrl:focus, .textCtrl.Focus]]></property>
+    <property property_name="stylium_primaryColorBorderTopSelectors" property_type="scalar" definition="1" group_name="stylium_styler" title="Primary Color Border Top Selectors" description="Selects elements that primary color applies to." css_components="" scalar_type="longstring" scalar_parameters="" display_order="35" sub_group="selector"><![CDATA[.Menu]]></property>
+    <property property_name="stylium_secondaryColorBorderTopSelectors" property_type="scalar" definition="1" group_name="stylium_styler" title="Secondary Color Border Top Selectors" description="Selects elements that secondary color applies to." css_components="" scalar_type="longstring" scalar_parameters="" display_order="55" sub_group="selector"><![CDATA[]]></property>
+    <property property_name="stylium_tertiaryColorBorderTopSelectors" property_type="scalar" definition="1" group_name="stylium_styler" title="Tertiary Color Border Top Selectors" description="Selects elements that tertiary color applies to." css_components="" scalar_type="longstring" scalar_parameters="" display_order="75" sub_group="selector"><![CDATA[]]></property>
+    <property property_name="stylium_secondaryColorSelectors" property_type="scalar" definition="1" group_name="stylium_styler" title="Secondary Color Selectors" description="Selects elements that secondary color applies to." css_components="" scalar_type="longstring" scalar_parameters="" display_order="40" sub_group="selector"><![CDATA[.sidebar .featuredNotice, .resourceListItem .main .featuredBanner, .smilieList .smilieText:hover]]></property>
+    <property property_name="stylium_secondaryColorBgSelectors" property_type="scalar" definition="1" group_name="stylium_styler" title="Secondary Color Background Selectors" description="Selects elements that secondary color applies to." css_components="" scalar_type="longstring" scalar_parameters="" display_order="45" sub_group="selector"><![CDATA[.button:hover, .button[href]:hover, .buttonProxy:hover .button, #SignupButton:hover .inner, a.callToAction:hover span, .downloadButton:hover .inner]]></property>
+    <property property_name="stylium_secondaryColorBorderSelectors" property_type="scalar" definition="1" group_name="stylium_styler" title="Secondary Color Border Selectors" description="Selects elements that secondary color applies to." css_components="" scalar_type="longstring" scalar_parameters="" display_order="50" sub_group="selector"><![CDATA[]]></property>
+    <property property_name="stylium_tertiaryColorBorderSelectors" property_type="scalar" definition="1" group_name="stylium_styler" title="Tertiary Color Border Selectors" description="Selects elements that tertiary color applies to." css_components="" scalar_type="longstring" scalar_parameters="" display_order="70" sub_group="selector"><![CDATA[]]></property>
+    <property property_name="stylium_tertiaryColorBgSelectors" property_type="scalar" definition="1" group_name="stylium_styler" title="Tertiary Color Background Selectors" description="Selects elements that tertiary color applies to." css_components="" scalar_type="longstring" scalar_parameters="" display_order="65" sub_group="selector"><![CDATA[]]></property>
+    <property property_name="stylium_tertiaryColorSelectors" property_type="scalar" definition="1" group_name="stylium_styler" title="Tertiary Color Selectors" description="Selects elements that tertiary color applies to." css_components="" scalar_type="longstring" scalar_parameters="" display_order="60" sub_group="selector"><![CDATA[]]></property>
+    <property property_name="stylium_settingEnablePatterns" property_type="scalar" definition="1" group_name="stylium_setting" title="Enable Background Patterns" description="Enable body pattern background chooser." css_components="" scalar_type="boolean" scalar_parameters="" display_order="30" sub_group="container"><![CDATA[1]]></property>
+    <property property_name="stylium_settingEnableBgImage" property_type="scalar" definition="1" group_name="stylium_setting" title="Enable Background Images" description="Enable body images background chooser." css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group="bg_image"><![CDATA[1]]></property>
+    <property property_name="stylium_settingImageSource" property_type="scalar" definition="1" group_name="stylium_setting" title="Image Source" description="Path to your background image folder. Path can relative with your XenForo root directory.&#10;Include patternx.png (x from 1 to 10). bkgdy.jpg( y from 1 to 5)." css_components="" scalar_type="" scalar_parameters="" display_order="20" sub_group="bg_image"><![CDATA[js/brivium/stylium/1000000/img]]></property>
+    <property property_name="stylium_settingEnableColor" property_type="scalar" definition="1" group_name="stylium_setting" title="Enable Color Picker" description="Enable color picker." css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group="color"><![CDATA[1]]></property>
+    <property property_name="html" property_type="css"><![CDATA[{"background-color":"@pageBackground"}]]></property>
+    <property property_name="headerLogoHeight" property_type="scalar"><![CDATA[70px]]></property>
+    <property property_name="stylium_removeGradientBg" property_type="scalar" definition="1" group_name="stylium_styler" title="Remove Gradients Background" description="Remove gradient background from selectors has gradients bg." css_components="" scalar_type="boolean" scalar_parameters="" display_order="10" sub_group="general"><![CDATA[1]]></property>
+    <property property_name="stylium_settingFontVariants" property_type="scalar" definition="1" group_name="stylium_setting" title="Google Fonts Variants" description="Select google fonts variants." css_components="" scalar_type="template" scalar_parameters="BRSF_style_property_unit_FontWeight" display_order="20" sub_group="fonts"><![CDATA[]]></property>
+    <property property_name="stylium_sidebarBlockCollapseTriggerClass" property_type="scalar" definition="1" group_name="stylium_sidebar" title="Sidebar Block Collapse Trigger Class" description="Using Font Awesome class" css_components="" scalar_type="" scalar_parameters="" display_order="5" sub_group="sidebar_collapse_class"><![CDATA[fa-chevron-up]]></property>
+    <property property_name="stylium_sidebarBlockExpandTriggerClass" property_type="scalar" definition="1" group_name="stylium_sidebar" title="Sidebar Block Expand Trigger Class" description="Using Font Awesome class" css_components="" scalar_type="" scalar_parameters="" display_order="10" sub_group="sidebar_collapse_class"><![CDATA[fa-chevron-down]]></property>
+    <property property_name="stylium_categoryCollapseTriggerClass" property_type="scalar" definition="1" group_name="stylium_nodes" title="Category Collapse Trigger Class" description="Using Font Awesome class" css_components="" scalar_type="" scalar_parameters="" display_order="5" sub_group="category_collapse_class"><![CDATA[fa-chevron-up]]></property>
+    <property property_name="stylium_categoryExpandTriggerClass" property_type="scalar" definition="1" group_name="stylium_nodes" title="Category Expand Trigger Class" description="Using Font Awesome class" css_components="" scalar_type="" scalar_parameters="" display_order="10" sub_group="category_collapse_class"><![CDATA[fa-chevron-down]]></property>
+    <property property_name="stylium_goToTopButtonHover" property_type="css" definition="1" group_name="stylium_styler" title="Go To Top Button Hover" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="25" sub_group=""><![CDATA[{"extra":"background-color: rgba(0, 0, 0, 0.4);"}]]></property>
+    <property property_name="stylium_gradientBgClass" property_type="scalar" definition="1" group_name="stylium_styler" title="Gradient Background Class" description="Selects elements to remove gradient background." css_components="" scalar_type="longstring" scalar_parameters="" display_order="5" sub_group="selector"><![CDATA[.Popup .PopupControl.PopupOpen, .Popup.PopupContainerControl.PopupOpen, .navTabs .navTab.selected.PopupOpen .navLink, 
+.messageUserBlock, 
+.navTabs .navTab.selected .navLink, .navTabs .navTab.selected .tabLinks, 
+.formPopup .controlsWrapper, .formPopup .advSearchLink, .dataTable tr.dataRow td.secondary, .dataTable tr.dataRow th, .dataTable .dataRow .delete, .innerContent .rateBlock, .imageCollection, .navigationSideBar a:hover, .messageSimpleList .messageSimple.InlineModChecked, .InlineModChecked .messageUserBlock, .InlineModChecked .messageInfo, .InlineModChecked .messageNotices, .InlineModChecked .bbCodeBlock .type, .InlineModChecked .bbCodeBlock blockquote, .InlineModChecked .attachedFiles .attachedFilesHeader, .InlineModChecked .attachedFiles .attachmentList, .InlineModChecked .section, .InlineModChecked .sectionMain, .InlineModChecked .primaryContent, .InlineModChecked .secondaryContent, .InlineModChecked .sectionFooter, .uploadedFile, .uploadedFile .Progress .gauge .Meter, .discussionList .sectionHeaders, .discussionListItem .posterAvatar, .discussionListItem .stats, .discussionListItem.InlineModChecked, .discussionListItem.InlineModChecked .posterAvatar, .discussionListItem.InlineModChecked .main, .discussionListItem.InlineModChecked .stats, .discussionListItem.InlineModChecked .lastPost, .discussionListItem.deleted.InlineModChecked, .discussionListItem.moderated.InlineModChecked, .itemPageNav a, .discussionListFilters .removeFilter, .discussionListFilters .removeAllFilters, .AttachmentEditor .AttachedFile .ProgressMeter .ProgressGraphic, .bbCodeBlock pre, .bbCodeBlock .code, .bbCodeQuote .quoteContainer, .breadcrumb, ul.autoCompleteList, .featuredResourceList .featuredResource, .resourceListItem .resourceImage, .resourceListItem .resourceStats, .resourceListItem.InlineModChecked, .resourceListItem.InlineModChecked .resourceImage, .resourceListItem.InlineModChecked .main, .resourceListItem.InlineModChecked .resourceStats, .resourceListItem.deleted.InlineModChecked, .resourceListItem.moderated.InlineModChecked, .PanelScroller .panel, .PanelScrollerOff .panel, .node .nodeLastPost, .nodeList .categoryStrip, .categoryListItem .lastUpdate, .subHeading, .sectionFooter, 
+.userBanner, .PrefixMenu .PrefixGroup h3, .thread_view .threadAlerts, .downloadButton .inner, .resourceAlerts, .sidebar .featuredNotice, .message .newIndicator, .message .newIndicator, .attachedFiles .attachedFilesHeader, .attachedFiles .attachmentList, .bbCodeBlock .type, .bbCodeQuote .attribution, .bbCodeBlock .type, a.callToAction, a.callToAction span, #SignupButton .inner, .prefix, .button, .Responsive .resourceHeaders .typeFilter, .messageNotices li, .redactor_toolbar, .redactor_toolbar li.redactor_btn_group ul, .tabs, .tabs li a, .tabs.noLinks li, 
+textarea.textCtrl:focus, .textCtrl:focus, .textCtrl.Focus, .lightBox .imageContainer, .inlineCtrlGroup]]></property>
+    <property property_name="fbColorScheme" property_type="scalar"><![CDATA[light]]></property>
+    <property property_name="stylium_fbLogin" property_type="css" definition="1" group_name="stylium_social" title="Facebook Login Container" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="20" sub_group=""><![CDATA[{"background-color":"#29447e","background-image":"\/\/b.s-static.ak.facebook.com\/images\/connect_sprite.png","background-repeat":"no-repeat","border-radius":"3px","color":"white","extra":"display: inline-block;\nbox-sizing: border-box;\ncursor: pointer;\noutline: none;\nline-height: 14px;","font-size":"11px","font-weight":"bold","height":"22px","padding-bottom":"0px","padding-left":"1px","padding-right":"0px","padding-top":"0px","text-decoration":{"none":"none"},"width":"@eAuthButtonWidth"}]]></property>
+    <property property_name="stylium_fbLoginContent" property_type="css" definition="1" group_name="stylium_social" title="Facebook Login Content" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="40" sub_group=""><![CDATA[{"background-color":"#5f78ab","background-image":"\/\/b.s-static.ak.facebook.com\/images\/connect_sprite.png","border-bottom-color":"#1a356e","border-bottom-style":"solid","border-bottom-width":"1px","border-top-color":"#879ac0","border-top-style":"solid","border-top-width":"1px","extra":"display: block;\ntext-shadow: none;\nwhite-space: nowrap;\noverflow: hidden;","margin-bottom":"0px","margin-left":"21px","margin-right":"1px","margin-top":"1px","padding-bottom":"3px","padding-left":"4px","padding-right":"4px","padding-top":"2px"}]]></property>
+    <property property_name="stylium_fbLoginContentActive" property_type="css" definition="1" group_name="stylium_social" title="Facebook Login Content Active" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="50" sub_group=""><![CDATA[{"background-color":"#4f6aa3","border-bottom-color":"#29447e","border-bottom-style":"solid","border-bottom-width":"1px","border-top-color":"#45619d","border-top-style":"solid","border-top-width":"1px","extra":"text-shadow: none;"}]]></property>
+    <property property_name="stylium_twitterLogin" property_type="css" definition="1" group_name="stylium_social" title="Twitter Login Container" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="110" sub_group=""><![CDATA[{"background-color":"#eee","border-color":"#ccc","border-radius":"3px","border-style":"solid","border-width":"1px","color":"#333 !important","extra":"display: inline-block;\nbox-sizing: border-box;\ncursor: pointer;\nbackground-image: -webkit-linear-gradient(#fff, #dedede);\nbackground-image: linear-gradient(#fff, #dedede);\nline-height: 14px;","font-size":"11px","font-weight":"bold","height":"22px","padding-all":"3px","width":"@eAuthButtonWidth"}]]></property>
+    <property property_name="stylium_twitterLoginContent" property_type="css" definition="1" group_name="stylium_social" title="Twitter Login Content" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="130" sub_group=""><![CDATA[{"background-image":"@imagePath\/xenforo\/twitter-bird.png","background-position":"left 0","background-repeat":"no-repeat","extra":"display: block;\ntext-shadow: 0 1px 0 rgba(255,255,255,.5);\nwhite-space: nowrap;\noverflow: hidden;","padding-left":"22px"}]]></property>
+    <property property_name="stylium_twitterLoginActive" property_type="css" definition="1" group_name="stylium_social" title="Twitter Login Active" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="120" sub_group=""><![CDATA[{"border-color":"#d9d9d9","extra":"background-image: -webkit-linear-gradient(#f8f8f8, #d9d9d9);\nbackground-image: linear-gradient(#f8f8f8, #d9d9d9);","text-decoration":{"none":"none"}}]]></property>
+    <property property_name="stylium_googleLoginActive" property_type="css" definition="1" group_name="stylium_social" title="Google Login Active" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="220" sub_group=""><![CDATA[{"background-color":"#be3e2e"}]]></property>
+    <property property_name="stylium_googleLogin" property_type="css" definition="1" group_name="stylium_social" title="Google Login Container" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="200" sub_group=""><![CDATA[{"background-color":"#dd4b39","border-color":"#be3e2e","border-radius":"3px","border-style":"solid","border-width":"1px","color":"white","extra":"display: inline-block;\nbox-sizing: border-box;\ncursor: pointer;\nline-height: 14px;","font-size":"11px","font-weight":"bold","height":"22px","padding-left":"2px","width":"@eAuthButtonWidth"}]]></property>
+    <property property_name="stylium_googleLoginContent" property_type="css" definition="1" group_name="stylium_social" title="Google Login Content" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="230" sub_group=""><![CDATA[{"background-image":"@imagePath\/xenforo\/gplus.png","background-position":"left 0","background-repeat":"no-repeat","extra":"display: block;\nwhite-space: nowrap;\noverflow: hidden;","padding-bottom":"3px","padding-left":"23px","padding-right":"3px","padding-top":"3px"}]]></property>
+    <group group_name="stylium_general" display_order="1">
+      <title>╔ [Stylium]  General</title>
+      <description>General options and settings for the framework.</description>
+    </group>
+    <group group_name="stylium_nodes" display_order="4">
+      <title>╠ [Stylium] Nodes</title>
+      <description>Style properties that customize the elements within nodes</description>
+    </group>
+    <group group_name="stylium_sidebar" display_order="5">
+      <title>╠ [Stylium] Sidebar</title>
+      <description>Style properties that customize the sidebar.</description>
+    </group>
+    <group group_name="stylium_footer" display_order="6">
+      <title>╠ [Stylium] Footer</title>
+      <description>Style properties that customize the footer.</description>
+    </group>
+    <group group_name="stylium_navigation" display_order="3">
+      <title>╠ [Stylium] Header &amp; Navigation</title>
+      <description>Style properties that customize the header &amp; navigation</description>
+    </group>
+    <group group_name="stylium_styler" display_order="2">
+      <title>╠ [Stylium] Styler</title>
+      <description>General customize style for the framework.</description>
+    </group>
+    <group group_name="stylium_setting" display_order="8">
+      <title>╚ [Stylium] Setting</title>
+      <description>Style properties that customize the stylium setting panel.</description>
+    </group>
+    <group group_name="stylium_social" display_order="7">
+      <title>╠ [Stylium] Social</title>
+      <description>Style properties that customize the social content.</description>
+    </group>
+  </properties>
+  <templates>
+    <template title="breadcrumb" addon_id="XenForo" version_id="1040470" version_string="1.4.4" disable_modifications="0"><![CDATA[<xen:edithint template="breadcrumb.css" />
+
+<nav>
+
+	<xen:if hascontent="true">
+	<div class="styliumSidebarToggle">
+		<xen:contentcheck>	
+			<xen:if is="{xen:property stylium_collapsibleSidebar} && {$sidebar} && {xen:property stylium_enableSidebar}">
+			<span class="styliumIcon styliumSidebarCollapse" title="{xen:phrase BRSF_toggle_sidebar}">
+				<i class="fa fa-align-justify"></i>
+			</span>
+			</xen:if>
+		</xen:contentcheck>
+	</div>
+	</xen:if>
+	
+	<xen:if is="!{$quickNavSelected} AND {$navigation}">
+		<xen:foreach loop="$navigation" value="$breadcrumb">
+			<xen:if is="{$breadcrumb.node_id}">
+				<xen:set var="$quickNavSelected">node-{$breadcrumb.node_id}</xen:set>
+			</xen:if>
+		</xen:foreach>
+	</xen:if>
+
+	<fieldset class="breadcrumb">
+		<a href="{xen:link misc/quick-navigation-menu, '', 'selected={$quickNavSelected}'}" class="OverlayTrigger jumpMenuTrigger" data-cacheOverlay="true" title="{xen:phrase open_quick_navigation}"><!--{xen:phrase jump_to}...--></a>
+			
+		<div class="boardTitle"><strong>{$xenOptions.boardTitle}</strong></div>
+		
+		<span class="crumbs">
+			<xen:if is="{$showHomeLink}">
+				<span class="crust homeCrumb"{xen:if $microdata, ' itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"'}>
+					<a href="{$homeLink}" class="crumb"{xen:if $microdata, ' rel="up" itemprop="url"'}><span{xen:if $microdata, ' itemprop="title"'}>{xen:phrase home}</span></a>
+					<span class="arrow"><span></span></span>
+				</span>
+			<xen:elseif is="{$selectedTabId} != {$homeTabId}" />
+				<span class="crust homeCrumb"{xen:if $microdata, ' itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"'}>
+					<a href="{$homeTab.href}" class="crumb"{xen:if $microdata, ' rel="up" itemprop="url"'}><span{xen:if $microdata, ' itemprop="title"'}>{$homeTab.title}</span></a>
+					<span class="arrow"><span></span></span>
+				</span>
+			</xen:if>
+			
+			<xen:if is="{$selectedTab}">
+				<span class="crust selectedTabCrumb"{xen:if $microdata, ' itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"'}>
+					<a href="{$selectedTab.href}" class="crumb"{xen:if $microdata, ' rel="up" itemprop="url"'}><span{xen:if $microdata, ' itemprop="title"'}>{$selectedTab.title}</span></a>
+					<span class="arrow"><span>&gt;</span></span>
+				</span>
+			</xen:if>
+			
+			<xen:if is="{$navigation}">
+				<xen:foreach loop="$navigation" value="$breadcrumb" i="$i" count="$count">
+					<span class="crust"{xen:if $microdata, ' itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"'}>
+						<a href="{xen:raw $breadcrumb.href}" class="crumb"{xen:if $microdata, ' rel="up" itemprop="url"'}><span{xen:if $microdata, ' itemprop="title"'}>{xen:raw $breadcrumb.value}</span></a>
+						<span class="arrow"><span>&gt;</span></span>
+					</span>
+				</xen:foreach>
+			</xen:if>
+		</span>
+	</fieldset>
+</nav>]]></template>
+    <template title="facebook.css" addon_id="XenForo" version_id="1040270" version_string="1.4.2" disable_modifications="0"><![CDATA[a.fbLogin,
+#loginBar a.fbLogin
+{
+	{xen:property stylium_fbLogin}
+	rtl-raw.background-position: {xen:if $pageIsRtl, 'right -396px', 'left -188px'};
+}
+
+a.fbLogin:active,
+#loginBar a.fbLogin:active
+{
+	rtl-raw.background-position: {xen:if $pageIsRtl, 'right -418px', 'left -210px'};
+}
+
+a.fbLogin:hover,
+#loginBar a.fbLogin:hover
+{
+	text-decoration: none;
+}
+
+	a.fbLogin span
+	{
+		{xen:property stylium_fbLoginContent}
+	}
+
+	a.fbLogin:active span
+	{
+		{xen:property stylium_fbLoginContentActive}
+	}]]></template>
+    <template title="footer" addon_id="XenForo" version_id="1030370" version_string="1.3.3" disable_modifications="0"><![CDATA[<xen:edithint template="footer.css" />
+
+<xen:hook name="footer">
+<xen:if is="{xen:property stylium_advancedFooter}">
+	<xen:include template="stylium_advanced_footer" />
+</xen:if>
+
+<xen:if is="{xen:property stylium_footerGoToTop}">
+	<a href="javascript:;" class="styliumToTop">{xen:property stylium_footerGoToTopStyle}</a>
+</xen:if>
+<div class="footer">
+	<div class="pageWidth">
+		<div class="pageContent">
+			<xen:if is="{$canChangeStyle} OR {$canChangeLanguage}">
+			<dl class="choosers">
+				<xen:hook name="stylium_setting_toggle_footer" />
+				<xen:if is="{$canChangeStyle}">
+					<dt>{xen:phrase style}</dt>
+					<dd><a href="{xen:link 'misc/style', '', 'redirect={$requestPaths.requestUri}'}" class="OverlayTrigger Tooltip" title="{xen:phrase style_chooser}" rel="nofollow">{$visitorStyle.title}</a></dd>
+				</xen:if>
+				<xen:if is="{$canChangeLanguage}">
+					<dt>{xen:phrase language}</dt>
+					<dd><a href="{xen:link 'misc/language', '', 'redirect={$requestPaths.requestUri}'}" class="OverlayTrigger Tooltip" title="{xen:phrase language_chooser}" rel="nofollow">{$visitorLanguage.title}</a></dd>
+				</xen:if>
+			</dl>
+			</xen:if>
+			
+			<ul class="footerLinks">
+			<xen:hook name="footer_links">
+				<xen:if is="{$xenOptions.contactUrl.type} === 'default'">
+					<li><a href="{xen:link 'misc/contact'}" class="OverlayTrigger" data-overlayOptions="{&quot;fixed&quot;:false}">{xen:phrase contact_us}</a></li>
+				<xen:elseif is="{$xenOptions.contactUrl.type} === 'custom'" />
+					<li><a href="{$xenOptions.contactUrl.custom}" {xen:if {$xenOptions.contactUrl.overlay}, 'class="OverlayTrigger" data-overlayOptions="{&quot;fixed&quot;:false}"'}>{xen:phrase contact_us}</a></li>
+				</xen:if>
+				<li><a href="{xen:link help}">{xen:phrase help}</a></li>
+				<xen:if is="{$homeLink}"><li><a href="{$homeLink}" class="homeLink">{xen:phrase home}</a></li></xen:if>
+				<li><a href="{$requestPaths.requestUri}#navigation" class="topLink">{xen:phrase go_to_top}</a></li>
+				<xen:if is="{xen:property stylium_footerRSSIcon}"><li><a href="{xen:link forums/-/index.rss}" rel="alternate" class="globalFeed" target="_blank"
+					title="{xen:phrase rss_feed_for_x, 'title={$xenOptions.boardTitle}'}">{xen:phrase rss}</a></li></xen:if>
+			</xen:hook>
+			</ul>
+			
+			<span class="helper"></span>
+		</div>
+	</div>
+</div>
+
+<div class="footerLegal">
+	<div class="pageWidth">
+		<div class="pageContent">
+			<ul id="legal">
+			<xen:hook name="footer_links_legal">
+				<xen:if is="{$tosUrl}"><li><a href="{$tosUrl}">{xen:phrase terms_and_rules}</a></li></xen:if>
+				<xen:if is="{$xenOptions.privacyPolicyUrl}"><li><a href="{$xenOptions.privacyPolicyUrl}">{xen:phrase privacy_policy}</a></li></xen:if>
+			</xen:hook>
+			</ul>
+			
+			<div id="copyright">{xen:helper copyright} {xen:phrase extra_copyright}</div>
+			<xen:hook name="footer_after_copyright" />
+		
+			<xen:if is="{$debugMode} AND {xen:helper ismemberof, $visitor, {xen:property stylium_footerDebug}}">
+				<xen:if hascontent="true">
+					<dl class="pairsInline debugInfo" title="{$controllerName}-&gt;{$controllerAction}{xen:if $viewName, ' ({$viewName})'}">
+					<xen:contentcheck>
+						<xen:if is="{$page_time}"><dt>{xen:phrase timing}:</dt> <dd><a href="{$debug_url}" rel="nofollow">{xen:phrase x_seconds, 'time={xen:number $page_time, 4}'}</a></dd></xen:if>
+						<xen:if is="{$memory_usage}"><dt>{xen:phrase memory}:</dt> <dd>{xen:phrase x_mb, 'size={xen:number {xen:calc "{$memory_usage} / 1024 / 1024"}, 3}'}</dd></xen:if>
+						<xen:if is="{$db_queries}"><dt>{xen:phrase db_queries}:</dt> <dd>{xen:number {$db_queries}}</dd></xen:if>
+					</xen:contentcheck>
+					</dl>
+				</xen:if>
+			</xen:if>
+			
+			<span class="helper"></span>
+		</div>
+	</div>	
+</div>
+</xen:hook>]]></template>
+    <template title="google.css" addon_id="XenForo" version_id="1030570" version_string="1.3.5" disable_modifications="0"><![CDATA[.googleLogin,
+#loginBar .googleLogin
+{
+	{xen:property stylium_googleLogin}
+}
+
+	.googleLogin span
+	{
+		{xen:property stylium_googleLoginContent}
+		
+	}
+
+.googleLogin:active,
+#loginBar .googleLogin:active
+{
+	{xen:property stylium_googleLoginActive}
+}]]></template>
+    <template title="header" addon_id="XenForo" version_id="1040470" version_string="1.4.4" disable_modifications="0"><![CDATA[<xen:edithint template="header.css" />
+
+<xen:hook name="header">
+<div id="header" class="{xen:if '!{xen:property stylium_subNavigation}','removeSubNav'}">
+	<xen:include template="logo_block" />
+	<xen:include template="navigation" />
+	<xen:if is="{$canSearch}"><xen:include template="search_bar" /></xen:if>
+</div>
+</xen:hook>]]></template>
+    <template title="helper_login_form" addon_id="XenForo" version_id="1040070" version_string="1.4.0" disable_modifications="0"><![CDATA[<xen:if is="!{$visitor.user_id}">
+
+<xen:container var="$hideLoginBar">1</xen:container>
+
+<form action="{xen:link 'login/login'}" method="post" class="xenForm{xen:if '{xen:property stylium_loginHandleOverlay}',' formOverlay'}" id="pageLogin">
+
+	<xen:if hascontent="true">
+		<div class="errorPanel"><span class="errors">
+			<xen:contentcheck>{xen:raw $text}</xen:contentcheck>
+		</span></div>
+	</xen:if>
+	
+	<h2 class="textHeading">{xen:phrase log_in_or_sign_up}</h2>
+
+	<dl class="ctrlUnit">
+		<dt><label for="ctrl_pageLogin_login">{xen:phrase your_name_or_email_address}:</label></dt>
+		<dd><input type="text" name="login" value="{$defaultLogin}" id="ctrl_pageLogin_login" class="textCtrl" tabindex="1" /></dd>
+	</dl>
+
+<xen:if is="{$xenOptions.registrationSetup.enabled}">
+	<dl class="ctrlUnit">
+		<dt><label for="ctrl_pageLogin_password">{xen:phrase do_you_already_have_account}</label></dt>
+		<dd>
+			<ul>
+				<li><label for="ctrl_pageLogin_not_registered"><input type="radio" name="register" value="1" id="ctrl_pageLogin_not_registered" tabindex="5" />
+					{xen:phrase no_create_account_now}</label></li>
+				<li><label for="ctrl_pageLogin_registered"><input type="radio" name="register" value="0" id="ctrl_pageLogin_registered" checked="checked" class="Disabler" tabindex="5" />
+					{xen:phrase yes_my_password_is}:</label></li>
+				<li id="ctrl_pageLogin_registered_Disabler">
+					<input type="password" name="password" class="textCtrl" id="ctrl_pageLogin_password" tabindex="2" />					
+					<div><a href="{xen:link lost-password}" class="OverlayTrigger OverlayCloser" tabindex="6">{xen:phrase forgot_your_password}</a></div>
+				</li>
+			</ul>
+		</dd>
+	</dl>
+<xen:else />
+	<dl class="ctrlUnit">
+		<dt><label for="ctrl_pageLogin_password">{xen:phrase password}:</label></dt>
+		<dd>
+			<input type="password" name="password" class="textCtrl" id="ctrl_pageLogin_password" />					
+			<div><a href="{xen:link lost-password}" class="OverlayTrigger OverlayCloser" tabindex="6">{xen:phrase forgot_your_password}</a></div>
+		</dd>
+	</dl>
+</xen:if>
+	
+	<xen:if is="{$captcha}">
+		<dl class="ctrlUnit">
+			<dt>{xen:phrase verification}:</dt>
+			<dd>{xen:raw $captcha}</dd>
+		</dl>
+	</xen:if>
+
+	<dl class="ctrlUnit submitUnit">
+		<dt></dt>
+		<dd>
+			<input type="submit" class="button primary" value="{xen:phrase log_in}" data-loginPhrase="{xen:phrase log_in}" data-signupPhrase="{xen:phrase sign_up}" tabindex="4" />
+			<label class="rememberPassword"><input type="checkbox" name="remember" value="1" id="ctrl_pageLogin_remember" tabindex="3" /> {xen:phrase stay_logged_in}</label>
+		</dd>
+	</dl>
+
+	<xen:if is="{$xenOptions.facebookAppId}">
+		<xen:require css="facebook.css" />
+		<dl class="ctrlUnit">
+			<dt></dt>
+			<dd><a href="{xen:link register/facebook, '', 'reg=1'}" class="fbLogin" tabindex="10"><span>{xen:phrase login_with_facebook}</span></a></dd>
+		</dl>
+	</xen:if>
+	
+	<xen:if is="{$xenOptions.twitterAppKey}">
+		<xen:require css="twitter.css" />
+		<dl class="ctrlUnit">
+			<dt></dt>
+			<dd><a href="{xen:link register/twitter, '', 'reg=1'}" class="twitterLogin" tabindex="10"><span>{xen:phrase login_with_twitter}</span></a></dd>
+		</dl>
+	</xen:if>
+	
+	<xen:if is="{$xenOptions.googleClientId}">
+		<xen:require css="google.css" />
+		<dl class="ctrlUnit">
+			<dt></dt>
+			<dd><span class="googleLogin GoogleLogin JsOnly" tabindex="10" data-client-id="{$xenOptions.googleClientId}" data-redirect-url="{xen:link register/google, '', 'code=__CODE__', 'csrf={$session.sessionCsrf}'}"><span>{xen:phrase login_with_google}</span></span></dd>
+		</dl>
+	</xen:if>
+	
+	<input type="hidden" name="cookie_check" value="1" />
+	<input type="hidden" name="_xfToken" value="{$visitor.csrf_token_page}" />
+	<input type="hidden" name="redirect" value="{xen:if $redirect, $redirect, $requestPaths.requestUri}" />
+	<xen:if is="{$postData}">
+		<input type="hidden" name="postData" value="{xen:escape {xen:helper json, $postData}}" />
+	</xen:if>
+
+</form>
+
+<script>
+	$(function()
+	{
+		var $button = $('#pageLogin input.button.primary');
+		$('#pageLogin input[name="register"]').click(function()
+		{
+			$button.val(
+				$('#pageLogin input[name="register"]:checked').val() == '1'
+				? $button.data('signupphrase')
+				: $button.data('loginphrase')
+			);
+		});
+	});
+</script>
+</xen:if>]]></template>
+    <template title="login_bar" addon_id="XenForo" version_id="1020170" version_string="1.2.1" disable_modifications="0"><![CDATA[<xen:require css="login_bar.css" />
+
+<div id="loginBar">
+	<div class="pageWidth">
+		<div class="pageContent">	
+			<xen:if is="!{xen:property stylium_loginHandleNavigation}">
+			<h3 id="loginBarHandle">
+				<label<xen:if is="!{xen:property stylium_loginHandleOverlay}"> for="LoginControl"</xen:if>><a href="{xen:link login}" class="concealed noOutline<xen:if is="{xen:property stylium_loginHandleOverlay}"> OverlayTrigger</xen:if>">{xen:if $xenOptions.registrationSetup.enabled, {xen:phrase log_in_or_sign_up}, {xen:phrase log_in}}</a></label>
+			</h3>
+			</xen:if>
+			<span class="helper"></span>
+
+			<xen:if is="!{xen:property stylium_loginHandleOverlay}"><xen:edithint template="login_bar_form" /></xen:if>
+		</div>
+	</div>
+</div>]]></template>
+    <template title="moderator_bar" addon_id="XenForo" version_id="1030370" version_string="1.3.3" disable_modifications="0"><![CDATA[<xen:require css="moderator_bar.css" />
+
+<xen:if hascontent="true">
+<fieldset id="moderatorBar" class="{xen:if {xen:property stylium_stickyModerator}, 'styliumStickyTop'}">
+	<div class="pageWidth">
+		<div class="pageContent">
+		<xen:contentcheck>
+			<xen:if is="{$visitor.is_admin}">			
+				<a href="admin.php" class="acp adminLink"><span class="itemLabel">{xen:phrase admin_control_panel_short}</span></a>
+				
+				<xen:if is="{$session.permissionTest}">
+					<a href="{xen:link misc/reset-permissions}" class="permissionTest adminLink OverlayTrigger">
+						<span class="itemLabel">{xen:phrase permissions_from_x, 'name={$session.permissionTest.username}'}</span>
+					</a>
+				</xen:if>
+			</xen:if>
+			
+			<xen:if is="{$visitor.is_moderator} AND {$session.moderationCounts.total}">
+				<a href="{xen:link moderation-queue}" class="moderationQueue modLink">
+					<span class="itemLabel">{xen:phrase moderation_queue_short}:</span>
+					<span class="itemCount {xen:if {$session.moderationCounts.total}, 'alert'}">{$session.moderationCounts.total}</span>
+				</a>
+			</xen:if>
+			
+			<xen:if is="{$visitor.is_moderator} && !{$xenOptions.reportIntoForumId}">
+				<a href="{xen:link reports}" class="reportedItems modLink">
+					<span class="itemLabel">{xen:phrase reported_items_short}:</span>
+					<span class="itemCount {xen:if '({$session.reportCounts.total} AND {$session.reportCounts.lastUpdate} > {$session.reportLastRead}) OR {$session.reportCounts.assigned}', 'alert'}" title="{xen:if $session.reportCounts.lastUpdate, '{xen:phrase last_report_update}: {xen:datetime $session.reportCounts.lastUpdate}'}"><xen:if is="{$session.reportCounts.assigned}">{$session.reportCounts.assigned} / {$session.reportCounts.total}<xen:else />{$session.reportCounts.total}</xen:if></span>
+				</a>
+			</xen:if>
+			
+			<xen:if is="{$visitor.is_admin} AND {$session.canAdminUsers} AND {$session.userModerationCounts.total}">
+				<a href="admin.php?users/moderated" class="userModerationQueue modLink">
+					<span class="itemLabel">{xen:phrase users_awaiting_approval_short}:</span>
+					<span class="itemCount {xen:if {$session.userModerationCounts.total}, 'alert'}">{$session.userModerationCounts.total}</span>
+				</a>
+			</xen:if>
+
+			<xen:hook name="moderator_bar" />
+		</xen:contentcheck>
+			
+			<span class="helper"></span>
+		</div>
+	</div>
+</fieldset>
+</xen:if>]]></template>
+    <template title="navigation" addon_id="XenForo" version_id="1040470" version_string="1.4.4" disable_modifications="0"><![CDATA[<xen:edithint template="navigation.css" />
+
+<div id="navigation" class="pageWidth {xen:if $canSearch, withSearch}  {xen:if {xen:property stylium_stickyNavigation}, 'styliumStickyTop'}">
+	<div class="pageContent">
+		<nav>
+
+<div class="navTabs">
+	<ul class="publicTabs">
+	
+		<!-- home -->
+		<xen:if is="{$showHomeLink}">
+			<li class="navTab home PopupClosed"><a href="{$homeLink}" class="navLink">{xen:phrase home}</a></li>
+		</xen:if>
+		
+		
+		<!-- extra tabs: home -->
+		<xen:if is="{$extraTabs.home}">
+		<xen:foreach loop="$extraTabs.home" key="$extraTabId" value="$extraTab">
+			<xen:if is="{$extraTab.linksTemplate}">
+				<li class="navTab {$extraTabId} {xen:if $extraTab.selected, 'selected', 'Popup PopupControl PopupClosed'}">
+			
+				<a href="{$extraTab.href}" class="navLink">{$extraTab.title}<xen:if is="{$extraTab.counter}"><strong class="itemCount"><span class="Total">{$extraTab.counter}</span><span class="arrow"></span></strong></xen:if></a>
+				<a href="{$extraTab.href}" class="SplitCtrl" rel="Menu"></a>
+				
+				<div class="{xen:if {$extraTab.selected}, 'tabLinks', 'Menu JsOnly tabMenu'} {$extraTabId}TabLinks">
+					<div class="primaryContent menuHeader">
+						<h3>{$extraTab.title}</h3>
+						<div class="muted">{xen:phrase quick_links}</div>
+					</div>
+					{xen:raw $extraTab.linksTemplate}
+				</div>
+			</li>
+			<xen:else />
+				<li class="navTab {$extraTabId} {xen:if $extraTab.selected, 'selected', 'PopupClosed'}">
+					<a href="{$extraTab.href}" class="navLink">{$extraTab.title}<xen:if is="{$extraTab.counter}"><strong class="itemCount"><span class="Total">{$extraTab.counter}</span><span class="arrow"></span></strong></xen:if></a>
+					<xen:if is="{$extraTab.selected}"><div class="tabLinks"></div></xen:if>
+				</li>
+			</xen:if>
+		</xen:foreach>
+		</xen:if>
+		
+		
+		<!-- forums -->
+		<xen:if is="{$tabs.forums}">
+			<li class="navTab forums {xen:if $tabs.forums.selected, 'selected', 'Popup PopupControl PopupClosed'}">
+			
+				<a href="{$tabs.forums.href}" class="navLink">{$tabs.forums.title}</a>
+				<a href="{$tabs.forums.href}" class="SplitCtrl" rel="Menu"></a>
+				
+				<div class="{xen:if {$tabs.forums.selected}, 'tabLinks', 'Menu JsOnly tabMenu'} forumsTabLinks">
+					<div class="primaryContent menuHeader">
+						<h3>{$tabs.forums.title}</h3>
+						<div class="muted">{xen:phrase quick_links}</div>
+					</div>
+					<ul class="secondaryContent blockLinksList">
+					<xen:hook name="navigation_tabs_forums">
+						<xen:if is="{$visitor.user_id}"><li><a href="{xen:link 'forums/-/mark-read', $forum, 'date={$serverTime}'}" class="OverlayTrigger">{xen:phrase mark_forums_read}</a></li></xen:if>
+						<xen:if is="{$canSearch}"><li><a href="{xen:link search, '', 'type=post'}">{xen:phrase search_forums}</a></li></xen:if>
+						<xen:if is="{$visitor.user_id}">
+							<li><a href="{xen:link 'watched/forums'}">{xen:phrase watched_forums}</a></li>
+							<li><a href="{xen:link 'watched/threads'}">{xen:phrase watched_threads}</a></li>
+						</xen:if>
+						<li><a href="{xen:link 'find-new/posts'}" rel="nofollow">{xen:if $visitor.user_id, {xen:phrase new_posts}, {xen:phrase recent_posts}}</a></li>
+					</xen:hook>
+					</ul>
+				</div>
+			</li>
+		</xen:if>
+		
+		
+		<!-- extra tabs: middle -->
+		<xen:if is="{$extraTabs.middle}">
+		<xen:foreach loop="$extraTabs.middle" key="$extraTabId" value="$extraTab">
+			<xen:if is="{$extraTab.linksTemplate}">
+				<li class="navTab {$extraTabId} {xen:if $extraTab.selected, 'selected', 'Popup PopupControl PopupClosed'}">
+			
+				<a href="{$extraTab.href}" class="navLink">{$extraTab.title}<xen:if is="{$extraTab.counter}"><strong class="itemCount"><span class="Total">{$extraTab.counter}</span><span class="arrow"></span></strong></xen:if></a>
+				<a href="{$extraTab.href}" class="SplitCtrl" rel="Menu"></a>
+				
+				<div class="{xen:if {$extraTab.selected}, 'tabLinks', 'Menu JsOnly tabMenu'} {$extraTabId}TabLinks">
+					<div class="primaryContent menuHeader">
+						<h3>{$extraTab.title}</h3>
+						<div class="muted">{xen:phrase quick_links}</div>
+					</div>
+					{xen:raw $extraTab.linksTemplate}
+				</div>
+			</li>
+			<xen:else />
+				<li class="navTab {$extraTabId} {xen:if $extraTab.selected, 'selected', 'PopupClosed'}">
+					<a href="{$extraTab.href}" class="navLink">{$extraTab.title}<xen:if is="{$extraTab.counter}"><strong class="itemCount"><span class="Total">{$extraTab.counter}</span><span class="arrow"></span></strong></xen:if></a>
+					<xen:if is="{$extraTab.selected}"><div class="tabLinks"></div></xen:if>
+				</li>
+			</xen:if>
+		</xen:foreach>
+		</xen:if>
+		
+		
+		<!-- members -->
+		<xen:if is="{$tabs.members}">
+			<li class="navTab members {xen:if $tabs.members.selected, 'selected', 'Popup PopupControl PopupClosed'}">
+			
+				<a href="{$tabs.members.href}" class="navLink">{$tabs.members.title}</a>
+				<a href="{$tabs.members.href}" class="SplitCtrl" rel="Menu"></a>
+				
+				<div class="{xen:if {$tabs.members.selected}, 'tabLinks', 'Menu JsOnly tabMenu'} membersTabLinks">
+					<div class="primaryContent menuHeader">
+						<h3>{$tabs.members.title}</h3>
+						<div class="muted">{xen:phrase quick_links}</div>
+					</div>
+					<ul class="secondaryContent blockLinksList">
+					<xen:hook name="navigation_tabs_members">
+						<li><a href="{xen:link members}">{xen:phrase notable_members}</a></li>
+						<xen:if is="{$xenOptions.enableMemberList}"><li><a href="{xen:link members/list}">{xen:phrase registered_members}</a></li></xen:if>
+						<li><a href="{xen:link online}">{xen:phrase current_visitors}</a></li>
+						<xen:if is="{$xenOptions.enableNewsFeed}"><li><a href="{xen:link recent-activity}">{xen:phrase recent_activity}</a></li></xen:if>
+						<xen:if is="{$canViewProfilePosts}"><li><a href="{xen:link find-new/profile-posts}">{xen:phrase new_profile_posts}</a></li></xen:if>
+					</xen:hook>
+					</ul>
+				</div>
+			</li>
+		</xen:if>				
+		
+		<!-- extra tabs: end -->
+		<xen:if is="{$extraTabs.end}">
+		<xen:foreach loop="$extraTabs.end" key="$extraTabId" value="$extraTab">
+			<xen:if is="{$extraTab.linksTemplate}">
+				<li class="navTab {$extraTabId} {xen:if $extraTab.selected, 'selected', 'Popup PopupControl PopupClosed'}">
+			
+				<a href="{$extraTab.href}" class="navLink">{$extraTab.title}<xen:if is="{$extraTab.counter}"><strong class="itemCount"><span class="Total">{$extraTab.counter}</span><span class="arrow"></span></strong></xen:if></a>
+				<a href="{$extraTab.href}" class="SplitCtrl" rel="Menu"></a>
+				
+				<div class="{xen:if {$extraTab.selected}, 'tabLinks', 'Menu JsOnly tabMenu'} {$extraTabId}TabLinks">
+					<div class="primaryContent menuHeader">
+						<h3>{$extraTab.title}</h3>
+						<div class="muted">{xen:phrase quick_links}</div>
+					</div>
+					{xen:raw $extraTab.linksTemplate}
+				</div>
+			</li>
+			<xen:else />
+				<li class="navTab {$extraTabId} {xen:if $extraTab.selected, 'selected', 'PopupClosed'}">
+					<a href="{$extraTab.href}" class="navLink">{$extraTab.title}<xen:if is="{$extraTab.counter}"><strong class="itemCount"><span class="Total">{$extraTab.counter}</span><span class="arrow"></span></strong></xen:if></a>
+					<xen:if is="{$extraTab.selected}"><div class="tabLinks"></div></xen:if>
+				</li>
+			</xen:if>
+		</xen:foreach>
+		</xen:if>
+
+		<!-- responsive popup -->
+		<li class="navTab navigationHiddenTabs Popup PopupControl PopupClosed" style="display:none">	
+						
+			<a rel="Menu" class="navLink NoPopupGadget"><span class="menuIcon">{xen:phrase menu}</span></a>
+			
+			<div class="Menu JsOnly blockLinksList primaryContent" id="NavigationHiddenMenu"></div>
+		</li>
+			
+		
+		<!-- no selection -->
+		<xen:if is="!{$selectedTab}">
+			<li class="navTab selected"><div class="tabLinks"></div></li>
+		</xen:if>
+		
+	</ul>
+	
+	<xen:if is="{$visitor.user_id}"><xen:include template="navigation_visitor_tab" /></xen:if>
+	<xen:if is="!{$visitor.user_id} && {xen:property stylium_loginHandleNavigation}">
+		<xen:include template="stylium_login_handle_as_navLink" />
+	</xen:if>
+</div>
+
+<span class="helper"></span>
+			
+		</nav>	
+	</div>
+</div>]]></template>
+    <template title="navigation_visitor_tab" addon_id="XenForo" version_id="1050034" version_string="1.5.0 Beta 4" disable_modifications="0"><![CDATA[<xen:edithint template="navigation.css" />
+
+<ul class="visitorTabs">
+
+	<xen:hook name="navigation_visitor_tabs_start" />
+
+	<!-- account -->
+	<li class="navTab account Popup PopupControl PopupClosed {xen:if $tabs.account.selected, 'selected'}">
+
+		<xen:set var="$visitorHiddenUnread" value="{xen:calc '{$visitor.alerts_unread} + {$visitor.conversations_unread}'}" />
+		
+		<a href="{xen:link account}" class="navLink accountPopup NoPopupGadget" rel="Menu"><xen:if is="{xen:property stylium_miniAvatarVisitorTabs}"><span class="avatar"><img src="{xen:helper avatar, $visitor, s}" alt="" /></span></xen:if><strong class="accountUsername">{$visitor.username}</strong>
+			<strong class="itemCount ResponsiveOnly {xen:if $visitorHiddenUnread, '', 'Zero'}"
+				id="VisitorExtraMenu_Counter">
+				<span class="Total">{xen:number $visitorHiddenUnread}</span>
+				<span class="arrow"></span>
+			</strong>
+		</a>
+		
+		<div class="Menu JsOnly" id="AccountMenu">
+			<div class="primaryContent menuHeader">
+				<xen:avatar user="$visitor" size="m" class="NoOverlay plainImage" title="{xen:phrase view_your_profile}" />
+				
+				<h3><a href="{xen:link members, $visitor}" class="concealed" title="{xen:phrase view_your_profile}">{$visitor.username}</a></h3>
+				
+				<xen:if hascontent="true"><div class="muted"><xen:contentcheck>{xen:helper usertitle, $visitor}</xen:contentcheck></div></xen:if>
+				
+				<ul class="links">
+					<li class="fl"><a href="{xen:link members, $visitor}">{xen:phrase your_profile_page}</a></li>
+				</ul>
+			</div>
+			<div class="menuColumns secondaryContent">
+				<ul class="col1 blockLinksList">
+				<xen:hook name="navigation_visitor_tab_links1">
+					<xen:if is="{$canEditProfile}"><li><a href="{xen:link account/personal-details}">{xen:phrase personal_details}</a></li></xen:if>
+					<xen:if is="{$canEditSignature}"><li><a href="{xen:link account/signature}">{xen:phrase signature}</a></li></xen:if>
+					<li><a href="{xen:link account/contact-details}">{xen:phrase contact_details}</a></li>
+					<li><a href="{xen:link account/privacy}">{xen:phrase privacy}</a></li>
+					<li><a href="{xen:link account/preferences}" class="OverlayTrigger">{xen:phrase preferences}</a></li>
+					<li><a href="{xen:link account/alert-preferences}">{xen:phrase alert_preferences}</a></li>
+					<xen:if is="{$canUploadAvatar}"><li><a href="{xen:link account/avatar}" class="OverlayTrigger" data-cacheOverlay="true">{xen:phrase avatar}</a></li></xen:if>
+					<xen:if is="{$xenOptions.facebookAppId} OR {$xenOptions.twitterAppKey} OR {$xenOptions.googleClientId}"><li><a href="{xen:link account/external-accounts}">{xen:phrase external_accounts}</a></li></xen:if>
+					<li><a href="{xen:link account/security}">{xen:phrase password}</a></li>
+				</xen:hook>
+				</ul>
+				<ul class="col2 blockLinksList">
+				<xen:hook name="navigation_visitor_tab_links2">
+					<xen:if is="{$xenOptions.enableNewsFeed}"><li><a href="{xen:link account/news-feed}">{xen:phrase your_news_feed}</a></li></xen:if>
+					<li><a href="{xen:link conversations}">{xen:phrase conversations}
+						<strong class="itemCount {xen:if $visitor.conversations_unread, '', 'Zero'}"
+							id="VisitorExtraMenu_ConversationsCounter">
+							<span class="Total">{xen:number $visitor.conversations_unread}</span>
+						</strong></a></li>
+					<li><a href="{xen:link account/alerts}">{xen:phrase alerts}
+						<strong class="itemCount {xen:if $visitor.alerts_unread, '', 'Zero'}"
+							id="VisitorExtraMenu_AlertsCounter">
+							<span class="Total">{xen:number $visitor.alerts_unread}</span>
+						</strong></a></li>
+					<li><a href="{xen:link account/likes}">{xen:phrase likes_youve_received}</a></li>
+					<li><a href="{xen:link search/member, '', 'user_id={$visitor.user_id}'}">{xen:phrase your_content}</a></li>
+					<li><a href="{xen:link account/following}">{xen:phrase people_you_follow}</a></li>
+					<li><a href="{xen:link account/ignored}">{xen:phrase people_you_ignore}</a></li>
+					<xen:if is="{$xenCache.userUpgradeCount}"><li><a href="{xen:link account/upgrades}">{xen:phrase account_upgrades}</a></li></xen:if>
+					<li><a href="{xen:link account/two-step}">{xen:phrase two_step_verification}</a></li>
+				</xen:hook>
+				</ul>
+			</div>
+			<div class="menuColumns secondaryContent">
+				<ul class="col1 blockLinksList">
+					<li>				
+						<form action="{xen:link account/toggle-visibility}" method="post" class="AutoValidator visibilityForm">
+							<label><input type="checkbox" name="visible" value="1" class="SubmitOnChange" {xen:checked $visitor.visible} />
+								{xen:phrase show_online_status}</label>
+							<input type="hidden" name="_xfToken" value="{$visitor.csrf_token_page}" />
+						</form>
+					</li>
+				</ul>
+				<ul class="col2 blockLinksList">
+					<li><a href="{xen:link logout, '', '_xfToken={$visitor.csrf_token_page}'}" class="LogOut">{xen:phrase log_out}</a></li>
+				</ul>
+			</div>
+			<xen:if is="{$canUpdateStatus}">
+				<form action="{xen:link members/post, $visitor}" method="post" class="sectionFooter statusPoster AutoValidator" data-optInOut="OptIn">
+					<textarea name="message" class="textCtrl StatusEditor UserTagger Elastic" placeholder="{xen:phrase update_your_status}..." rows="1" cols="40" style="height:18px" data-statusEditorCounter="#visMenuSEdCount" data-nofocus="true"></textarea>
+					<div class="submitUnit">
+						<span id="visMenuSEdCount" title="{xen:phrase characters_remaining}"></span>
+						<input type="submit" class="button primary MenuCloser" value="{xen:phrase post_verb}" />
+						<input type="hidden" name="_xfToken" value="{$visitor.csrf_token_page}" />
+						<input type="hidden" name="return" value="1" /> 
+					</div>
+				</form>
+			</xen:if>
+		</div>		
+	</li>
+		
+	<xen:if is="{$tabs.account.selected}">
+	<li class="navTab selected">
+		<div class="tabLinks">
+			<ul class="secondaryContent blockLinksList">
+			<xen:hook name="navigation_tabs_account">
+				<li><a href="{xen:link account/personal-details}">{xen:phrase personal_details}</a></li>
+				<li><a href="{xen:link conversations}">{xen:phrase conversations}</a></li>
+				<xen:if is="{$xenOptions.enableNewsFeed}"><li><a href="{xen:link account/news-feed}">{xen:phrase your_news_feed}</a></li></xen:if>
+				<li><a href="{xen:link account/likes}">{xen:phrase likes_youve_received}</a></li>
+			</xen:hook>
+			</ul>
+		</div>
+	</li>
+	</xen:if>
+	
+	<!-- conversations popup -->
+	<li class="navTab inbox Popup PopupControl PopupClosed {xen:if $tabs.inbox.selected, 'selected'}">
+					
+		<a href="{xen:link conversations}" rel="Menu" class="navLink NoPopupGadget">{xen:phrase inbox}
+			<strong class="itemCount {xen:if {$visitor.conversations_unread}, '', 'Zero'}"
+				id="ConversationsMenu_Counter" data-text="{xen:phrase you_have_x_new_unread_conversations}">
+				<span class="Total">{xen:number $visitor.conversations_unread}</span>
+				<span class="arrow"></span>
+			</strong>
+		</a>
+		
+		<div class="Menu JsOnly navPopup" id="ConversationsMenu"
+			data-contentSrc="{xen:link 'conversations/popup'}"
+			data-contentDest="#ConversationsMenu .listPlaceholder">
+			
+			<div class="menuHeader primaryContent">
+				<h3>
+					<span class="Progress InProgress"></span>
+					<a href="{xen:link conversations}" class="concealed">{xen:phrase conversations}</a>
+				</h3>						
+			</div>
+			
+			<div class="listPlaceholder"></div>
+			
+			<div class="sectionFooter">
+				<xen:if is="{$canStartConversation}"><a href="{xen:link conversations/add}" class="floatLink">{xen:phrase start_new_conversation}</a></xen:if>
+				<a href="{xen:link conversations}">{xen:phrase show_all}...</a>
+			</div>
+		</div>
+	</li>
+	
+	<xen:if is="{$tabs.inbox.selected}">
+	<li class="navTab selected">
+		<div class="tabLinks">
+			<ul class="secondaryContent blockLinksList">
+				<li><a href="{xen:link conversations}">{xen:phrase conversations}</a></li>
+				<li><a href="{xen:link conversations/starred}">{xen:phrase starred_conversations}</a></li>
+				<li><a href="{xen:link conversations/yours}">{xen:phrase conversations_you_started}</a></li>
+			</ul>
+		</div>
+	</li>
+	</xen:if>
+	
+	<xen:hook name="navigation_visitor_tabs_middle" />
+	
+	<!-- alerts popup -->
+	<li class="navTab alerts Popup PopupControl PopupClosed">	
+					
+		<a href="{xen:link account/alerts}" rel="Menu" class="navLink NoPopupGadget">{xen:phrase alerts}
+			<strong class="itemCount {xen:if {$visitor.alerts_unread}, '', 'Zero'}"
+				id="AlertsMenu_Counter" data-text="{xen:phrase you_have_x_new_alerts}">
+				<span class="Total">{xen:number $visitor.alerts_unread}</span>
+				<span class="arrow"></span>
+			</strong>
+		</a>
+		
+		<div class="Menu JsOnly navPopup" id="AlertsMenu"
+			data-contentSrc="{xen:link 'account/alerts-popup'}"
+			data-contentDest="#AlertsMenu .listPlaceholder"
+			data-removeCounter="#AlertsMenu_Counter">
+			
+			<div class="menuHeader primaryContent">
+				<h3>
+					<span class="Progress InProgress"></span>
+					<a href="{xen:link account/alerts}" class="concealed">{xen:phrase alerts}</a>
+				</h3>
+			</div>
+			
+			<div class="listPlaceholder"></div>
+			
+			<div class="sectionFooter">
+				<a href="{xen:link account/alert-preferences}" class="floatLink">{xen:phrase alert_preferences}</a>
+				<a href="{xen:link account/alerts}">{xen:phrase show_all}...</a>
+			</div>
+		</div>
+	</li>
+	
+	<xen:hook name="navigation_visitor_tabs_end" />
+</ul>]]></template>
+    <template title="node_category_level_1" addon_id="XenForo" version_id="1020170" version_string="1.2.1" disable_modifications="0"><![CDATA[<xen:require css="node_list.css" />
+<xen:require css="node_category.css" />
+
+<li class="node category level_{$level} node_{$category.node_id}" id="{xen:helper linktitle, $category.node_id, $category.title, 1}">
+
+	<div class="nodeInfo categoryNodeInfo categoryStrip">
+	
+		<div class="categoryText">
+			<h3 class="nodeTitle"><a href="{xen:link categories, $category}" <xen:if is="{xen:property stylium_categoryDescriptionTooltip} AND {$category.description}">data-description="{xen:if {xen:property nodeListDescriptionTooltips}, '#nodeDescription-{$category.node_id}'}"</xen:if>>{$category.title}</a></h3>
+			
+			<xen:if is="{$category.description} AND !{xen:property stylium_categoryDescriptionTooltip}">
+				<blockquote class="nodeDescription baseHtml">{xen:raw $category.description}</blockquote>
+			<xen:else/>
+				<blockquote class="nodeDescription baseHtml" id="nodeDescription-{$category.node_id}">{xen:raw $category.description}</blockquote>
+			</xen:if>
+			
+		</div>
+		
+	</div>
+	
+	<xen:if is="{$renderedChildren}">		
+		<ol class="nodeList">
+			<xen:foreach loop="$renderedChildren" value="$child">{xen:raw $child}</xen:foreach>
+		</ol>
+	</xen:if>
+	
+	<span class="tlc"></span>
+	<span class="trc"></span>
+	<span class="blc"></span>
+	<span class="brc"></span>
+</li>]]></template>
+    <template title="PAGE_CONTAINER" addon_id="XenForo" version_id="1050070" version_string="1.5.0" disable_modifications="0"><![CDATA[<!DOCTYPE html><xen:set var="$isResponsive" value="{xen:if '{xen:property enableResponsive} AND !{$noResponsive}', 1, 0}" />
+<html id="XenForo" lang="{$visitorLanguage.language_code}" dir="{$visitorLanguage.text_direction}" class="Public NoJs {xen:if {$visitor.user_id}, 'LoggedIn', 'LoggedOut'} {xen:if {$sidebar}, 'Sidebar', 'NoSidebar'} {xen:if $hasAutoDeferred, RunDeferred} {xen:if $isResponsive, Responsive, NoResponsive}" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+<xen:hook name="page_container_head">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<xen:if is="{$isResponsive}">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</xen:if>
+	<xen:if is="{$requestPaths.fullBasePath}">
+		<base href="{$requestPaths.fullBasePath}" />
+		<script><xen:comment>/* Chrome bug and for Google cache */</xen:comment>
+			var _b = document.getElementsByTagName('base')[0], _bH = "{xen:jsescape $requestPaths.fullBasePath}";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+	</xen:if>
+
+	<title><xen:if is="{$title}">{xen:raw $title} | {$xenOptions.boardTitle}<xen:else />{$xenOptions.boardTitle}</xen:if></title>
+	
+	<noscript><style>.JsOnly, .jsOnly { display: none !important; }</style></noscript>
+	<link rel="stylesheet" href="css.php?css=xenforo,form,public&amp;style={xen:urlencode $_styleId}&amp;dir={$visitorLanguage.text_direction}&amp;d={$visitorStyle.last_modified_date}" />
+	<!--XenForo_Require:CSS-->	
+	{xen:helper ignoredCss, {$visitor.ignoredUsers}}
+
+	<xen:include template="google_analytics" />
+	<xen:include template="page_container_js_head" />
+	
+	<link rel="apple-touch-icon" href="{xen:helper fullurl, {xen:property ogLogoPath}, 1}" />
+	<link rel="alternate" type="application/rss+xml" title="{xen:phrase rss_feed_for_x, 'title={$xenOptions.boardTitle}'}" href="{xen:link forums/-/index.rss}" />
+	<xen:if is="{$pageDescription.content} AND !{$pageDescription.skipmeta} AND !{$head.description}"><meta name="description" content="{xen:string wordTrim, {xen:helper stripHtml, {xen:raw $pageDescription.content}}, 200}" /></xen:if>
+	<xen:if is="{$head}"><xen:foreach loop="$head" value="$headElement">{xen:raw $headElement}</xen:foreach></xen:if>
+</xen:hook>
+<xen:set var="$bodyClasses" value="{xen:helper brsf_bodyclasses, $bodyClasses}" />
+</head>
+
+<body{xen:if {$bodyClasses}, ' class="{$bodyClasses}"'}>
+<xen:hook name="body">
+
+<xen:comment>START STYLIUM WRAPPER</xen:comment>
+<div id="StyliumWrapper">
+
+<xen:if is="{$visitor.is_moderator} || {$visitor.is_admin}">
+	<xen:include template="moderator_bar" />
+<xen:elseif is="!{$visitor.user_id} && !{$hideLoginBar}" />
+	<xen:include template="login_bar" />
+</xen:if>
+
+<div id="headerMover">
+	<div id="headerProxy"></div>
+
+<div id="content" class="{$contentTemplate}">
+	<div class="pageWidth">
+		<div class="pageContent">
+			<!-- main content area -->
+			
+			<xen:hook name="page_container_content_top" />
+			
+			<xen:if is="{$sidebar}">
+				<div class="mainContainer">
+					<div class="mainContent"></xen:if>
+						
+						<xen:include template="ad_above_top_breadcrumb" />
+						
+						<xen:hook name="page_container_breadcrumb_top">
+						<div class="breadBoxTop {xen:if $topctrl, withTopCtrl}">
+							<xen:if is="{$topctrl}"><div class="topCtrl">{xen:raw $topctrl}</div></xen:if>
+							<xen:include template="breadcrumb"><xen:set var="$microdata">1</xen:set></xen:include>
+						</div>
+						</xen:hook>
+						
+						<xen:include template="ad_below_top_breadcrumb" />
+					
+						<!--[if lt IE 8]>
+							<p class="importantMessage">{xen:phrase you_are_using_out_of_date_browser_upgrade}</p>
+						<![endif]-->
+
+						<xen:hook name="page_container_notices">
+						<xen:include template="notices" />						
+						</xen:hook>
+						
+						<xen:hook name="page_container_content_title_bar">
+						<xen:if is="!{$noH1}">						
+							<!-- h1 title, description -->
+							<div class="titleBar">
+								{xen:raw $beforeH1}
+								<h1><xen:if
+									is="{$h1}">{xen:raw $h1}<xen:elseif
+									is="{$title}" />{xen:raw $title}<xen:else
+									/>{$xenOptions.boardTitle}</xen:if></h1>
+								
+								<xen:if is="{$pageDescription.content}"><p id="pageDescription" class="muted {$pageDescription.class}">{xen:raw $pageDescription.content}</p></xen:if>
+							</div>
+						</xen:if>
+						</xen:hook>
+						
+						<xen:include template="ad_above_content" />
+						
+						<!-- main template -->
+						{xen:raw $contents}
+						
+						<xen:include template="ad_below_content" />
+						
+						<xen:if is="!{$visitor.user_id} && !{$hideLoginBar}">
+							<!-- login form, to be moved to the upper drop-down -->
+							<xen:include template="login_bar_form" />
+						</xen:if>
+						
+					<xen:if is="{$sidebar}"></div>
+				</div>
+				
+				<!-- sidebar -->
+				<xen:if is="{xen:property stylium_enableSidebar}">
+				<aside>
+					<div class="sidebar styliumMainSidebar" data-location="{xen:if {xen:property stylium_sidebarLeft},'left','right'}">
+						<xen:hook name="page_container_sidebar">
+						<xen:include template="ad_sidebar_top" />
+						<xen:if is="!{$noVisitorPanel}"><xen:include template="sidebar_visitor_panel" /></xen:if>
+						{xen:raw $sidebar}
+						<xen:include template="ad_sidebar_bottom" />
+						</xen:hook>
+					</div>
+				</aside>
+				</xen:if>
+			</xen:if>
+			
+			<xen:hook name="page_container_breadcrumb_bottom">			
+			<xen:if is="{xen:property stylium_bottomBreadcrumb}"><div class="breadBoxBottom"><xen:include template="breadcrumb" /></div></xen:if>
+			</xen:hook>
+						
+			<xen:include template="ad_below_bottom_breadcrumb" />
+						
+		</div>
+	</div>
+</div>
+
+<header>
+	<xen:include template="header" />
+	<xen:edithint template="navigation" />
+	<xen:edithint template="search_bar" />
+</header>
+
+</div>
+
+<footer>
+	<xen:include template="footer" />
+</footer>
+
+<xen:include template="page_container_js_body" />
+
+<xen:if is="{$isIndexPage} AND {$canSearch}">
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "WebSite",
+	"url": "{xen:jsescape {xen:link canonical:index}}",
+	"potentialAction": {
+		"@type": "SearchAction",
+		"target": "{xen:jsescape {xen:link canonical:search/search}}{xen:if $xenOptions.useFriendlyUrls, '?', '&'}keywords={search_keywords}",
+		"query-input": "required name=search_keywords"
+	}
+}
+</script>
+</xen:if>
+
+<xen:hook name="stylium_settings" />
+</div><xen:comment>END STYLIUM WRAPPER</xen:comment>
+</xen:hook>
+</body>
+</html>]]></template>
+    <template title="page_container_js_head" addon_id="XenForo" version_id="1040270" version_string="1.4.2" disable_modifications="0"><![CDATA[	<script src="{$jQuerySource}"></script>	
+	<xen:if is="{$jQuerySource} != {$jQuerySourceLocal}">
+		<script>if (!window.jQuery) { document.write('<scr'+'ipt type="text/javascript" src="{$jQuerySourceLocal}"><\/scr'+'ipt>'); }</script>
+	</xen:if><xen:if is="{$xenOptions.uncompressedJs} == 1 OR {$xenOptions.uncompressedJs} == 3">
+	<script src="{$javaScriptSource}/jquery/jquery.xenforo.rollup.js?_v={$xenOptions.jsVersion}"></script></xen:if>	
+	<script src="{xen:helper javaScriptUrl, '{$javaScriptSource}/xenforo/xenforo.js?_v={$xenOptions.jsVersion}'}"></script>
+	<script src="{$javaScriptSource}/brivium/stylium/jquery.cookie.js?_v={$xenOptions.jsVersion}"></script>
+	<script src="{$javaScriptSource}/brivium/stylium/stylium.js?_v={$xenOptions.jsVersion}"></script>
+<!--XenForo_Require:JS-->]]></template>
+    <template title="stylium.css" addon_id="" version_id="0" version_string="" disable_modifications="0"><![CDATA[/*
+ * Stylium Framework CSS
+ *
+ */
+
+/** Body Style **/
+	html{
+		background: none;
+	}
+	body.styliumBoxedCover .pageWidth{
+		max-width: {xen:property stylium_boxedMaxPageWidth};
+		margin: auto;
+	}
+	body.styliumBoxed #StyliumWrapper{
+		max-width: {xen:property stylium_boxedMaxPageWidth};
+		margin: auto;
+	}
+	body.styliumBoxed .pageWidth,
+	body.styliumBoxed2 .pageWidth{
+		padding-right: 0px;
+		padding-left: 0px;
+		margin: 0;
+	}
+	body.styliumBoxed2{
+		padding: 20px 0;
+	}
+	body.styliumBoxed2 #StyliumWrapper{
+		{xen:property stylium_wrapperBoxed}
+		margin:auto;
+	}
+	
+	::selection{
+		{xen:property stylium_selection}
+	}
+	::-webkit-selection{
+		{xen:property stylium_selection}
+	}
+	::-moz-selection{
+		{xen:property stylium_selection}
+	}
+
+	::-o-selection {
+		{xen:property stylium_selection}
+	}
+	::-ms-selection {
+		{xen:property stylium_selection}
+	}
+/** Navigation **/
+
+	<xen:if is="!{xen:property stylium_subNavigation}">
+	.removeSubNav #QuickSearch{
+		padding-bottom: 5px;
+		_padding-bottom: 5px;
+		top: {xen:calc '-1 * ({xen:property headerTabHeight} / 2 + 16 / 2 + 50)'}px;
+	}
+	#headerMover #headerProxy
+	{
+		{xen:property header.background}
+		height: {xen:calc '{xen:property headerLogoHeight} + {xen:property headerTabHeight} + 2'}px; /* +2 borders */
+	}
+	#navigation .pageContent
+	{
+		height: {xen:calc '{xen:property headerTabHeight} + 2'}px;
+		position: relative;
+	}
+
+	</xen:if>
+
+	<xen:if is="{xen:property stylium_homeTabIcon}">
+		.navTabs .navTab.home .navLink {
+			text-indent: -9999px;
+			position: relative;
+			width: 20px;
+		}
+		.navTabs .navTab.home .navLink:before {
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			content: "\f015";
+			text-indent: 0;
+			position: absolute;
+			left: 50%;
+			width: 20px;
+			text-align: center;
+			margin-left: -10px;
+			font-size: 16px;
+		}
+	</xen:if>
+	<xen:if is="{xen:property stylium_miniAvatarVisitorTabs}">
+		.navTab.account .avatar img {
+			width: 20px;
+			height: 20px;
+			border: none;
+			box-shadow: none;
+			display: block;
+			padding: 0;
+		}
+		.navTabs .navTab.account .navLink {
+			padding-left: 38px;
+		}
+		.navTabs .navTab.account .avatar {
+			position: absolute;
+			left: 10px; 
+			top: {xen:calc '({xen:property headerTabHeight}/ 2) - 10'}px;
+		}
+		.navTabs .navTab.account .avatar img {
+			width: 20px;
+			height: 20px;
+			border: none;
+			box-shadow: none;
+			display: block;
+		}
+		.navTabs a.adminLink.navLink {
+			padding-right: 0;
+		}
+		
+		.stickyheader .navTabs .navTab.account .avatar {
+			top: {xen:calc '({xen:property stylium_stickyNavigationHeight} / 2) - 10'}px;
+		}
+	</xen:if>
+
+	<xen:if is="!{xen:property stylium_navDropdownArrows}">
+		.navTabs .navTab .SplitCtrl
+		{
+			display: none !important;
+		}
+	</xen:if>
+
+/** BREADCRUM **/
+	<xen:if is="!{xen:property stylium_breadcrumbIndex}">
+		.forum_list .breadBoxTop,
+		.forum_list .breadBoxBottom{
+			display: none;
+		}
+	</xen:if>
+	
+
+/** BREADCRUM **/
+	<xen:if is="!{xen:property stylium_titlebarIndex}">
+		.forum_list .titleBar{
+			display: none;
+		}
+	</xen:if>
+	
+/** Avatar Shape **/
+	<xen:if is="{xen:property stylium_avatarStyle}=='circle'">
+		.avatar img, 
+		.avatar .img, 
+		.avatarCropper,
+		.AvatarCropControl,
+		.avatar.plainImage img,
+		.avatar.plainImage .img,
+		.posterAvatar .avatar.miniMe .img,
+		.posterAvatar .avatar.miniMe img
+		{
+			border-radius: 100%;
+			background-position: 0 0 !important;
+			padding: 0 !important;
+		}
+		.memberCard .avatarCropper img, 
+		.memberCard .avatarCropper ,
+		.avatarEditor .currentAvatar .avatar img, 
+		.AvatarCropControl img
+		{
+			border-radius: 0;
+		}
+	</xen:if>
+
+
+/** BEGIN ADVANCED FOOTER **/
+	<xen:if is="{xen:property stylium_advancedFooter}">
+	.styliumAdvancedFooterContainer {
+		{xen:property stylium_footerAdvancedContainer}
+	}
+
+	.styliumAdvancedFooterContent {
+		{xen:property stylium_footerAdvancedContent}
+	}
+
+	.styliumAdvancedFooterContent > li {
+		{xen:property stylium_footerAdvancedColumn}
+	}
+	
+	{xen:helper clearfix, '.styliumAdvancedFooterContent'}
+	
+	.styliumAdvancedFooterContent > li .styliumFooterColWrapper{
+		padding: 10px;
+	}
+	.styliumFooterCol1 > li {
+		width: 100%;
+		*width: 99.98%;
+	}
+
+	.styliumFooterCol2 > li {
+		width: 50%;
+		*width: 48.98%;
+	}
+
+	.styliumFooterCol3 > li {
+		width: 33.33%;
+		*width: 33.30%;
+	}
+
+	.styliumFooterCol4 > li {
+		width: 25%;
+		*width: 24.98%;
+	}
+
+	li.styliumFooterFirstCol {
+		{xen:property stylium_footerFirstColumn}
+	}
+
+	li.styliumFooterSecondCol {
+		{xen:property stylium_footerSecondColumn}
+	}
+
+	li.styliumFooterThirdCol {
+		{xen:property stylium_footerThirdColumn}
+	}
+
+	li.styliumFooterFourthCol {
+		{xen:property stylium_footerFourthColumn}
+	}
+
+	.styliumAdvancedFooterContent > li h3 {
+		{xen:property stylium_footerHeading};
+	}
+
+	.styliumAdvancedFooterContent > li a {
+		{xen:property stylium_footerLink}
+	}
+
+	.styliumAdvancedFooterContent > li a:hover {
+		{xen:property stylium_footerLinkHover}
+	}
+	</xen:if>
+/** END ADVANCED FOOTER **/
+
+/** BEGIN SOCIAL MEDIA **/
+	<xen:if is="{xen:property stylium_footerSocialMedia}">
+	.styliumFooterSocial ul {
+		float: left;
+		padding: 10px 0;
+	}
+	{xen:helper clearfix, '.styliumFooterSocial ul'}
+	.styliumFooterSocial ul > li {
+		float: left;
+		padding-right: 5px;
+		padding-bottom: 5px;
+	}
+
+	.styliumFooterSocial ul > li .styliumSocial {
+		{xen:property stylium_footerSocial}
+	}
+
+	.styliumFooterSocial ul > li a.styliumSocial:hover {
+		{xen:property stylium_footerSocialHover}
+	}
+
+	<xen:if is="{xen:property stylium_footerDeviantArtLink}">
+	.styliumFooterSocial ul > li .styliumSocialDeviantArt {
+		background-position: 0px 0px;
+	}
+	</xen:if>
+
+	<xen:if is="{xen:property stylium_footerDribbbleLink}">
+	.styliumFooterSocial ul > li .styliumSocialDribbble {
+		background-position: 0px -70px;
+	}
+	</xen:if>
+
+	<xen:if is="{xen:property stylium_footerFacebookLink}">
+	.styliumFooterSocial ul > li .styliumSocialFacebook {
+		background-position: 0px -140px;
+	}
+	</xen:if>
+
+	<xen:if is="{xen:property stylium_footerFlickrLink}">
+	.styliumFooterSocial ul > li .styliumSocialFlickr {
+		background-position: 0px -210px;
+	}
+	</xen:if>
+
+	<xen:if is="{xen:property stylium_footerGooglePlusLink}">
+	.styliumFooterSocial ul > li .styliumSocialGooglePlus {
+			background-position: 0px -280px;
+	}
+	</xen:if>
+
+	<xen:if is="{xen:property stylium_footerLinkedInLink}">
+	.styliumFooterSocial ul > li .styliumSocialLinkedIn {
+		background-position: 0px -350px;
+	}
+	</xen:if>
+
+	<xen:if is="{xen:property stylium_footerEmail}">
+	.styliumFooterSocial ul > li .styliumSocialEmail {
+		background-position: 0px -420px;
+	}
+	</xen:if>
+
+	<xen:if is="{xen:property stylium_footerPinterestLink}">
+	.styliumFooterSocial ul > li .styliumSocialPinterest {
+		background-position: 0px -490px;
+	}
+	</xen:if>
+
+	<xen:if is="{xen:property stylium_footerRSSLink}">
+	.styliumFooterSocial ul > li .styliumSocialRSS {
+		background-position: 0px -560px;
+	}
+	</xen:if>
+
+	<xen:if is="{xen:property stylium_footerTwitterLink}">
+	.styliumFooterSocial ul > li .styliumSocialTwitter {
+		background-position: 0px -630px;
+	}
+	</xen:if>
+
+	<xen:if is="{xen:property stylium_footerVimeoLink}">
+	.styliumFooterSocial ul > li .styliumSocialVimeo {
+		background-position: 0px -700px;
+	}
+	</xen:if>
+
+	<xen:if is="{xen:property stylium_footerYoutubeLink}">
+	.styliumFooterSocial ul > li .styliumSocialYoutube {
+		background-position: 0px -770px;
+	}
+	</xen:if>
+
+	</xen:if>
+/** END SOCIAL MEDIA **/
+
+/** BEGIN GO TO TOP **/
+	<xen:if is="{xen:property stylium_footerGoToTop}">
+	.styliumToTop{
+		{xen:property stylium_goToTopButton}
+	}
+	.styliumToTop.off {
+		right: -60px;
+		opacity: 0;
+	}
+	.styliumToTop.on {
+		right: 10px;
+		opacity: 1;
+	}
+	.styliumToTop:hover {
+		{xen:property stylium_goToTopButtonHover}
+	}
+	.styliumToTop i {
+		color: #fff;
+		font-size: 24px;
+		line-height: 24px;
+	}
+	</xen:if>
+/** END GO TO TOP **/
+
+/** BEGIN SIDEBAR CUSTOM **/
+	<xen:if is="!{xen:property stylium_enableSidebar}">
+		.mainContainer { 
+			float: none; 
+			margin-right: 0; 
+		}	
+		
+		.mainContent { 
+			margin-right: 0; 
+		}	
+	</xen:if>
+	<xen:if is="{xen:property stylium_enableSidebar} && {xen:property stylium_sidebarLeft} ">
+		.mainContainer { 
+			float: right; 
+			margin-right: 0; 
+			margin-left: -{xen:calc '{xen:property sidebar.width} + 10'}px;
+		}
+		
+		.mainContent { 
+			margin-right: 0; 
+			margin-left: {xen:calc '{xen:property sidebar.width} + 10'}px; 
+		}
+		
+		.sidebar {
+			float: left;
+		}	
+	</xen:if>
+
+	.styliumIcon{
+		padding: 0 5px;
+		-webkit-transition: 0.2s;
+		-moz-transition: 0.2s;
+		-o-transition: 0.2s;
+		-ms-transition: 0.2s;
+		transition: 0.2s;
+		cursor: pointer;
+		color: #888;
+	}
+	<xen:if is="{xen:property stylium_collapsibleSidebar}">
+
+	.styliumSidebarToggle{
+		float: right;
+		margin-left: 5px;
+	}
+
+	.styliumSidebarToggle .styliumIcon {
+		{xen:property stylium_collapseSidebar}
+	}
+	.styliumSidebarToggle:hover .styliumIcon {
+		{xen:property stylium_collapseSidebarHover}
+	}
+	.styliumSidebarToggle .styliumIcon:last-child {margin-right: 0;}
+	</xen:if>
+
+	<xen:if is="{xen:property stylium_collapsibleSidebarBlock}">
+	.sidebar .section .secondaryContent > h3{
+		position: relative;
+	}
+	.styliumSidebarBlockToggle{
+		position: absolute;
+		right: 0;
+		top: 50%;
+		cursor: pointer;
+		margin-top: -{xen:calc '{xen:property stylium_collapseSidebarBlock.font-size} * 1'}px;
+	}
+	.styliumSidebarBlockToggle .fa {
+		{xen:property stylium_collapseSidebarBlock}
+	}
+		
+	</xen:if>
+
+	<xen:if is="{xen:property stylium_sidebarIcons}">
+		.sidebar .section .primaryContent h3,
+		.sidebar .section .secondaryContent h3,
+		.sidebar .profilePage .mast .section.infoBlock h3,
+		.xengallerySideBar > .secondaryContent > h3,
+		.resourceListSidebar > .secondaryContent > h3 {
+			padding-left: {xen:calc '(2 * {xen:property sidebarBlockHeading.padding-left}) + 24'}px;
+			position: relative;
+			line-height: {xen:property sidebarBlockHeading.font-size};
+		}
+		
+		.sidebar .section > .secondaryContent > h3:before,
+		.xengallerySideBar > .secondaryContent > h3:before ,
+		.resourceListSidebar > .secondaryContent > h3:before {
+			display: inline-block;
+			position: absolute;
+			top: 50%;
+			margin-top: -10px;
+			left: {xen:calc '{xen:property sidebarBlockHeading.padding-left} + 0'}px;
+			vertical-align: middle;
+			font-family: 'FontAwesome';
+			font-style: normal;
+			font-weight: normal;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			font-size: 18px;
+			width: 18px;
+			height: 18px;
+			line-height: 1;
+			content: '\f00b';
+		}
+		<xen:comment> COMMON SIDEBAR ICONS </xen:comment>
+		.sidebar .section.membersOnline h3:before,
+		.sidebar .section.userList h3:before {content: "\f0c0";}
+		.sidebar .section.sharePage h3:before {content: "\f14d";}
+		.sidebar .section .statsList h3:before {content: '\f080';}
+		.sidebar .section.staffOnline h3:before {content: "\f0f2";}
+		
+		<xen:comment> MEMBER LIST SIDEBAR ICONS </xen:comment>
+		.sidebar .section .secondaryContent.avatarHeap h3:before {content: "\f0f2";}
+		.sidebar .section .secondaryContent.findMember h3:before {content: "\f002";}
+		
+		<xen:comment> WIDGET FRAMEWORK SIDEBAR ICONS </xen:comment>
+		.sidebar .section .secondaryContent.widget.WidgetFramework_WidgetRenderer_OnlineUsers h3:before {content: "\f0c0";}
+		.sidebar .section .secondaryContent.widget.WidgetFramework_WidgetRenderer_OnlineStaff h3:before {content: "\f0f2";}
+		.sidebar .section .secondaryContent.widget.WidgetFramework_WidgetRenderer_Stats h3:before {content: '\f080';}
+		
+		
+		<xen:comment> RESOURCE MANAGER SIDEBAR ICONS </xen:comment>
+		.resourceListSidebar > .secondaryContent.categoryList > h3:before {content: "\f07c";}
+		.resourceListSidebar > .secondaryContent.miniResourceList> h3:before {content: "\f091";}
+		.resourceListSidebar > .secondaryContent.avatarList> h3:before {content: "\f0c0";}
+		
+		.sidebar .section#resourceInfo .secondaryContent h3:before {content: "\f05a";}
+		.sidebar .section .secondaryContent#authorTools h3:before {content: "\f085";}
+		.sidebar .section .secondaryContent#moreAppsByAuthor h3:before {content: "\f0ca";}
+		.sidebar .section#versionInfo .secondaryContent h3:before {content: "\f0c5";}
+		
+		.sidebar .section > .discussionListFilters > h3:before {content: none !important;}
+	</xen:if>
+
+	<xen:if is="{xen:property enableResponsive}">
+	@media (max-width:{xen:property maxResponsiveWideWidth})
+	{
+		<xen:if is="{xen:property stylium_responsiveSidebar} == 'wide'">
+			.Responsive .sidebar {
+				width: 100%; 
+			}
+		</xen:if>
+	}
+
+	@media (max-width:{xen:property maxResponsiveMediumWidth})
+	{
+		<xen:if is="{xen:property stylium_responsiveSidebar} == 'medium'">
+			.Responsive .sidebar {
+				width: 100%;
+			}
+		</xen:if>
+	}
+	</xen:if>
+
+/** END SIDEBAR CUSTOM **/
+
+/** BEGIN NODES CUSTOM **/
+
+	<xen:if is="{xen:property stylium_collapsibleCategory}">
+	.nodeList .categoryStrip{
+		position: relative;
+	}
+	.nodeList .categoryStrip .categoryText {
+		margin-right: 20px;
+	}
+	.styliumCategoryToggle {
+		position: absolute;
+		right: {xen:property subHeading.padding-right};
+		top: 50%;
+		cursor: pointer;
+		margin-top: -{xen:calc '{xen:property stylium_toggleCategoryHandler.font-size} / 2'}px;
+		line-height: 1;
+		{xen:property stylium_toggleCategoryHandler}
+	}
+	.styliumCategoryToggle .fa {
+	}
+		
+	</xen:if>
+
+	<xen:if is="!{xen:property stylium_nodeLastPost}">
+		.node .nodeLastPost {display: none;}
+		.node .nodeControls {right: 10px !important;}
+	</xen:if>
+
+
+	.node .nodeLastPost .noMessages {display: block; text-align: center;}
+
+	<xen:if is="!{xen:property stylium_nodeControls}">
+		.node .nodeControls {display: none;}
+	</xen:if>
+	
+	<xen:if is="{xen:property stylium_nodeStyle}=='dual'">
+	@media (min-width: {xen:property maxResponsiveMediumWidth}) {
+		{xen:helper clearfix, '.node.level_1 .nodeList'}
+		{xen:helper clearfix, '.nodeList.sectionMain'}
+		
+		.node.level_2 {
+			width: 50%;
+			float: left;
+		}
+
+		.node.level_2:nth-child(odd) {
+			clear: left;
+		}
+
+		.node.level_2:last-child:nth-child(odd) {
+			width: 100%;
+			float: left;
+		}
+
+		.node.level_2 .nodeLastPost {
+			text-align: left;
+			position: static;
+			height: auto;
+			width: auto;
+			background: none;
+			border: none;
+			padding: 0;
+			margin: -{xen:calc '{xen:property nodeText.margin-bottom} - 2'}px 0 {xen:property nodeText.margin-bottom} {xen:property nodeText.margin-left};
+		}
+		.node.level_2 .nodeLastPost .noMessages {
+			text-align: left;
+		}
+
+		.node.level_2 .nodeControls {
+			right: 5px;
+			top: 10px;
+			margin-top: 5px;
+		}
+
+		.node.level_2 .nodeText {
+			margin-right: 32px;
+		}
+
+		.node.level_2:last-child:nth-child(odd) .nodeLastPost {
+			{xen:property nodeLastPost}
+		}
+
+		.node.level_2:last-child:nth-child(odd) .nodeControls {
+			right: {xen:calc '{xen:property nodeLastPost.border-left-width} + {xen:property nodeLastPost.padding-left} + {xen:property nodeLastPost.width} + {xen:property nodeLastPost.padding-right} + {xen:property nodeLastPost.border-right-width} + {xen:property nodeLastPost.margin-right}'}px;
+			margin: 20px 0;
+		}
+
+		.node.level_2:last-child:nth-child(odd) .nodeText {
+			margin-right: {xen:property nodeText.margin-right};
+		}
+		.nodeList .categoryForumNodeInfo,
+		.nodeList .forumNodeInfo,
+		.nodeList .pageNodeInfo,
+		.nodeList .linkNodeInfo
+		{
+			border-top: 1px solid {xen:property primaryLighterStill};
+			border-bottom: none;
+			padding: 0;
+		}
+		.node.level_2:nth-child(odd) {
+			clear: left;
+		}
+		
+	}
+	</xen:if>
+	
+/** END NODE CUSTOM **/
+
+/** BEGIN STICKY CONTENT **/
+
+	.styliumStickyTop.activeSticky .styliumStickyWrapper{
+		width: 100%;
+		position: fixed;
+		z-index: 200;
+		left: 0;
+	}
+	.styliumBoxed #StyliumWrapper .activeSticky .styliumStickyWrapperInner,
+	.styliumBoxedCover  #StyliumWrapper .activeSticky .styliumStickyWrapperInner,
+	.styliumBoxed2 #StyliumWrapper .activeSticky .styliumStickyWrapperInner{
+		max-width: {xen:property stylium_boxedMaxPageWidth};
+		margin: auto;
+	}
+	#navigation.activeSticky .navTabs{
+		border-radius: 0px;
+		border-left-width: 0px;
+		border-right-width: 0px;
+	}
+	#navigation.activeSticky .navTabs .navLink .itemCount{
+		padding-left: 4px;
+		padding-right: 4px;
+		margin-left: 5px;
+		
+		text-align: center;
+		text-shadow: none;
+		position: static;
+	}
+	#navigation.activeSticky .navTabs .navLink .itemCount .arrow{
+		display: none;
+	}
+	.styliumBoxedCover #navigation.activeSticky .styliumStickyWrapperInner{
+		max-width: {xen:calc '{xen:property stylium_boxedMaxPageWidth} -{xen:property pageWidth.padding-right} - {xen:property pageWidth.padding-left}'}px;
+	}
+	.styliumBoxedCover #moderatorBar.activeSticky .styliumStickyWrapper{
+		background-color: {xen:property primaryDarker};
+	}
+	#moderatorBar.activeSticky .styliumStickyWrapperInner{
+		background-color: {xen:property primaryDarker};
+		font-size: 11px;
+	}
+/** END STICKY CONTENT **/
+
+/** Remove Gradients Background **/
+	<xen:if is="{xen:property stylium_removeGradientBg}">
+
+	{xen:property stylium_gradientBgClass}
+	{
+		background-image: none;
+	}
+	</xen:if>
+.styliumTooltip
+{
+	z-index: 100000 !important;
+}
+<xen:if is="{xen:property enableResponsive}">
+@media (max-width:{xen:property maxResponsiveWideWidth})
+{
+	
+	<xen:if is="{xen:property stylium_enableSidebar} && {xen:property stylium_sidebarLeft}">
+		.Responsive .mainContainer
+		{
+			 margin-right: 0;
+			 margin-left: 0;
+		}
+
+			.Responsive .mainContent
+			{
+				margin-right: 0;
+				margin-left: 0;
+			}
+	</xen:if>
+	
+	<xen:if is="{xen:property stylium_advancedFooter}">
+	
+	.Responsive .styliumFooterCol2 > li {
+		width: 100%;
+		*width: 99.98%;
+	}
+
+	.Responsive .styliumFooterCol3 > li {
+		width: 49%;
+		*width: 48.98%;
+	}
+
+	.Responsive .styliumFooterCol4 > li {
+		width: 33.33%;
+		*width: 33.30%;
+	}
+
+	.Responsive li.styliumFooterFirstCol {
+		width: 100%;
+		*width: 99.98%;
+	}
+
+	.Responsive li.styliumFooterSecondCol,
+	.Responsive li.styliumFooterThirdCol,
+	.Responsive li.styliumFooterFourthCol {
+		width: 33.33%;
+		*width: 33.30%;
+	}
+	</xen:if>
+}
+@media (max-width:{xen:property maxResponsiveMediumWidth})
+{
+	<xen:if is="{xen:property stylium_advancedFooter}">
+	
+	.Responsive .styliumFooterCol4 > li {
+		width: 49%;
+		*width: 48.98%;
+		text-align: center;
+	}
+	.Responsive .styliumFooterCol1 > li {
+		text-align: center;
+	}
+	.Responsive .styliumFooterCol2 > li,
+	.Responsive .styliumFooterCol3 > li,
+	.Responsive li.styliumFooterFirstCol,
+	.Responsive li.styliumFooterSecondCol,
+	.Responsive li.styliumFooterThirdCol,
+	.Responsive li.styliumFooterFourthCol {
+		width: 100%;
+		*width: 99.98%;
+		text-align: center;
+	}
+	</xen:if>
+}
+@media (max-width:{xen:property maxResponsiveNarrowWidth})
+{
+	.Responsive .styliumFooterCol4 > li {
+		width: 100%;
+		*width: 99.98%;
+	}
+}
+
+</xen:if>]]></template>
+    <template title="stylium_advanced_footer" addon_id="" version_id="0" version_string="" disable_modifications="0"><![CDATA[<xen:set var="$stylium_footerColumns">{xen:calc '{xen:property stylium_footerFirstCol} + {xen:property stylium_footerSecondCol} + {xen:property stylium_footerThirdCol} + {xen:property stylium_footerFourthCol}'}</xen:set>
+
+<div id="styliumAdvancedFooter" class="styliumAdvancedFooterContainer">
+	<div class="pageWidth">
+		<div class="pageContent">
+			<ul class="styliumAdvancedFooterContent styliumFooterCol{$stylium_footerColumns}">
+				<xen:if is="{xen:property stylium_footerFirstCol}">
+				<li class="styliumFooterFirstCol">
+					<div class="styliumFooterColWrapper">
+						<xen:if is="{xen:property stylium_footerFirstCol}">
+							<h3>
+								<xen:if is="{xen:property stylium_footerFirstColIcon}">
+									<span class="fa {xen:property stylium_footerFirstColIcon}"></span>
+								</xen:if>
+								{xen:property stylium_footerFirstColTitle}
+							</h3>
+						</xen:if>
+						{xen:property stylium_footerFirstColContent}
+						<xen:include template="stylium_footer_social"/>
+					</div>
+				</li>
+				</xen:if>
+				
+				<xen:if is="{xen:property stylium_footerSecondCol}">
+				<li class="styliumFooterSecondCol">
+					<div class="styliumFooterColWrapper">
+						<xen:if is="{xen:property stylium_footerSecondCol}">
+							<h3>
+								<xen:if is="{xen:property stylium_footerSecondColIcon}">
+									<span class="fa {xen:property stylium_footerSecondColIcon}"></span>
+								</xen:if>
+								{xen:property stylium_footerSecondColTitle}
+							</h3>
+						</xen:if>
+						{xen:property stylium_footerSecondColContent}
+					</div>
+				</li>
+				</xen:if>
+				
+				<xen:if is="{xen:property stylium_footerThirdCol}">
+				<li class="styliumFooterThirdCol">
+					<div class="styliumFooterColWrapper">
+						<xen:if is="{xen:property stylium_footerThirdCol}">
+							<h3>
+								<xen:if is="{xen:property stylium_footerThirdColIcon}">
+									<span class="fa {xen:property stylium_footerThirdColIcon}"></span>
+								</xen:if>
+								{xen:property stylium_footerThirdColTitle}
+							</h3>
+						</xen:if>
+						{xen:property stylium_footerThirdColContent}
+					</div>
+				</li>
+				</xen:if>
+				
+				<xen:if is="{xen:property stylium_footerFourthCol}">
+				<li class="styliumFooterFourthCol">
+					<div class="styliumFooterColWrapper">
+						<xen:if is="{xen:property stylium_footerFourthCol}">
+							<h3>
+								<xen:if is="{xen:property stylium_footerFourthColIcon}">
+									<span class="fa {xen:property stylium_footerFourthColIcon}"></span>
+								</xen:if>
+								{xen:property stylium_footerFourthColTitle}
+							</h3>
+						</xen:if>
+						{xen:property stylium_footerFourthColContent}
+					</div>
+				</li>
+				</xen:if>
+			</ul>			
+		</div>
+	</div>
+</div>]]></template>
+    <template title="stylium_extra_css.css" addon_id="" version_id="0" version_string="" disable_modifications="0"><![CDATA[]]></template>
+    <template title="stylium_font_setting" addon_id="" version_id="0" version_string="" disable_modifications="0"><![CDATA[<option value="default">Theme Default</option>
+	<optgroup label="Built-in Fonts" type="built">
+		<option value="Arial">Arial</option>
+		<option value="Tahoma">Tahoma</option>
+		<option value="Verdana">Verdana</option>
+		<option value="Trebuchet MS">Trebuchet MS</option>
+		<option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+		<option value="Georgia">Georgia</option>
+		<option value="Times New Roman">Times New Roman</option>
+	  </optgroup>
+	<optgroup label="Google Fonts" type="google">
+		<option value="ABeeZee">ABeeZee</option>
+		<option value="Abel">Abel</option>
+		<option value="Abril Fatface">Abril Fatface</option>
+		<option value="Aclonica">Aclonica</option>
+		<option value="Acme">Acme</option>
+		<option value="Actor">Actor</option>
+		<option value="Adamina">Adamina</option>
+		<option value="Advent Pro">Advent Pro</option>
+		<option value="Aguafina Script">Aguafina Script</option>
+		<option value="Akronim">Akronim</option>
+		<option value="Aladin">Aladin</option>
+		<option value="Aldrich">Aldrich</option>
+		<option value="Alef">Alef</option>
+		<option value="Alegreya">Alegreya</option>
+		<option value="Alegreya SC">Alegreya SC</option>
+		<option value="Alegreya Sans">Alegreya Sans</option>
+		<option value="Alegreya Sans SC">Alegreya Sans SC</option>
+		<option value="Alex Brush">Alex Brush</option>
+		<option value="Alfa Slab One">Alfa Slab One</option>
+		<option value="Alice">Alice</option>
+		<option value="Alike">Alike</option>
+		<option value="Alike Angular">Alike Angular</option>
+		<option value="Allan">Allan</option>
+		<option value="Allerta">Allerta</option>
+		<option value="Allerta Stencil">Allerta Stencil</option>
+		<option value="Allura">Allura</option>
+		<option value="Almendra">Almendra</option>
+		<option value="Almendra Display">Almendra Display</option>
+		<option value="Almendra SC">Almendra SC</option>
+		<option value="Amarante">Amarante</option>
+		<option value="Amaranth">Amaranth</option>
+		<option value="Amatic SC">Amatic SC</option>
+		<option value="Amethysta">Amethysta</option>
+		<option value="Anaheim">Anaheim</option>
+		<option value="Andada">Andada</option>
+		<option value="Andika">Andika</option>
+		<option value="Angkor">Angkor</option>
+		<option value="Annie Use Your Telescope">Annie Use Your Telescope</option>
+		<option value="Anonymous Pro">Anonymous Pro</option>
+		<option value="Antic">Antic</option>
+		<option value="Antic Didone">Antic Didone</option>
+		<option value="Antic Slab">Antic Slab</option>
+		<option value="Anton">Anton</option>
+		<option value="Arapey">Arapey</option>
+		<option value="Arbutus">Arbutus</option>
+		<option value="Arbutus Slab">Arbutus Slab</option>
+		<option value="Architects Daughter">Architects Daughter</option>
+		<option value="Archivo Black">Archivo Black</option>
+		<option value="Archivo Narrow">Archivo Narrow</option>
+		<option value="Arimo">Arimo</option>
+		<option value="Arizonia">Arizonia</option>
+		<option value="Armata">Armata</option>
+		<option value="Artifika">Artifika</option>
+		<option value="Arvo">Arvo</option>
+		<option value="Asap">Asap</option>
+		<option value="Asset">Asset</option>
+		<option value="Astloch">Astloch</option>
+		<option value="Asul">Asul</option>
+		<option value="Atomic Age">Atomic Age</option>
+		<option value="Aubrey">Aubrey</option>
+		<option value="Audiowide">Audiowide</option>
+		<option value="Autour One">Autour One</option>
+		<option value="Average">Average</option>
+		<option value="Average Sans">Average Sans</option>
+		<option value="Averia Gruesa Libre">Averia Gruesa Libre</option>
+		<option value="Averia Libre">Averia Libre</option>
+		<option value="Averia Sans Libre">Averia Sans Libre</option>
+		<option value="Averia Serif Libre">Averia Serif Libre</option>
+		<option value="Bad Script">Bad Script</option>
+		<option value="Balthazar">Balthazar</option>
+		<option value="Bangers">Bangers</option>
+		<option value="Basic">Basic</option>
+		<option value="Battambang">Battambang</option>
+		<option value="Baumans">Baumans</option>
+		<option value="Bayon">Bayon</option>
+		<option value="Belgrano">Belgrano</option>
+		<option value="Belleza">Belleza</option>
+		<option value="BenchNine">BenchNine</option>
+		<option value="Bentham">Bentham</option>
+		<option value="Berkshire Swash">Berkshire Swash</option>
+		<option value="Bevan">Bevan</option>
+		<option value="Bigelow Rules">Bigelow Rules</option>
+		<option value="Bigshot One">Bigshot One</option>
+		<option value="Bilbo">Bilbo</option>
+		<option value="Bilbo Swash Caps">Bilbo Swash Caps</option>
+		<option value="Bitter">Bitter</option>
+		<option value="Black Ops One">Black Ops One</option>
+		<option value="Bokor">Bokor</option>
+		<option value="Bonbon">Bonbon</option>
+		<option value="Boogaloo">Boogaloo</option>
+		<option value="Bowlby One">Bowlby One</option>
+		<option value="Bowlby One SC">Bowlby One SC</option>
+		<option value="Brawler">Brawler</option>
+		<option value="Bree Serif">Bree Serif</option>
+		<option value="Bubblegum Sans">Bubblegum Sans</option>
+		<option value="Bubbler One">Bubbler One</option>
+		<option value="Buda">Buda</option>
+		<option value="Buenard">Buenard</option>
+		<option value="Butcherman">Butcherman</option>
+		<option value="Butterfly Kids">Butterfly Kids</option>
+		<option value="Cabin">Cabin</option>
+		<option value="Cabin Condensed">Cabin Condensed</option>
+		<option value="Cabin Sketch">Cabin Sketch</option>
+		<option value="Caesar Dressing">Caesar Dressing</option>
+		<option value="Cagliostro">Cagliostro</option>
+		<option value="Calligraffitti">Calligraffitti</option>
+		<option value="Cambo">Cambo</option>
+		<option value="Candal">Candal</option>
+		<option value="Cantarell">Cantarell</option>
+		<option value="Cantata One">Cantata One</option>
+		<option value="Cantora One">Cantora One</option>
+		<option value="Capriola">Capriola</option>
+		<option value="Cardo">Cardo</option>
+		<option value="Carme">Carme</option>
+		<option value="Carrois Gothic">Carrois Gothic</option>
+		<option value="Carrois Gothic SC">Carrois Gothic SC</option>
+		<option value="Carter One">Carter One</option>
+		<option value="Caudex">Caudex</option>
+		<option value="Cedarville Cursive">Cedarville Cursive</option>
+		<option value="Ceviche One">Ceviche One</option>
+		<option value="Changa One">Changa One</option>
+		<option value="Chango">Chango</option>
+		<option value="Chau Philomene One">Chau Philomene One</option>
+		<option value="Chela One">Chela One</option>
+		<option value="Chelsea Market">Chelsea Market</option>
+		<option value="Chenla">Chenla</option>
+		<option value="Cherry Cream Soda">Cherry Cream Soda</option>
+		<option value="Cherry Swash">Cherry Swash</option>
+		<option value="Chewy">Chewy</option>
+		<option value="Chicle">Chicle</option>
+		<option value="Chivo">Chivo</option>
+		<option value="Cinzel">Cinzel</option>
+		<option value="Cinzel Decorative">Cinzel Decorative</option>
+		<option value="Clicker Script">Clicker Script</option>
+		<option value="Coda">Coda</option>
+		<option value="Coda Caption">Coda Caption</option>
+		<option value="Codystar">Codystar</option>
+		<option value="Combo">Combo</option>
+		<option value="Comfortaa">Comfortaa</option>
+		<option value="Coming Soon">Coming Soon</option>
+		<option value="Concert One">Concert One</option>
+		<option value="Condiment">Condiment</option>
+		<option value="Content">Content</option>
+		<option value="Contrail One">Contrail One</option>
+		<option value="Convergence">Convergence</option>
+		<option value="Cookie">Cookie</option>
+		<option value="Copse">Copse</option>
+		<option value="Corben">Corben</option>
+		<option value="Courgette">Courgette</option>
+		<option value="Cousine">Cousine</option>
+		<option value="Coustard">Coustard</option>
+		<option value="Covered By Your Grace">Covered By Your Grace</option>
+		<option value="Crafty Girls">Crafty Girls</option>
+		<option value="Creepster">Creepster</option>
+		<option value="Crete Round">Crete Round</option>
+		<option value="Crimson Text">Crimson Text</option>
+		<option value="Croissant One">Croissant One</option>
+		<option value="Crushed">Crushed</option>
+		<option value="Cuprum">Cuprum</option>
+		<option value="Cutive">Cutive</option>
+		<option value="Cutive Mono">Cutive Mono</option>
+		<option value="Damion">Damion</option>
+		<option value="Dancing Script">Dancing Script</option>
+		<option value="Dangrek">Dangrek</option>
+		<option value="Dawning of a New Day">Dawning of a New Day</option>
+		<option value="Days One">Days One</option>
+		<option value="Delius">Delius</option>
+		<option value="Delius Swash Caps">Delius Swash Caps</option>
+		<option value="Delius Unicase">Delius Unicase</option>
+		<option value="Della Respira">Della Respira</option>
+		<option value="Denk One">Denk One</option>
+		<option value="Devonshire">Devonshire</option>
+		<option value="Didact Gothic">Didact Gothic</option>
+		<option value="Diplomata">Diplomata</option>
+		<option value="Diplomata SC">Diplomata SC</option>
+		<option value="Domine">Domine</option>
+		<option value="Donegal One">Donegal One</option>
+		<option value="Doppio One">Doppio One</option>
+		<option value="Dorsa">Dorsa</option>
+		<option value="Dosis">Dosis</option>
+		<option value="Dr Sugiyama">Dr Sugiyama</option>
+		<option value="Droid Sans">Droid Sans</option>
+		<option value="Droid Sans Mono">Droid Sans Mono</option>
+		<option value="Droid Serif">Droid Serif</option>
+		<option value="Duru Sans">Duru Sans</option>
+		<option value="Dynalight">Dynalight</option>
+		<option value="EB Garamond">EB Garamond</option>
+		<option value="Eagle Lake">Eagle Lake</option>
+		<option value="Eater">Eater</option>
+		<option value="Economica">Economica</option>
+		<option value="Ek Mukta">Ek Mukta</option>
+		<option value="Electrolize">Electrolize</option>
+		<option value="Elsie">Elsie</option>
+		<option value="Elsie Swash Caps">Elsie Swash Caps</option>
+		<option value="Emblema One">Emblema One</option>
+		<option value="Emilys Candy">Emilys Candy</option>
+		<option value="Engagement">Engagement</option>
+		<option value="Englebert">Englebert</option>
+		<option value="Enriqueta">Enriqueta</option>
+		<option value="Erica One">Erica One</option>
+		<option value="Esteban">Esteban</option>
+		<option value="Euphoria Script">Euphoria Script</option>
+		<option value="Ewert">Ewert</option>
+		<option value="Exo">Exo</option>
+		<option value="Exo 2">Exo 2</option>
+		<option value="Expletus Sans">Expletus Sans</option>
+		<option value="Fanwood Text">Fanwood Text</option>
+		<option value="Fascinate">Fascinate</option>
+		<option value="Fascinate Inline">Fascinate Inline</option>
+		<option value="Faster One">Faster One</option>
+		<option value="Fasthand">Fasthand</option>
+		<option value="Fauna One">Fauna One</option>
+		<option value="Federant">Federant</option>
+		<option value="Federo">Federo</option>
+		<option value="Felipa">Felipa</option>
+		<option value="Fenix">Fenix</option>
+		<option value="Finger Paint">Finger Paint</option>
+		<option value="Fira Mono">Fira Mono</option>
+		<option value="Fira Sans">Fira Sans</option>
+		<option value="Fjalla One">Fjalla One</option>
+		<option value="Fjord One">Fjord One</option>
+		<option value="Flamenco">Flamenco</option>
+		<option value="Flavors">Flavors</option>
+		<option value="Fondamento">Fondamento</option>
+		<option value="Fontdiner Swanky">Fontdiner Swanky</option>
+		<option value="Forum">Forum</option>
+		<option value="Francois One">Francois One</option>
+		<option value="Freckle Face">Freckle Face</option>
+		<option value="Fredericka the Great">Fredericka the Great</option>
+		<option value="Fredoka One">Fredoka One</option>
+		<option value="Freehand">Freehand</option>
+		<option value="Fresca">Fresca</option>
+		<option value="Frijole">Frijole</option>
+		<option value="Fruktur">Fruktur</option>
+		<option value="Fugaz One">Fugaz One</option>
+		<option value="GFS Didot">GFS Didot</option>
+		<option value="GFS Neohellenic">GFS Neohellenic</option>
+		<option value="Gabriela">Gabriela</option>
+		<option value="Gafata">Gafata</option>
+		<option value="Galdeano">Galdeano</option>
+		<option value="Galindo">Galindo</option>
+		<option value="Gentium Basic">Gentium Basic</option>
+		<option value="Gentium Book Basic">Gentium Book Basic</option>
+		<option value="Geo">Geo</option>
+		<option value="Geostar">Geostar</option>
+		<option value="Geostar Fill">Geostar Fill</option>
+		<option value="Germania One">Germania One</option>
+		<option value="Gilda Display">Gilda Display</option>
+		<option value="Give You Glory">Give You Glory</option>
+		<option value="Glass Antiqua">Glass Antiqua</option>
+		<option value="Glegoo">Glegoo</option>
+		<option value="Gloria Hallelujah">Gloria Hallelujah</option>
+		<option value="Goblin One">Goblin One</option>
+		<option value="Gochi Hand">Gochi Hand</option>
+		<option value="Gorditas">Gorditas</option>
+		<option value="Goudy Bookletter 1911">Goudy Bookletter 1911</option>
+		<option value="Graduate">Graduate</option>
+		<option value="Grand Hotel">Grand Hotel</option>
+		<option value="Gravitas One">Gravitas One</option>
+		<option value="Great Vibes">Great Vibes</option>
+		<option value="Griffy">Griffy</option>
+		<option value="Gruppo">Gruppo</option>
+		<option value="Gudea">Gudea</option>
+		<option value="Habibi">Habibi</option>
+		<option value="Hammersmith One">Hammersmith One</option>
+		<option value="Hanalei">Hanalei</option>
+		<option value="Hanalei Fill">Hanalei Fill</option>
+		<option value="Handlee">Handlee</option>
+		<option value="Hanuman">Hanuman</option>
+		<option value="Happy Monkey">Happy Monkey</option>
+		<option value="Headland One">Headland One</option>
+		<option value="Henny Penny">Henny Penny</option>
+		<option value="Herr Von Muellerhoff">Herr Von Muellerhoff</option>
+		<option value="Hind">Hind</option>
+		<option value="Holtwood One SC">Holtwood One SC</option>
+		<option value="Homemade Apple">Homemade Apple</option>
+		<option value="Homenaje">Homenaje</option>
+		<option value="IM Fell DW Pica">IM Fell DW Pica</option>
+		<option value="IM Fell DW Pica SC">IM Fell DW Pica SC</option>
+		<option value="IM Fell Double Pica">IM Fell Double Pica</option>
+		<option value="IM Fell Double Pica SC">IM Fell Double Pica SC</option>
+		<option value="IM Fell English">IM Fell English</option>
+		<option value="IM Fell English SC">IM Fell English SC</option>
+		<option value="IM Fell French Canon">IM Fell French Canon</option>
+		<option value="IM Fell French Canon SC">IM Fell French Canon SC</option>
+		<option value="IM Fell Great Primer">IM Fell Great Primer</option>
+		<option value="IM Fell Great Primer SC">IM Fell Great Primer SC</option>
+		<option value="Iceberg">Iceberg</option>
+		<option value="Iceland">Iceland</option>
+		<option value="Imprima">Imprima</option>
+		<option value="Inconsolata">Inconsolata</option>
+		<option value="Inder">Inder</option>
+		<option value="Indie Flower">Indie Flower</option>
+		<option value="Inika">Inika</option>
+		<option value="Irish Grover">Irish Grover</option>
+		<option value="Istok Web">Istok Web</option>
+		<option value="Italiana">Italiana</option>
+		<option value="Italianno">Italianno</option>
+		<option value="Jacques Francois">Jacques Francois</option>
+		<option value="Jacques Francois Shadow">Jacques Francois Shadow</option>
+		<option value="Jim Nightshade">Jim Nightshade</option>
+		<option value="Jockey One">Jockey One</option>
+		<option value="Jolly Lodger">Jolly Lodger</option>
+		<option value="Josefin Sans">Josefin Sans</option>
+		<option value="Josefin Slab">Josefin Slab</option>
+		<option value="Joti One">Joti One</option>
+		<option value="Judson">Judson</option>
+		<option value="Julee">Julee</option>
+		<option value="Julius Sans One">Julius Sans One</option>
+		<option value="Junge">Junge</option>
+		<option value="Jura">Jura</option>
+		<option value="Just Another Hand">Just Another Hand</option>
+		<option value="Just Me Again Down Here">Just Me Again Down Here</option>
+		<option value="Kalam">Kalam</option>
+		<option value="Kameron">Kameron</option>
+		<option value="Kantumruy">Kantumruy</option>
+		<option value="Karla">Karla</option>
+		<option value="Karma">Karma</option>
+		<option value="Kaushan Script">Kaushan Script</option>
+		<option value="Kavoon">Kavoon</option>
+		<option value="Kdam Thmor">Kdam Thmor</option>
+		<option value="Keania One">Keania One</option>
+		<option value="Kelly Slab">Kelly Slab</option>
+		<option value="Kenia">Kenia</option>
+		<option value="Khmer">Khmer</option>
+		<option value="Kite One">Kite One</option>
+		<option value="Knewave">Knewave</option>
+		<option value="Kotta One">Kotta One</option>
+		<option value="Koulen">Koulen</option>
+		<option value="Kranky">Kranky</option>
+		<option value="Kreon">Kreon</option>
+		<option value="Kristi">Kristi</option>
+		<option value="Krona One">Krona One</option>
+		<option value="La Belle Aurore">La Belle Aurore</option>
+		<option value="Lancelot">Lancelot</option>
+		<option value="Lato">Lato</option>
+		<option value="League Script">League Script</option>
+		<option value="Leckerli One">Leckerli One</option>
+		<option value="Ledger">Ledger</option>
+		<option value="Lekton">Lekton</option>
+		<option value="Lemon">Lemon</option>
+		<option value="Libre Baskerville">Libre Baskerville</option>
+		<option value="Life Savers">Life Savers</option>
+		<option value="Lilita One">Lilita One</option>
+		<option value="Lily Script One">Lily Script One</option>
+		<option value="Limelight">Limelight</option>
+		<option value="Linden Hill">Linden Hill</option>
+		<option value="Lobster">Lobster</option>
+		<option value="Lobster Two">Lobster Two</option>
+		<option value="Londrina Outline">Londrina Outline</option>
+		<option value="Londrina Shadow">Londrina Shadow</option>
+		<option value="Londrina Sketch">Londrina Sketch</option>
+		<option value="Londrina Solid">Londrina Solid</option>
+		<option value="Lora">Lora</option>
+		<option value="Love Ya Like A Sister">Love Ya Like A Sister</option>
+		<option value="Loved by the King">Loved by the King</option>
+		<option value="Lovers Quarrel">Lovers Quarrel</option>
+		<option value="Luckiest Guy">Luckiest Guy</option>
+		<option value="Lusitana">Lusitana</option>
+		<option value="Lustria">Lustria</option>
+		<option value="Macondo">Macondo</option>
+		<option value="Macondo Swash Caps">Macondo Swash Caps</option>
+		<option value="Magra">Magra</option>
+		<option value="Maiden Orange">Maiden Orange</option>
+		<option value="Mako">Mako</option>
+		<option value="Marcellus">Marcellus</option>
+		<option value="Marcellus SC">Marcellus SC</option>
+		<option value="Marck Script">Marck Script</option>
+		<option value="Margarine">Margarine</option>
+		<option value="Marko One">Marko One</option>
+		<option value="Marmelad">Marmelad</option>
+		<option value="Marvel">Marvel</option>
+		<option value="Mate">Mate</option>
+		<option value="Mate SC">Mate SC</option>
+		<option value="Maven Pro">Maven Pro</option>
+		<option value="McLaren">McLaren</option>
+		<option value="Meddon">Meddon</option>
+		<option value="MedievalSharp">MedievalSharp</option>
+		<option value="Medula One">Medula One</option>
+		<option value="Megrim">Megrim</option>
+		<option value="Meie Script">Meie Script</option>
+		<option value="Merienda">Merienda</option>
+		<option value="Merienda One">Merienda One</option>
+		<option value="Merriweather">Merriweather</option>
+		<option value="Merriweather Sans">Merriweather Sans</option>
+		<option value="Metal">Metal</option>
+		<option value="Metal Mania">Metal Mania</option>
+		<option value="Metamorphous">Metamorphous</option>
+		<option value="Metrophobic">Metrophobic</option>
+		<option value="Michroma">Michroma</option>
+		<option value="Milonga">Milonga</option>
+		<option value="Miltonian">Miltonian</option>
+		<option value="Miltonian Tattoo">Miltonian Tattoo</option>
+		<option value="Miniver">Miniver</option>
+		<option value="Miss Fajardose">Miss Fajardose</option>
+		<option value="Modern Antiqua">Modern Antiqua</option>
+		<option value="Molengo">Molengo</option>
+		<option value="Molle">Molle</option>
+		<option value="Monda">Monda</option>
+		<option value="Monofett">Monofett</option>
+		<option value="Monoton">Monoton</option>
+		<option value="Monsieur La Doulaise">Monsieur La Doulaise</option>
+		<option value="Montaga">Montaga</option>
+		<option value="Montez">Montez</option>
+		<option value="Montserrat">Montserrat</option>
+		<option value="Montserrat Alternates">Montserrat Alternates</option>
+		<option value="Montserrat Subrayada">Montserrat Subrayada</option>
+		<option value="Moul">Moul</option>
+		<option value="Moulpali">Moulpali</option>
+		<option value="Mountains of Christmas">Mountains of Christmas</option>
+		<option value="Mouse Memoirs">Mouse Memoirs</option>
+		<option value="Mr Bedfort">Mr Bedfort</option>
+		<option value="Mr Dafoe">Mr Dafoe</option>
+		<option value="Mr De Haviland">Mr De Haviland</option>
+		<option value="Mrs Saint Delafield">Mrs Saint Delafield</option>
+		<option value="Mrs Sheppards">Mrs Sheppards</option>
+		<option value="Muli">Muli</option>
+		<option value="Mystery Quest">Mystery Quest</option>
+		<option value="Neucha">Neucha</option>
+		<option value="Neuton">Neuton</option>
+		<option value="New Rocker">New Rocker</option>
+		<option value="News Cycle">News Cycle</option>
+		<option value="Niconne">Niconne</option>
+		<option value="Nixie One">Nixie One</option>
+		<option value="Nobile">Nobile</option>
+		<option value="Nokora">Nokora</option>
+		<option value="Norican">Norican</option>
+		<option value="Nosifer">Nosifer</option>
+		<option value="Nothing You Could Do">Nothing You Could Do</option>
+		<option value="Noticia Text">Noticia Text</option>
+		<option value="Noto Sans">Noto Sans</option>
+		<option value="Noto Serif">Noto Serif</option>
+		<option value="Nova Cut">Nova Cut</option>
+		<option value="Nova Flat">Nova Flat</option>
+		<option value="Nova Mono">Nova Mono</option>
+		<option value="Nova Oval">Nova Oval</option>
+		<option value="Nova Round">Nova Round</option>
+		<option value="Nova Script">Nova Script</option>
+		<option value="Nova Slim">Nova Slim</option>
+		<option value="Nova Square">Nova Square</option>
+		<option value="Numans">Numans</option>
+		<option value="Nunito">Nunito</option>
+		<option value="Odor Mean Chey">Odor Mean Chey</option>
+		<option value="Offside">Offside</option>
+		<option value="Old Standard TT">Old Standard TT</option>
+		<option value="Oldenburg">Oldenburg</option>
+		<option value="Oleo Script">Oleo Script</option>
+		<option value="Oleo Script Swash Caps">Oleo Script Swash Caps</option>
+		<option value="Open Sans" selected="selected">Open Sans</option>
+		<option value="Open Sans Condensed">Open Sans Condensed</option>
+		<option value="Oranienbaum">Oranienbaum</option>
+		<option value="Orbitron">Orbitron</option>
+		<option value="Oregano">Oregano</option>
+		<option value="Orienta">Orienta</option>
+		<option value="Original Surfer">Original Surfer</option>
+		<option value="Oswald">Oswald</option>
+		<option value="Over the Rainbow">Over the Rainbow</option>
+		<option value="Overlock">Overlock</option>
+		<option value="Overlock SC">Overlock SC</option>
+		<option value="Ovo">Ovo</option>
+		<option value="Oxygen">Oxygen</option>
+		<option value="Oxygen Mono">Oxygen Mono</option>
+		<option value="PT Mono">PT Mono</option>
+		<option value="PT Sans">PT Sans</option>
+		<option value="PT Sans Caption">PT Sans Caption</option>
+		<option value="PT Sans Narrow">PT Sans Narrow</option>
+		<option value="PT Serif">PT Serif</option>
+		<option value="PT Serif Caption">PT Serif Caption</option>
+		<option value="Pacifico">Pacifico</option>
+		<option value="Paprika">Paprika</option>
+		<option value="Parisienne">Parisienne</option>
+		<option value="Passero One">Passero One</option>
+		<option value="Passion One">Passion One</option>
+		<option value="Pathway Gothic One">Pathway Gothic One</option>
+		<option value="Patrick Hand">Patrick Hand</option>
+		<option value="Patrick Hand SC">Patrick Hand SC</option>
+		<option value="Patua One">Patua One</option>
+		<option value="Paytone One">Paytone One</option>
+		<option value="Peralta">Peralta</option>
+		<option value="Permanent Marker">Permanent Marker</option>
+		<option value="Petit Formal Script">Petit Formal Script</option>
+		<option value="Petrona">Petrona</option>
+		<option value="Philosopher">Philosopher</option>
+		<option value="Piedra">Piedra</option>
+		<option value="Pinyon Script">Pinyon Script</option>
+		<option value="Pirata One">Pirata One</option>
+		<option value="Plaster">Plaster</option>
+		<option value="Play">Play</option>
+		<option value="Playball">Playball</option>
+		<option value="Playfair Display">Playfair Display</option>
+		<option value="Playfair Display SC">Playfair Display SC</option>
+		<option value="Podkova">Podkova</option>
+		<option value="Poiret One">Poiret One</option>
+		<option value="Poller One">Poller One</option>
+		<option value="Poly">Poly</option>
+		<option value="Pompiere">Pompiere</option>
+		<option value="Pontano Sans">Pontano Sans</option>
+		<option value="Port Lligat Sans">Port Lligat Sans</option>
+		<option value="Port Lligat Slab">Port Lligat Slab</option>
+		<option value="Prata">Prata</option>
+		<option value="Preahvihear">Preahvihear</option>
+		<option value="Press Start 2P">Press Start 2P</option>
+		<option value="Princess Sofia">Princess Sofia</option>
+		<option value="Prociono">Prociono</option>
+		<option value="Prosto One">Prosto One</option>
+		<option value="Puritan">Puritan</option>
+		<option value="Purple Purse">Purple Purse</option>
+		<option value="Quando">Quando</option>
+		<option value="Quantico">Quantico</option>
+		<option value="Quattrocento">Quattrocento</option>
+		<option value="Quattrocento Sans">Quattrocento Sans</option>
+		<option value="Questrial">Questrial</option>
+		<option value="Quicksand">Quicksand</option>
+		<option value="Quintessential">Quintessential</option>
+		<option value="Qwigley">Qwigley</option>
+		<option value="Racing Sans One">Racing Sans One</option>
+		<option value="Radley">Radley</option>
+		<option value="Rajdhani">Rajdhani</option>
+		<option value="Raleway">Raleway</option>
+		<option value="Raleway Dots">Raleway Dots</option>
+		<option value="Rambla">Rambla</option>
+		<option value="Rammetto One">Rammetto One</option>
+		<option value="Ranchers">Ranchers</option>
+		<option value="Rancho">Rancho</option>
+		<option value="Rationale">Rationale</option>
+		<option value="Redressed">Redressed</option>
+		<option value="Reenie Beanie">Reenie Beanie</option>
+		<option value="Revalia">Revalia</option>
+		<option value="Ribeye">Ribeye</option>
+		<option value="Ribeye Marrow">Ribeye Marrow</option>
+		<option value="Righteous">Righteous</option>
+		<option value="Risque">Risque</option>
+		<option value="Roboto">Roboto</option>
+		<option value="Roboto Condensed">Roboto Condensed</option>
+		<option value="Roboto Slab">Roboto Slab</option>
+		<option value="Rochester">Rochester</option>
+		<option value="Rock Salt">Rock Salt</option>
+		<option value="Rokkitt">Rokkitt</option>
+		<option value="Romanesco">Romanesco</option>
+		<option value="Ropa Sans">Ropa Sans</option>
+		<option value="Rosario">Rosario</option>
+		<option value="Rosarivo">Rosarivo</option>
+		<option value="Rouge Script">Rouge Script</option>
+		<option value="Rubik Mono One">Rubik Mono One</option>
+		<option value="Rubik One">Rubik One</option>
+		<option value="Ruda">Ruda</option>
+		<option value="Rufina">Rufina</option>
+		<option value="Ruge Boogie">Ruge Boogie</option>
+		<option value="Ruluko">Ruluko</option>
+		<option value="Rum Raisin">Rum Raisin</option>
+		<option value="Ruslan Display">Ruslan Display</option>
+		<option value="Russo One">Russo One</option>
+		<option value="Ruthie">Ruthie</option>
+		<option value="Rye">Rye</option>
+		<option value="Sacramento">Sacramento</option>
+		<option value="Sail">Sail</option>
+		<option value="Salsa">Salsa</option>
+		<option value="Sanchez">Sanchez</option>
+		<option value="Sancreek">Sancreek</option>
+		<option value="Sansita One">Sansita One</option>
+		<option value="Sarina">Sarina</option>
+		<option value="Satisfy">Satisfy</option>
+		<option value="Scada">Scada</option>
+		<option value="Schoolbell">Schoolbell</option>
+		<option value="Seaweed Script">Seaweed Script</option>
+		<option value="Sevillana">Sevillana</option>
+		<option value="Seymour One">Seymour One</option>
+		<option value="Shadows Into Light">Shadows Into Light</option>
+		<option value="Shadows Into Light Two">Shadows Into Light Two</option>
+		<option value="Shanti">Shanti</option>
+		<option value="Share">Share</option>
+		<option value="Share Tech">Share Tech</option>
+		<option value="Share Tech Mono">Share Tech Mono</option>
+		<option value="Shojumaru">Shojumaru</option>
+		<option value="Short Stack">Short Stack</option>
+		<option value="Siemreap">Siemreap</option>
+		<option value="Sigmar One">Sigmar One</option>
+		<option value="Signika">Signika</option>
+		<option value="Signika Negative">Signika Negative</option>
+		<option value="Simonetta">Simonetta</option>
+		<option value="Sintony">Sintony</option>
+		<option value="Sirin Stencil">Sirin Stencil</option>
+		<option value="Six Caps">Six Caps</option>
+		<option value="Skranji">Skranji</option>
+		<option value="Slabo 13px">Slabo 13px</option>
+		<option value="Slabo 27px">Slabo 27px</option>
+		<option value="Slackey">Slackey</option>
+		<option value="Smokum">Smokum</option>
+		<option value="Smythe">Smythe</option>
+		<option value="Sniglet">Sniglet</option>
+		<option value="Snippet">Snippet</option>
+		<option value="Snowburst One">Snowburst One</option>
+		<option value="Sofadi One">Sofadi One</option>
+		<option value="Sofia">Sofia</option>
+		<option value="Sonsie One">Sonsie One</option>
+		<option value="Sorts Mill Goudy">Sorts Mill Goudy</option>
+		<option value="Source Code Pro">Source Code Pro</option>
+		<option value="Source Sans Pro">Source Sans Pro</option>
+		<option value="Source Serif Pro">Source Serif Pro</option>
+		<option value="Special Elite">Special Elite</option>
+		<option value="Spicy Rice">Spicy Rice</option>
+		<option value="Spinnaker">Spinnaker</option>
+		<option value="Spirax">Spirax</option>
+		<option value="Squada One">Squada One</option>
+		<option value="Stalemate">Stalemate</option>
+		<option value="Stalinist One">Stalinist One</option>
+		<option value="Stardos Stencil">Stardos Stencil</option>
+		<option value="Stint Ultra Condensed">Stint Ultra Condensed</option>
+		<option value="Stint Ultra Expanded">Stint Ultra Expanded</option>
+		<option value="Stoke">Stoke</option>
+		<option value="Strait">Strait</option>
+		<option value="Sue Ellen Francisco">Sue Ellen Francisco</option>
+		<option value="Sunshiney">Sunshiney</option>
+		<option value="Supermercado One">Supermercado One</option>
+		<option value="Suwannaphum">Suwannaphum</option>
+		<option value="Swanky and Moo Moo">Swanky and Moo Moo</option>
+		<option value="Syncopate">Syncopate</option>
+		<option value="Tangerine">Tangerine</option>
+		<option value="Taprom">Taprom</option>
+		<option value="Tauri">Tauri</option>
+		<option value="Teko">Teko</option>
+		<option value="Telex">Telex</option>
+		<option value="Tenor Sans">Tenor Sans</option>
+		<option value="Text Me One">Text Me One</option>
+		<option value="The Girl Next Door">The Girl Next Door</option>
+		<option value="Tienne">Tienne</option>
+		<option value="Tinos">Tinos</option>
+		<option value="Titan One">Titan One</option>
+		<option value="Titillium Web">Titillium Web</option>
+		<option value="Trade Winds">Trade Winds</option>
+		<option value="Trocchi">Trocchi</option>
+		<option value="Trochut">Trochut</option>
+		<option value="Trykker">Trykker</option>
+		<option value="Tulpen One">Tulpen One</option>
+		<option value="Ubuntu">Ubuntu</option>
+		<option value="Ubuntu Condensed">Ubuntu Condensed</option>
+		<option value="Ubuntu Mono">Ubuntu Mono</option>
+		<option value="Ultra">Ultra</option>
+		<option value="Uncial Antiqua">Uncial Antiqua</option>
+		<option value="Underdog">Underdog</option>
+		<option value="Unica One">Unica One</option>
+		<option value="UnifrakturCook">UnifrakturCook</option>
+		<option value="UnifrakturMaguntia">UnifrakturMaguntia</option>
+		<option value="Unkempt">Unkempt</option>
+		<option value="Unlock">Unlock</option>
+		<option value="Unna">Unna</option>
+		<option value="VT323">VT323</option>
+		<option value="Vampiro One">Vampiro One</option>
+		<option value="Varela">Varela</option>
+		<option value="Varela Round">Varela Round</option>
+		<option value="Vast Shadow">Vast Shadow</option>
+		<option value="Vibur">Vibur</option>
+		<option value="Vidaloka">Vidaloka</option>
+		<option value="Viga">Viga</option>
+		<option value="Voces">Voces</option>
+		<option value="Volkhov">Volkhov</option>
+		<option value="Vollkorn">Vollkorn</option>
+		<option value="Voltaire">Voltaire</option>
+		<option value="Waiting for the Sunrise">Waiting for the Sunrise</option>
+		<option value="Wallpoet">Wallpoet</option>
+		<option value="Walter Turncoat">Walter Turncoat</option>
+		<option value="Warnes">Warnes</option>
+		<option value="Wellfleet">Wellfleet</option>
+		<option value="Wendy One">Wendy One</option>
+		<option value="Wire One">Wire One</option>
+		<option value="Yanone Kaffeesatz">Yanone Kaffeesatz</option>
+		<option value="Yellowtail">Yellowtail</option>
+		<option value="Yeseva One">Yeseva One</option>
+		<option value="Yesteryear">Yesteryear</option>
+		<option value="Zeyada">Zeyada</option>
+	</optgroup>]]></template>
+    <template title="stylium_footer_social" addon_id="" version_id="0" version_string="" disable_modifications="0"><![CDATA[<div class="styliumFooterSocial"> 
+	<ul>
+		<xen:if is="{xen:property stylium_footerFacebookLink}">
+			<li><a href="{xen:property stylium_footerFacebookLink}" class="styliumSocial styliumSocialFacebook" target="_blank"></a></li>
+		</xen:if>
+		<xen:if is="{xen:property stylium_footerTwitterLink}">
+			<li><a href="{xen:property stylium_footerTwitterLink}" class="styliumSocial styliumSocialTwitter" target="_blank"></a></li>
+		</xen:if>
+		<xen:if is="{xen:property stylium_footerYoutubeLink}">
+			<li><a href="{xen:property stylium_footerYoutubeLink}" class="styliumSocial styliumSocialYoutube" target="_blank"></a></li>
+		</xen:if>
+		<xen:if is="{xen:property stylium_footerGooglePlusLink}">
+			<li><a href="{xen:property stylium_footerGooglePlusLink}" class="styliumSocial styliumSocialGooglePlus" target="_blank"></a></li>
+		</xen:if>
+			<xen:if is="{xen:property stylium_footerDribbbleLink}">
+			<li><a href="{xen:property stylium_footerDribbbleLink}" class="styliumSocial styliumSocialDribbble" target="_blank"></a></li>
+		</xen:if>
+		<xen:if is="{xen:property stylium_footerFlickrLink}">
+			<li><a href="{xen:property stylium_footerFlickrLink}" class="styliumSocial styliumSocialFlickr" target="_blank"></a></li>
+		</xen:if>
+		<xen:if is="{xen:property stylium_footerLinkedInLink}">
+			<li><a href="{xen:property stylium_footerLinkedInLink}" class="styliumSocial styliumSocialLinkedIn" target="_blank"></a></li>
+		</xen:if>
+		<xen:if is="{xen:property stylium_footerPinterestLink}">
+			<li><a href="{xen:property stylium_footerPinterestLink}" class="styliumSocial styliumSocialPinterest" target="_blank"></a></li>
+		</xen:if>
+		<xen:if is="{xen:property stylium_footerVimeoLink}">
+			<li><a href="{xen:property stylium_footerVimeoLink}" class="styliumSocial styliumSocialVimeo" target="_blank"></a></li>
+		</xen:if>
+		<xen:if is="{xen:property stylium_footerDeviantArtLink}">
+			<li><a href="{xen:property stylium_footerDeviantArtLink}" class="styliumSocial styliumSocialDeviantArt" target="_blank"></a></li>
+		</xen:if>
+		<xen:if is="{xen:property stylium_footerRSSLink}">
+			<li><a href="{xen:property stylium_footerRSSLink}" class="styliumSocial styliumSocialRSS" target="_blank"></a></li>
+		</xen:if>
+		<xen:if is="{xen:property stylium_footerEmail}">
+			<li><a href="mailto:{xen:property stylium_footerEmail}" class="styliumSocial styliumSocialEmail" target="_blank"></a></li>
+		</xen:if>
+	</ul>
+</div>]]></template>
+    <template title="stylium_login_handle_as_navLink" addon_id="" version_id="0" version_string="" disable_modifications="0"><![CDATA[<ul class="visitorTabs right">
+	<li class="navTab login PopupClosed">
+		<label<xen:if is="!{xen:property stylium_loginHandleOverlay}"> for="LoginControl"</xen:if>>
+			<a href="{xen:link login}" class="navLink <xen:if is="{xen:property stylium_loginHandleOverlay}"> OverlayTrigger</xen:if>">
+				<span class="fa fa-sign-in"></span> 
+				<strong class="loginText">{xen:if $xenOptions.registrationSetup.enabled, {xen:phrase log_in_or_sign_up}, {xen:phrase log_in}}</strong>
+			</a>	
+		</label>
+		
+	</li>
+</ul>]]></template>
+    <template title="stylium_modified_css.css" addon_id="" version_id="0" version_string="" disable_modifications="0"><![CDATA[]]></template>
+    <template title="stylium_page_container_head" addon_id="" version_id="0" version_string="" disable_modifications="0"><![CDATA[<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<!--[if IE 7]>
+	<link rel="stylesheet" href="{$javaScriptSource}/brivium/stylium/1000000/css/fa.4.2.0.ie7.min.css">
+<![endif]-->
+
+<link rel="stylesheet" href="css.php?css=stylium,stylium_modified_css,stylium_extra_css&amp;style={xen:urlencode $_styleId}&amp;dir={$visitorLanguage.text_direction}&amp;d={$visitorStyle.last_modified_date}" />
+
+<xen:if is="{$systemFont} && !in_array({$styliumValue.font},{$systemFont})">
+	<link href='//fonts.googleapis.com/css?family={$styliumValue.font}:{$styliumValue.fontVariants}&subset=latin,greek,vietnamese' id='styliumLoadedFont' rel='stylesheet' type='text/css'>
+</xen:if>
+
+<xen:if is="{$canUseStyliumSetting} && {xen:property stylium_settingEnable}">
+	<link rel="stylesheet" href="{$javaScriptSource}/brivium/stylium/1000000/css/colpick.css" />
+	<script src="{$javaScriptSource}/brivium/stylium/1000000/js/colpick.js?_v={$xenOptions.jsVersion}"></script>
+</xen:if>
+<xen:if is="{$styliumValue}">
+<style type="text/css">
+		<xen:if is="{$styliumValue.bodyBgColor}">
+		{xen:helper brsf_selectorclean, 'body, #styliumSetting .styliumBodyBackgroundColor, {xen:property stylium_bodyBgColorSelectors}'}{
+			background-color: {$styliumValue.bodyBgColor};
+		}
+		</xen:if><xen:if is="{xen:property stylium_fontSelectors} && {$styliumValue.font}">
+		{xen:helper brsf_selectorclean, '{xen:property stylium_fontSelectors}'}{
+			font-family: {$styliumValue.font}, arial,helvetica,clean,sans-serif;
+		}
+		</xen:if>
+		body{
+			background-image: url({$styliumValue.bodyBgImage});
+			-webkit-background-size: {$styliumValue.bodyBgSize};
+			-moz-background-size: {$styliumValue.bodyBgSize};
+			-o-background-size: {$styliumValue.bodyBgSize};
+			background-size: {$styliumValue.bodyBgSize};
+			background-position: {$styliumValue.bodyBgPosition};
+			background-repeat: {$styliumValue.bodyBgRepeat};
+		}
+		<xen:if is="{xen:property stylium_primaryColorSelectors}">
+		{xen:helper brsf_selectorclean, '{xen:property stylium_primaryColorSelectors}'}{
+			color: {$styliumValue.primaryColor};
+		}
+		</xen:if>
+		{xen:helper brsf_selectorclean, '#styliumSetting .styliumPrimaryColor, {xen:property stylium_primaryColorBgSelectors}'}{
+			background-color: {$styliumValue.primaryColor};
+		}
+		<xen:if is="{xen:property stylium_primaryColorBorderSelectors}">
+		{xen:helper brsf_selectorclean, '{xen:property stylium_primaryColorBorderSelectors}'}{
+			border-color: {$styliumValue.primaryColor};
+		}
+		</xen:if><xen:if is="{xen:property stylium_primaryColorBorderTopSelectors}">
+		{xen:helper brsf_selectorclean, '{xen:property stylium_primaryColorBorderTopSelectors}'}{
+			border-top-color: {$styliumValue.primaryColor};
+		}
+		</xen:if><xen:if is="{xen:property stylium_secondaryColorSelectors}">
+		{xen:helper brsf_selectorclean, '{xen:property stylium_secondaryColorSelectors}'}{
+			color: {$styliumValue.secondaryColor};
+		}
+		</xen:if>
+		{xen:helper brsf_selectorclean, '#styliumSetting .styliumSecondaryColor, {xen:property stylium_secondaryColorBgSelectors}'}{
+			background-color: {$styliumValue.secondaryColor};
+		}
+		<xen:if is="{xen:property stylium_secondaryColorBorderSelectors}">
+		{xen:helper brsf_selectorclean, '{xen:property stylium_secondaryColorBorderSelectors}'}{
+			border-color: {$styliumValue.secondaryColor};
+		}
+		</xen:if><xen:if is="{xen:property stylium_secondaryColorBorderTopSelectors}">
+		{xen:helper brsf_selectorclean, '{xen:property stylium_secondaryColorBorderTopSelectors}'}{
+			border-top-color: {$styliumValue.secondaryColor};
+		}
+		</xen:if><xen:if is="{xen:property stylium_tertiaryColorSelectors}">
+		{xen:helper brsf_selectorclean, '{xen:property stylium_tertiaryColorSelectors}'}{
+			color: {$styliumValue.tertiaryColor};
+		}
+		</xen:if>
+		{xen:helper brsf_selectorclean, '#styliumSetting .styliumTertiaryColor, {xen:property stylium_tertiaryColorBgSelectors}'}{
+			background-color: {$styliumValue.tertiaryColor};
+		}
+		<xen:if is="{xen:property stylium_tertiaryColorBorderSelectors}">
+		{xen:helper brsf_selectorclean, '{xen:property stylium_tertiaryColorBorderSelectors}'}{
+			border-color: {$styliumValue.tertiaryColor};
+		}
+		</xen:if><xen:if is="{xen:property stylium_tertiaryColorBorderTopSelectors}">
+		{xen:helper brsf_selectorclean, '{xen:property stylium_tertiaryColorBorderTopSelectors}'}{
+			border-top-color: {$styliumValue.tertiaryColor};
+		}
+		</xen:if>
+</style>
+</xen:if>]]></template>
+    <template title="stylium_settings" addon_id="" version_id="0" version_string="" disable_modifications="0"><![CDATA[<xen:if is="{xen:property stylium_settingEnable}">
+
+<xen:require css="stylium_settings.css" />
+<xen:require js="js/brivium/stylium/1000000/js/stylium_settings.js" />
+
+<xen:set var="$styliumImgPath">{xen:property stylium_settingImageSource}</xen:set>
+<div id="styliumSetting" class="enabled" data-saveurl="{xen:link stylium/save}"  data-restoreurl="{xen:link stylium/restore}" data-styleid="{$visitorStyle.style_id}">
+	<div class="styliumSettingContainer">
+		<div class="styliumMainTitle">
+			{xen:phrase BRSF_stylium_setting}
+		</div>
+		<xen:if is="{xen:property stylium_settingEnableLayout}">
+		<div class="styliumBox">
+			<div class="boxTitle">{xen:phrase BRSF_choose_your_layout_style}</div>
+			<div class="boxContent">
+				<select class="styliumLayout Tooltip" title="{xen:phrase BRSF_choose_your_layout_style}" data-tipclass="styliumTooltip" name="layout">
+					<option value="styliumWide">{xen:phrase BRSF_wide}</option>
+					<option value="styliumBoxedCover">{xen:phrase BRSF_boxed_with_cover}</option>
+					<option value="styliumBoxed">{xen:phrase BRSF_boxed} 1</option>
+					<option value="styliumBoxed2">{xen:phrase BRSF_boxed} 2</option>
+				</select>
+			</div>
+		</div>
+		</xen:if><xen:if is="{xen:property stylium_settingEnableFont}">
+		<div class="styliumBox">
+			<div class="boxTitle">{xen:phrase BRSF_choose_title_font}</div>
+			<div class="boxContent">
+				<select class="styliumFont Tooltip" title="{xen:phrase BRSF_choose_title_font}" data-tipclass="styliumTooltip" name="title_font">
+					<xen:include template="stylium_font_setting" />
+				</select>
+			</div>
+		</div>
+		</xen:if><xen:if is="{xen:property stylium_settingEnableColor}">
+		<div class="styliumBox">
+			<div class="boxTitle">{xen:phrase BRSF_choose_your_color_skin}</div>
+			<div class="boxContent">
+				<div class="styliumItems">
+					<span class="Tooltip styliumPrimaryColor styliumColPick" title="{xen:phrase BRSF_primary_color}" data-tipclass="styliumTooltip" data-change="primaryColor" data-color="{xen:property stylium_settingPrimaryColor}">
+					</span><span class="Tooltip styliumSecondaryColor styliumColPick" title="{xen:phrase BRSF_secondary_color}" data-tipclass="styliumTooltip" data-change="secondaryColor" data-color="{xen:property stylium_settingSecondaryColor}">
+					</span><span class="Tooltip styliumTertiaryColor styliumColPick" title="{xen:phrase BRSF_tertiary_color}" data-tipclass="styliumTooltip" data-change="tertiaryColor" data-color="{xen:property stylium_settingTertiaryColor}">
+					</span><span class="Tooltip styliumBodyBackgroundColor styliumColPick" title="{xen:phrase BRSF_body_background_color}" data-tipclass="styliumTooltip" data-change="bodyBgColor" data-color="{xen:property stylium_settingBodyBackgroundColor}"></span>
+				</div>
+			</div>
+		</div>
+		</xen:if><xen:if is="{xen:property stylium_settingEnablePatterns}">
+		<div class="styliumBox">
+			<div class="boxTitle">{xen:phrase BRSF_patterns_for_boxed_version}</div>
+			<div class="boxContent">
+				<div class="styliumItems patternList">
+					<span class="StyliumBodyBg pattern1" data-image="{$styliumImgPath}/pattern1.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern2" data-image="{$styliumImgPath}/pattern2.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern3" data-image="{$styliumImgPath}/pattern3.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern4" data-image="{$styliumImgPath}/pattern4.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern5" data-image="{$styliumImgPath}/pattern5.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern6" data-image="{$styliumImgPath}/pattern6.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern7" data-image="{$styliumImgPath}/pattern7.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern8" data-image="{$styliumImgPath}/pattern8.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern9" data-image="{$styliumImgPath}/pattern9.png" data-repeat="repeat" data-size="auto">
+					</span><xen:if is="{xen:property stylium_settingEnableBgImage} || {xen:property stylium_settingEnablePatterns}"><span class="StyliumBodyBg noneImage Tooltip" title="{xen:phrase BRSF_no_body_background_image}" data-tipclass="styliumTooltip" >
+					</span></xen:if><xen:comment><span class="StyliumBodyBg pattern10" data-image="{$styliumImgPath}/pattern10.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern11" data-image="{$styliumImgPath}/pattern11.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern12" data-image="{$styliumImgPath}/pattern12.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern13" data-image="{$styliumImgPath}/pattern13.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern14" data-image="{$styliumImgPath}/pattern14.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern15" data-image="{$styliumImgPath}/pattern15.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern16" data-image="{$styliumImgPath}/pattern16.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern17" data-image="{$styliumImgPath}/pattern17.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern18" data-image="{$styliumImgPath}/pattern18.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern19" data-image="{$styliumImgPath}/pattern19.png" data-repeat="repeat" data-size="auto">
+					</span><span class="StyliumBodyBg pattern20" data-image="{$styliumImgPath}/pattern20.png" data-repeat="repeat" data-size="auto"></span></xen:comment>
+				</div>
+			</div>
+		</div>
+		</xen:if><xen:if is="{xen:property stylium_settingEnableBgImage}">
+		<div class="styliumBox">
+			<div class="boxTitle">{xen:phrase BRSF_images_for_boxed_version}</div>
+			<div class="boxContent">
+				<div class="styliumItems imageList">
+					<span class="StyliumBodyBg bkgd bkgd1" data-image="{$styliumImgPath}/bkgd1.jpg" data-size="cover">
+					</span><span class="StyliumBodyBg bkgd bkgd2" data-image="{$styliumImgPath}/bkgd2.jpg" data-size="cover">
+					</span><span class="StyliumBodyBg bkgd bkgd3" data-image="{$styliumImgPath}/bkgd3.jpg" data-size="cover">
+					</span><span class="StyliumBodyBg bkgd bkgd4" data-image="{$styliumImgPath}/bkgd4.jpg" data-size="cover">
+					</span><span class="StyliumBodyBg bkgd bkgd5" data-image="{$styliumImgPath}/bkgd5.jpg" data-size="cover"></span>
+				</div>
+			</div>
+		</div>
+		</xen:if>
+		<div class="styliumBox ctrlHandler">
+			<div class="boxContent">
+				<span class="styliumIcon bottomIcon saveComplete Tooltip" title="{xen:phrase BRSF_save_complete}" data-tipclass="styliumTooltip">
+					<i class="fa fa-check"></i>
+				</span><span class="styliumIcon bottomIcon styliumSettingSave Tooltip first" title="{xen:phrase BRSF_save}" data-tipclass="styliumTooltip">
+					<i class="fa fa-floppy-o"></i>
+				</span><xen:if is="{$canSaveBoardDefault}"><span class="styliumIcon bottomIcon styliumSettingSave Tooltip" title="{xen:phrase BRSF_save_as_board_default}" data-default="1" data-tipclass="styliumTooltip">
+					<i class="fa fa-files-o"></i>
+				</span></xen:if><span class="styliumIcon bottomIcon styliumSettingReset Tooltip" title="{xen:phrase BRSF_reset}" data-tipclass="styliumTooltip">
+					<i class="fa fa-undo"></i>
+				</span><span class="styliumIcon bottomIcon styliumSettingRestore Tooltip" title="{xen:phrase BRSF_restore_default}" data-tipclass="styliumTooltip">
+					<i class="fa fa-refresh"></i>
+				</span>
+			</div>
+		</div>
+	</div>
+	<span class="styliumIcon styliumSettingToggle">
+		<i class="fa fa-cog fa-spin"></i>
+	</span>
+</div>
+</xen:if>]]></template>
+    <template title="stylium_settings.css" addon_id="" version_id="0" version_string="" disable_modifications="0"><![CDATA[#styliumSetting {
+	background: #fff;
+	width: 215px;
+	position: fixed;
+	<xen:if is="{$pageIsRtl}">right: -215px;<xen:else />left: -215px;</xen:if>
+	top: 40px;
+	border-top: 2px solid #ff844e;
+	z-index: 99999;
+}
+#styliumSetting.enabled
+{
+	<xen:if is="{$pageIsRtl}">right: 0;<xen:else />left: 0;</xen:if>
+}
+#styliumSetting.disabled
+{
+	<xen:if is="{$pageIsRtl}">right: -215px;<xen:else />left: -215px;</xen:if>
+}
+#styliumSetting.dragging
+{
+	opacity: 0.8;
+}
+#styliumSetting .styliumIcon{
+	border-color: #cecece;
+	font-size: 18px;
+	border-left: 1px solid #cecece;
+	padding: 0 10px;
+}
+
+#styliumSetting .styliumIcon.first{
+	border-left: none;
+}
+#styliumSetting .styliumIcon:hover{
+	color: #ff844e;
+}
+
+#styliumSetting .styliumIcon.styliumSettingToggle{
+	position: absolute;
+	right: -40px;
+	top: 47%;
+	padding: 10px 0;
+	margin: 0;
+	width: 40px;
+	float: right;
+	text-align: center;
+	background: #fff;
+	border: 1px solid #cecece;
+	border-left-width: 0px;
+	cursor: pointer;
+}
+#styliumSetting.closeRight .styliumIcon.styliumSettingToggle{
+	border-left-width: 1px;
+	border-right-width: 0px;
+}
+#styliumSetting .styliumIcon.styliumSettingToggle i{
+	-webkit-animation: spin 4s infinite linear;
+	-moz-animation: spin 4s infinite linear;
+	animation: spin 4s infinite linear;
+}
+#styliumSetting .styliumIcon.bottomIcon {
+	display: inline-block;
+}
+#styliumSetting .styliumIcon.saveComplete{
+	color: #3deb49;
+	display: none;
+	border-left: none;
+	border-right: 1px solid #cecece;
+}
+#styliumSetting .styliumIcon.saveComplete.processing{
+	display: inline-block;
+}
+.styliumSettingContainer {
+	-webkit-box-shadow: 0 2px 9px 2px rgba(0,0,0,0.14);
+	-moz-box-shadow: 0 2px 9px 2px rgba(0,0,0,0.14);
+	box-shadow: 0 2px 9px 2px rgba(0,0,0,0.14);
+	border: 1px solid #cecece;
+	-webkit-border-top-left-radius: 2px;
+	-webkit-border-bottom-left-radius: 2px;
+	-moz-border-radius-topleft: 2px;
+	-moz-border-radius-bottomleft: 2px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+
+#styliumSetting .styliumMainTitle {
+	cursor: move;
+	color: #000;
+	font-size: 15px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	border-bottom: 1px solid #cecece;
+	background-image: linear-gradient(top, #FFF 0%, #F7F4F4 100%);
+	background-image: -o-linear-gradient(top, #FFF 0%, #F7F4F4 100%);
+	background-image: -moz-linear-gradient(top, #FFF 0%, #F7F4F4 100%);
+	background-image: -webkit-linear-gradient(top, #FFF 0%, #F7F4F4 100%);
+	background-image: -ms-linear-gradient(top, #FFF 0%, #F7F4F4 100%);
+	background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #F7F4F4) );
+}
+
+#styliumSetting .boxTitle {
+	font-size: 11px;
+	margin-top: 10px;
+	text-align: left;
+	padding: 0px 10px;
+	color: #888;
+}
+
+#styliumSetting .boxContent {
+	padding: 10px;
+	text-align: center;
+	border-bottom: 1px solid #cecece;
+}
+
+#styliumSetting .boxContent select {
+	background: #f7f7f7;
+	width: 150px;
+	border: 1px solid #cecece;
+	font-size: 11px;
+	height: 28px;
+	color: #000;
+	outline: none;
+}
+
+#styliumSetting .boxContent select:focus,
+#styliumSetting .boxContent select:active,
+#styliumSetting .styliumItems span:focus,
+#styliumSetting .styliumItems span:active
+{
+	box-shadow: 0 0 3px #ff884e;
+}
+#styliumSetting .styliumItems {
+	position: relative;
+	z-index: 200;
+}
+
+#styliumSetting .styliumColPick {
+	height: 24px;
+	width: 24px;
+	margin-right: 10px;
+	border: 1px solid #cecece;
+	position: relative;
+}
+#styliumSetting .styliumColPick:before {
+	display: block;
+	background: transparent;
+	position: absolute;
+	top: -4px;
+	left: -4px;
+	content: "";
+	
+	box-shadow: 0 0 3px #777;
+	
+	padding: 16px;
+}
+#styliumSetting .styliumItems span.styliumColPick:focus,
+#styliumSetting .styliumItems span.styliumColPick:active{
+	box-shadow:   none;
+}
+#styliumSetting .styliumColPick:focus:before,
+#styliumSetting .styliumColPick:active:before,
+#styliumSetting .styliumColPick:hover:before {
+	box-shadow: 0 0 3px #ff884e;
+	
+}
+#styliumSetting .styliumPrimaryColor {
+	background-color: {xen:property stylium_settingPrimaryColor};
+}
+#styliumSetting .styliumSecondaryColor {
+	background-color: {xen:property stylium_settingSecondaryColor};
+}
+#styliumSetting .styliumTertiaryColor {
+	background-color: {xen:property stylium_settingTertiaryColor};
+}
+#styliumSetting .styliumBodyBackgroundColor {
+	background-color: {xen:property stylium_settingBodyBackgroundColor};
+}
+
+#styliumSetting .styliumItems img.active {
+	border: 0px solid #ccc;
+	opacity: 0.5;
+}
+
+#styliumSetting .styliumItems > span {
+	display: inline-block;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+#styliumSetting .styliumItems .StyliumBodyBg{
+	width: 25px;
+	height: 24px;
+}
+
+#styliumSetting .StyliumBodyBg.selected{
+	border: 1px solid #ff884e;
+	width: 23px;
+	height: 22px;
+}
+#styliumSetting .styliumItems.patternList > span,
+#styliumSetting .styliumItems.imageList > span {
+	background-image: url({xen:property stylium_settingImageSource}/style-selector.png);
+	background-repeat:no-repeat;
+	
+}
+#styliumSetting .styliumItems .bkgd1 {background-position: -5px -5px;}
+#styliumSetting .styliumItems .bkgd2 {background-position: -40px -5px;}
+#styliumSetting .styliumItems .bkgd3 {background-position: -75px -5px;}
+#styliumSetting .styliumItems .bkgd4 {background-position: -110px -5px;}
+#styliumSetting .styliumItems .bkgd5 {background-position: -145px -5px;}
+#styliumSetting .styliumItems .bkgd6 {background-position: -180px -5px;}
+#styliumSetting .styliumItems .pattern1 {background-position: -265px -5px;}
+#styliumSetting .styliumItems .pattern10 {background-position: -315px -5px;}
+#styliumSetting .styliumItems .pattern11 {background-position: -365px -5px;}
+#styliumSetting .styliumItems .pattern12 {background-position: -415px -5px;}
+#styliumSetting .styliumItems .pattern13 {background-position: -465px -5px;}
+#styliumSetting .styliumItems .pattern14 {background-position: -515px -5px;}
+#styliumSetting .styliumItems .pattern15 {background-position: -565px -5px;}
+#styliumSetting .styliumItems .pattern16 {background-position: -611px -5px;}
+#styliumSetting .styliumItems .pattern17 {background-position: -661px -5px;}
+#styliumSetting .styliumItems .pattern18 {background-position: -707px -5px;}
+#styliumSetting .styliumItems .pattern19 {background-position: -753px -5px;}
+#styliumSetting .styliumItems .pattern2 {background-position: -803px -5px;}
+#styliumSetting .styliumItems .pattern20 {background-position: -853px -5px;}
+#styliumSetting .styliumItems .pattern3 {background-position: -903px -5px;}
+#styliumSetting .styliumItems .pattern4 {background-position: -953px -5px;}
+#styliumSetting .styliumItems .pattern5 {background-position: -1003px -5px;}
+#styliumSetting .styliumItems .pattern6 {background-position: -1053px -5px;}
+#styliumSetting .styliumItems .pattern7 {background-position: -1103px -5px;}
+#styliumSetting .styliumItems .pattern8 {background-position: -1153px -5px;}
+#styliumSetting .styliumItems .pattern9 {background-position: -1203px -5px;}
+
+#styliumSetting .styliumItems.patternList > span.noneImage
+{background-image: url({xen:property stylium_settingImageSource}/no_image.png);}
+.colpick{
+	z-index: 100000;
+}
+
+
+#styliumSetting.overHeightLeft .styliumBox.ctrlHandler{
+	position: absolute;
+	right: -41px;
+	top: -2px;
+	background: #fff;
+	border-right: 1px solid #cecece;
+	border-top: 2px solid #ff884e;
+}
+#styliumSetting.overHeightLeft .styliumBox.ctrlHandler .boxContent{
+	padding: 0;
+}
+#styliumSetting.overHeightLeft .styliumBox .styliumIcon.bottomIcon,
+#styliumSetting.overHeightRight .styliumBox .styliumIcon.bottomIcon{
+	display: block;
+	width: 40px;
+	text-align: center;
+	padding: 10px 0;
+	border: none;
+}
+#styliumSetting.overHeightLeft .styliumBox .styliumIcon.saveComplete,
+#styliumSetting.overHeightRight .styliumBox .styliumIcon.saveComplete{
+	display: none;
+}
+#styliumSetting.overHeightRight .styliumBox.ctrlHandler{
+	position: absolute;
+	left: -41px;
+	top: -2px;
+	background: #fff;
+	border-left: 1px solid #cecece;
+	border-top: 2px solid #ff884e;
+}
+#styliumSetting.overHeightRight .styliumBox.ctrlHandler .boxContent{
+	padding: 0;
+}
+#styliumSetting.overHeightRight .styliumBox .styliumIcon.saveComplete.processing,
+#styliumSetting.overHeightLeft .styliumBox .styliumIcon.saveComplete.processing{
+	display: block;
+}
+#styliumSetting.disabled.overHeightRight .styliumBox.ctrlHandler,
+#styliumSetting.disabled.overHeightLeft .styliumBox.ctrlHandler{
+	display: none !important;
+}
+#styliumSetting.closeRight .styliumIcon.styliumSettingToggle{
+	left: -40px;
+	right:auto;
+}]]></template>
+    <template title="stylium_setting_toggle_footer" addon_id="" version_id="0" version_string="" disable_modifications="0"><![CDATA[<xen:if is="{xen:property stylium_settingEnable}">
+	<dt>{xen:phrase BRSF_stylium}</dt>
+	<dd><a href="javascript:;" class="styliumIcon styliumSettingToggle" title="{xen:phrase BRSF_stylium_setting}" >{xen:phrase BRSF_stylium_setting} <i class="fa fa-magic"></i></a></dd>
+</xen:if>]]></template>
+    <template title="stylium_setting_value" addon_id="" version_id="0" version_string="" disable_modifications="0"><![CDATA[jQuery.extend(true, Stylium,
+{
+	_settingEnable: "{xen:property stylium_settingEnable}",
+	_imagePath: "{$javaScriptSource}/brivium/stylium/1000000/img",
+	_boardUrl: "{$xenOptions.boardUrl}",
+	_settingEnable: "{xen:property stylium_settingEnable}",
+	_mainContainerMargin: '{xen:calc '{xen:property sidebar.width} + 10'}px',
+	_maxResponsiveWideWidth: "{xen:property maxResponsiveWideWidth}",
+	_maxResponsiveMediumWidth: "{xen:property maxResponsiveMediumWidth}",
+	_maxResponsiveNarrowWidth: "{xen:property maxResponsiveNarrowWidth}",
+	_collapsibleCategory: "{xen:property stylium_collapsibleCategory}",
+	_categoryCollapseSpeed: "{xen:property stylium_categoryCollapseSpeed}",
+	_footerGoToTop: "{xen:property stylium_footerGoToTop}",
+	_footerGoToTopVisibilty: "{xen:property stylium_footerGoToTopVisibilty}",
+	_footerGoToTopSpeed: "{xen:property stylium_footerGoToTopSpeed}",
+	_collapsibleSidebar: "{xen:property stylium_collapsibleSidebar}",
+	_collapsibleSidebarBlock: "{xen:property stylium_collapsibleSidebarBlock}",
+	
+	_homeTabIcon: "{xen:property stylium_homeTabIcon}",
+	_navDropdownArrows: "{xen:property stylium_navDropdownArrows}",
+	_subNavigation: "{xen:property stylium_subNavigation}",
+	_stickyHeader: "{xen:property stylium_stickyHeader}",
+	_stickyModerator: "{xen:property stylium_stickyModerator}",
+	
+	_sidebarBlockCollapseTriggerClass: "{xen:property stylium_sidebarBlockCollapseTriggerClass}",
+	_sidebarBlockExpandTriggerClass: "{xen:property stylium_sidebarBlockExpandTriggerClass}",
+	_categoryCollapseTriggerClass: "{xen:property stylium_categoryCollapseTriggerClass}",
+	_categoryExpandTriggerClass: "{xen:property stylium_categoryExpandTriggerClass}",
+	
+	settingSelectors: {
+		font				: "{xen:property stylium_fontSelectors}",
+		bodyBgColor			: "body, #styliumSetting .styliumBodyBackgroundColor, {xen:property stylium_bodyBgColorSelectors}",
+		bodyBgImage			: 'body',
+		bodyBgSize			: 'body',
+		bodyBgPosition		: 'body',
+		bodyBgRepeat		: 'body',
+		
+		primaryColor			: "{xen:property stylium_primaryColorSelectors}",
+		primaryColorBg			: "#styliumSetting .styliumPrimaryColor, {xen:property stylium_primaryColorBgSelectors}",
+		primaryColorBorder		: "{xen:property stylium_primaryColorBorderSelectors}",
+		primaryColorBorderTop	: "{xen:property stylium_primaryColorBorderTopSelectors}",
+		
+		secondaryColor			: "{xen:property stylium_secondaryColorSelectors}",
+		secondaryColorBg		: "#styliumSetting .styliumSecondaryColor, {xen:property stylium_secondaryColorBgSelectors}",
+		secondaryColorBorder	: "{xen:property stylium_secondaryColorBorderSelectors}",
+		secondaryColorBorderTop	: "{xen:property stylium_secondaryColorBorderTopSelectors}",
+		
+		tertiaryColor			: "{xen:property stylium_tertiaryColorSelectors}",
+		tertiaryColorBg			: "#styliumSetting .styliumTertiaryColor, {xen:property stylium_tertiaryColorBgSelectors}",
+		tertiaryColorBorder		: "{xen:property stylium_tertiaryColorBorderSelectors}",
+		tertiaryColorBorderTop	: "{xen:property stylium_tertiaryColorBorderTopSelectors}"
+	},
+	settingDefaultValues: {
+		<xen:if is="{$settingDefaultValues}">
+			<xen:foreach loop="$settingDefaultValues" key="$propertyName" value="$propertyValue">
+				{$propertyName}		: "{$propertyValue}",
+			</xen:foreach>
+		</xen:if>
+	}
+});
+
+Stylium.settingCustomValues = {
+	<xen:if is="{$settingCustomValues}">
+		<xen:foreach loop="$settingCustomValues" key="$propertyName" value="$propertyValue">
+			{$propertyName}		: "{$propertyValue}",
+		</xen:foreach>
+	</xen:if>
+};
+
+
+jQuery.extend(XenForo.phrases,
+{
+	BRSF_collapse: "{xen:jsescape {xen:phrase BRSF_collapse}}"
+});
+<xen:if is="{$settingCustomValues.bodyBgSize}=='cover' || (!{$settingCustomValues.bodyBgImage} && {$styliumValue.bodyBgSize}=='cover')">
+	$.backstretch('{$styliumValue.bodyBgImage}');
+</xen:if>]]></template>
+    <template title="twitter.css" addon_id="XenForo" version_id="1030570" version_string="1.3.5" disable_modifications="0"><![CDATA[a.twitterLogin,
+#loginBar a.twitterLogin
+{
+	{xen:property stylium_twitterLogin}
+}
+
+	a.twitterLogin span
+	{
+		{xen:property stylium_twitterLoginContent}
+	}
+	
+a.twitterLogin:hover,
+#loginBar a.twitterLogin:hover,
+a.twitterLogin:active,
+#loginBar a.twitterLogin:active
+{
+	{xen:property stylium_twitterLoginActive}
+}]]></template>
+  </templates>
+</style>

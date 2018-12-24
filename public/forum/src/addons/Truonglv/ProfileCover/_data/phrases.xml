@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="option.tl_ProfileCover_defaultCover" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Default Cover URL]]></phrase>
+  <phrase title="option.tl_ProfileCover_maxSize" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Maximum of cover size (KB)]]></phrase>
+  <phrase title="option.tl_ProfileCover_minHeight" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Minimum cover height]]></phrase>
+  <phrase title="option.tl_ProfileCover_minWidth" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Minimum cover width]]></phrase>
+  <phrase title="option_explain.tl_ProfileCover_defaultCover" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[The default cover display on profile without an cover.]]></phrase>
+  <phrase title="option_explain.tl_ProfileCover_maxSize" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[The maximum of cover file size which user can use for cover.]]></phrase>
+  <phrase title="option_explain.tl_ProfileCover_minHeight" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.tl_ProfileCover_minWidth" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_group.tl_ProfileCover" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[tl] Profile Cover]]></phrase>
+  <phrase title="option_group_description.tl_ProfileCover" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="permission.general_profileCover_deleteAny" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Delete cover by anyone]]></phrase>
+  <phrase title="permission.general_profileCover_deleteSelf" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Delete cover by self]]></phrase>
+  <phrase title="permission.general_profileCover_uploadAny" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Upload/modify cover by anyone]]></phrase>
+  <phrase title="permission.general_profileCover_uploadSelf" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Upload/modify cover by self]]></phrase>
+  <phrase title="permission_interface.profileCover" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[tl] Profile Cover Permissions]]></phrase>
+  <phrase title="tl_profile_cover.cover_image" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Cover Image]]></phrase>
+  <phrase title="tl_profile_cover.it_is_recommended_that_you_use_image_that_is_at_least_x_pixels" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[It is recommended that you use an image that is at least {width}x{height} pixels and no more than {size} kilobytes.]]></phrase>
+  <phrase title="tl_profile_cover.please_use_image_that_at_least_x_pixels" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Please use an image that at least {width}x{height} pixels.]]></phrase>
+  <phrase title="tl_profile_cover.please_use_image_that_no_more_than_x" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Please use image that no more than {size} kilobytes.]]></phrase>
+  <phrase title="tl_profile_cover.remove_cover" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Remove Cover]]></phrase>
+  <phrase title="tl_profile_cover.reposition" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Reposition]]></phrase>
+  <phrase title="tl_profile_cover.upload_new_cover" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Upload New Cover]]></phrase>
+</phrases>

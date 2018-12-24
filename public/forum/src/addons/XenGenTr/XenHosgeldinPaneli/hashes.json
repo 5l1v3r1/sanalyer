@@ -1,0 +1,16 @@
+{
+    "src/addons/XenGenTr/XenHosgeldinPaneli/addon.json": "13532c006dfd5034b50b1b7cc0cdfe0ba05d2c063dea3dc5d22dcb53a592a2b8",
+    "src/addons/XenGenTr/XenHosgeldinPaneli/Setup.php": "a5a08126f33813e461d00318fc0cfb40052886822624bf06bdb924cdbba93f8b",
+    "src/addons/XenGenTr/XenHosgeldinPaneli/Widget/ForumStatistics.php": "121f4649742b700470b4c5b9c870fe1bf48175c7804cb9a8f05ea99d6737cfc4",
+    "src/addons/XenGenTr/XenHosgeldinPaneli/Widget/HosgeldinSidebar.php": "ae16d625985bc25e76fabfb6b1ca2733a6750798f54bd008a0e6e108183ac7e4",
+    "src/addons/XenGenTr/XenHosgeldinPaneli/XenFooterikon.png": "5df3d002f2f49ec8c5a40694b33e706ddab657bdae6de93f48f9d59559c31000",
+    "src/addons/XenGenTr/XenHosgeldinPaneli/_data/options.xml": "e150079799b9c762bb343391cd751de431e8a8424685ec06f8551e0337742d2a",
+    "src/addons/XenGenTr/XenHosgeldinPaneli/_data/option_groups.xml": "ebc3c2110d285f761bb6371b94bdfc698471b0dd676f7f9651fb77a4aa75600d",
+    "src/addons/XenGenTr/XenHosgeldinPaneli/_data/permissions.xml": "9af4867ee86c624194eaba19a1ba166da313905f616e13441765a01ef55959bd",
+    "src/addons/XenGenTr/XenHosgeldinPaneli/_data/permission_interface_groups.xml": "1f8dd91623b8106b164db161a3d7a40345047396b091978aa9a48e74b1741184",
+    "src/addons/XenGenTr/XenHosgeldinPaneli/_data/phrases.xml": "8038ec906e9862051e0ced388e0b115da1986a865a64e8b42feac0c97eefc005",
+    "src/addons/XenGenTr/XenHosgeldinPaneli/_data/style_properties.xml": "4dc11cbbe321a761deb2bbef6d7915053c358002c89c77c27a955af59fe1cba5",
+    "src/addons/XenGenTr/XenHosgeldinPaneli/_data/style_property_groups.xml": "682c14541db87e9980b7b2bc43cd1a7836a714ca00a7f04bc8fe7cc2d5682afa",
+    "src/addons/XenGenTr/XenHosgeldinPaneli/_data/templates.xml": "5a54d9cca2f441ccb77996ff66988c75e29f4275259d9aca87ee9f1127454b9a",
+    "src/addons/XenGenTr/XenHosgeldinPaneli/_data/widget_definitions.xml": "683b60930af1547e798ec3a4729973e7385438f8e3f40a2ce63d52ce3d4af0ad"
+}

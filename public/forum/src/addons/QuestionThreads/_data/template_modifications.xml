@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template_modifications>
+  <modification type="public" template="account_alerts" modification_key="QT_account_alerts_less" description="Including QuestionThreads.less" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:title>{{ phrase('alerts') }}</xf:title>]]></find>
+    <replace><![CDATA[$0
+
+<xf:css src="QuestionThreads.less" />]]></replace>
+  </modification>
+  <modification type="public" template="account_alerts_popup" modification_key="QT_account_alerts_popup_less" description="Including QuestionThreads.less" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:if is="$alerts is not empty">]]></find>
+    <replace><![CDATA[<xf:css src="QuestionThreads.less" />
+
+$0]]></replace>
+  </modification>
+  <modification type="public" template="account_visitor_menu" modification_key="QT_account_visitor_menu_best_answer_count" description="Adding best answer count" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<!--[XF:stats_pairs:above_likes]-->]]></find>
+    <replace><![CDATA[<xf:macro template="QT_best_answer_count_macros" name="account_visitor_menu" />
+
+$0]]></replace>
+  </modification>
+  <modification type="admin" template="app.less" modification_key="QT_app_questions_only_forum_icon" description="Adding questions only forum node icon" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[&--Page:before
+	{
+		.m-faContent(@fa-var-file-text, .86em);
+	}]]></find>
+    <replace><![CDATA[$0
+
+&--QT_questions_only_forum:before
+{
+	.m-faContent(@fa-var-question-circle, .86em);
+}]]></replace>
+  </modification>
+  <modification type="public" template="core_button.less" modification_key="QT_question_button_icon" description="Adding question icon to a list of icons for buttons" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[&--add          { .m-buttonIcon(@fa-var-plus-square, .79em); }]]></find>
+    <replace><![CDATA[$0
+
+&--QT_question          { .m-buttonIcon(@fa-var-question, .45em); }]]></replace>
+  </modification>
+  <modification type="admin" template="forum_edit" modification_key="QT_forum_type" description="Forum type select tag" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:macro template="node_edit_macros" name="description" arg-node="{$node}" />]]></find>
+    <replace><![CDATA[$0
+
+<xf:include template="QT_forum_type" />]]></replace>
+  </modification>
+  <modification type="public" template="forum_post_quick_thread" modification_key="QT_forum_post_quick_thread_to_post_question" description="&quot;Post thread&quot; -&gt; &quot;Post question&quot;" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[phrase('post_thread')]]></find>
+    <replace><![CDATA[($forum->QT_type === 'questions_only') ? phrase('QT_post_question') : $0]]></replace>
+  </modification>
+  <modification type="public" template="forum_post_quick_thread" modification_key="QT_forum_post_quick_thread_submit_icon" description="Changing submit button icon" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/(type="submit".+icon=")(.+)(">)/]]></find>
+    <replace><![CDATA[$1{{ ($forum->QT_type === 'questions_only') ? 'QT_question' : '$2' }}$3]]></replace>
+  </modification>
+  <modification type="public" template="forum_post_thread" modification_key="QT_forum_post_thread_is_question" description="&quot;Post question&quot; button near &quot;Post thread&quot;" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:if is="!$xf.visitor.user_id">]]></find>
+    <replace><![CDATA[<xf:include template="QT_forum_post_thread_is_question" />
+
+$0]]></replace>
+  </modification>
+  <modification type="public" template="forum_post_thread" modification_key="QT_forum_post_thread_to_post_question" description="&quot;Post thread&quot; -&gt; &quot;Post question&quot;" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[phrase('post_thread')]]></find>
+    <replace><![CDATA[($forum->QT_type === 'questions_only') ? phrase('QT_post_question') : $0]]></replace>
+  </modification>
+  <modification type="public" template="forum_post_thread" modification_key="QT_forum_post_thread_submit_icon" description="Changing submit button icon" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/(<xf:submitrow.+icon=")(.+?)(".+>)/]]></find>
+    <replace><![CDATA[$1{{ ($forum->QT_type === 'questions_only') ? 'QT_question' : '$2' }}$3]]></replace>
+  </modification>
+  <modification type="public" template="forum_post_thread" modification_key="QT_forum_post_thread_prompt" description="Using custom thread prompt &quot;Question title&quot;" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[{$forum.thread_prompt}]]></find>
+    <replace><![CDATA[{{ ($forum->QT_type === 'questions_only' && $xf.options.QT_useQuestionPrompt) ? phrase('QT_question_title') : $forum.thread_prompt }}]]></replace>
+  </modification>
+  <modification type="public" template="forum_view" modification_key="QT_forum_view_to_post_question" description="&quot;Post thread&quot; -&gt; &quot;Post question&quot;" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[phrase('post_thread')]]></find>
+    <replace><![CDATA[($forum->QT_type === 'questions_only') ? phrase('QT_post_question') : $0]]></replace>
+  </modification>
+  <modification type="public" template="forum_view" modification_key="QT_forum_view_post_question_icon" description="Changing post thread button icon" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/(<xf:button.+icon=")(.+)(">)/]]></find>
+    <replace><![CDATA[$1{{ ($forum->QT_type === 'questions_only') ? 'QT_question' : '$2' }}$3]]></replace>
+  </modification>
+  <modification type="public" template="forum_view" modification_key="QT_forum_view_less" description="Including QuestionThreads.less" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:title page="{$page}">{$forum.Node.title}</xf:title>]]></find>
+    <replace><![CDATA[<xf:css src="QuestionThreads.less" />
+
+$0]]></replace>
+  </modification>
+  <modification type="admin" template="helper_criteria" modification_key="QT_helper_criteria" description="Adding Question Threads related criteria" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:checkboxrow label="{{ phrase('content_and_achievements') }}">]]></find>
+    <replace><![CDATA[<xf:include template="QT_helper_criteria" />
+
+$0]]></replace>
+  </modification>
+  <modification type="public" template="member_macros" modification_key="QT_member_macros_best_answer_count" description="Adding best answer count" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<!--[XF:stat_pairs:above_likes]-->]]></find>
+    <replace><![CDATA[<xf:macro template="QT_best_answer_count_macros" name="member_macros" arg-user="{$user}" />
+
+$0]]></replace>
+  </modification>
+  <modification type="public" template="member_view" modification_key="QT_member_view_less" description="Including QuestionThreads.less" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:title page="{$page}">{$user.username}</xf:title>]]></find>
+    <replace><![CDATA[<xf:css src="QuestionThreads.less" />
+
+$0]]></replace>
+  </modification>
+  <modification type="public" template="message_macros" modification_key="QT_message_macros" description="Adding total best answers number if needed" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:if is="$extras.like_count">]]></find>
+    <replace><![CDATA[<xf:macro template="QT_best_answer_count_macros" name="message_macros"
+		  arg-user="{$user}" arg-extras="{$extras}" />
+
+$0]]></replace>
+  </modification>
+  <modification type="admin" template="node_list" modification_key="QT_node_list_questions_only_forum_icon" description="Adding questions only forum node icon" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[nodeIcon--{$node.NodeType.node_type_id}]]></find>
+    <replace><![CDATA[{{ ($node.NodeType.node_type_id === 'Forum' && $node->getData()->QT_type === 'questions_only') ? 'nodeIcon--QT_questions_only_forum' : '' }} $0]]></replace>
+  </modification>
+  <modification type="public" template="node_list.less" modification_key="QT_node_list_questions_forum_node_icon" description="Adding questions only forum node icon" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[.node--page &:before]]></find>
+    <replace><![CDATA[.node--QT_questions_only_forum &:before
+{
+	.m-faContent(@fa-var-question-circle, .86em);
+}
+
+$0]]></replace>
+  </modification>
+  <modification type="public" template="node_list_forum" modification_key="QT_node_list_forum_questions_forum_icon" description="Questions only forum node icon" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[node--forum]]></find>
+    <replace><![CDATA[{{ ($node->getData()->QT_type === 'questions_only' && $xf.options.QT_useIconForQuestionsOnly) ? 'node--QT_questions_only_forum' : '$0' }}]]></replace>
+  </modification>
+  <modification type="public" template="post_edit" modification_key="QT_post_edit_thread_type" description="Adding thread type switcher" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/<xf:prefixinputrow[\s\S]+?\/>/]]></find>
+    <replace><![CDATA[$0
+
+<xf:include template="QT_post_edit_thread_type_switcher" />]]></replace>
+  </modification>
+  <modification type="public" template="post_macros" modification_key="QT_post_macros_best_answer_indicator" description="Adding best answer indicator" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<div class="message-attribution-opposite">]]></find>
+    <replace><![CDATA[$0
+
+<xf:include template="QT_post_macros_best_answer_indicator" />]]></replace>
+  </modification>
+  <modification type="public" template="post_macros" modification_key="QT_post_macros_best_answer_message_background" description="Adding classes to best answer post in thread" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/(<article.+class="message.+)(")/]]></find>
+    <replace><![CDATA[<xf:if is="$thread.QT_question && $thread.QT_best_answer_id === $post.post_id">
+	$1 <xf:trim><xf:macro template="QT_macros" name="best_answer_classes" /></xf:trim>$2
+	<xf:else />
+	$0
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="post_macros" modification_key="QT_post_macros_best_answer" description="Adding select/unselect best answer buttons" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:if is="$post.canLike()">]]></find>
+    <replace><![CDATA[<xf:include template="QT_post_macros_best_answer" />
+
+$0]]></replace>
+  </modification>
+  <modification type="public" template="search_result_post" modification_key="QT_search_result_post_best_answer" description="Adding best answer mark" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<h3 class="contentRow-title">]]></find>
+    <replace><![CDATA[$0
+
+<xf:include template="QT_search_result_post_best_answer" />]]></replace>
+  </modification>
+  <modification type="public" template="search_result_thread" modification_key="QT_search_result_thread_question_additions" description="Adding question mark and best answer icons before thread title" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<h3 class="contentRow-title">]]></find>
+    <replace><![CDATA[$0
+
+<xf:include template="QT_search_result_thread_question_additions" />]]></replace>
+  </modification>
+  <modification type="public" template="search_results" modification_key="QT_search_results_less" description="Including QuestionThreads.less" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:css src="search_results.less" />]]></find>
+    <replace><![CDATA[$0
+
+<xf:css src="QuestionThreads.less" />]]></replace>
+  </modification>
+  <modification type="admin" template="style_property_template_messageUserElements" modification_key="QT_style_property_template_messageUserElements" description="Adding best answer count option" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:option name="{$formBaseKey}[like_count]" selected="{$property.property_value.like_count}">]]></find>
+    <replace><![CDATA[<xf:option name="{$formBaseKey}[QT_best_answer_count]" selected="{$property.property_value.QT_best_answer_count}">
+	{{ phrase('QT_total_best_answers') }}
+</xf:option>
+
+$0]]></replace>
+  </modification>
+  <modification type="public" template="tag_view" modification_key="QT_tag_view" description="Including QuestionThreads.less" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:title page="{$page}">{$tag.tag}</xf:title>]]></find>
+    <replace><![CDATA[$0
+
+<xf:css src="QuestionThreads.less" />]]></replace>
+  </modification>
+  <modification type="public" template="thread_edit" modification_key="QT_thread_edit_type" description="Adding thread type switcher" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/<xf:prefixinputrow[\s\S]+?\/>/]]></find>
+    <replace><![CDATA[$0
+
+<xf:include template="QT_thread_edit_type_switcher" />]]></replace>
+  </modification>
+  <modification type="public" template="thread_list_macros" modification_key="QT_thread_list_macros_prompt" description="Using custom thread prompt &quot;Question title&quot;" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[{$forum.thread_prompt}]]></find>
+    <replace><![CDATA[{{ ($forum->QT_type === 'questions_only' && $xf.options.QT_useQuestionPrompt) ? phrase('QT_question_title') : $forum.thread_prompt }}]]></replace>
+  </modification>
+  <modification type="public" template="thread_list_macros" modification_key="QT_thread_list_macros_question_additions" description="Adding question mark and best answer icons before thread title" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<div class="structItem-title">]]></find>
+    <replace><![CDATA[$0
+
+<xf:include template="QT_thread_list_macros_question_additions" />]]></replace>
+  </modification>
+  <modification type="public" template="thread_view" modification_key="QT_thread_view_question_mark" description="Adding question mark before thread title" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/(<xf:h1>)(.+)(<\/xf:h1>)/]]></find>
+    <replace><![CDATA[<xf:css src="QuestionThreads.less" />
+
+$1<xf:include template="QT_thread_view_question_mark" />$2$3]]></replace>
+  </modification>
+  <modification type="public" template="thread_view" modification_key="QT_thread_view_pageactions" description="Adding &quot;Solved/Unsolved&quot; page actions to question threads" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:description meta="false">]]></find>
+    <replace><![CDATA[<xf:include template="QT_thread_view_pageactions" />
+
+$0]]></replace>
+  </modification>
+  <modification type="admin" template="tools_rebuild" modification_key="QT_tools_rebuild" description="Adding &quot;Rebuild best asnwer counts&quot; block" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<!--[XF:after_trophies]-->]]></find>
+    <replace><![CDATA[$0
+
+<xf:include template="QT_tools_rebuild" />]]></replace>
+  </modification>
+  <modification type="public" template="whats_new" modification_key="QT_whats_new_less" description="Including QuestionThreads.less" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:title>{{ phrase('whats_new') }}</xf:title>]]></find>
+    <replace><![CDATA[$0
+
+<xf:css src="QuestionThreads.less" />]]></replace>
+  </modification>
+</template_modifications>

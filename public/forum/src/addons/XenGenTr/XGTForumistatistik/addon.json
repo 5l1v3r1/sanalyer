@@ -1,0 +1,26 @@
+{
+    "legacy_addon_id": "",
+    "title": "[XenGenTr] Forum istatistikleri",
+    "description": "[XenGenTr] XGT Forum istatistik forumdan son mesajlar,konular en hit konular gibi bir kac widget ile forum istatistiklerini gosterebilirisiniz.",
+    "version_id": 2000260,
+    "version_string": "2.0.6",
+    "dev": "eTiKeT",
+    "dev_url": "https://xenforo.gen.tr",
+    "faq_url": "",
+    "support_url": "https://xenforo.gen.tr",
+    "extra_urls": {
+        "[XenGenTr] Forum istatistik sistemi": "https://xenforo.gen.tr/xenforo-kaynaklari/xengentr-forum-istatistik-sistemi.490/",
+        "Yorumlar": "https://xenforo.gen.tr/konular/xengentr-forum-istatistik-sistemi.1899/"
+    },
+    "require": {
+        "XF": [
+            2000010,
+            "XenForo 2.0.0+"
+        ],
+        "php": [
+            "5.4.0",
+            "PHP 5.4.0+"
+        ]
+    },
+    "icon": "XenGenTr.png"
+}

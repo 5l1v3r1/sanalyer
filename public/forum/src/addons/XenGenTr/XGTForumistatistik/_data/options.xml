@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<options>
+  <option option_id="XGT_istatistik_EnCokBegeni_konu_forumlari" edit_format="callback" data_type="array">
+    <default_value>[]</default_value>
+    <edit_format_params>XF\Option\Forum::renderSelectMultiple</edit_format_params>
+    <sub_options>*</sub_options>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="550"/>
+  </option>
+  <option option_id="XGT_istatistik_EnCokBegeni_konu_limiti" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>10</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="530"/>
+  </option>
+  <option option_id="XGT_istatistik_EnCokBegeni_konubaslik" edit_format="textbox" data_type="string">
+    <default_value>En çok begenilen</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="520"/>
+  </option>
+  <option option_id="XGT_istatistik_EnCokBegenilen_konu_ackapat" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="60"/>
+  </option>
+  <option option_id="XGT_istatistik_EnCokCevap_konu_ackapat" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="40"/>
+  </option>
+  <option option_id="XGT_istatistik_EnCokCevap_konu_forumlari" edit_format="callback" data_type="array">
+    <default_value>[]</default_value>
+    <edit_format_params>XF\Option\Forum::renderSelectMultiple</edit_format_params>
+    <sub_options>*</sub_options>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="350"/>
+  </option>
+  <option option_id="XGT_istatistik_EnCokCevap_konu_limiti" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>10</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="330"/>
+  </option>
+  <option option_id="XGT_istatistik_EnCokCevap_konubaslik" edit_format="textbox" data_type="string">
+    <default_value>En çok cevaplanan</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="320"/>
+  </option>
+  <option option_id="XGT_istatistik_EnCokGoruntulenen_konu_ackapat" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="50"/>
+  </option>
+  <option option_id="XGT_istatistik_EnCokGoruntulenen_konu_forumlari" edit_format="callback" data_type="array">
+    <default_value>[]</default_value>
+    <edit_format_params>XF\Option\Forum::renderSelectMultiple</edit_format_params>
+    <sub_options>*</sub_options>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="450"/>
+  </option>
+  <option option_id="XGT_istatistik_EnCokGoruntulenen_konu_limiti" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>10</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="430"/>
+  </option>
+  <option option_id="XGT_istatistik_EnCokGoruntulenen_konubaslik" edit_format="textbox" data_type="string">
+    <default_value>En görüntülenen konu</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="420"/>
+  </option>
+  <option option_id="XGT_istatistik_Konum" edit_format="radio" data_type="string">
+    <default_value>icerikustu</default_value>
+    <edit_format_params>icerikustu={{ phrase('XGT_istatistik_konum_icerik_ustu') }}
+forumustu={{ phrase('widget_pos.forum_list_above_nodes') }}
+forumalti={{ phrase('widget_pos.forum_list_below_nodes') }}
+kendikonumum={{ phrase('XGT_istatistik_konum_ozel') }}</edit_format_params>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="14"/>
+  </option>
+  <option option_id="XGT_istatistik_Kullanici_kapat" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="18"/>
+  </option>
+  <option option_id="XGT_istatistik_Kullanici_limiti" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>10</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="19"/>
+  </option>
+  <option option_id="XGT_istatistik_Last_Post_Jump" edit_format="onoff" data_type="string">
+    <default_value>0</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="90"/>
+  </option>
+  <option option_id="XGT_istatistik_google_arat" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="24"/>
+  </option>
+  <option option_id="XGT_istatistik_kullanici_gruprengi" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="23"/>
+  </option>
+  <option option_id="XGT_istatistik_question_Threads" edit_format="onoff" data_type="string">
+    <default_value>0</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="70"/>
+  </option>
+  <option option_id="XGT_istatistik_sayfalar" edit_format="radio" data_type="string">
+    <default_value>anasayfada</default_value>
+    <edit_format_params>anasayfada={{ phrase('XGT_istatistik_sayfalar_anasayfa') }}
+tumsayfalarda={{ phrase('XGT_istatistik_sayfalar_tumu') }}</edit_format_params>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="15"/>
+  </option>
+  <option option_id="XGT_istatistik_yeniKonu_Limit" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>10</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="230"/>
+  </option>
+  <option option_id="XGT_istatistik_yeniKonu_baslik" edit_format="textbox" data_type="string">
+    <default_value>Yeni konular</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="220"/>
+  </option>
+  <option option_id="XGT_istatistik_yeniKonu_kapat_ac" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="30"/>
+  </option>
+  <option option_id="XGT_istatistik_yeniKonular_forumlari" edit_format="callback" data_type="array">
+    <default_value>[]</default_value>
+    <edit_format_params>XF\Option\Forum::renderSelectMultiple</edit_format_params>
+    <sub_options>*</sub_options>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="250"/>
+  </option>
+  <option option_id="XGT_istatistik_yeniMesaj_Limit" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>10</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="180"/>
+  </option>
+  <option option_id="XGT_istatistik_yeniMesaj_baslik" edit_format="textbox" data_type="string">
+    <default_value>Yeni mesajlar</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="120"/>
+  </option>
+  <option option_id="XGT_istatistik_yeniMesaj_forumlari" edit_format="callback" data_type="array">
+    <default_value>[]</default_value>
+    <edit_format_params>XF\Option\Forum::renderSelectMultiple</edit_format_params>
+    <sub_options>*</sub_options>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="190"/>
+  </option>
+  <option option_id="XGT_istatistik_yeniMesaj_kapat_ac" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="XGT_istatistik_secenekleri" display_order="25"/>
+  </option>
+</options>

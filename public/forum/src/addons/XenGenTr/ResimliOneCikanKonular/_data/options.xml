@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<options>
+  <option option_id="XenGenTr_ResimliKonular_Boyutlari" edit_format="template" data_type="array">
+    <default_value>{"width":"400","height":"290"}</default_value>
+    <edit_format_params>option_template_attachmentMaxDimensions</edit_format_params>
+    <sub_options>width
+height</sub_options>
+    <relation group_id="XenGenTr_ResimliOneCikanKonu_Secenekleri" display_order="700"/>
+  </option>
+  <option option_id="XenGenTr_ResimliKonular_Sileder_gecis_zamani" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>2000</default_value>
+    <edit_format_params>min=2000
+step=2000</edit_format_params>
+    <relation group_id="XenGenTr_ResimliOneCikanKonu_Secenekleri" display_order="400"/>
+  </option>
+  <option option_id="XenGenTr_ResimliKonular_baslik" edit_format="textbox" data_type="string">
+    <default_value>XenGenTr Öne çıkan resimli konular V1 - 1.0.0 Beta 2</default_value>
+    <relation group_id="XenGenTr_ResimliOneCikanKonu_Secenekleri" display_order="100"/>
+  </option>
+  <option option_id="XenGenTr_ResimliKonular_gosterim_sayisi" edit_format="spinbox" data_type="string">
+    <default_value>5</default_value>
+    <edit_format_params>min=4
+max=50</edit_format_params>
+    <relation group_id="XenGenTr_ResimliOneCikanKonu_Secenekleri" display_order="600"/>
+  </option>
+  <option option_id="XenGenTr_ResimliKonular_header_gizle" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="XenGenTr_ResimliOneCikanKonu_Secenekleri" display_order="200"/>
+  </option>
+  <option option_id="XenGenTr_ResimliKonular_kapat" edit_format="onoff" data_type="string">
+    <default_value>1</default_value>
+    <relation group_id="XenGenTr_ResimliOneCikanKonu_Secenekleri" display_order="1"/>
+  </option>
+  <option option_id="XenGenTr_ResimliKonular_konum" edit_format="radio" data_type="string">
+    <default_value>enust</default_value>
+    <edit_format_params>enust={{ phrase('XenGenTr_ResimliOneCikan_icerikler_ustunde') }}
+frmustu={{ phrase('widget_pos.forum_list_above_nodes') }}
+frmalti={{ phrase('widget_pos.forum_list_below_nodes') }}</edit_format_params>
+    <relation group_id="XenGenTr_ResimliOneCikanKonu_Secenekleri" display_order="300"/>
+  </option>
+  <option option_id="XenGenTr_ResimliKonular_limit" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>200</default_value>
+    <edit_format_params>min=50
+step=50</edit_format_params>
+    <relation group_id="XenGenTr_ResimliOneCikanKonu_Secenekleri" display_order="500"/>
+  </option>
+  <option option_id="XenGenTr_ResimliKonular_slider_gecis_bloklari" edit_format="spinbox" data_type="integer">
+    <default_value>1</default_value>
+    <edit_format_params>min=1
+max=4</edit_format_params>
+    <relation group_id="XenGenTr_ResimliOneCikanKonu_Secenekleri" display_order="420"/>
+  </option>
+  <option option_id="XenGenTr_ResimliKonular_slider_gecis_hizi" edit_format="spinbox" data_type="unsigned_integer">
+    <default_value>700</default_value>
+    <edit_format_params>min=500
+step=200</edit_format_params>
+    <relation group_id="XenGenTr_ResimliOneCikanKonu_Secenekleri" display_order="410"/>
+  </option>
+</options>

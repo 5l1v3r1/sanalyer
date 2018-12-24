@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget_definitions>
+  <widget_definition definition_id="XGT_EnCokBegenKonu_widget" definition_class="XenGenTr\XGTForumistatistik\Widget\XGTEnCokLikeKonular"/>
+  <widget_definition definition_id="XGT_EnCokCevapKonu_widget" definition_class="XenGenTr\XGTForumistatistik\Widget\XGTEnCokCevapKonular"/>
+  <widget_definition definition_id="XGT_EnCokGrtKonu_widget" definition_class="XenGenTr\XGTForumistatistik\Widget\XGTEnCokGrnKonular"/>
+  <widget_definition definition_id="XGT_YeniKonular_widget" definition_class="XenGenTr\XGTForumistatistik\Widget\XGTYeniKonular"/>
+  <widget_definition definition_id="XGT_YeniMesajlar_widget" definition_class="XenGenTr\XGTForumistatistik\Widget\XGTYeniMesajlar"/>
+  <widget_definition definition_id="XGT_encokmesaj_kullanici" definition_class="XenGenTr\XGTForumistatistik\Widget\XGTEnCokMesajKullanici"/>
+</widget_definitions>

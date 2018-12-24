@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="admin_navigation.th_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[ThemeHouse styles]]></phrase>
+  <phrase title="cron_entry.th_updateCheck_uix" version_id="2000070" version_string="2.0.0"><![CDATA[[TH] UI.X: Check for updates]]></phrase>
+  <phrase title="option.th_apiKey_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[API key]]></phrase>
+  <phrase title="option.th_deviantArtUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[DeviantArt URL]]></phrase>
+  <phrase title="option.th_enableFtp_uix" version_id="2000270" version_string="2.0.2"><![CDATA[Enable FTP]]></phrase>
+  <phrase title="option.th_facebookUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Facebook URL]]></phrase>
+  <phrase title="option.th_gitHubUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[GitHub URL]]></phrase>
+  <phrase title="option.th_instagramUrl" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Instagram URL]]></phrase>
+  <phrase title="option.th_linkedInUrl" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[LinkedIn URL]]></phrase>
+  <phrase title="option.th_materialAvatars_uix" version_id="2000031" version_string="2.0.0 Beta 1"><![CDATA[Globally enable material avatars]]></phrase>
+  <phrase title="option.th_newDirectoryPermissions_uix" version_id="2000270" version_string="2.0.2"><![CDATA[New directory octal permission]]></phrase>
+  <phrase title="option.th_pinterestUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Pinterest URL]]></phrase>
+  <phrase title="option.th_redditUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Reddit URL]]></phrase>
+  <phrase title="option.th_sidebarCollapseTime_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Sidebar collapse time]]></phrase>
+  <phrase title="option.th_steamUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Steam URL]]></phrase>
+  <phrase title="option.th_tumblrUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Tumblr URL]]></phrase>
+  <phrase title="option.th_twitchUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Twitch URL]]></phrase>
+  <phrase title="option.th_twitterUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Twitter URL]]></phrase>
+  <phrase title="option.th_updateCheck_uix" version_id="2000170" version_string="2.0.1"><![CDATA[Automatically check for updates]]></phrase>
+  <phrase title="option.th_youtubeUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[YouTube URL]]></phrase>
+  <phrase title="option_explain.th_apiKey_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Your ThemeHouse API key. You can find your API key <a href="https://www.themehouse.com/customer/account/api">here</a>.]]></phrase>
+  <phrase title="option_explain.th_deviantArtUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.th_enableFtp_uix" version_id="2000270" version_string="2.0.2"><![CDATA[If this option is enabled, all styles will be installed through FTP instead of attempting to copy the files on the server using PHP. Use this if you get permission errors while installing a style.]]></phrase>
+  <phrase title="option_explain.th_facebookUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.th_gitHubUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.th_instagramUrl" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.th_linkedInUrl" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.th_materialAvatars_uix" version_id="2000031" version_string="2.0.0 Beta 1"><![CDATA[If you're using any additional styles and want your default avatars consistent across styles you'll want to enable this option to enable Material avatars regardless of style]]></phrase>
+  <phrase title="option_explain.th_newDirectoryPermissions_uix" version_id="2000270" version_string="2.0.2"><![CDATA[This will define the octal file permissions to use for new directories. The default value of "0755" should work in most situations. This option is only used if you install with FTP]]></phrase>
+  <phrase title="option_explain.th_pinterestUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.th_redditUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.th_sidebarCollapseTime_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[How long (in seconds) should the sidebar collapse for before being reopened? Leave at 0 for indefinite.]]></phrase>
+  <phrase title="option_explain.th_steamUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.th_tumblrUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.th_twitchUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.th_twitterUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_explain.th_updateCheck_uix" version_id="2000170" version_string="2.0.1"><![CDATA[]]></phrase>
+  <phrase title="option_explain.th_youtubeUrl_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_group.th_socialMedia_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[[UI.X] Social Media]]></phrase>
+  <phrase title="option_group.th_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[[UI.X] General options]]></phrase>
+  <phrase title="option_group_description.th_socialMedia_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="option_group_description.th_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="permission.th_uix_collapseCategories" version_id="2000032" version_string="2.0.0 Beta 2"><![CDATA[Can collapse categories]]></phrase>
+  <phrase title="permission.th_uix_collapseSidebar" version_id="2000032" version_string="2.0.0 Beta 2"><![CDATA[Can collapse sidebar]]></phrase>
+  <phrase title="permission.th_uix_showWelcomeSection" version_id="2000032" version_string="2.0.0 Beta 2"><![CDATA[Show welcome section]]></phrase>
+  <phrase title="permission.th_uix_togglePageWidth" version_id="2000032" version_string="2.0.0 Beta 2"><![CDATA[Can toggle page width]]></phrase>
+  <phrase title="permission_interface.th_uix" version_id="2000031" version_string="2.0.0 Beta 1"><![CDATA[UI.X Permissions]]></phrase>
+  <phrase title="th_advanced_uix" version_id="2000170" version_string="2.0.1"><![CDATA[Advanced]]></phrase>
+  <phrase title="th_cant_find_a_topic_uix" version_id="2000070" version_string="2.0.0"><![CDATA[Can't find a topic?]]></phrase>
+  <phrase title="th_child_style_uix" version_id="2000370" version_string="2.0.3"><![CDATA[Child style]]></phrase>
+  <phrase title="th_child_styles_for_x_uix" version_id="2000531" version_string="2.0.5 Beta 1"><![CDATA[Child styles for {product_name}]]></phrase>
+  <phrase title="th_child_styles_uix" version_id="2000370" version_string="2.0.3"><![CDATA[Child styles]]></phrase>
+  <phrase title="th_documentation_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Documentation]]></phrase>
+  <phrase title="th_enter_ftp_details_explain_uix" version_id="2000270" version_string="2.0.2"><![CDATA[Please enter your FTP details so your style can be installed.]]></phrase>
+  <phrase title="th_fixed_width_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Fixed width]]></phrase>
+  <phrase title="th_fluid_width_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Fluid width]]></phrase>
+  <phrase title="th_force_reinstall_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Force reinstall]]></phrase>
+  <phrase title="th_ftp_directory_uix" version_id="2000270" version_string="2.0.2"><![CDATA[FTP directory]]></phrase>
+  <phrase title="th_ftp_host_uix" version_id="2000270" version_string="2.0.2"><![CDATA[FTP host]]></phrase>
+  <phrase title="th_ftp_password_uix" version_id="2000270" version_string="2.0.2"><![CDATA[FTP password]]></phrase>
+  <phrase title="th_ftp_username_uix" version_id="2000270" version_string="2.0.2"><![CDATA[FTP username]]></phrase>
+  <phrase title="th_install_x_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Install {product_name}]]></phrase>
+  <phrase title="th_installing_x_confirm_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[By continuing we will attempt to automatically install the selected version of {product_name}. To ensure we provide the best installation possible your XenForo version, XenForo installation URL and ThemeHouse API key will be passed to our servers when the installation happens.]]></phrase>
+  <phrase title="th_invalid_api_key_uix" version_id="2000052" version_string="2.0.0 Release Candidate 2"><![CDATA[You have not entered a valid API key. You can find our documentation for this process <a href="https://www.themehouse.com/help/documentation/uix2/installing-uix-with-uix-2-add-on" target="_BLANK">here</a>.]]></phrase>
+  <phrase title="th_no_active_licenses_found_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[No active licenses found, if you believe this is an error please <a href="https://www.themehouse.com/contact/create-ticket/choose-product">contact us</a>]]></phrase>
+  <phrase title="th_no_child_styles_found_for_x_uix" version_id="2000570" version_string="2.0.5"><![CDATA[No child styles found for {product_name}.]]></phrase>
+  <phrase title="th_page_width_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Page width]]></phrase>
+  <phrase title="th_style_preferences_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Style preferences]]></phrase>
+  <phrase title="th_themehouse_styles_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[ThemeHouse Styles]]></phrase>
+  <phrase title="th_toggle_width_uix" version_id="2000170" version_string="2.0.1"><![CDATA[Toggle width]]></phrase>
+  <phrase title="th_uix_addon_prerelease_uix" version_id="2000170" version_string="2.0.1"><![CDATA[You are running a prerelease version of the UI.X add-on, some bugs and issues may be expected.]]></phrase>
+  <phrase title="th_uix_addon_requires_update_uix" version_id="2000170" version_string="2.0.1"><![CDATA[A new version for the UI.X add-on has been released, <a href="https://www.themehouse.com/xenforo/2/addons/uix-addon">Click here</a> to update.]]></phrase>
+  <phrase title="th_use_default_value_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Use default value]]></phrase>
+  <phrase title="th_version_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[Version]]></phrase>
+  <phrase title="th_view_documentation_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[View documentation]]></phrase>
+  <phrase title="th_x_prerelease_styles_uix" version_id="2000170" version_string="2.0.1"><![CDATA[You are currently running {count} prerelease version(s) of ThemeHouse styles, some bugs/issues may be expected.]]></phrase>
+  <phrase title="th_x_updated_styles_uix" version_id="2000170" version_string="2.0.1"><![CDATA[An update has been released for {count} of your ThemeHouse styles, <a href="admin.php?styles/themehouse">Click here</a> to update.]]></phrase>
+  <phrase title="widget_def.th_post_thread_uix" version_id="2000070" version_string="2.0.0"><![CDATA[[UI.X] Post new thread block]]></phrase>
+  <phrase title="widget_def.th_widget_login_uix" version_id="2000070" version_string="2.0.0"><![CDATA[[UI.X] Login form]]></phrase>
+  <phrase title="widget_def_desc.th_post_thread_uix" version_id="2000070" version_string="2.0.0"><![CDATA[Allows you to display a post new thread block in your sidebar]]></phrase>
+  <phrase title="widget_def_desc.th_widget_login_uix" version_id="2000070" version_string="2.0.0"><![CDATA[Allows you to display a login bar in your sidebar, or any other widget location.]]></phrase>
+  <phrase title="widget_pos.th_footer_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[UI.X: Extended footer]]></phrase>
+  <phrase title="widget_pos.th_sidebarNavigation_uix" version_id="2000031" version_string="2.0.0 Beta 1"><![CDATA[UI.X: Sidebar navigation]]></phrase>
+  <phrase title="widget_pos_desc.th_footer_uix" version_id="2000010" version_string="2.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="widget_pos_desc.th_sidebarNavigation_uix" version_id="2000031" version_string="2.0.0 Beta 1"><![CDATA[]]></phrase>
+</phrases>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<options>
+  <option option_id="HosgeldinpanelAcKapat" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="XenHosgeldinPanelAyarlari" display_order="10"/>
+  </option>
+  <option option_id="XenHgPanel_Konum" edit_format="radio" data_type="string">
+    <default_value>forumustu</default_value>
+    <edit_format_params>forumustu={{ phrase('widget_pos.forum_list_above_nodes') }}
+sidebarda={{ phrase('widget_pos.forum_list_sidebar') }}</edit_format_params>
+    <relation group_id="XenHosgeldinPanelAyarlari" display_order="30"/>
+  </option>
+  <option option_id="XenHgPanel_Show_avatar" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="XenHosgeldinPanelAyarlari" display_order="50"/>
+  </option>
+  <option option_id="XenHgPanel_Show_statistics" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="XenHosgeldinPanelAyarlari" display_order="70"/>
+  </option>
+  <option option_id="XenHgPanel_Show_username" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="XenHosgeldinPanelAyarlari" display_order="60"/>
+  </option>
+</options>

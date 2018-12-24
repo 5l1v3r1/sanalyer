@@ -1,0 +1,20 @@
+{
+    "src/addons/DayNightSwitcher/addon.json": "db72e49dac31b047551f0961c8a4e5b57b6783b5f59af4ca88e5a86326c72ff7",
+    "src/addons/DayNightSwitcher/EntityStructureExtender.php": "39a0dbc611af8a422c86d330c3fcf73423eb926c42d4ebe27bf602539e836a2c",
+    "src/addons/DayNightSwitcher/icon.png": "a01c00a0bbe8d0c1793c85ceb99689e1070d71cd6bf0b4a149fac078e0dab8c4",
+    "src/addons/DayNightSwitcher/LICENSE": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
+    "src/addons/DayNightSwitcher/Option/DayTime.php": "588fed510be5487d7e8cfa2c30ec6ead433cc758d1537a815fead1f834e0ef9e",
+    "src/addons/DayNightSwitcher/Option/StyleChooser.php": "83577306e9c3c717609dd1a351ab9fa2c5179cd43d4ec5d974d004cca631c322",
+    "src/addons/DayNightSwitcher/Setup.php": "6f8c42b384c5fecd20932b7bea55aebfd24d6720b76924b1ddb23665a9b880c6",
+    "src/addons/DayNightSwitcher/Switcher.php": "50e380125815d921a3b4a62d22c21ea017f15f4dcc28dc9db92ac7f0858417a4",
+    "src/addons/DayNightSwitcher/XF/Pub/Controller/Account.php": "caa83f4c5354ec687dca5c0d31728154be9e575ac5bb7e1109109d48b4cd4697",
+    "src/addons/DayNightSwitcher/XF/Pub/Controller/Misc.php": "99cf5463eb1f434bc94d032335486c418f501a2f3dffeec2ea0133cef155d1d7",
+    "src/addons/DayNightSwitcher/_data/class_extensions.xml": "0ce8fd3ab4d7adf42708ccf7a57589cec4997493d43fa5cfb494c1d6e0739c7a",
+    "src/addons/DayNightSwitcher/_data/code_event_listeners.xml": "94cc09f552a4e2477c777200ecf244007e5aae844922e169fe195682cadec85a",
+    "src/addons/DayNightSwitcher/_data/options.xml": "43e3bcd2b88e377c08e1026547492045f6394694882ea40cefa4dbef789517b2",
+    "src/addons/DayNightSwitcher/_data/option_groups.xml": "c9e371d52e2ce26676bbad1ae90cf65cba775c68e123fbed4d1bb3c61cc3cfbb",
+    "src/addons/DayNightSwitcher/_data/permissions.xml": "ecfc97fe763e38a7b525dbc78e1b7863e4433d6746f74d69fe7ad9e75723f4b1",
+    "src/addons/DayNightSwitcher/_data/phrases.xml": "ee6d081a0f4b15a4d993a3ea22c08a8b04f44cf672d73130946d842aa60cdb7b",
+    "src/addons/DayNightSwitcher/_data/templates.xml": "b0cad737de52fcf3f068434749b5ec5d4e7e60a5ab7314301230ae8e34efad57",
+    "src/addons/DayNightSwitcher/_data/template_modifications.xml": "f9b11054c76383d3b5c3f3777574c1ea900fa131bbc8e7f3bc1031463b719c51"
+}

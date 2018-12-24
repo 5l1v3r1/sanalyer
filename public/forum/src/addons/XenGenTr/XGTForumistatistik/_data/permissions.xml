@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+  <permission permission_group_id="XGT_istatistik_izin_grubu" permission_id="XGT_istatistik_gor" permission_type="flag" interface_group_id="XGT_istatistik_izin_grubu" display_order="1"/>
+  <permission permission_group_id="XGT_istatistik_izin_grubu" permission_id="XGT_istatistik_kullanici" permission_type="flag" interface_group_id="XGT_istatistik_izin_grubu" display_order="2"/>
+  <permission permission_group_id="XGT_istatistik_izin_grubu" permission_id="XGT_istatistikgor" permission_type="flag" interface_group_id="XGT_izin_grubu" display_order="1"/>
+</permissions>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<options>
+  <option option_id="th_apiKey_uix" edit_format="textbox" data_type="string">
+    <default_value/>
+    <relation group_id="th_uix" display_order="1"/>
+  </option>
+  <option option_id="th_deviantArtUrl_uix" edit_format="textbox" data_type="string">
+    <default_value/>
+    <relation group_id="th_socialMedia_uix" display_order="1"/>
+  </option>
+  <option option_id="th_enableFtp_uix" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="th_uix" display_order="1000"/>
+  </option>
+  <option option_id="th_facebookUrl_uix" edit_format="textbox" data_type="string">
+    <default_value/>
+    <relation group_id="th_socialMedia_uix" display_order="1"/>
+  </option>
+  <option option_id="th_gitHubUrl_uix" edit_format="textbox" data_type="string">
+    <default_value/>
+    <relation group_id="th_socialMedia_uix" display_order="1"/>
+  </option>
+  <option option_id="th_instagramUrl" edit_format="textbox" data_type="string">
+    <default_value/>
+    <relation group_id="th_socialMedia_uix" display_order="1"/>
+  </option>
+  <option option_id="th_linkedInUrl" edit_format="textbox" data_type="string">
+    <default_value/>
+    <relation group_id="th_socialMedia_uix" display_order="1"/>
+  </option>
+  <option option_id="th_materialAvatars_uix" edit_format="onoff" data_type="boolean">
+    <default_value>0</default_value>
+    <relation group_id="th_uix" display_order="1000"/>
+  </option>
+  <option option_id="th_newDirectoryPermissions_uix" edit_format="textbox" data_type="string">
+    <default_value>0755</default_value>
+    <relation group_id="th_uix" display_order="1"/>
+  </option>
+  <option option_id="th_pinterestUrl_uix" edit_format="textbox" data_type="string">
+    <default_value/>
+    <relation group_id="th_socialMedia_uix" display_order="1"/>
+  </option>
+  <option option_id="th_redditUrl_uix" edit_format="textbox" data_type="string">
+    <default_value/>
+    <relation group_id="th_socialMedia_uix" display_order="1"/>
+  </option>
+  <option option_id="th_sidebarCollapseTime_uix" edit_format="spinbox" data_type="integer">
+    <default_value>0</default_value>
+    <relation group_id="th_uix" display_order="100"/>
+  </option>
+  <option option_id="th_steamUrl_uix" edit_format="textbox" data_type="string">
+    <default_value/>
+    <relation group_id="th_socialMedia_uix" display_order="1"/>
+  </option>
+  <option option_id="th_tumblrUrl_uix" edit_format="textbox" data_type="string">
+    <default_value/>
+    <relation group_id="th_socialMedia_uix" display_order="1"/>
+  </option>
+  <option option_id="th_twitchUrl_uix" edit_format="textbox" data_type="string">
+    <default_value/>
+    <relation group_id="th_socialMedia_uix" display_order="1"/>
+  </option>
+  <option option_id="th_twitterUrl_uix" edit_format="textbox" data_type="string">
+    <default_value/>
+    <relation group_id="th_socialMedia_uix" display_order="1"/>
+  </option>
+  <option option_id="th_updateCheck_uix" edit_format="onoff" data_type="boolean">
+    <default_value>1</default_value>
+    <relation group_id="th_uix" display_order="10"/>
+  </option>
+  <option option_id="th_youtubeUrl_uix" edit_format="textbox" data_type="string">
+    <default_value/>
+    <relation group_id="th_socialMedia_uix" display_order="1"/>
+  </option>
+</options>

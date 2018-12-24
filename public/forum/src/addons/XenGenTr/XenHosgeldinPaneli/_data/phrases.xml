@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="GecerliSaat" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Your current time]]></phrase>
+  <phrase title="HosgeldinPaneli_Forum_istatistikleri" version_id="1000110" version_string="1.0.0"><![CDATA[Forum statistics]]></phrase>
+  <phrase title="HosgeldinPaneli_kullaniciadi" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Hello {username} , Welcome to your User Control Panel ]]></phrase>
+  <phrase title="okunmamis_mesajlar" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Unread conversations messages]]></phrase>
+  <phrase title="option.HosgeldinpanelAcKapat" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Enable plugin]]></phrase>
+  <phrase title="option.XenHgPanel_Konum" version_id="1010000" version_string="1.1.0"><![CDATA[Select location]]></phrase>
+  <phrase title="option.XenHgPanel_Show_avatar" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show avatars]]></phrase>
+  <phrase title="option.XenHgPanel_Show_statistics" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show statistics]]></phrase>
+  <phrase title="option.XenHgPanel_Show_username" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Show your username]]></phrase>
+  <phrase title="option_explain.HosgeldinpanelAcKapat" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[If selected, the plugin will work.]]></phrase>
+  <phrase title="option_explain.XenHgPanel_Konum" version_id="1010000" version_string="1.1.0"><![CDATA[Position the forums above the list or in the sidebar area.]]></phrase>
+  <phrase title="option_explain.XenHgPanel_Show_avatar" version_id="1000110" version_string="1.0.0"><![CDATA[If selected, users can see and change their avatars.]]></phrase>
+  <phrase title="option_explain.XenHgPanel_Show_statistics" version_id="1000110" version_string="1.0.0"><![CDATA[If selected, the user can view general statistics from the forum.]]></phrase>
+  <phrase title="option_explain.XenHgPanel_Show_username" version_id="1000110" version_string="1.0.0"><![CDATA[If selected, users see username and banner.]]></phrase>
+  <phrase title="option_group.XenHosgeldinPanelAyarlari" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] Welcome Panel]]></phrase>
+  <phrase title="option_group_description.XenHosgeldinPanelAyarlari" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] Welcome panel control options.]]></phrase>
+  <phrase title="permission.XenHosGeldinPanelYetki_XenHhGorebilirmi" version_id="1000110" version_string="1.0.0"><![CDATA[Can you see the welcome panel?]]></phrase>
+  <phrase title="permission_interface.XenHosGeldinPanelYetki" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] Welcome Panel]]></phrase>
+  <phrase title="style_prop.XenHg_Header" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Welcome - Header]]></phrase>
+  <phrase title="style_prop.XenHg_blok" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Welcome - Block]]></phrase>
+  <phrase title="style_prop.XenHg_footer" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Welcome - Footer]]></phrase>
+  <phrase title="style_prop_desc.XenHg_Header" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="style_prop_desc.XenHg_blok" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="style_prop_desc.XenHg_footer" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[]]></phrase>
+  <phrase title="style_prop_group.XenHosgeldinPanelDesing" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] Welcome Panel]]></phrase>
+  <phrase title="style_prop_group_desc.XenHosgeldinPanelDesing" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] Welcome Panel desing]]></phrase>
+  <phrase title="widget_def.hosgeldinpaneli" version_id="1000200" version_string="1.0.2"><![CDATA[[XenGenTr] Hosgeldin paneli]]></phrase>
+  <phrase title="widget_def.hosgeldinpaneli_sidebar" version_id="1010000" version_string="1.1.0"><![CDATA[[XenGenTr] Hosgeldin paneli - Sidebar]]></phrase>
+  <phrase title="widget_def_desc.hosgeldinpaneli" version_id="1000110" version_string="1.0.0"><![CDATA[[XenGenTr] Hosgeldin paneli widget.]]></phrase>
+  <phrase title="widget_def_desc.hosgeldinpaneli_sidebar" version_id="1010000" version_string="1.1.0"><![CDATA[[XenGenTr] Hosgeldin paneli sidebar widget.]]></phrase>
+  <phrase title="yeni_bildirim" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[New notifications]]></phrase>
+</phrases>

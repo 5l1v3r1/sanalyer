@@ -1,0 +1,16 @@
+{
+    "legacy_addon_id": "ProfileCover",
+    "title": "[tl] Profile Cover",
+    "description": "",
+    "version_id": 1000070,
+    "version_string": "1.0.0",
+    "dev": "Truonglv",
+    "dev_url": "http://nobita.me",
+    "faq_url": "",
+    "support_url": "",
+    "extra_urls": [
+
+    ],
+    "require": [],
+    "icon": ""
+}

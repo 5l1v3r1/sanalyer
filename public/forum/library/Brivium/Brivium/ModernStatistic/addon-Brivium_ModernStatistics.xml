@@ -1,0 +1,1863 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="Brivium_ModernStatistics" title="Brivium - Modern Statistics" version_string="2.3.1" version_id="2030100" url="http://brivium.com/" install_callback_class="Brivium_ModernStatistic_Installer" install_callback_method="install" uninstall_callback_class="Brivium_ModernStatistic_Installer" uninstall_callback_method="uninstall">
+  <admin_navigation>
+    <navigation navigation_id="BRMS_Statistics" parent_navigation_id="applications" display_order="1000" link="" admin_permission_id="" debug_only="0" hide_no_children="0"/>
+    <navigation navigation_id="BRMS_statisticAdd" parent_navigation_id="BRMS_Statistics" display_order="20" link="brms-statistics/add" admin_permission_id="" debug_only="0" hide_no_children="0"/>
+    <navigation navigation_id="BRMS_statisticList" parent_navigation_id="BRMS_Statistics" display_order="10" link="brms-statistics" admin_permission_id="" debug_only="0" hide_no_children="0"/>
+  </admin_navigation>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates>
+    <template title="BRMS_modern_statistic_delete"><![CDATA[<xen:title>{xen:phrase BRMS_confirm_deletion_of_modern_statistic}: {$modernStatistic.title}</xen:title>
+<xen:h1>{xen:phrase BRMS_confirm_deletion_of_modern_statistic}</xen:h1>
+
+<xen:navigation>
+	<xen:breadcrumb href="{xen:adminlink 'brms-statistics/edit', $modernStatistic}">{$modernStatistic.title}</xen:breadcrumb>
+</xen:navigation>
+
+<xen:require css="delete_confirmation.css" />
+
+<xen:form action="{xen:adminlink 'brms-statistics/delete'}" class="deleteConfirmForm formOverlay">
+	<p>{xen:phrase BRMS_please_confirm_that_you_want_to_delete_following_modern_statistic}:</p>
+	<strong><a href="{xen:adminlink 'brms-statistics/edit', $modernStatistic}">{$modernStatistic.title}</a></strong>
+	<input type="hidden" name="modern_statistic_id" value="{$modernStatistic.modern_statistic_id}" />
+	<input type="hidden" name="_xfConfirm" value="1" />
+	<xen:submitunit save="{xen:phrase delete}" />
+</xen:form>]]></template>
+    <template title="BRMS_modern_statistic_edit"><![CDATA[<xen:title>{xen:if $modernStatistic.modern_statistic_id, '{xen:phrase BRSTS_edit_modern_statistic}: {$modernStatistic.title}', '{xen:phrase BRSTS_create_new_modern_statistic}'}</xen:title>
+
+<xen:require css="BRMS_modern_statistic_edit.css" />
+<xen:if is="{$modernStatistic.modern_statistic_id}">
+	<xen:navigation>
+		<xen:breadcrumb href="{xen:adminlink brms-statistics}#{xen:helper listitemid, $modernStatistic.modern_statistic_id}">{$modernStatistic.title}</xen:breadcrumb>
+	</xen:navigation>
+</xen:if>
+
+<xen:form action="{xen:adminlink 'brms-statistics/save', $modernStatistic}" class="AutoValidator" data-redirect="yes">
+	<ul class="tabs Tabs" data-panes="#statisticPanes > li">
+		<li id="tabStatisticDatas" class="active"><a>{xen:phrase BRMS_modern_statistic_information}</a></li>
+		<li id="tabStatisticTabs"><a>{xen:phrase BRMS_display_this_statistic_while}</a></li>
+		<li id="tabStatisticTabs"><a>{xen:phrase BRMS_tabs_data}</a></li>
+	</ul>
+	<ul id="statisticPanes">
+		<li>
+			<xen:textboxunit label="{xen:phrase title}:" name="title" value="{$modernStatistic.title}" id="PrefixTitle" data-livetitletemplate="{xen:if {$modernStatistic.modern_statistic_id},
+				'{xen:phrase BRSTS_edit_modern_statistic}: <em>%s</em>',
+				'{xen:phrase BRSTS_create_new_modern_statistic}: <em>%s</em>'}" />
+
+			<fieldset>
+				<xen:checkboxunit label="">
+					<xen:option name="active" selected="{$modernStatistic.active}">{xen:phrase BRMS_active}</xen:option>
+				</xen:checkboxunit>
+				<xen:textboxunit name="position" hint="{xen:phrase BRMS_hook_name}" rows="2" inputclass="Elastic"  label="{xen:phrase position}:" value="{$modernStatistic.position}" size="20" >
+					<xen:explain>{xen:phrase BRMS_position_explain}</xen:explain>
+				</xen:textboxunit>
+			</fieldset>
+			<fieldset>
+				<xen:checkboxunit label="">
+					<xen:option name="usename_marke_up" label="{xen:phrase BRMS_username_make_up}" selected="{$modernStatistic.usename_marke_up}">
+						<xen:hint>{xen:phrase BRMS_username_make_up_explain}</xen:hint>
+					</xen:option>
+					<xen:option name="show_thread_prefix" label="{xen:phrase BRMS_show_thread_prefix}" selected="{$modernStatistic.show_thread_prefix}">
+						<xen:hint>{xen:phrase BRMS_show_thread_prefix_explain}</xen:hint>
+					</xen:option>
+					<xen:option name="show_resource_prefix" label="{xen:phrase BRMS_show_resource_prefix}" selected="{$modernStatistic.show_resource_prefix}">
+						<xen:hint>{xen:phrase BRMS_show_resource_prefix_explain}</xen:hint>
+					</xen:option>
+					<xen:option name="load_fisrt_tab" label="{xen:phrase BRMS_load_fisrt_tab_promptly}" selected="{$modernStatistic.load_fisrt_tab}">
+						<xen:hint>{xen:phrase BRMS_load_fisrt_tab_promptly_explain}</xen:hint>
+					</xen:option>
+				</xen:checkboxunit>
+
+				<xen:radiounit label="{xen:phrase BRMS_use_preview_tooltip}:" name="preview_tooltip" value="{xen:if {$modernStatistic.preview_tooltip}, {$modernStatistic.preview_tooltip}, 'custom_preview'}">
+					<xen:option value="disable">{xen:phrase disable}</xen:option>
+					<xen:option value="thread_preview">{xen:phrase BRMS_thread_preview}</xen:option>
+					<xen:option value="custom_preview">{xen:phrase BRMS_custom_preview}</xen:option>
+					<xen:explain>{xen:phrase BRMS_use_preview_tooltip_explain}</xen:explain>
+				</xen:radiounit>
+
+			</fieldset>
+			<fieldset>
+				<xen:spinboxunit label="{xen:phrase BRMS_thread_date_cut_off_default}:" name="thread_cutoff" value="{$modernStatistic.thread_cutoff}" min="0" >
+					<xen:explain>{xen:phrase BRMS_thread_date_cut_off_default_explain}</xen:explain>
+				</xen:spinboxunit>
+
+				<xen:checkboxunit label="">
+					<xen:option label="{xen:phrase BRMS_tabs_cache_time}" name="enable_cache" selected="{$modernStatistic.enable_cache}">
+						<xen:disabled>
+							<xen:spinbox name="cache_time" value="{xen:if {$modernStatistic.cache_time}, {$modernStatistic.cache_time}, 1}" min="1" max="" step="1" />
+						</xen:disabled>
+					</xen:option>
+					<xen:explain>{xen:phrase BRMS_tabs_cache_time_explain}</xen:explain>
+				</xen:checkboxunit>
+
+				<xen:spinboxunit label="{xen:phrase BRMS_update_time}:" name="auto_update" value="{$modernStatistic.auto_update}" min="0" >
+					<xen:explain>{xen:phrase BRMS_update_time_explain}</xen:explain>
+				</xen:spinboxunit>
+
+				<xen:checkboxunit label="{xen:phrase BRMS_item_limits}:" hint="{xen:phrase BRMS_item_limits_explain}">
+					<xen:option name="item_limit[enabled]" value="1" selected="{$itemLimit.enabled}">
+						<xen:label>{xen:phrase enabled}</xen:label>
+						<xen:hint>{xen:phrase BRMS_allow_member_change_item_limit}</xen:hint>
+						<xen:disabled>
+							<ul>
+								<xen:if is="{$itemLimit.value}">
+									<xen:foreach loop="$itemLimit.value" key="$counter" value="$item">
+										<li class="ModernStatisticLimit">
+											<xen:textbox name="item_limit[value][]" value="{$item}" placeholder="{xen:phrase number}" size="20" />
+										</li>
+									</xen:foreach>
+								</xen:if>
+								<li class="ModernStatisticLimit">
+									<xen:textbox name="item_limit[value][]" value="" placeholder="{xen:phrase number}" size="20" />
+								</li>
+							</ul>
+							<div style="margin-bottom: 5px"><input type="button" value="{xen:phrase BRMS_add_another_limit_step}" class="button smallButton FieldAdder" data-source="li.ModernStatisticLimit" /></div>
+						</xen:disabled>
+					</xen:option>
+					<xen:html>
+						<ul style="padding:10px 0">
+							<li>
+								<label for="ctrl_item_limitdefault">{xen:phrase default}
+								<xen:spinbox name="item_limit[default]" value="{$itemLimit.default}" min="1" size="20" />
+								</label>
+							</li>
+						</ul>
+					</xen:html>
+				</xen:checkboxunit>
+
+			</fieldset>
+			<fieldset>
+				<xen:radiounit label="{xen:phrase BRMS_control_navigation_position}:" name="control_position" value="{xen:if {$modernStatistic.control_position}, {$modernStatistic.control_position}, 'brmsLeftTabs'}">
+					<xen:option value="brmsLeftTabs">{xen:phrase left}</xen:option>
+					<xen:option value="brmsTopTabs">{xen:phrase top}</xen:option>
+					<xen:option value="brmsRightTabs">{xen:phrase right}</xen:option>
+					<xen:explain>{xen:phrase BRMS_control_navigation_position_explain}</xen:explain>
+				</xen:radiounit>
+
+				<xen:radiounit label="{xen:phrase BRMS_style_display}:" name="style_display" value="{$modernStatistic.style_display}">
+					<xen:option value="dark">{xen:phrase BRMS_dark}</xen:option>
+					<xen:option value="">{xen:phrase BRMS_light}</xen:option>
+					<xen:explain>{xen:phrase BRMS_style_display_explain}</xen:explain>
+				</xen:radiounit>
+				<xen:if is="{$styles}">
+				<xen:controlunit label="{xen:phrase BRMS_style_for_board_style}:">
+					<xen:foreach loop="$styles" value="$style">
+					<xen:selectunit label="{$style.title}:" name="style_settings[{$style.style_id}]" value="{$modernStatistic.styleSettings.{$style.style_id}}">
+						<xen:option value="dark">{xen:phrase BRMS_dark}</xen:option>
+						<xen:option value="light">{xen:phrase BRMS_light}</xen:option>
+						<xen:option value="">{xen:phrase default}</xen:option>
+					</xen:selectunit>
+					</xen:foreach>
+				</xen:controlunit>
+				</xen:if>
+
+				<xen:checkboxunit label="">
+					<xen:option name="allow_user_setting" label="{xen:phrase BRMS_allow_member_setting}" selected="{$modernStatistic.allow_user_setting}">
+						<xen:hint>{xen:phrase BRMS_allow_member_setting_explain}</xen:hint>
+					</xen:option>
+
+					<xen:option name="allow_change_layout" label="{xen:phrase BRMS_allow_change_layout}" selected="{$modernStatistic.allow_change_layout}">
+						<xen:hint>{xen:phrase BRMS_allow_change_layout_explain}</xen:hint>
+					</xen:option>
+					<xen:option name="allow_manual_refresh" label="{xen:phrase BRMS_allow_manual_refresh}" selected="{$modernStatistic.allow_manual_refresh}">
+						<xen:hint>{xen:phrase BRMS_allow_manual_refresh_explain}</xen:hint>
+					</xen:option>
+				</xen:checkboxunit>
+			</fieldset>
+		</li>
+		<li>
+			<fieldset>
+				<xen:textboxunit name="modern_criteria[template_name]" rows="2" inputclass="Elastic"  label="{xen:phrase template_title}:" value="{$modernStatistic.modernCriteria.template_name}" size="20" >
+					<xen:explain>{xen:phrase BRMS_modern_criteria_template_name_explain}</xen:explain>
+				</xen:textboxunit>
+				<xen:selectunit label="{xen:phrase BRMS_include_nodes}:" name="modern_criteria[node_ids]" value="{xen:raw $modernStatistic.modernCriteria.node_ids}" size="15" multiple="true">
+					<xen:option value="">({xen:phrase all})</xen:option>
+					<xen:optgroup label="">
+						<xen:options source="$nodeList" />
+					</xen:optgroup>
+					<xen:explain>{xen:phrase BRMS_modern_criteria_node_ids_explain}</xen:explain>
+				</xen:selectunit>
+				<xen:selectunit label="{xen:phrase BRMS_exclude_groups}:" name="modern_criteria[user_group_ids]" value="{xen:raw $modernStatistic.modernCriteria.user_group_ids}" size="10" multiple="true">
+					<xen:option value="">({xen:phrase none})</xen:option>
+					<xen:optgroup label="">
+						<xen:options source="$userGroupOptions" />
+					</xen:optgroup>
+					<xen:explain>{xen:phrase BRMS_exclude_groups_explain}</xen:explain>
+				</xen:selectunit>
+			</fieldset>
+		</li>
+		<li>
+			<fieldset>
+				<xen:require js="js/brivium/ModernStatistic/options_tab.js" />
+				<h3 class="subHeading">{xen:phrase BRMS_tabs_selector}:<div class="collapse button BRMSCollapse">{xen:phrase BRMS_toggle_collapse}</div></h3>
+				<ul class="listTabs">
+					<xen:if is="{$tabsData}">
+					<xen:foreach loop="$tabsData" key="$counter" value="$tabData">
+						<xen:include template="BRMS_modern_statistic_edit_tab">
+							<xen:set var="$counter" value="{$counter}" />
+						</xen:include>
+					</xen:foreach>
+					<xen:set var="$tabData" value="0" />
+					</xen:if>
+					<xen:include template="BRMS_modern_statistic_edit_tab">
+						<xen:set var="$brmsListener" value="1" />
+						<xen:map from="$defaultTabData" to="$tabData" />
+						<xen:set var="$counter" value="{$nextCounter}" />
+					</xen:include>
+				</ul>
+				<p class="explain">{xen:phrase BRMS_tabs_selector_explain}</p>
+			</fieldset>
+		</li>
+	</ul>
+	<input type="hidden" value="{$lastOrder}" class="lastOrderHolder" />
+	<xen:submitunit save="{xen:phrase save}">
+		<xen:if is="{$modernStatistic.modern_statistic_id}">
+			<input type="button" value="{xen:phrase delete}..." accesskey="d" class="button OverlayTrigger"
+				data-href="{xen:adminlink 'brms-statistics/delete', $modernStatistic}" />
+		</xen:if>
+	</xen:submitunit>
+</xen:form>]]></template>
+    <template title="BRMS_modern_statistic_edit.css"><![CDATA[.ctrlUnit > dd > * > li.sectionMain{
+	padding-left: 10px; 
+}
+.hiddenContainer{
+}
+.tabFields{
+	margin-top: 10px;
+}
+.collapse{
+	float: right;
+	margin-top: -3px;
+	max-height: 22px;
+	overflow: hidden;
+}
+.collapse.button {
+	padding-top: 0;
+	padding-bottom: 0;
+	height: 19px;
+	line-height: 19px;
+	font-size: 11px;
+}
+.displayOrder{
+	float: right;
+	margin-top: -7px;
+}
+.displayOrder .textCtrl.number{
+	width: 50px;
+}
+.tabHeader{
+	display: inline-block;
+}]]></template>
+    <template title="BRMS_modern_statistic_edit_tab"><![CDATA[<li class="sectionMain BRMSTabListener{xen:if '{$brmsListener}',' BRMSNewTabListener'}">
+	<div class="textHeading">
+		<div class="tabHeader"></div>
+		<div class="displayOrder">{xen:phrase display_order}: <xen:textbox name="tab_data[{$counter}][display_order]" value="{$tabData.display_order}" inputclass="orderValue" size="5" /></div>
+	</div>
+	<div class="tabContent hideParent">
+		<xen:selectunit label="{xen:phrase BRMS_tab_type}:" name="tab_data[{$counter}][kind]" inputclass="autoSize hiddenSelector tabKind" value="{xen:raw $tabData.kind}" >
+			<xen:option value="">{xen:phrase none}</xen:option>
+			<xen:options source="{$listKinds}" />
+		</xen:selectunit>
+		<xen:textboxunit label="{xen:phrase title}" name="tab_data[{$counter}][title]" value="{$tabData.title}" placeholder="{xen:phrase title}" size="20" />
+		<xen:checkboxunit label="">
+			<xen:option name="tab_data[{$counter}][active]" selected="{$tabData.active}">{xen:phrase BRMS_active}</xen:option>
+		</xen:checkboxunit>
+		<div class="tabFields hideParent hiddenContainer hiddenContainer_thread">
+			<xen:selectunit label="{xen:phrase BRMS_thread_type}:" name="tab_data[{$counter}][type]" inputclass="autoSize hiddenSelector tabType" value="{xen:raw $tabData.type}" >
+				<xen:option value="">{xen:phrase none}</xen:option>
+				<xen:options source="{$listTypeThreads}" />
+			</xen:selectunit>
+			<div class="tabFields hiddenContainer hiddenContainer_my_threads hiddenContainer_sticky_threads">
+				<xen:selectunit label="{xen:phrase sort_threads_by}:" name="tab_data[{$counter}][order_type]" inputclass="autoSize" value="{xen:raw $tabData.order_type}" >
+					<xen:option value="">{xen:phrase last_message_time}</xen:option>
+					<xen:options source="{$listThreadOrders}" />
+				</xen:selectunit>
+				<xen:selectunit label="{xen:phrase order_threads_in}:" name="tab_data[{$counter}][order_direction]" inputclass="autoSize" value="{xen:raw $tabData.order_direction}" >
+					<xen:option value="">{xen:phrase descending_order}</xen:option>
+					<xen:option value="asc">{xen:phrase ascending_order}</xen:option>
+				</xen:selectunit>
+			</div>
+			<div class="tabFields hiddenContainer hiddenContainer_thread_hotest hiddenContainer_most_reply">
+				<xen:spinboxunit label="{xen:phrase BRMS_thread_date_cut_off}:" name="tab_data[{$counter}][cut_off]" value="{xen:raw $tabData.cut_off}" min="0" tep="1" />
+			</div>
+			<div class="tabFields">
+				<xen:selectunit label="{xen:phrase forum}:" name="tab_data[{$counter}][forums]" value="{xen:raw $tabData.forums}" size="5" multiple="true">
+					<xen:option value="">({xen:phrase all})</xen:option>
+					<xen:options source="$forumList" />
+				</xen:selectunit>
+			</div>
+			<div class="tabFields">
+				<xen:selectunit label="{xen:phrase prefix}:" name="tab_data[{$counter}][prefix_id]" value="{xen:raw $tabData.prefix_id}" size="5" multiple="true">
+					<xen:option value="0">({xen:phrase any})</xen:option>
+					<xen:option value="-1">({xen:phrase none})</xen:option>
+					<xen:options source="$prefixes" />
+				</xen:selectunit>
+			</div>
+			<xen:checkboxunit label="{xen:phrase state}:">
+				<xen:option name="tab_data[{$counter}][discussion_state][visible]" value="visible" selected="{$tabData.discussion_state}||{$tabData.discussion_state.visible}">{xen:phrase visible}</xen:option>
+				<xen:option name="tab_data[{$counter}][discussion_state][deleted]" value="deleted" selected="{$tabData.discussion_state.deleted}">{xen:phrase deleted}</xen:option>
+				<xen:option name="tab_data[{$counter}][discussion_state][moderated]" value="moderated" selected="{$tabData.discussion_state.moderated}">{xen:phrase moderated}</xen:option>
+			</xen:checkboxunit>
+			<xen:checkboxunit label="{xen:phrase locked}:" name="tab_data[{$counter}][discussion_open]">
+				<xen:option name="tab_data[{$counter}][discussion_open][unlocked]" value="unlocked" selected="{$tabData.discussion_open.unlocked}">{xen:phrase unlocked}</xen:option>
+				<xen:option name="tab_data[{$counter}][discussion_open][locked]" value="locked" selected="{$tabData.discussion_open.locked}">{xen:phrase locked}</xen:option>
+			</xen:checkboxunit>
+		</div>
+		<xen:if is="{$resourceVersion}">
+			<div class="tabFields hiddenContainer hiddenContainer_resource">
+				<xen:selectunit label="{xen:phrase BRMS_resource_type}:" name="tab_data[{$counter}][type_resource]" inputclass="autoSize tabType" value="{xen:raw $tabData.type}" >
+					<xen:option value="">{xen:phrase none}</xen:option>
+					<xen:options source="{$listTypeResources}" />
+				</xen:selectunit>
+				<div class="tabFields">
+				<xen:selectunit label="{xen:phrase BRMS_categories}:" name="tab_data[{$counter}][categories]" value="{xen:raw $tabData.categories}" size="5" multiple="true">
+					<xen:option value="">({xen:phrase all})</xen:option>
+					<xen:options source="$categoryList" />
+				</xen:selectunit>
+				</div>
+				<div class="tabFields">
+					<xen:selectunit label="{xen:phrase prefix}:" name="tab_data[{$counter}][resource_prefix_id]" value="{xen:raw $tabData.resource_prefix_id}" size="5" multiple="true">
+						<xen:option value="0">({xen:phrase any})</xen:option>
+						<xen:option value="-1">({xen:phrase none})</xen:option>
+						<xen:options source="$resourcePrefixes" />
+					</xen:selectunit>
+				</div>
+				<xen:checkboxunit label="{xen:phrase state}:">
+					<xen:option name="tab_data[{$counter}][resource_state][visible]" value="visible" selected="!{$tabData.resource_state}||{$tabData.resource_state.visible}">{xen:phrase visible}</xen:option>
+					<xen:option name="tab_data[{$counter}][resource_state][deleted]" value="deleted" selected="{$tabData.resource_state.deleted}">{xen:phrase deleted}</xen:option>
+					<xen:option name="tab_data[{$counter}][resource_state][moderated]" value="moderated" selected="{$tabData.resource_state.moderated}">{xen:phrase moderated}</xen:option>
+				</xen:checkboxunit>
+			</div>
+		</xen:if>
+		<div class="tabFields hideParent hiddenContainer hiddenContainer_user">
+			<xen:selectunit label="{xen:phrase BRMS_user_type}:" name="tab_data[{$counter}][type_user]" inputclass="autoSize hiddenSelector tabType" value="{xen:raw $tabData.type}" >
+				<xen:option value="">{xen:phrase none}</xen:option>
+				<xen:options source="{$listTypeUsers}" />
+			</xen:selectunit>
+			<xen:if is="{$currencyOptions}">
+			<div class="tabFields hiddenContainer hiddenContainer_user_richest hiddenContainer_user_poorest">
+				<xen:selectunit label="{xen:phrase BRC_currencies}:" name="tab_data[{$counter}][currency_id]" inputclass="autoSize" value="{xen:raw $tabData.currency_id}" >
+					<xen:options source="{$currencyOptions}" />
+				</xen:selectunit>
+			</div>
+			</xen:if>
+			<div class="tabFields">
+			<xen:selectunit label="{xen:phrase user_groups}:" name="tab_data[{$counter}][user_groups]" value="{xen:raw $tabData.user_groups}" size="5" multiple="true">
+				<xen:option value="">({xen:phrase all})</xen:option>
+				<xen:optgroup label="">
+					<xen:options source="$userGroupOptions" />
+				</xen:optgroup>
+			</xen:selectunit>
+			</div>
+			<div class="tabFields">
+			<xen:checkboxunit label="{xen:phrase gender}:" name="tab_data[{$counter}][gender]">
+				<xen:option name="tab_data[{$counter}][gender][male]" value="male" selected="{$tabData.gender.male}">{xen:phrase male}</xen:option>
+				<xen:option name="tab_data[{$counter}][gender][female]" value="female" selected="{$tabData.gender.female}">{xen:phrase female}</xen:option>
+				<xen:option name="tab_data[{$counter}][gender][unspecified]" value="" selected="{$tabData.gender.unspecified}">({xen:phrase unspecified})</xen:option>
+			</xen:checkboxunit>
+			</div>
+			<div class="tabFields">
+			<xen:checkboxunit label="{xen:phrase user_state}:" name="tab_data[{$counter}][user_state]">
+				<xen:option name="tab_data[{$counter}][user_state][valid]" value="male" selected="{$tabData.user_state.valid}">{xen:phrase valid}</xen:option>
+				<xen:option name="tab_data[{$counter}][user_state][email_confirm]" value="male" selected="{$tabData.user_state.email_confirm}">{xen:phrase awaiting_email_confirmation}</xen:option>
+				<xen:option name="tab_data[{$counter}][user_state][email_confirm_edit]" value="male" selected="{$tabData.user_state.email_confirm_edit}">{xen:phrase awaiting_email_confirmation_from_edit}</xen:option>
+				<xen:option name="tab_data[{$counter}][user_state][email_bounce]" value="male" selected="{$tabData.user_state.email_bounce}">{xen:phrase email_invalid_bounced}</xen:option>
+				<xen:option name="tab_data[{$counter}][user_state][moderated]" value="male" selected="{$tabData.user_state.moderated}">{xen:phrase awaiting_moderation}</xen:option>
+			</xen:checkboxunit>
+			</div>
+		</div>
+	</div>
+</li>]]></template>
+    <template title="BRMS_modern_statistic_list"><![CDATA[<xen:title>{xen:phrase BRMS_modern_statistics}</xen:title>
+
+<xen:topctrl><a href="{xen:adminlink brms-statistics/add}" class="button">+ {xen:phrase BRMS_create_new_modern_statistic}</a></xen:topctrl>
+
+<xen:require css="filter_list.css" />
+<xen:require js="js/xenforo/filter_list.js" />
+
+<xen:form action="{xen:adminlink brms-statistics}" class="section">
+	<xen:if is="{$modernStatistics}">
+
+		<h2 class="subHeading">
+			<xen:include template="filter_list_controls" />
+			{xen:phrase BRMS_modern_statistics}
+		</h2>
+
+		<ol class="FilterList">
+			<xen:foreach loop="$modernStatistics" value="$modernStatistic">
+				<xen:listitem
+					id="{$modernStatistic.modern_statistic_id}"
+					label="{$modernStatistic.title}"
+					href="{xen:adminlink brms-statistics/edit, $modernStatistic}"
+					delete="{xen:adminlink brms-statistics/delete, $modernStatistic}">
+					<xen:html>
+						<span class="secondaryContent">{xen:if $modernStatistic.active,'{xen:phrase BRMS_active}','{xen:phrase BRMS_inactive}'}</span>
+					</xen:html>
+				</xen:listitem>
+			</xen:foreach>
+		</ol>
+
+		<p class="sectionFooter">{xen:phrase showing_x_of_y_items, 'count=<span class="FilterListCount">{xen:count $modernStatistics}</span>', 'total={xen:count $modernStatistics}'}</p>
+
+	<xen:else />
+		<div class="noResults">{xen:phrase BRMS_no_modern_statistics_have_been_created_yet}</div>
+	</xen:if>
+</xen:form>]]></template>
+  </admin_templates>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners>
+    <listener event_id="init_dependencies" execute_order="10" callback_class="Brivium_ModernStatistic_EventListeners_Listener" callback_method="initDependencies" active="1" hint="" description="initDependencies"/>
+    <listener event_id="template_create" execute_order="10" callback_class="Brivium_ModernStatistic_EventListeners_Listener" callback_method="templateCreate" active="1" hint="" description="templateCreate"/>
+    <listener event_id="template_hook" execute_order="10" callback_class="Brivium_ModernStatistic_EventListeners_Listener" callback_method="templateHook" active="1" hint="" description="templateHook"/>
+  </code_event_listeners>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups/>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="admin_navigation_BRMS_statisticAdd" version_id="1080100" version_string="1.8.1"><![CDATA[Create New Statistic]]></phrase>
+    <phrase title="admin_navigation_BRMS_statisticList" version_id="1080100" version_string="1.8.1"><![CDATA[List Statistics]]></phrase>
+    <phrase title="admin_navigation_BRMS_Statistics" version_id="1080100" version_string="1.8.1"><![CDATA[Modern Statistics]]></phrase>
+    <phrase title="BRMS_active" version_id="110" version_string="1.1.0"><![CDATA[Active]]></phrase>
+    <phrase title="BRMS_add_another_limit_step" version_id="110" version_string="1.1.0"><![CDATA[Add another limit step]]></phrase>
+    <phrase title="BRMS_allow_change_layout" version_id="1080100" version_string="1.8.1"><![CDATA[Allow Member Change Layout]]></phrase>
+    <phrase title="BRMS_allow_change_layout_explain" version_id="1080100" version_string="1.8.1"><![CDATA[Allow member to change layout of statistics]]></phrase>
+    <phrase title="BRMS_allow_manual_refresh" version_id="1080100" version_string="1.8.1"><![CDATA[Allow Member Refresh Statistic Manual]]></phrase>
+    <phrase title="BRMS_allow_manual_refresh_explain" version_id="1080100" version_string="1.8.1"><![CDATA[Allow member to refresh statistics manual]]></phrase>
+    <phrase title="BRMS_allow_member_change_item_limit" version_id="110" version_string="1.1.0"><![CDATA[Allow member change item limit options]]></phrase>
+    <phrase title="BRMS_allow_member_setting" version_id="2020100" version_string="2.2.1"><![CDATA[Allow Member Setting]]></phrase>
+    <phrase title="BRMS_allow_member_setting_explain" version_id="2020100" version_string="2.2.1"><![CDATA[Allow member to show or hide this modern statistic]]></phrase>
+    <phrase title="BRMS_below_page_title" version_id="1050200" version_string="1.5.2"><![CDATA[ Below page title]]></phrase>
+    <phrase title="BRMS_below_top_breadcrumb" version_id="1050200" version_string="1.5.2"><![CDATA[Below breadcrumb top]]></phrase>
+    <phrase title="BRMS_categories" version_id="2020300" version_string="2.2.3"><![CDATA[Categories]]></phrase>
+    <phrase title="BRMS_confirm_deletion_of_modern_statistic" version_id="1080100" version_string="1.8.1"><![CDATA[Confirm Deleteion of Modern Statistic]]></phrase>
+    <phrase title="BRMS_content_loading" version_id="100" version_string="1.0.0"><![CDATA[Content Loading]]></phrase>
+    <phrase title="BRMS_control_navigation_position" version_id="1080100" version_string="1.8.1"><![CDATA[Control Navigation Position]]></phrase>
+    <phrase title="BRMS_control_navigation_position_explain" version_id="1080100" version_string="1.8.1"><![CDATA[Position for control navigation]]></phrase>
+    <phrase title="BRMS_create_new_modern_statistic" version_id="1080100" version_string="1.8.1"><![CDATA[Create New Modern Statistics]]></phrase>
+    <phrase title="BRMS_custom_preview" version_id="1050200" version_string="1.5.2"><![CDATA[Custom Preview]]></phrase>
+    <phrase title="BRMS_dark" version_id="1050200" version_string="1.5.2"><![CDATA[Dark]]></phrase>
+    <phrase title="BRMS_display_this_statistic_while" version_id="2000000" version_string="2.0.0"><![CDATA[Display This Statistic While...]]></phrase>
+    <phrase title="BRMS_entries" version_id="100" version_string="1.0.0"><![CDATA[Entries]]></phrase>
+    <phrase title="BRMS_exclude_groups" version_id="2000000" version_string="2.0.0"><![CDATA[Exclude Groups]]></phrase>
+    <phrase title="BRMS_exclude_groups_explain" version_id="2000000" version_string="2.0.0"><![CDATA[Which groups would you like to be hide this statistic.]]></phrase>
+    <phrase title="BRMS_hook_name" version_id="2000000" version_string="2.0.0"><![CDATA[Hook name]]></phrase>
+    <phrase title="BRMS_inactive" version_id="2000000" version_string="2.0.0"><![CDATA[Inactive]]></phrase>
+    <phrase title="BRMS_include_nodes" version_id="2000000" version_string="2.0.0"><![CDATA[Include Nodes]]></phrase>
+    <phrase title="BRMS_item_limits" version_id="1080100" version_string="1.8.1"><![CDATA[Item Limits]]></phrase>
+    <phrase title="BRMS_item_limits_explain" version_id="1080100" version_string="1.8.1"><![CDATA[Number of threads that will be displayed. Choosing this value higher will use more server resources.]]></phrase>
+    <phrase title="BRMS_latest_banned_members" version_id="2000000" version_string="2.0.0"><![CDATA[Latest Banned Members]]></phrase>
+    <phrase title="BRMS_latest_members" version_id="2000000" version_string="2.0.0"><![CDATA[Latest Members]]></phrase>
+    <phrase title="BRMS_latest_replies" version_id="100" version_string="1.0.0"><![CDATA[Latest Replies]]></phrase>
+    <phrase title="BRMS_latest_replies_description" version_id="100" version_string="1.0.0"><![CDATA[The latest reply]]></phrase>
+    <phrase title="BRMS_latest_threads" version_id="1020000" version_string="1.2.0"><![CDATA[Latest Threads]]></phrase>
+    <phrase title="BRMS_latest_threads_description" version_id="100" version_string="1.0.0"><![CDATA[The latest threads]]></phrase>
+    <phrase title="BRMS_light" version_id="1050200" version_string="1.5.2"><![CDATA[Light]]></phrase>
+    <phrase title="BRMS_load_fisrt_tab_promptly" version_id="1080100" version_string="1.8.1"><![CDATA[Load First Tab Promptly]]></phrase>
+    <phrase title="BRMS_load_fisrt_tab_promptly_explain" version_id="1080100" version_string="1.8.1"><![CDATA[If enabled the first tab will load with template on the first time. Otherwise this will load with AJAX.]]></phrase>
+    <phrase title="BRMS_modern_criteria_node_ids_explain" version_id="2000000" version_string="2.0.0"><![CDATA[If hook and template is node content like Forum list page, Forum view page, Thread view page, Category view page.... Select node you want to display this. If not it will display with all node.
+=> Select the forums you want to display statistics while hooks and templates are node content (forum_list, forum_view, thread_view, category_view...). <br/>Leave nothing selected to include all forums.]]></phrase>
+    <phrase title="BRMS_modern_criteria_template_name_explain" version_id="2000000" version_string="2.0.0"><![CDATA[Input list of templates that you want to display in with hook from statistic's position. <br/>
+You can leave it blank to display in all templates that contain hook from position. <br/>
+Use spaces or line break between templates. <br/>
+For example: <br/>
+- forum_list (the index page)<br/>
+- forum_view (the individual forum page)<br/>
+- thread_view (the thread page)<br/>
+- member_view (the individual member page)<br/>]]></phrase>
+    <phrase title="BRMS_modern_statistics" version_id="1080100" version_string="1.8.1"><![CDATA[Modern Statistics]]></phrase>
+    <phrase title="BRMS_modern_statistic_information" version_id="1080100" version_string="1.8.1"><![CDATA[Modern Statistic Information]]></phrase>
+    <phrase title="BRMS_modern_statistisc_preferences" version_id="2020000" version_string="2.2.0"><![CDATA[Modern Statistic Preferences]]></phrase>
+    <phrase title="BRMS_most_replied_threads" version_id="100" version_string="1.0.0"><![CDATA[Most Replied Threads]]></phrase>
+    <phrase title="BRMS_most_replied_threads_description" version_id="100" version_string="1.0.0"><![CDATA[The most replied threads]]></phrase>
+    <phrase title="BRMS_most_viewed_threads" version_id="100" version_string="1.0.0"><![CDATA[Most Viewed Threads]]></phrase>
+    <phrase title="BRMS_most_viewed_threads_description" version_id="100" version_string="1.0.0"><![CDATA[The most viewed threads]]></phrase>
+    <phrase title="BRMS_must_have_value_for_item_limit" version_id="110" version_string="1.1.0"><![CDATA[Sorry, you must enter at least one value for item limit options]]></phrase>
+    <phrase title="BRMS_must_select_currency" version_id="2010000" version_string="2.1.0"><![CDATA[You must select currency for richest or poorest users.]]></phrase>
+    <phrase title="BRMS_my_threads" version_id="1050000" version_string="1.5.0"><![CDATA[My Threads]]></phrase>
+    <phrase title="BRMS_no_modern_statistics_have_been_created_yet" version_id="2000000" version_string="2.0.0"><![CDATA[No modern statistics have been created yet.]]></phrase>
+    <phrase title="BRMS_no_modern_statistics_to_display" version_id="2020000" version_string="2.2.0"><![CDATA[There are no comments to display.]]></phrase>
+    <phrase title="BRMS_please_confirm_that_you_want_to_delete_following_modern_statistic" version_id="1080100" version_string="1.8.1"><![CDATA[Please confirm that you want to delete the following modern statistic]]></phrase>
+    <phrase title="BRMS_please_enter_valid_item_limit" version_id="1080100" version_string="1.8.1"><![CDATA[Please enter valid item limit]]></phrase>
+    <phrase title="BRMS_please_select_at_least_one_tab" version_id="1080100" version_string="1.8.1"><![CDATA[Please select at least one tab]]></phrase>
+    <phrase title="BRMS_please_select_valid_position_to_display" version_id="1080100" version_string="1.8.1"><![CDATA[Please select valid position to display]]></phrase>
+    <phrase title="BRMS_position_explain" version_id="2000000" version_string="2.0.0"><![CDATA[Input list of hooks where Modern Statistic will be displayed on. Use spaces or line break between positions. <br/>
+For example: <br/>
+- "page_container_content_top" statistics visible at the top of the page.<br/>
+- "ad_below_top_breadcrumb" statistics visible at below top breadcrumb.<br/>
+- "page_container_content_title_bar" statistics visible at below page title.<br/>
+- "ad_sidebar_top" statistic visible at the top of the sidebar.<br/>]]></phrase>
+    <phrase title="BRMS_resource_type" version_id="2020300" version_string="2.2.3"><![CDATA[Resource Type]]></phrase>
+    <phrase title="BRMS_show_resource_prefix" version_id="1080100" version_string="1.8.1"><![CDATA[Show Resource prefix]]></phrase>
+    <phrase title="BRMS_show_resource_prefix_explain" version_id="1080100" version_string="1.8.1"><![CDATA[Enable this option will use more server resources]]></phrase>
+    <phrase title="BRMS_show_thread_prefix" version_id="1080100" version_string="1.8.1"><![CDATA[Show Thread prefix]]></phrase>
+    <phrase title="BRMS_show_thread_prefix_explain" version_id="1080100" version_string="1.8.1"><![CDATA[Enable this option will use more server resources]]></phrase>
+    <phrase title="BRMS_sticky_threads" version_id="1050200" version_string="1.5.2"><![CDATA[Sticky Threads]]></phrase>
+    <phrase title="BRMS_style_display" version_id="1080100" version_string="1.8.1"><![CDATA[Style Display]]></phrase>
+    <phrase title="BRMS_style_display_explain" version_id="1080100" version_string="1.8.1"><![CDATA[For compatible with other forum color]]></phrase>
+    <phrase title="BRMS_style_for_board_style" version_id="2020000" version_string="2.2.0"><![CDATA[Style for Board Style]]></phrase>
+    <phrase title="BRMS_tabs_cache_time" version_id="1080100" version_string="1.8.1"><![CDATA[Tabs Cache Time]]></phrase>
+    <phrase title="BRMS_tabs_cache_time_explain" version_id="1080100" version_string="1.8.1"><![CDATA[Tabs will cache with specify user. Enter number of minutes of caching time. If enabled, Update Time and Custom Item Limit will be disabled. Tabs will load with default value for item limit.]]></phrase>
+    <phrase title="BRMS_tabs_data" version_id="1080100" version_string="1.8.1"><![CDATA[Tabs Data]]></phrase>
+    <phrase title="BRMS_tabs_selector" version_id="1080100" version_string="1.8.1"><![CDATA[Tabs Selector
+]]></phrase>
+    <phrase title="BRMS_tabs_selector_explain" version_id="1080100" version_string="1.8.1"><![CDATA[Select and config tabs you want to display]]></phrase>
+    <phrase title="BRMS_tab_type" version_id="2020300" version_string="2.2.3"><![CDATA[Tab Type]]></phrase>
+    <phrase title="BRMS_thread_date_cut_off" version_id="1060000" version_string="1.6.0"><![CDATA[Thread Date Cut Off]]></phrase>
+    <phrase title="BRMS_thread_date_cut_off_default" version_id="1080100" version_string="1.8.1"><![CDATA[Thread Date Cut Off Default]]></phrase>
+    <phrase title="BRMS_thread_date_cut_off_default_explain" version_id="1080100" version_string="1.8.1"><![CDATA[Enter the number of days to cut off the list of most view and most reply threads. Enter 0 If you want to include all threads from beginning.]]></phrase>
+    <phrase title="BRMS_thread_preview" version_id="1050200" version_string="1.5.2"><![CDATA[Thread Preview]]></phrase>
+    <phrase title="BRMS_thread_type" version_id="2020300" version_string="2.2.3"><![CDATA[Thread Type]]></phrase>
+    <phrase title="BRMS_toggle_collapse" version_id="2030000" version_string="2.3.0"><![CDATA[Toggle Collapse]]></phrase>
+    <phrase title="BRMS_top_of_page" version_id="1050200" version_string="1.5.2"><![CDATA[Top of the page]]></phrase>
+    <phrase title="BRMS_update_time" version_id="1080100" version_string="1.8.1"><![CDATA[Update Time]]></phrase>
+    <phrase title="BRMS_update_time_explain" version_id="1080100" version_string="1.8.1"><![CDATA[Specify time to update statistic content.]]></phrase>
+    <phrase title="BRMS_username_make_up" version_id="1080100" version_string="1.8.1"><![CDATA[Username Make Up]]></phrase>
+    <phrase title="BRMS_username_make_up_explain" version_id="1080100" version_string="1.8.1"><![CDATA[Display username with user group's css.]]></phrase>
+    <phrase title="BRMS_user_type" version_id="2020300" version_string="2.2.3"><![CDATA[User Type]]></phrase>
+    <phrase title="BRMS_use_preview_tooltip" version_id="1080100" version_string="1.8.1"><![CDATA[Use Preview Tooltip]]></phrase>
+    <phrase title="BRMS_use_preview_tooltip_explain" version_id="1080100" version_string="1.8.1"><![CDATA[Show thread preview tooltips]]></phrase>
+    <phrase title="BRSTS_create_new_modern_statistic" version_id="1080100" version_string="1.8.1"><![CDATA[Create New Modern Statistic]]></phrase>
+    <phrase title="BRSTS_edit_modern_statistic" version_id="1080100" version_string="1.8.1"><![CDATA[Edit Modern Statistic]]></phrase>
+    <phrase title="BRSTS_use_preview_tooltip" version_id="1080100" version_string="1.8.1"><![CDATA[Use Preview Tooltip]]></phrase>
+    <phrase title="style_property_brmsConfigBtn_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[Controls the config button.]]></phrase>
+    <phrase title="style_property_brmsConfigBtn_master" version_id="1070400" version_string="1.7.4"><![CDATA[Config Button]]></phrase>
+    <phrase title="style_property_brmsConfigList_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[Controls the config button container.]]></phrase>
+    <phrase title="style_property_brmsConfigList_master" version_id="1070400" version_string="1.7.4"><![CDATA[Config Button Container]]></phrase>
+    <phrase title="style_property_BRMSContainer_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[The styling of the statistics container area is controlled with this property.]]></phrase>
+    <phrase title="style_property_BRMSContainer_master" version_id="1070400" version_string="1.7.4"><![CDATA[Container]]></phrase>
+    <phrase title="style_property_brmsContentItemHover_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[]]></phrase>
+    <phrase title="style_property_brmsContentItemHover_master" version_id="1070400" version_string="1.7.4"><![CDATA[Content Item Hover]]></phrase>
+    <phrase title="style_property_brmsContentItemNew_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[Style for unread item content]]></phrase>
+    <phrase title="style_property_brmsContentItemNew_master" version_id="1070400" version_string="1.7.4"><![CDATA[Content New Item]]></phrase>
+    <phrase title="style_property_brmsContentItemOuterFirst_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[]]></phrase>
+    <phrase title="style_property_brmsContentItemOuterFirst_master" version_id="1070400" version_string="1.7.4"><![CDATA[Content Item Outer First]]></phrase>
+    <phrase title="style_property_brmsContentItemOuter_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[]]></phrase>
+    <phrase title="style_property_brmsContentItemOuter_master" version_id="1070400" version_string="1.7.4"><![CDATA[Content Item Outer]]></phrase>
+    <phrase title="style_property_brmsContentItemSticky_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[Style for sticky item content]]></phrase>
+    <phrase title="style_property_brmsContentItemSticky_master" version_id="1070400" version_string="1.7.4"><![CDATA[Content Sticky Item]]></phrase>
+    <phrase title="style_property_brmsContentItem_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[]]></phrase>
+    <phrase title="style_property_brmsContentItem_master" version_id="1070400" version_string="1.7.4"><![CDATA[Content Item]]></phrase>
+    <phrase title="style_property_brmsContentList_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[]]></phrase>
+    <phrase title="style_property_brmsContentList_master" version_id="1070400" version_string="1.7.4"><![CDATA[Content List]]></phrase>
+    <phrase title="style_property_brmsDropdownItemHover_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[]]></phrase>
+    <phrase title="style_property_brmsDropdownItemHover_master" version_id="1070400" version_string="1.7.4"><![CDATA[Dropdown Menu Item Hover]]></phrase>
+    <phrase title="style_property_brmsDropdownItem_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[]]></phrase>
+    <phrase title="style_property_brmsDropdownItem_master" version_id="1070400" version_string="1.7.4"><![CDATA[Dropdown Menu Item]]></phrase>
+    <phrase title="style_property_brmsDropdownLink_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[]]></phrase>
+    <phrase title="style_property_brmsDropdownLink_master" version_id="1070400" version_string="1.7.4"><![CDATA[Dropdown Menu Item Link]]></phrase>
+    <phrase title="style_property_brmsDropdownMenu_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[Style for drop down menu]]></phrase>
+    <phrase title="style_property_brmsDropdownMenu_master" version_id="1070400" version_string="1.7.4"><![CDATA[Dropdown Menu]]></phrase>
+    <phrase title="style_property_brmsStatisticHeader_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[]]></phrase>
+    <phrase title="style_property_brmsStatisticHeader_master" version_id="1070400" version_string="1.7.4"><![CDATA[Statistics Header]]></phrase>
+    <phrase title="style_property_brmsTabContent_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[]]></phrase>
+    <phrase title="style_property_brmsTabContent_master" version_id="1070400" version_string="1.7.4"><![CDATA[Tab Content]]></phrase>
+    <phrase title="style_property_brmsTabLinkSelected_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[]]></phrase>
+    <phrase title="style_property_brmsTabLinkSelected_master" version_id="1070400" version_string="1.7.4"><![CDATA[Selected Tab]]></phrase>
+    <phrase title="style_property_brmsTabLink_description_master" version_id="2000000" version_string="2.0.0"><![CDATA[]]></phrase>
+    <phrase title="style_property_brmsTabLink_master" version_id="2000000" version_string="2.0.0"><![CDATA[Tab Navigation Link]]></phrase>
+    <phrase title="style_property_brmsTabNav_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[Controls the container for the statistics navigation tabs.]]></phrase>
+    <phrase title="style_property_brmsTabNav_master" version_id="1070400" version_string="1.7.4"><![CDATA[Tab Navigation Container]]></phrase>
+    <phrase title="style_property_brmsTabOuter_description_master" version_id="2000000" version_string="2.0.0"><![CDATA[]]></phrase>
+    <phrase title="style_property_brmsTabOuter_master" version_id="2000000" version_string="2.0.0"><![CDATA[Tab Navigation]]></phrase>
+    <phrase title="style_property_brsmCounterArrow_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[]]></phrase>
+    <phrase title="style_property_brsmCounterArrow_master" version_id="1070400" version_string="1.7.4"><![CDATA[Content Item Counter Arrow]]></phrase>
+    <phrase title="style_property_brsmCounterNumber_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[]]></phrase>
+    <phrase title="style_property_brsmCounterNumber_master" version_id="1070400" version_string="1.7.4"><![CDATA[Content Item Counter Number]]></phrase>
+    <phrase title="style_property_brsmCounter_description_master" version_id="1070400" version_string="1.7.4"><![CDATA[Styles index number of content item]]></phrase>
+    <phrase title="style_property_brsmCounter_master" version_id="1070400" version_string="1.7.4"><![CDATA[Content Item Counter]]></phrase>
+    <phrase title="style_property_brsmsNewItemCounterArrow_description_master" version_id="1080000" version_string="1.8.0"><![CDATA[]]></phrase>
+    <phrase title="style_property_brsmsNewItemCounterArrow_master" version_id="1080000" version_string="1.8.0"><![CDATA[New Item Counter Arrow]]></phrase>
+    <phrase title="style_property_brsmsNewItemCounter_description_master" version_id="1080000" version_string="1.8.0"><![CDATA[Style for new item counter displayed absolute with Tab Navigation.]]></phrase>
+    <phrase title="style_property_brsmsNewItemCounter_master" version_id="1080000" version_string="1.8.0"><![CDATA[New Item Counter]]></phrase>
+    <phrase title="style_property_group_BRMS_Content_master" version_id="1070400" version_string="1.7.4"><![CDATA[Brivium - Modern Statistics Content]]></phrase>
+    <phrase title="style_property_group_BRMS_Content_master_desc" version_id="1070400" version_string="1.7.4"><![CDATA[Styling for content of modern statistic]]></phrase>
+    <phrase title="style_property_group_BRMS_DropDown_master" version_id="1070400" version_string="1.7.4"><![CDATA[Brivium - Modern Statistics Dropdown]]></phrase>
+    <phrase title="style_property_group_BRMS_DropDown_master_desc" version_id="1070400" version_string="1.7.4"><![CDATA[Styling for modern statistic dropdown content]]></phrase>
+    <phrase title="style_property_group_BR_ModernStatistics_master" version_id="1070400" version_string="1.7.4"><![CDATA[Brivium - Modern Statistics]]></phrase>
+    <phrase title="style_property_group_BR_ModernStatistics_master_desc" version_id="1070400" version_string="1.7.4"><![CDATA[Styling for modern statistic]]></phrase>
+  </phrases>
+  <route_prefixes>
+    <route_type type="admin">
+      <prefix original_prefix="brms-statistics" class="Brivium_ModernStatistic_Route_PrefixAdmin_ModernStatistic" build_link="data_only"/>
+    </route_type>
+    <route_type type="public">
+      <prefix original_prefix="brms-statistic" class="Brivium_ModernStatistic_Route_Prefix_ModernStatistic" build_link="data_only"/>
+    </route_type>
+  </route_prefixes>
+  <style_properties>
+    <property property_name="BRMSContainer" property_type="css" definition="1" group_name="BR_ModernStatistics" title="Container" description="The styling of the statistics container area is controlled with this property." css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="10" sub_group=""><![CDATA[{"color":"#333","extra":"font: 13px\/18px Arial, Helvetica, sans-serif;","height":"100%","margin-bottom":"10px","margin-left":"auto","margin-right":"auto","margin-top":"auto"}]]></property>
+    <property property_name="brmsConfigBtn" property_type="css" definition="1" group_name="BR_ModernStatistics" title="Config Button" description="Controls the config button." css_components="background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="210" sub_group=""><![CDATA[{"background-color":"#FAFAFA","border-color":"#D5D5D5","border-radius":"2px","border-style":"solid","border-width":"1px","extra":"display: inline-block;\ncursor: pointer;\nfont-weight: bold;\nline-height: 13px;\ncolor: #686868;\nbox-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);\nbackground: -moz-linear-gradient(top, #FFF 0%, #F5F5F5 100%);\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF), color-stop(100%,#F5F5F5));\nbackground: -webkit-linear-gradient(top, #FFF 0%,#F5F5F5 100%);\nbackground: -o-linear-gradient(top, #FFF 0%,#F5F5F5 100%);\nbackground: -ms-linear-gradient(top, #FFF 0%,#F5F5F5 100%);\nbackground: linear-gradient(top, #FFF 0%,#F5F5F5 100%);","margin-bottom":"2px","margin-left":"0","margin-right":"0","margin-top":"2px","padding-bottom":"7px","padding-left":"13px","padding-right":"13px","padding-top":"8px"}]]></property>
+    <property property_name="brmsStatisticHeader" property_type="css" definition="1" group_name="BR_ModernStatistics" title="Statistics Header" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="20" sub_group=""><![CDATA[{"extra":"display: block;\nmargin: auto 0 !important;"}]]></property>
+    <property property_name="brmsConfigList" property_type="css" definition="1" group_name="BR_ModernStatistics" title="Config Button Container" description="Controls the config button container." css_components="background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="200" sub_group=""><![CDATA[{"extra":"text-align: center;"}]]></property>
+    <property property_name="brmsTabNav" property_type="css" definition="1" group_name="BR_ModernStatistics" title="Tab Navigation Container" description="Controls the container for the statistics navigation tabs." css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="100" sub_group=""><![CDATA[[]]]></property>
+    <property property_name="brmsTabOuter" property_type="css" definition="1" group_name="BR_ModernStatistics" title="Tab Navigation" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="110" sub_group=""><![CDATA[{"background-color":"whitesmoke","border-color":"#DDD","border-style":"solid","border-width":"0px","extra":"list-style-type: none;\ndisplay: block;\ntext-shadow: 0 0 0 transparent, 0px 1px 1px #F2F1F0;\nbackground: -moz-linear-gradient(top, #ffffff 0%, #f2f2f2 100%);\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #f2f2f2));\nbackground: -webkit-linear-gradient(top, #ffffff 0%, #f2f2f2 100%);\nbackground: -o-linear-gradient(top, #ffffff 0%, #f2f2f2 100%);\nbackground: -ms-linear-gradient(top, #ffffff 0%, #f2f2f2 100%);\nbackground: linear-gradient(top, #ffffff 0%, #f2f2f2 100%);","font-size":"1.11em","margin-all":"auto"}]]></property>
+    <property property_name="brmsTabLinkSelected" property_type="css" definition="1" group_name="BR_ModernStatistics" title="Selected Tab" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="120" sub_group=""><![CDATA[{"border-right-width":"0px","color":"black","extra":"background: white !important;\nbox-shadow: inset 0 0 35px 5px #fafbfd;"}]]></property>
+    <property property_name="brmsTabContent" property_type="css" definition="1" group_name="BRMS_Content" title="Tab Content" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="10" sub_group=""><![CDATA[{"background-color":"#FFF","border-color":"#ddd","border-style":"solid","border-width":"1px","extra":"display: none;\nbox-shadow: inset 0 0 35px 5px #fafbfd;","padding-all":"10px"}]]></property>
+    <property property_name="brmsContentList" property_type="css" definition="1" group_name="BRMS_Content" title="Content List" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="20" sub_group=""><![CDATA[{"extra":"counter-reset: numList;"}]]></property>
+    <property property_name="brmsContentItemOuter" property_type="css" definition="1" group_name="BRMS_Content" title="Content Item Outer" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="30" sub_group=""><![CDATA[{"border-top-color":"#CCC","border-top-style":"dashed","border-top-width":"1px","extra":"float: left;","padding-bottom":"1px","padding-left":"0","padding-right":"0","padding-top":"1px","width":"100%"}]]></property>
+    <property property_name="brmsContentItemOuterFirst" property_type="css" definition="1" group_name="BRMS_Content" title="Content Item Outer First" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="40" sub_group=""><![CDATA[{"border-top-color":"black","border-top-style":"none","border-top-width":"1px"}]]></property>
+    <property property_name="brmsContentItem" property_type="css" definition="1" group_name="BRMS_Content" title="Content Item" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="50" sub_group=""><![CDATA[{"extra":"-moz-transition: all .3s ease-out;\n-ms-transition: all .3s ease-out;\n-o-transition: all .3s ease-out;\ntransition: all .3s ease-out;\ndisplay: table;\ntable-layout: fixed;\nword-wrap: normal;","padding-all":"0px","width":"100%"}]]></property>
+    <property property_name="brsmCounter" property_type="css" definition="1" group_name="BRMS_Content" title="Content Item Counter" description="Styles index number of content item" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="100" sub_group=""><![CDATA[{"background-position":"0px -192px","color":"#f00","extra":"text-align: center;\nposition: relative;","font-size":"11px","margin-right":"1px","margin-top":"1px","padding-right":"5px","width":"20px"}]]></property>
+    <property property_name="brmsContentItemHover" property_type="css" definition="1" group_name="BRMS_Content" title="Content Item Hover" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="51" sub_group=""><![CDATA[{"background-color":"#eee"}]]></property>
+    <property property_name="brsmCounterNumber" property_type="css" definition="1" group_name="BRMS_Content" title="Content Item Counter Number" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="110" sub_group=""><![CDATA[{"background-color":"#eee","border-radius":"3px","extra":"line-height: 15px;\nmin-width: 15px;\ndisplay: block;","height":"15px"}]]></property>
+    <property property_name="brsmCounterArrow" property_type="css" definition="1" group_name="BRMS_Content" title="Content Item Counter Arrow" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="120" sub_group=""><![CDATA[{"border-color":"transparent","border-left-color":"#eee","border-right-color":"black","border-right-style":"none","border-right-width":"1px","border-style":"solid","border-width":"3px","extra":"position: absolute;\ntop: 6px;\nright: 2px;\ndisplay: block;","height":"0px","width":"0px"}]]></property>
+    <property property_name="brmsContentItemNew" property_type="css" definition="1" group_name="BRMS_Content" title="Content New Item" description="Style for unread item content" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="60" sub_group=""><![CDATA[{"border-radius":"5px","extra":"background: #FFEAE7 !important;"}]]></property>
+    <property property_name="brmsContentItemSticky" property_type="css" definition="1" group_name="BRMS_Content" title="Content Sticky Item" description="Style for sticky item content" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="70" sub_group=""><![CDATA[{"border-radius":"5px","extra":"background: #fff1ba !important;"}]]></property>
+    <property property_name="brmsDropdownMenu" property_type="css" definition="1" group_name="BRMS_DropDown" title="Dropdown Menu" description="Style for drop down menu" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="10" sub_group=""><![CDATA[{"background-color":"#FFF","border-color":"#DADADA","border-style":"solid","border-top-color":"black","border-top-style":"none","border-top-width":"1px","border-width":"1px","extra":"display: none;\nposition: absolute;\nz-index: 999;\ntext-align: left;\ntop: 100%;\nleft: -1px;\nfloat: left;\nmin-width: 160px;\nbackground-clip: padding-box;\nbox-shadow: 0 2px 2px -2px #CCC;","font-size":"11px","margin-bottom":"0","margin-left":"0","margin-right":"0","margin-top":"0px"}]]></property>
+    <property property_name="brmsDropdownItem" property_type="css" definition="1" group_name="BRMS_DropDown" title="Dropdown Menu Item" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="20" sub_group=""><![CDATA[{"background-color":"#FAFAFA","border-color":"black","border-style":"none","border-top-color":"#E4E4E4","border-top-style":"solid","border-top-width":"1px","border-width":"1px","color":"#686868","extra":"box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);\nbackground: -moz-linear-gradient(top, #FFF 0%, #F5F5F5 100%);\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF), color-stop(100%,#F5F5F5));\nbackground: -webkit-linear-gradient(top, #FFF 0%,#F5F5F5 100%);\nbackground: -o-linear-gradient(top, #FFF 0%,#F5F5F5 100%);\nbackground: -ms-linear-gradient(top, #FFF 0%,#F5F5F5 100%);\nbackground: linear-gradient(top, #FFF 0%,#F5F5F5 100%);"}]]></property>
+    <property property_name="brmsDropdownItemHover" property_type="css" definition="1" group_name="BRMS_DropDown" title="Dropdown Menu Item Hover" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="30" sub_group=""><![CDATA[{"background-color":"#f6f6f6"}]]></property>
+    <property property_name="brmsDropdownLink" property_type="css" definition="1" group_name="BRMS_DropDown" title="Dropdown Menu Item Link" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="40" sub_group=""><![CDATA[{"color":"#6A6A6A","extra":"display: block;\nclear: both;\nfont-weight: normal;\nwhite-space: nowrap;","font-size":"12px","padding-bottom":"8px","padding-left":"10px","padding-right":"10px","padding-top":"8px"}]]></property>
+    <property property_name="brsmsNewItemCounter" property_type="css" definition="1" group_name="BR_ModernStatistics" title="New Item Counter" description="Style for new item counter displayed absolute with Tab Navigation." css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="130" sub_group=""><![CDATA[{"background-color":"#e03030","border-radius":"2px","color":"white","extra":"position: absolute;\nline-height: 16px;\nmin-width: 12px;\ntext-align: center;\nwhite-space: nowrap;\nword-wrap: normal;\nright: 2px;\ntop: -10px;\nz-index: 100;\nbox-shadow: 2px 2px 5px rgba(0,0,0, 0.25);","font-size":"10px","font-weight":"bold","height":"16px","padding-bottom":"0","padding-left":"3px","padding-right":"3px","padding-top":"0"}]]></property>
+    <property property_name="brsmsNewItemCounterArrow" property_type="css" definition="1" group_name="BR_ModernStatistics" title="New Item Counter Arrow" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="140" sub_group=""><![CDATA[{"border-bottom-color":"black","border-bottom-style":"none","border-bottom-width":"1px","border-color":"transparent","border-style":"solid","border-top-color":"#e03030","border-width":"5px","extra":"position: absolute;\nright: 3px;\nline-height: 0px;\n_display: none;\nbottom: -4px;\nz-index: 100;","height":"0px","width":"0px"}]]></property>
+    <property property_name="brmsTabLink" property_type="css" definition="1" group_name="BR_ModernStatistics" title="Tab Navigation Link" description="" css_components="text,background,border,layout,extra" scalar_type="" scalar_parameters="" display_order="112" sub_group=""><![CDATA[{"color":"#5C5C5C","extra":"outline: none;\ndisplay: block;\ntext-align: left;","font-size":"11px","font-weight":"bold","margin-all":"0px","text-decoration":{"none":"none"}}]]></property>
+    <group group_name="BR_ModernStatistics" display_order="1500">
+      <title>Brivium - Modern Statistics</title>
+      <description>Styling for modern statistic</description>
+    </group>
+    <group group_name="BRMS_Content" display_order="1501">
+      <title>Brivium - Modern Statistics Content</title>
+      <description>Styling for content of modern statistic</description>
+    </group>
+    <group group_name="BRMS_DropDown" display_order="1502">
+      <title>Brivium - Modern Statistics Dropdown</title>
+      <description>Styling for modern statistic dropdown content</description>
+    </group>
+  </style_properties>
+  <templates>
+    <template title="BRMS_account_wrapper_sidebar_settings" version_id="2020000" version_string="2.2.0"><![CDATA[<li><a class="{xen:if "{$selectedKey} == 'account/BrmsStatisticsPreferences'", 'secondaryContent', 'primaryContent'}" href="{xen:link account/brms-statistics-preferences}">{xen:phrase BRMS_modern_statistisc_preferences}</a></li>]]></template>
+    <template title="BRMS_ModernStatistic" version_id="2020300" version_string="2.2.3"><![CDATA[<xen:if is="{$modernStatistic.tab_data} && {$modernStatistic.active}">
+	<xen:if hascontent="true">
+	<div<xen:comment>
+		</xen:comment> class="BRMSContainer {$modernStatistic.displayStyle} {xen:if {$modernStatistic.control_position},'{$modernStatistic.control_position}','brmsLeftTabs'}"
+		data-loadUrl="{xen:link 'full:brms-statistic/statistics.json'}"
+		data-previewType="{$modernStatistic.preview_tooltip}"
+		data-allowCusItemLimit="{xen:if '{$modernStatistic.itemLimit.enabled} && !{$modernStatistic.enable_cache}',1,0}"
+		data-allowCusLayout="{xen:if {$modernStatistic.allow_change_layout},1,0}"
+		data-modernStatisticId="{xen:if {$modernStatistic.modern_statistic_id},'{$modernStatistic.modern_statistic_id}',0}"
+		data-navPosition="{xen:if {$modernStatistic.control_position},'{$modernStatistic.control_position}','brmsLeftTabs'}"
+		data-useLimit="{xen:if '{$cachedStatistic.item_limit} && !{$modernStatistic.enable_cache}','{$cachedStatistic.item_limit}',''}"
+		data-updateInterval="{xen:if '{$modernStatistic.auto_update} && !{$modernStatistic.enable_cache}','{$modernStatistic.auto_update}',0}" <xen:comment>
+	</xen:comment>>
+		<div class="brmsStatisticHeader">
+			<div class="brmsConfigList">
+				<xen:if is="{$modernStatistic.itemLimit.enabled} && !{$modernStatistic.enable_cache}">
+				<div class="brmsConfigBtn brmsDropdownToggle brmsLimitList">
+					<a href="javascript:;" class="brmsIco brmsIcoConfig"></a>
+					<ul class="brmsDropdownMenu">
+						<xen:if is="{$modernStatistic.itemLimit.value}">
+							<xen:foreach loop="$modernStatistic.itemLimit.value" key="$key" value="$numberLimit">
+								<li {xen:if '{$key}==0','class="first"'}><a href="#" class="brmsNumberEntry" data-limit="{$numberLimit}">{$numberLimit} {xen:phrase BRMS_entries}</a></li>
+							</xen:foreach>
+						</xen:if>
+					</ul>
+				</div>
+				</xen:if>
+				<xen:if is="{$modernStatistic.allow_manual_refresh}">
+				<div class="brmsConfigBtn brmsRefresh"><a href="javascript:;" class="brmsIco brmsIcoRefresh"></a></div>
+				</xen:if>
+				<xen:if is="{$modernStatistic.allow_change_layout}">
+				<div class="brmsConfigBtn brmsDropdownToggle brmsLayoutList last">
+					<a href="javascript:;" class="brmsIco brmsIcoLayout"></a>
+					<ul class="brmsDropdownMenu">
+						<li class="first"><a href="#" class="brmsLayoutChange" data-layout="brmsTopTabs">{xen:phrase top}</a></li>
+						<li><a href="#" class="brmsLayoutChange" data-layout="brmsLeftTabs">{xen:phrase left}</a></li>
+						<li><a href="#" class="brmsLayoutChange" data-layout="brmsRightTabs">{xen:phrase right}</a></li>
+					</ul>
+				</div>
+				</xen:if>
+			</div>
+			<ul class="brmsTabNav">
+				<xen:contentcheck>
+				<xen:foreach loop="$modernStatistic.tabData" key="$key" value="$tab">
+					<xen:if is="{$tab.active} && ({$tab.type}!='my_threads'||{$visitor.user_id})">
+						<li class="brmlShow"><a class="brmsTabHandler_{$key}" href="javascript:;" data-content="brmsTabContent_{$key}" data-tabid="{$key}"><span>{xen:if '{$tab.defaultTitle}','{xen:raw $tab.defaultTitle}','{xen:raw $tab.title}'}</span></a></li>
+					</xen:if>
+				</xen:foreach>
+				</xen:contentcheck>
+				<li class="brmsTabNavHiddenMenu last">
+					<div class="brmsTabNavHidden brmsDropdownToggle">
+						<a href="javascript:;" class="brmsIco brmsIcoList"></a>
+						<ul class="brmsDropdownMenu">
+							<xen:foreach loop="$modernStatistic.tabData" key="$key" value="$tab">
+								<xen:if is="{$tab.active} && ({$tab.type}!='my_threads'||{$visitor.user_id})">
+									<li class="brmlShow"><a class="brmsTabHandler_{$key}" href="javascript:;" data-content="brmsTabContent_{$key}" data-tabid="{$key}"><span>{xen:if '{$tab.defaultTitle}','{xen:raw $tab.defaultTitle}','{xen:raw $tab.title}'}</span></a></li>
+								</xen:if>
+							</xen:foreach>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<xen:foreach loop="$modernStatistic.tabData" key="$key" value="$tab">
+			<xen:if is="{$tab.active} && ({$tab.type}!='my_threads'||{$visitor.user_id})">
+			<div class="brmsTabContent brmsTabContent_{$key}" data-content="brmsTabContent_{$key}">
+				<xen:if is="{$key}==0">
+					<xen:if is="{$firstTabHtml}">{xen:raw $firstTabHtml}<xen:else /><div class="brmsIcoLoader brmsIcoRefresh"></div><div class="clear"></div></xen:if>
+				<xen:else />
+					<div class="brmsIcoLoader brmsIcoRefresh"></div><div class="clear"></div>
+				</xen:if>
+			</div>
+			</xen:if>
+		</xen:foreach>
+		<div class="xenTooltip brmsToolTip"></div>
+	</div>
+	<div style="clear:both;"></div>
+	<xen:include template="preview_tooltip" />
+	</xen:if>
+</xen:if>
+<xen:edithint template="BRMS_ModernStatistic.css" />]]></template>
+    <template title="BRMS_ModernStatistic.css" version_id="2000000" version_string="2.0.0"><![CDATA[.BRMSContainer
+{
+	{xen:property BRMSContainer}
+}
+
+.BRMSContainer .brmsStatisticHeader
+{
+	{xen:property brmsStatisticHeader}
+}
+
+.BRMSContainer.brmsLeftTabs .brmsStatisticHeader,
+.BRMSContainer.brmsRightTabs .brmsStatisticHeader{
+	float: left;
+	width: 151px;
+	position: relative;
+	top: 0;
+	z-index: 10;
+}
+.BRMSContainer.brmsRightTabs .brmsStatisticHeader{
+	float: right;
+}
+.BRMSContainer.brmsTopTabs .brmsStatisticHeader{
+	height: 39px;
+	padding: 0 13px;
+}
+
+.brmlShow{
+	display:block;
+}
+.brmlHide{
+	display:none;
+}
+
+.BRMSContainer .brmsConfigList{
+	{xen:property brmsConfigList}
+}
+
+.BRMSContainer.brmsLeftTabs .brmsConfigList,
+.BRMSContainer.brmsRightTabs .brmsConfigList{
+	margin-bottom:10px;
+}
+.BRMSContainer.brmsTopTabs .brmsConfigList{
+	float:right;
+}
+
+.BRMSContainer .brmsConfigList .brmsConfigBtn
+{
+	{xen:property brmsConfigBtn}
+}
+
+.brmsConfigBtn:hover
+{
+	background: #f6f6f6;
+}
+.BRMSContainer.brmsRightTabs .brmsConfigList .brmsConfigBtn
+{
+	margin-right:0px;
+	margin-left:5px;
+}
+.BRMSContainer .brmsConfigList .brmsConfigBtn.last
+{
+	margin-right:0;
+}
+
+.BRMSContainer ul.brmsTabNav
+{
+	{xen:property brmsTabNav}
+}
+
+.BRMSContainer.brmsLeftTabs ul.brmsTabNav{
+	border-bottom-left-radius: 12px;
+	border-top-left-radius: 12px;
+	border: 1px solid #DDD;
+	border-right-width: 0;
+}
+.BRMSContainer.brmsRightTabs ul.brmsTabNav{
+	border-bottom-right-radius: 12px;
+	border-top-right-radius: 12px;
+	border: 1px solid #DDD;
+	border-left-width: 0;
+}
+.BRMSContainer.brmsTopTabs ul.brmsTabNav{
+	height: 39px;
+}
+.BRMSContainer ul.brmsTabNav > li
+{
+	{xen:property brmsTabOuter}	
+}
+.BRMSContainer.brmsRightTabs ul.brmsTabNav > li{
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+}
+.BRMSContainer.brmsLeftTabs ul.brmsTabNav > li{
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+}
+.BRMSContainer.brmsTopTabs ul.brmsTabNav > li{
+	border-bottom: none;
+	float:left;
+	border-left-width: 1px;
+	border-top-width: 1px;
+	position: relative;
+}
+.BRMSContainer ul.brmsTabNav > li.current
+{
+	{xen:property brmsTabLinkSelected}	
+}
+.BRMSContainer.brmsLeftTabs ul.brmsTabNav > li.current
+{
+	border-right: none;
+	z-index: 10;
+}
+.BRMSContainer.brmsRightTabs ul.brmsTabNav > li.current
+{
+    border-left: none;
+    z-index: 10;
+}
+.BRMSContainer.brmsLeftTabs ul.brmsTabNav > li.first{
+	border-top-left-radius: 10px;
+}
+.BRMSContainer.brmsRightTabs ul.brmsTabNav > li.first{
+	border-top-right-radius: 10px;
+}
+
+.BRMSContainer.brmsLeftTabs ul.brmsTabNav > li.last
+{
+	border-bottom-left-radius: 10px;
+	border-bottom: none;
+}
+.BRMSContainer.brmsRightTabs ul.brmsTabNav > li.last
+{
+	border-bottom-right-radius: 10px;
+	border-bottom: none;
+}
+.BRMSContainer.brmsTopTabs ul.brmsTabNav > li.first{
+	
+}
+.BRMSContainer.brmsTopTabs ul.brmsTabNav > li.last
+{
+	border-right-width:1px;
+}
+.BRMSContainer.brmsTopTabs ul.brmsTabNav > li.current
+{
+    height: 39px;
+}
+.BRMSContainer.brmsLeftTabs ul.brmsTabNav > li.first.current,
+.BRMSContainer.brmsRightTabs ul.brmsTabNav > li.first.current
+{
+	border-bottom-width: 1px;
+}
+
+.BRMSContainer.brmsTopTabs ul.brmsTabNav > li.first.current
+{
+    border-bottom: none;
+}
+
+.BRMSContainer ul.brmsTabNav > li a
+{
+	{xen:property brmsTabLink}
+}
+.BRMSContainer ul.brmsTabNav > li a span{
+	display:block;
+}
+.BRMSContainer ul.brmsTabNav > li a span.description
+{
+	float:left;
+	display:block;
+	font-weight:normal;
+}
+.BRMSContainer.brmsLeftTabs ul.brmsTabNav > li a,
+.BRMSContainer.brmsRightTabs ul.brmsTabNav > li a
+{
+	padding: 15px 10px;
+}
+
+.BRMSContainer.brmsTopTabs ul.brmsTabNav > li a
+{
+	line-height: 38px;
+	padding:0 10px;
+}
+.BRMSContainer.brmsTopTabs ul.brmsTabNav > li a span.description{
+	display:none;
+}
+
+
+
+.BRMSContainer .brmsTabContent
+{
+	{xen:property brmsTabContent}
+}
+.BRMSContainer.brmsLeftTabs .brmsTabContent,
+.BRMSContainer.brmsRightTabs .brmsTabContent{
+	margin-left: 150px;
+	position: relative;
+	z-index: 9;
+	min-height:247px;
+}
+.BRMSContainer.brmsRightTabs .brmsTabContent{
+	margin-right: 150px;
+	margin-left: 0;
+}
+.BRMSContainer .brmsTabContent ol.brmsContentList{
+	{xen:property brmsContentList}
+}
+.BRMSContainer .brmsTabContent ol.brmsContentList li{
+	{xen:property brmsContentItemOuter}
+}
+
+.BRMSContainer .brmsTabContent ol.brmsContentList li.first{
+	{xen:property brmsContentItemOuterFirst}
+}
+.BRMSContainer .itemContent{
+	{xen:property brmsContentItem}
+}
+.BRMSContainer .itemContent:hover{
+	{xen:property brmsContentItemHover}
+}
+.BRMSContainer .itemContent .listBlock {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.brmsIcoRefresh, 
+.brmsIcoConfig,
+.brmsIcoList,
+.brmsIcoLayout{
+	background-image: url('styles/brivium/ModernStatistic/light-sprite.png');
+}
+
+.BRMSContainer .itemContent .counter{
+	{xen:property brsmCounter}
+}
+.BRMSContainer .itemContent .counter .countNumber{
+	{xen:property brsmCounterNumber}
+}
+.BRMSContainer .itemContent .counter .arrow{
+	{xen:property brsmCounterArrow}
+}
+.BRMSContainer .itemContent .counter.counter_1 .countNumber,
+.BRMSContainer .itemContent .counter.counter_2 .countNumber,
+.BRMSContainer .itemContent .counter.counter_3 .countNumber{
+	font-size:12px;
+	color:#fff;
+}
+
+.BRMSContainer .itemContent .counter.counter_1 .countNumber{
+	background-color: #FF0000;
+}
+.BRMSContainer .itemContent .counter.counter_2 .countNumber{
+	background-color: #FF4040;
+}
+.BRMSContainer .itemContent .counter.counter_3 .countNumber{
+	background-color: #FF7373;
+}
+.BRMSContainer .itemContent .counter.counter_1 .arrow{
+	border-left-color: #ff0000;
+}
+.BRMSContainer .itemContent .counter.counter_2 .arrow{
+	border-left-color: #FF4040;
+}
+.BRMSContainer .itemContent .counter.counter_3 .arrow{
+	border-left-color: #FF7373;
+}
+
+.BRMSContainer .itemContent:hover .counter .countNumber{
+	background-color: #fff;
+}
+.BRMSContainer .itemContent:hover .counter .arrow{
+	border-left-color: #fff;
+}
+.BRMSContainer .itemContent:hover .counter.counter_1 .countNumber,
+.BRMSContainer .itemContent:hover .counter.counter_2 .countNumber,
+.BRMSContainer .itemContent:hover .counter.counter_3 .countNumber{
+	color: #FF0000;
+}
+
+.BRMSContainer .itemContent .itemTitle{
+	width: auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 65%;
+}
+.BRMSContainer .itemUser .itemContent .itemTitle{
+	width: auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 35%;
+}
+.BRMSContainer .itemContent .itemDetail {
+    	width: 150px;
+	max-width: 150px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.BRMSContainer .itemContent .itemDetail.itemDate {
+    	width: 200px;
+	max-width: 200px;
+}
+
+.BRMSContainer .itemContent .itemDetail,
+.BRMSContainer .itemContent .itemDetail a{
+    font-size: 11px;
+    text-align: right;
+}
+.BRMSContainer .itemUser .itemContent .itemDetail,
+.BRMSContainer .itemUser .itemContent .itemDetail a{
+    font-size: 11px;
+}
+.BRMSContainer .itemContent .itemDetailDate a.paint {
+	color: {xen:property mutedTextColor};
+}
+.BRMSContainer .itemContent .itemDetailDate > span {
+    font-size: 0.8em;
+	color: {xen:property faintTextColor};
+}
+
+.BRMSContainer .itemUser .itemContent .itemDetailMain{
+	text-align:right;
+}
+.BRMSContainer .itemUser .itemContent .itemDetailMain strong{
+	font-weight: bold;
+}
+.BRMSContainer .itemContent .itemDetailName{
+	text-align:right;
+}
+.BRMSContainer .itemContent .itemDetailName a.username span {
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.BRMSContainer .newItemCounter {
+	{xen:property brsmsNewItemCounter}
+}
+
+.BRMSContainer .newItemCounter .totalNumber {
+
+}
+
+.BRMSContainer .newItemCounter .arrow {
+	{xen:property brsmsNewItemCounterArrow}
+}
+
+.BRMSContainer .brmsNewItem .itemContent{
+	{xen:property brmsContentItemNew}
+}
+
+.BRMSContainer .brmsSticky .itemContent{
+	{xen:property brmsContentItemSticky}
+}
+.clear{
+	clear:both;
+}
+.BRMSContainer .xenTooltip{
+	position: absolute;
+	margin: -50px 0px 0px 60px;
+	z-index:999;
+}
+
+
+.BRMSContainer .brmsRefresh{
+	
+}
+
+.brmsIco{
+	height:14px;
+	width:14px;
+	display:block;
+}
+.brmsDropdownToggle{
+	position:relative;
+}
+.brmsDropdownMenu{
+	{xen:property brmsDropdownMenu}
+}
+.brmsDropdownMenu li{
+	{xen:property brmsDropdownItem}
+}
+.brmsDropdownMenu li.current,
+.brmsDropdownMenu li:hover{
+	{xen:property brmsDropdownItemHover}
+}
+
+.brmsDropdownMenu.left{
+	left: 99%;
+	top: -1px;
+}
+.brmsDropdownMenu.right{
+	right: 99%;
+	top: -1px;
+	left: -160px;
+}
+.brmsDropdownMenu.edge{
+	right: -1px;
+	left: -160px;
+}
+
+.brmsDropdownMenu li.first {
+}
+.brmsDropdownMenu a {
+	{xen:property brmsDropdownLink}
+}
+.BRMSContainer.brmsLeftTabs .brmsTabNavHidden .brmsDropdownMenu{
+	top: -1px;
+	left: 99%;
+}
+.BRMSContainer.brmsRightTabs .brmsTabNavHidden .brmsDropdownMenu{
+	right: 99%;
+	top: -1px;
+	left: -160px;
+}
+.BRMSContainer ul.brmsTabNav > li.brmsTabNavHiddenMenu {
+	display:none;
+}
+
+.brmsTabNavHidden li{
+	display:none;
+}
+.brmsTabNavHidden > a {
+	text-align:center;
+}
+.BRMSContainer.brmsTopTabs .brmsTabNavHidden {
+	height:38px;
+	text-align:center;
+}
+.BRMSContainer.brmsTopTabs .brmsTabNavHidden > a {
+	height: 100%;
+	text-align:center;
+}
+
+
+.brmsDropdownToggle:hover .brmsDropdownMenu{
+	display:block;
+}
+
+.brmsIcoRefresh{
+	background-position: -10px -44px;
+}
+
+.brmsConfigBtn:hover .brmsIcoRefresh{
+	background:url('styles/brivium/ModernStatistic/refresh.gif') no-repeat center center;
+}
+.brmsIcoConfig{
+	background-position: -10px -10px;
+}
+.brmsIcoList{
+	background-position: 0px -102px;
+}
+.brmsIcoLayout{
+	background-position: -10px -78px;
+}
+.brmsIcoLoader{
+	background:url('styles/brivium/ModernStatistic/loader7.gif') no-repeat center center;
+	width:220px;
+	height:19px;
+	display:block;
+	margin: auto;
+}
+@media (max-width:800px)
+{
+	
+}
+
+@media (max-width:610px)
+{
+	
+}
+
+@media (max-width:480px)
+{
+	
+}]]></template>
+    <template title="BRMS_ModernStatistic_dark.css" version_id="2000000" version_string="2.0.0"><![CDATA[.BRMSContainer.BRMSContainerDark
+{
+	color: #d5d5d5;
+}
+.BRMSContainer.BRMSContainerDark .brmsConfigList .brmsConfigBtn
+{
+	color: #fafafa;
+	border: 1px solid #2e3234;
+	background: #313639;
+	background: -moz-linear-gradient(top, #3e4649 0%, #313639 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3e4649), color-stop(100%, #313639));
+	background: -webkit-linear-gradient(top, #3e4649 0%, #313639 100%);
+	background: -o-linear-gradient(top, #3e4649 0%, #313639 100%);
+	background: -ms-linear-gradient(top, #3e4649 0%, #313639 100%);
+	background: linear-gradient(top, #3e4649 0%, #313639 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e4649', endColorstr='#313639',GradientType=0 );
+	box-shadow: 0 1px 0 rgba(255,255,255,0.15) inset;
+}
+.BRMSContainer.BRMSContainerDark .brmsConfigList .brmsConfigBtn:hover
+{
+	border: 1px solid #252a31;
+	background: #272c30 !important;
+	box-shadow: inset 0 0 35px 5px #262b2e;
+}
+.BRMSContainer.BRMSContainerDark.brmsLeftTabs ul.brmsTabNav{
+	border: 1px solid #272c30;
+	border-right-width: 0;
+}
+.BRMSContainer.BRMSContainerDark.brmsRightTabs ul.brmsTabNav{
+	border: 1px solid #272c30;
+	border-left-width: 0;
+}
+.BRMSContainer.BRMSContainerDark ul.brmsTabNav > li
+{
+	background: #313639;
+	border-color:#272c30;
+	background: -moz-linear-gradient(top, #3e4649 0%, #313639 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3e4649), color-stop(100%, #313639));
+	background: -webkit-linear-gradient(top, #3e4649 0%, #313639 100%);
+	background: -o-linear-gradient(top, #3e4649 0%, #313639 100%);
+	background: -ms-linear-gradient(top, #3e4649 0%, #313639 100%);
+	background: linear-gradient(top, #3e4649 0%, #313639 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e4649', endColorstr='#313639',GradientType=0 );
+	box-shadow: 0 1px 0 rgba(255,255,255,0.15) inset;
+	text-shadow: none;
+}
+.BRMSContainer.BRMSContainerDark ul.brmsTabNav > li.current
+{
+	background: #272c30 !important;
+	box-shadow: inset 0 0 35px 5px #262b2e;
+}
+.BRMSContainer.BRMSContainerDark.brmsLeftTabs ul.brmsTabNav > li.first.current,
+.BRMSContainer.BRMSContainerDark.brmsRightTabs ul.brmsTabNav > li.first.current
+{
+	border-bottom-width: 1px;
+}
+
+.BRMSContainer.BRMSContainerDark.brmsTopTabs ul.brmsTabNav > li.last
+{
+	border-right-width: 1px;
+}
+.BRMSContainer.BRMSContainerDark ul.brmsTabNav > li a
+{
+	color: #fafafa;
+}
+.BRMSContainer.BRMSContainerDark .brmsTabContent
+{
+	border: 1px solid #272c30;
+	background-color: #2c3032;
+	box-shadow: inset 0 0 35px 5px #262b2e;
+}
+.BRMSContainer.BRMSContainerDark .brmsTabContent >h4
+{
+	color: Black;
+	text-shadow: 0px 1px 1px #F2F1F0;
+	border-bottom: 1px dotted #EEEDED;
+}
+.BRMSContainer.BRMSContainerDark .brmsTabContent ol li{
+	padding-top:1px;
+	background: url(styles/brivium/ModernStatistic/dark/linesSep.png) repeat-x 0 0;
+}
+.BRMSContainer.BRMSContainerDark .brmsTabContent ol li.first{
+	background: none;
+}
+
+.BRMSContainer.BRMSContainerDark .itemContent:hover{
+	background: #222;
+}
+.BRMSContainer.BRMSContainerDark .brmsIcoRefresh, 
+.BRMSContainer.BRMSContainerDark .brmsIcoConfig,
+.BRMSContainer.BRMSContainerDark .brmsIcoList,
+.BRMSContainer.BRMSContainerDark .brmsIcoLayout{
+	background-image: url('styles/brivium/ModernStatistic/dark-sprite.png');
+}
+.BRMSContainer.BRMSContainerDark .itemContent .counter{
+	background-position: 0px -147px;
+	color:#f00;
+}
+.BRMSContainer.BRMSContainerDark .itemContent .counter .countNumber{
+	background-color: #eee;
+}
+.BRMSContainer.BRMSContainerDark .itemContent .counter .arrow{
+	border-left-color: #eee;
+}
+.BRMSContainer.BRMSContainerDark .itemContent .counter.counter_1 .countNumber,
+.BRMSContainer.BRMSContainerDark .itemContent .counter.counter_2 .countNumber,
+.BRMSContainer.BRMSContainerDark .itemContent .counter.counter_3 .countNumber{
+	color:#fff;
+}
+.BRMSContainer.BRMSContainerDark .itemContent .counter.counter_1 .countNumber{
+	background-color: #FF0000;
+}
+.BRMSContainer.BRMSContainerDark .itemContent .counter.counter_2 .countNumber{
+	background-color: #FF4040;
+}
+.BRMSContainer.BRMSContainerDark .itemContent .counter.counter_3 .countNumber{
+	background-color: #FF7373;
+}
+.BRMSContainer.BRMSContainerDark .itemContent .counter.counter_1 .arrow{
+	border-left-color: #FF0000;
+}
+.BRMSContainer.BRMSContainerDark .itemContent .counter.counter_2 .arrow{
+	border-left-color: #FF4040;
+}
+.BRMSContainer.BRMSContainerDark .itemContent .counter.counter_3 .arrow{
+	border-left-color: #FF7373;
+}
+.BRMSContainer.BRMSContainerDark .itemContent:hover .counter .countNumber{
+	background-color: #fff;
+}
+.BRMSContainer.BRMSContainerDark .itemContent:hover .counter .arrow{
+	border-left-color: #fff;
+}
+.BRMSContainer.BRMSContainerDark .itemContent:hover .counter.counter_1 .countNumber,
+.BRMSContainer.BRMSContainerDark .itemContent:hover .counter.counter_2 .countNumber,
+.BRMSContainer.BRMSContainerDark .itemContent:hover .counter.counter_3 .countNumber{
+	color: #FF0000;
+}
+
+.BRMSContainer.BRMSContainerDark .itemContent .itemDetailDate a.paint {
+	color: #d5d5d5;
+}
+
+.BRMSContainer.BRMSContainerDark .itemContent .itemDetailDate > span {
+	color: #d5d5d5;
+}
+
+.BRMSContainer.BRMSContainerDark .brmsNewItem .itemContent{
+	background-color: #3e5d6d !important;
+}
+
+.BRMSContainer.BRMSContainerDark .brmsSticky .itemContent{
+	background-color: #B55D5C !important;
+}
+.BRMSContainer.BRMSContainerDark .itemContent .itemTitle,
+.BRMSContainer.BRMSContainerDark .itemContent .itemTitle a{
+	color:#fff;
+}
+
+.BRMSContainer.BRMSContainerDark .brmsDropdownMenu{
+	background-color: #FFF;
+	border: 1px solid #24272b;
+	box-shadow: 0 2px 2px -2px #CCC;
+}
+.BRMSContainer.BRMSContainerDark .brmsDropdownMenu li{
+	color: #fafafa;
+	background: #313639;
+	background: -moz-linear-gradient(top, #3e4649 0%, #313639 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3e4649), color-stop(100%, #313639));
+	background: -webkit-linear-gradient(top, #3e4649 0%, #313639 100%);
+	background: -o-linear-gradient(top, #3e4649 0%, #313639 100%);
+	background: -ms-linear-gradient(top, #3e4649 0%, #313639 100%);
+	background: linear-gradient(top, #3e4649 0%, #313639 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e4649', endColorstr='#313639',GradientType=0 );
+	box-shadow: 0 1px 0 rgba(255,255,255,0.15) inset;
+	
+	border-top: 1px solid #24272b;
+}
+.BRMSContainer.BRMSContainerDark .brmsDropdownMenu li.current,
+.BRMSContainer.BRMSContainerDark .brmsDropdownMenu li:hover{
+	border: 1px solid #252a31;
+	background: #272c30 !important;
+	box-shadow: inset 0 0 35px 5px #262b2e;
+}
+
+.BRMSContainer.BRMSContainerDark .brmsDropdownMenu li.first {
+	border-top: none;
+}
+
+.BRMSContainer.BRMSContainerDark .brmsDropdownMenu a {
+	color: #fafafa;
+}
+.BRMSContainer.BRMSContainerDark .brmsDropdownMenu a:hover {
+	text-decoration:none;
+}
+.BRMSContainer.BRMSContainerDark .brmsIcoRefresh{
+	background-position: -10px -44px;
+}
+.BRMSContainer.BRMSContainerDark .brmsConfigBtn:hover .brmsIcoRefresh{
+	background:url('styles/brivium/ModernStatistic/dark/refresh.gif') no-repeat center center;
+}
+.BRMSContainer.BRMSContainerDark .brmsIcoLoader{
+	background:url('styles/brivium/ModernStatistic/dark/loader7.gif') no-repeat center center;
+}
+
+.BRMSContainer.BRMSContainerDark .xenTooltip{
+	background:#000;
+}]]></template>
+    <template title="BRMS_modern_statistics_perference" version_id="2020100" version_string="2.2.1"><![CDATA[<xen:title>{xen:phrase BRMS_modern_statistisc_preferences}</xen:title>
+
+<xen:require css="account.css" />
+
+<form method="post" class="xenForm AutoValidator formOverlay"
+	action="{xen:link 'account/brms-statistics-preferences-save'}"  data-redirect="yes">
+	<xen:if is="{$modernStatistics}">
+		<xen:foreach loop="$modernStatistics" value="$modernStatistic">
+			<dl class="ctrlUnit">
+				<dt><label for="ctrl_modern_statistics_{$modernStatistic.modern_statistic_id}">{$modernStatistic.title}:</dt>
+				<dd>
+					<xen:if is="{$modernStatistic.allow_user_setting}">
+					<select class="textCtrl" id="ctrl_modern_statistics_{$modernStatistic.modern_statistic_id}" name="brms_statistic_perferences[{$modernStatistic.modern_statistic_id}]">
+						<option value="0" {xen:selected '!{$statisticPerferences.{$modernStatistic.modern_statistic_id}}'}>{xen:phrase show}</option>
+						<option value="1" {xen:selected '{$statisticPerferences.{$modernStatistic.modern_statistic_id}}'}>{xen:phrase hide}</option>
+					</select>
+					<xen:else/>
+						{xen:phrase show}
+					</xen:if>
+				</dd>
+			</dl>
+		</xen:foreach>
+	<xen:else />
+	<p>{xen:phrase BRMS_no_modern_statistics_to_display}</p>
+	</xen:if>
+
+	<dl class="ctrlUnit submitUnit">
+		<dt></dt>
+		<dd>
+			<input type="submit" name="save" value="{xen:phrase save}" accesskey="s" class="button primary" />
+		</dd>
+	</dl>
+
+	<input type="hidden" name="product_purchase_id" value="{$purchased.product_purchase_id}" />
+	<input type="hidden" name="_xfToken" value="{$visitor.csrf_token_page}" />
+</form>]]></template>
+    <template title="BRMS_modern_statistic_header" version_id="2000000" version_string="2.0.0"><![CDATA[<xen:require css="BRMS_ModernStatistic.css" />
+<xen:require css="BRMS_ModernStatistic_dark.css" />
+<xen:require js="js/brivium/ModernStatistic/cookie.js" />
+<xen:require js="js/brivium/ModernStatistic/ModernStatistic.js" />
+<script type="text/javascript">
+	if (typeof BRMSLANG === 'undefined')
+	{
+		var BRMSLANG = {};
+	}
+	BRMSLANG.xf = {
+		category: 		"{xen:jsescape {xen:phrase category}}",
+		download: 		"{xen:jsescape {xen:phrase download}}",
+		update: 		"{xen:jsescape {xen:phrase update}}",
+		review: 		"{xen:jsescape {xen:phrase review}}",
+		all_time_rating: "{xen:jsescape {xen:phrase all_time_rating}}",
+		forum: 			"{xen:jsescape {xen:phrase forum}}",
+		views: 			"{xen:jsescape {xen:phrase views}}",
+		replies: 		"{xen:jsescape {xen:phrase replies}}",
+		likes: 			"{xen:jsescape {xen:phrase likes}}",
+	};
+</script>]]></template>
+    <template title="BRMS_resource_download_count" version_id="2000000" version_string="2.0.0"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$resource">
+	<li class="itemStast BRMSToolTip {xen:if {$resource.feature_date}, 'brmsSticky',''} {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_resource_title" />
+			<div class="listBlock itemDetail itemDetailDate">
+				<a href="{xen:link resources, $resource}" class="concealed paint">{xen:phrase downloads}: {xen:number {$resource.download_count}}</a>
+			</div>
+			<div class="listBlock itemDetail itemDetailName">
+				<xen:username user="{$resource}" rich="true" />
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_resource_last_update" version_id="2000000" version_string="2.0.0"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$resource">
+	<li class="itemStast BRMSToolTip {xen:if {$resource.feature_date}, 'brmsSticky',''} {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_resource_title" />
+			<div class="listBlock itemDetail itemDetailDate">
+				<a href="{xen:link resources/updates, $resource}" class="concealed paint"><xen:datetime time="{$resource.last_update}" /></a>
+			</div>
+			<div class="listBlock itemDetail itemDetailName">
+				<xen:username user="{$resource}" rich="true" />
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_resource_rating_weighted" version_id="2000000" version_string="2.0.0"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$resource">
+	<li class="itemStast BRMSToolTip {xen:if {$resource.feature_date}, 'brmsSticky',''} {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_resource_title" />
+			<div class="listBlock itemDetail itemDetailDate">
+				<a href="{xen:link resources, $resource}" class="concealed faint">{xen:phrase rating}: {xen:if '{$resource.rating_count} == 1', {xen:phrase 1_vote}, {xen:phrase x_votes_plural, 'count={$resource.rating_count}'}}</a>
+			</div>
+			<div class="listBlock itemDetail itemDetailName">
+				<xen:username user="{$resource}" rich="true" />
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_resource_resource_date" version_id="2000000" version_string="2.0.0"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$resource">
+	<li class="itemStast BRMSToolTip {xen:if {$resource.feature_date}, 'brmsSticky',''} {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_resource_title" />
+			<div class="listBlock itemDetail itemDetailDate">
+				<a href="{xen:link resources, $resource}" class="concealed faint"><xen:datetime time="{$resource.resource_date}" /></a>
+			</div>
+			<div class="listBlock itemDetail itemDetailName">
+				<xen:username user="{$resource}" rich="true" />
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_resource_title" version_id="2000000" version_string="2.0.0"><![CDATA[<div class="listBlock counter counter_{$i}">
+	<span class="countNumber">{$i}</span>
+	<span class="arrow"><span></span></span>
+</div>
+<div class="listBlock itemTitle">
+	<a href="{xen:link resources, $resource}"
+		data-box="{$resource.category_title}"
+		data-kind="resource"
+		data-download="{$resource.download_count}"
+		data-update="{$resource.update_count}"
+		data-review="{$resource.review_count}"
+		data-vote="{xen:if '{$resource.rating_count} == 1', {xen:phrase 1_vote}, {xen:phrase x_votes_plural, 'count={$resource.rating_count}'}}"><xen:if is="{$modernStatistic.show_resource_prefix}">{xen:helper resourcePrefix, $resource}</xen:if> {xen:helper wrap, $resource.title, 50}</a>
+</div>]]></template>
+    <template title="BRMS_thread_latest" version_id="2020300" version_string="2.2.3"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$thread">
+	<li class="itemStast BRMSToolTip {xen:if {$thread.sticky}, 'brmsSticky',''}{xen:if {$thread.isNew}, ' brmsNewItem'} {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_thread_title" />
+			<div class="listBlock itemDetail itemDetailDate">
+				<a class="paint" href="{xen:link threads, $thread}"><xen:datetime time="$thread.post_date" /></a>
+			</div>
+			<div class="listBlock itemDetail itemDetailName">
+				<xen:username user="$thread" title="{xen:phrase thread_starter}" rich="true" />
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_thread_most_reply" version_id="2020300" version_string="2.2.3"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$thread">
+	<li class="itemStast BRMSToolTip {xen:if {$thread.sticky}, 'brmsSticky',''}{xen:if {$thread.isNew}, ' brmsNewItem'} {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_thread_title" />
+			<div class="listBlock itemDetail itemDetailDate">
+				<a class="paint" href="{xen:link threads, $thread}">{xen:phrase replies}: {xen:number {$thread.reply_count}}</a>
+			</div>
+			<div class="listBlock itemDetail itemDetailName">
+				<xen:username user="$thread" title="{xen:phrase thread_starter}" rich="true" />
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_thread_most_viewed" version_id="2020300" version_string="2.2.3"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$thread">
+	<li class="itemStast BRMSToolTip {xen:if {$thread.sticky}, 'brmsSticky',''}{xen:if {$thread.isNew}, ' brmsNewItem'} {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_thread_title" />
+			<div class="listBlock itemDetail itemDetailDate">
+				<a class="paint" href="{xen:link threads, $thread}">{xen:phrase views}: {xen:number {$thread.view_count}}</a>
+			</div>
+			<div class="listBlock itemDetail itemDetailName">
+				<xen:username user="$thread" title="{xen:phrase thread_starter}" rich="true" />
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_thread_my_threads" version_id="2020300" version_string="2.2.3"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$thread">
+	<li class="itemStast BRMSToolTip {xen:if {$thread.sticky}, 'brmsSticky',''}{xen:if {$thread.isNew}, ' brmsNewItem'} {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_thread_title" />
+			<div class="listBlock itemDetail itemDetailDate">
+				<a class="paint"  href="{xen:link posts, $thread.lastPostInfo}"><xen:datetime time="$thread.lastPostInfo.post_date" /></a>
+			</div>
+			<div class="listBlock itemDetail itemDetailName">
+				<a class="paint" href="{xen:link threads, $thread}">{xen:phrase replies}: {xen:number {$thread.reply_count}}</a>
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_thread_post_latest" version_id="2020300" version_string="2.2.3"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$thread">
+	<li class="itemStast BRMSToolTip {xen:if {$thread.sticky}, 'brmsSticky',''}{xen:if {$thread.isNew}, ' brmsNewItem'} {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_thread_title" />
+			<div class="listBlock itemDetail itemDetailDate">
+				<a class="paint"  href="{xen:link posts, $thread.lastPostInfo}"><xen:datetime time="$thread.lastPostInfo.post_date" /></a>
+			</div>
+			<div class="listBlock itemDetail itemDetailName">
+				<xen:username user="{$thread.lastPostInfo}" rich="true" />
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_thread_title" version_id="2020300" version_string="2.2.3"><![CDATA[<div class="listBlock counter counter_{$i}">
+	<span class="countNumber">{$i}</span>
+	<span class="arrow"><span></span></span>
+</div>
+<div class="listBlock itemTitle">
+	<a href="{xen:link "threads{xen:if '{$thread.isNew} AND {$thread.haveReadData}', '/unread'}", $thread}"
+		title="{xen:if '{$thread.isNew} AND {$thread.haveReadData}', {xen:phrase go_to_first_unread_message}}"
+		class="{xen:if $thread.hasPreview, PreviewTooltip}"
+		<xen:if is="{$modernStatistic.preview_tooltip}=='custom_preview'">
+		data-kind="thread"
+		data-box="{$thread.node_title}"
+		data-view="{$thread.view_count}"
+		data-rep="{$thread.reply_count}"
+		data-like="{$thread.first_post_likes}"
+		</xen:if>
+		data-previewUrl="{xen:if $thread.hasPreview, {xen:link threads/preview, $thread}}"><xen:if is="{$modernStatistic.show_thread_prefix}">{xen:helper threadPrefix, $thread}</xen:if> {xen:helper wrap, $thread.title, 50}</a>
+</div>]]></template>
+    <template title="BRMS_user_latest_banned" version_id="2010200" version_string="2.1.2"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$user">
+	<li class="itemStast itemUser {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_user_name" />
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.like_count}</strong> <span>{xen:phrase likes}</span>
+			</div>
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.trophy_points}</strong> <span>{xen:phrase trophy_points}</span>
+			</div>
+			<div class="listBlock itemDetail itemDetailMain itemDate">
+				<span>{xen:phrase ban_started}:</span> <strong>{xen:datetime $user.ban_date}</strong>
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_user_latest_members" version_id="2010200" version_string="2.1.2"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$user">
+	<li class="itemStast itemUser {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_user_name" />
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.like_count}</strong> <span>{xen:phrase likes}</span>
+			</div>
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.trophy_points}</strong> <span>{xen:phrase trophy_points}</span>
+			</div>
+			<div class="listBlock itemDetail itemDetailMain itemDate">
+				<span>{xen:phrase joined}:</span> <strong>{xen:datetime $user.register_date}</strong>
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_user_most_likes" version_id="2010200" version_string="2.1.2"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$user">
+	<li class="itemStast itemUser {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_user_name" />
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.message_count}</strong> <span>{xen:phrase messages}</span>
+			</div>
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.trophy_points}</strong> <span>{xen:phrase trophy_points}</span>
+			</div>
+			<div class="listBlock itemDetail itemDetailMain">
+				<strong>{xen:number $user.like_count}</strong> <span>{xen:phrase likes}</span>
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_user_most_messages" version_id="2010200" version_string="2.1.2"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$user">
+	<li class="itemStast itemUser {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_user_name" />
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.like_count}</strong> <span>{xen:phrase likes}</span>
+			</div>
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.trophy_points}</strong> <span>{xen:phrase trophy_points}</span>
+			</div>
+			<div class="listBlock itemDetail itemDetailMain">
+				<strong>{xen:number $user.message_count}</strong> <span>{xen:phrase messages}</span>
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_user_most_points" version_id="2010200" version_string="2.1.2"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$user">
+	<li class="itemStast itemUser {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_user_name" />
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.message_count}</strong> <span>{xen:phrase messages}</span>
+			</div>
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.like_count}</strong> <span>{xen:phrase likes}</span>
+			</div>
+			<div class="listBlock itemDetail itemDetailMain">
+				<strong>{xen:number $user.trophy_points}</strong> <span>{xen:phrase trophy_points}</span>
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_user_most_resources" version_id="2010200" version_string="2.1.2"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$user">
+	<li class="itemStast itemUser {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_user_name" />
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.message_count}</strong> <span>{xen:phrase messages}</span>
+			</div>
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.like_count}</strong> <span>{xen:phrase likes}</span>
+			</div>
+			<div class="listBlock itemDetail itemDetailMain">
+				<strong>{xen:number $user.resource_count}</strong> <span>{xen:phrase resources}</span>
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_user_name" version_id="2000000" version_string="2.0.0"><![CDATA[<div class="listBlock counter counter_{$i}">
+	<span class="countNumber">{$i}</span>
+	<span class="arrow"><span></span></span>
+</div>
+<div class="listBlock itemTitle">
+	<xen:username user="$user" rich="true" class="StatusTooltip{xen:if $noOverlay, ' NoOverlay'}" title="{xen:string censor, $user.status}" />
+</div>]]></template>
+    <template title="BRMS_user_poorest" version_id="2010200" version_string="2.1.2"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$user">
+	<li class="itemStast itemUser {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_user_name" />
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.message_count}</strong> <span>{xen:phrase messages}</span>
+			</div>
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.like_count}</strong> <span>{xen:phrase likes}</span>
+			</div>
+			<div class="listBlock itemDetail itemDetailMain">
+				<strong>{xen:helper brc_currencyformat, {$user.{$column}},true,{$currencyId}}</strong> <span></span>
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_user_richest" version_id="2010200" version_string="2.1.2"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$user">
+	<li class="itemStast itemUser {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_user_name" />
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.message_count}</strong> <span>{xen:phrase messages}</span>
+			</div>
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.like_count}</strong> <span>{xen:phrase likes}</span>
+			</div>
+			<div class="listBlock itemDetail itemDetailMain">
+				<strong>{xen:helper brc_currencyformat, {$user.{$column}},true,{$currencyId}}</strong> <span></span>
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+    <template title="BRMS_user_staff_members" version_id="2010200" version_string="2.1.2"><![CDATA[<xen:if is="{$items}">
+	<ol class="brmsContentList">
+	<xen:foreach loop="$items" i="$i" value="$user">
+	<li class="itemStast itemUser {xen:if '{$i}==1','first'}"> 
+		<div class="itemContent">
+			<xen:include template="BRMS_user_name" />
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.message_count}</strong> <span>{xen:phrase messages}</span>
+			</div>
+			<div class="listBlock itemDetail itemSubDetail">
+				<strong>{xen:number $user.trophy_points}</strong> <span>{xen:phrase trophy_points}</span>
+			</div>
+			<div class="listBlock itemDetail itemDetailMain">
+				<strong>{xen:number $user.like_count}</strong> <span>{xen:phrase likes}</span>
+			</div>
+		</div>
+	</li>
+	</xen:foreach>
+	</ol>
+	<div class="clear"></div>
+</xen:if>]]></template>
+  </templates>
+  <public_template_modifications>
+    <modification template="account_wrapper" modification_key="BRMS_account_wrapper" description="Add modern statistics perferences link" execution_order="10" enabled="1" action="str_replace">
+      <find><![CDATA[href="{xen:link account/alert-preferences}">{xen:phrase alert_preferences}</a></li>
+					<li>]]></find>
+      <replace><![CDATA[$0
+<li><a
+		class="{xen:if "{$selectedKey} == 'account/BrmsStatisticsPreferences'", 'secondaryContent', 'primaryContent'}"
+		href="{xen:link account/brms-statistics-preferences}">{xen:phrase BRMS_modern_statistisc_preferences}</a></li>]]></replace>
+    </modification>
+    <modification template="navigation_visitor_tab" modification_key="BRMS_navigation_visitor_tab" description="Add modern statistics perferences" execution_order="10" enabled="1" action="str_replace">
+      <find><![CDATA[<li><a href="{xen:link account/alert-preferences}">{xen:phrase alert_preferences}</a></li>]]></find>
+      <replace><![CDATA[$0
+<li><a href="{xen:link account/brms-statistics-preferences}">{xen:phrase BRMS_modern_statistisc_preferences}</a></li>]]></replace>
+    </modification>
+  </public_template_modifications>
+  <bb_code_media_sites/>
+  <bb_codes/>
+  <brc_actions/>
+</addon>

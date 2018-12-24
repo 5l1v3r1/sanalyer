@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template_modifications>
+  <modification type="public" template="account_preferences" modification_key="daynightswitcher_account_preferences" description="Checkbox for enabling Day Night Switcher functionality" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:if is="$xf.visitor.canChangeStyle()">
+
+				<xf:selectrow name="user[style_id]" value="{$xf.visitor.style_id}"
+					label="{{ phrase('style') }}">
+
+					<xf:option value="0">{{ phrase('use_default_style:') }} {$defaultStyle.title}</xf:option>
+					<xf:optgroup label="{{ phrase('styles:') }}">
+						<xf:foreach loop="$styles" value="$style">
+							<xf:option value="{$style.style_id}">{{ repeat('--', $style.depth) }} {$style.title}{{ !$style.user_selectable ? ' *' : '' }}</xf:option>
+						</xf:foreach>
+					</xf:optgroup>
+				</xf:selectrow>
+			<xf:else />
+				<xf:hiddenval name="user[style_id]">{$xf.visitor.style_id}</xf:hiddenval>
+			</xf:if>]]></find>
+    <replace><![CDATA[$0
+
+<xf:if is="{{ $xf.visitor.hasPermission('general', 'daynightswitcher_disable') }}">
+	<xf:checkboxrow>
+		<xf:option value="daynightswitcher_enabled"
+			   	name="option[daynightswitcher_enabled]"
+			   	checked="{{ $xf.visitor.Option.daynightswitcher_enabled }}"
+			   	label="{{ phrase('daynightswitcher_account_preferences_checkbox') }}" />
+	</xf:checkboxrow>
+</xf:if>]]></replace>
+  </modification>
+  <modification type="public" template="account_preferences" modification_key="daynightswitcher_account_preferences_disable_style" description="Disabling style chooser if addon functionality is enabled" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:selectrow name="user[style_id]" value="{$xf.visitor.style_id}"
+					label="{{ phrase('style') }}">
+
+					<xf:option value="0">{{ phrase('use_default_style:') }} {$defaultStyle.title}</xf:option>
+					<xf:optgroup label="{{ phrase('styles:') }}">
+						<xf:foreach loop="$styles" value="$style">
+							<xf:option value="{$style.style_id}">{{ repeat('--', $style.depth) }} {$style.title}{{ !$style.user_selectable ? ' *' : '' }}</xf:option>
+						</xf:foreach>
+					</xf:optgroup>
+				</xf:selectrow>]]></find>
+    <replace><![CDATA[<xf:if is="$xf.options.daynightswitcher_globalEnabled">
+	<xf:if is="{{ !$xf.visitor.hasPermission('general', 'daynightswitcher_disable') || $xf.visitor.Option.daynightswitcher_enabled }}">
+		<xf:selectrow name="user[style_id]" value="{$xf.visitor.style_id}"
+					  label="{{ phrase('style') }}" disabled="true"
+					  explain="{{ phrase('daynightswitcher_can_not_change_style') }}">
+
+			<xf:option value="0">{{ phrase('use_default_style:') }} {$defaultStyle.title}</xf:option>
+			<xf:optgroup label="{{ phrase('styles:') }}">
+				<xf:foreach loop="$styles" value="$style">
+					<xf:option value="{$style.style_id}">{{ repeat('--', $style.depth) }} {$style.title}{{ !$style.user_selectable ? ' *' : '' }}</xf:option>
+				</xf:foreach>
+			</xf:optgroup>
+		</xf:selectrow>
+	<xf:else />
+		$0
+	</xf:if>
+<xf:else />
+	$0
+</xf:if>]]></replace>
+  </modification>
+  <modification type="admin" template="style_list" modification_key="daynightswitcher_style_list" description="Marking light and dark themes" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:main
+			hash="{$style.style_id}"
+			href="{{ ($style.style_id ? link('styles/edit', $style) : '') }}"
+			label="{$style.title}"
+			explain="{$style.description}"
+			class="dataList-cell--d{$depth}">
+
+			<xf:hint><xf:if is="$xf.designer AND $style.designer_mode">
+				{{ phrase('designer_mode_enabled:') }} {$style.designer_mode}
+			</xf:if></xf:hint>
+		</xf:main>]]></find>
+    <replace><![CDATA[<xf:if is="$xf.options.daynightswitcher_globalEnabled">
+	<xf:if is="$xf.options.daynightswitcher_dayTheme == $style.style_id && $xf.options.daynightswitcher_nightTheme == $style.style_id">
+		<xf:main
+				 hash="{$style.style_id}"
+				 href="{{ ($style.style_id ? link('styles/edit', $style) : '') }}"
+				 label="{$style.title} <span class='daynightswitcher-theme-label daynightswitcher-day'><i class='fa fa-sun-o'></i>{{ phrase('daynightswitcher_day_style') }}</span><span class='daynightswitcher-theme-label daynightswitcher-night'><i class='fa fa-moon-o'></i>{{ phrase('daynightswitcher_night_style') }}</span>"
+				 explain="{$style.description}"
+				 class="dataList-cell--d{$depth}">
+
+			<xf:hint><xf:if is="$xf.designer AND $style.designer_mode">
+				{{ phrase('designer_mode_enabled:') }} {$style.designer_mode}
+				</xf:if></xf:hint>
+
+		</xf:main>
+	<xf:elseif is="$xf.options.daynightswitcher_dayTheme == $style.style_id" />
+		<xf:main
+				 hash="{$style.style_id}"
+				 href="{{ ($style.style_id ? link('styles/edit', $style) : '') }}"
+				 label="{$style.title} <span class='daynightswitcher-theme-label daynightswitcher-day'><i class='fa fa-sun-o'></i>{{ phrase('daynightswitcher_day_style') }}</span>"
+				 explain="{$style.description}"
+				 class="dataList-cell--d{$depth}">
+
+			<xf:hint><xf:if is="$xf.designer AND $style.designer_mode">
+				{{ phrase('designer_mode_enabled:') }} {$style.designer_mode}
+				</xf:if></xf:hint>
+
+		</xf:main>
+	<xf:elseif is="$xf.options.daynightswitcher_nightTheme == $style.style_id" />
+		<xf:main
+				 hash="{$style.style_id}"
+				 href="{{ ($style.style_id ? link('styles/edit', $style) : '') }}"
+				 label="{$style.title} <span class='daynightswitcher-theme-label daynightswitcher-night'><i class='fa fa-moon-o'></i>{{ phrase('daynightswitcher_night_style') }}</span>"
+				 explain="{$style.description}"
+				 class="dataList-cell--d{$depth}">
+
+			<xf:hint><xf:if is="$xf.designer AND $style.designer_mode">
+				{{ phrase('designer_mode_enabled:') }} {$style.designer_mode}
+				</xf:if></xf:hint>
+
+		</xf:main>
+	<xf:else />
+		$0
+	</xf:if>
+	
+	<xf:else />
+		$0
+</xf:if>]]></replace>
+  </modification>
+  <modification type="admin" template="style_list" modification_key="daynightswitcher_style_list_style" description="Adding style to &quot;style_list&quot; template" execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:title>{{ phrase('styles') }}</xf:title>]]></find>
+    <replace><![CDATA[$0
+
+<xf:css src="daynightswitcher_style_list.less" />]]></replace>
+  </modification>
+</template_modifications>

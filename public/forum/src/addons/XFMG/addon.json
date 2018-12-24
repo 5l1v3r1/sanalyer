@@ -1,0 +1,17 @@
+{
+    "legacy_addon_id": "XenGallery",
+    "title": "XenForo Media Gallery",
+    "description": "The XenForo Media Gallery is an add-on that allows you and your users to create galleries of images and videos in your forum, organized into admin-defined categories or user-created albums.",
+    "version_id": 902000170,
+    "version_string": "2.0.1",
+    "dev": "XenForo Ltd.",
+    "dev_url": "https://xenforo.com/",
+    "faq_url": "https://xenforo.com/help/media-gallery/",
+    "support_url": "https://xenforo.com/community/forums/media-gallery-support.87/",
+    "extra_urls": {
+        "Information": "https://goo.gl/fK1tNA",
+        "Facebook": "https://goo.gl/snMJuD"
+    },
+    "require": [],
+    "icon": "icon.png"
+}

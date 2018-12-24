@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget_definitions>
+  <widget_definition definition_id="ResimliOneCikanWidget" definition_class="XenGenTr\ResimliOneCikanKonular\Widget\ResimliOnecikanlar"/>
+</widget_definitions>

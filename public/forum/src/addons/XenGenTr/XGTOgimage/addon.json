@@ -1,0 +1,27 @@
+{
+    "legacy_addon_id": "",
+    "title": "[XenGenTr] OG:images Sistemi ",
+    "description": "Konularinizda Open Graph (og:images) ekleyin,degistirin,yonetin... ",
+    "version_id": 1000108,
+    "version_string": "1.0.1",
+    "dev": "eTiKeT",
+    "dev_url": "https://xenforo.gen.tr/kullanicilar/etiket-tm.1/",
+    "faq_url": "",
+    "support_url": "https://xenforo.gen.tr/",
+    "extra_urls": {
+        "[XenGenTr] OG:images sistemi": "https://xenforo.gen.tr/xenforo-kaynaklari/xengentr-og-images-sistemi.598/",
+        "Degerlendir": "https://xenforo.gen.tr/xenforo-kaynaklari/xengentr-og-images-sistemi.598/rate",
+        "Yorumlar": "https://xenforo.gen.tr/konular/xengentr-og-images-sistemi.3050/"
+    },
+    "require": {
+        "XF": [
+            2000010,
+            "XenForo 2.0.0+"
+        ],
+        "php": [
+            "5.6.0",
+            "PHP 5.6.0+"
+        ]
+    },
+    "icon": "XenGenTr.png"
+}

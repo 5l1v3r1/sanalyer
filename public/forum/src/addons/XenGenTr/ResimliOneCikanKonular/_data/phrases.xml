@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="XenGenTr_ResimliKonular_baslik" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Öne çıkan konular]]></phrase>
+  <phrase title="XenGenTr_ResimliKonular_hata_olustu" version_id="1000030" version_string="1.0.0 Beta3"><![CDATA[Beklenmedik bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.]]></phrase>
+  <phrase title="XenGenTr_ResimliKonular_ikon_sinir_bilgisi" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Yüklenecek ikon boyutları {width}x{height} pixel olarak düzenlenecektir.]]></phrase>
+  <phrase title="XenGenTr_ResimliKonular_ikon_yukle" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[One çıkan konu ikonu]]></phrase>
+  <phrase title="XenGenTr_ResimliKonular_mevcut_ikon" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Kullanılan ikon]]></phrase>
+  <phrase title="XenGenTr_ResimliKonular_onecikan_konu" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Öne çıkan konu]]></phrase>
+  <phrase title="XenGenTr_ResimliOneCikan_icerikler_ustunde" version_id="1000090" version_string="1.0.0"><![CDATA[Tüm içerik üstünde : Sadece ana sayfada ]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_Baslat_dur" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Başlat ve durdur kontrolleri]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_birincisaydan_sonra" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Birinci sayfadan sonra göster]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_duzenle" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Öne çıkanı düzenle]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_duzenle_baslik" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Öne çıkan bu konuyu düzenle]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_gecis_hizi" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Geçiş Hızı]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_gecis_modu" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Geçiş modu]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_gecis_modu_dikey" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Dikey]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_gecis_modu_karartma" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Karartma]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_gecis_modu_yatay" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Yatay]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_gecis_sikiligi" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Geçiş sıklığı]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_icerigi_kes" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[İçeriği kes]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_icerik_mesaji" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Konudan alınan içerik]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_kategori_sayfalarini_goster" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Kategori sayfalarında göster]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_one_cikani_silmek_istedigini_onayla" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Bu öne çıkarılmış konuyu silmek istediğinize eminmisiniz?]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_one_cikar" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Konuyu öne çıkar]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_one_cikar_baslik" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Konuyu öne çıkarma detayları]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_ozellestir" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Özel başlık ve içeriği kullan]]></phrase>
+  <phrase title="XenGenTr_ResimliOnecikanlar_yukleme_cubugu" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Yükleme çubuğunu göster]]></phrase>
+  <phrase title="admin_permission.ResimliKonular" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] Resimli Öne Çıkan Konular]]></phrase>
+  <phrase title="option.XenGenTr_ResimliKonular_Boyutlari" version_id="1000090" version_string="1.0.0"><![CDATA[Arka plan resim boyutu]]></phrase>
+  <phrase title="option.XenGenTr_ResimliKonular_Sileder_gecis_zamani" version_id="1000090" version_string="1.0.0"><![CDATA[Konu değiştirme zaman araliği]]></phrase>
+  <phrase title="option.XenGenTr_ResimliKonular_baslik" version_id="1000090" version_string="1.0.0"><![CDATA[Öne çıkan konular başlığı]]></phrase>
+  <phrase title="option.XenGenTr_ResimliKonular_gosterim_sayisi" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Gosterilecek konu sayısı]]></phrase>
+  <phrase title="option.XenGenTr_ResimliKonular_header_gizle" version_id="1000090" version_string="1.0.0"><![CDATA[Öne çıkan konular header göster]]></phrase>
+  <phrase title="option.XenGenTr_ResimliKonular_kapat" version_id="1000032" version_string="1.0.0 Beta 1"><![CDATA[Eklenti aktif]]></phrase>
+  <phrase title="option.XenGenTr_ResimliKonular_konum" version_id="1000032" version_string="1.0.0 Beta 1"><![CDATA[Konum seç]]></phrase>
+  <phrase title="option.XenGenTr_ResimliKonular_limit" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[İçerik karakter sayısı]]></phrase>
+  <phrase title="option.XenGenTr_ResimliKonular_slider_gecis_bloklari" version_id="1000090" version_string="1.0.0"><![CDATA[Her kaydığında X konu]]></phrase>
+  <phrase title="option.XenGenTr_ResimliKonular_slider_gecis_hizi" version_id="1000090" version_string="1.0.0"><![CDATA[Konu değiştirme hızı]]></phrase>
+  <phrase title="option_explain.XenGenTr_ResimliKonular_Boyutlari" version_id="1000032" version_string="1.0.0 Beta 1"><![CDATA[Yüklenecek arka plan resimleri sizin belirttiğiniz boyuta düşürülecektir. Resim boyutlarının büyük olması görsel sorunlara neden olabilir. Tavsiye edilen değer 396X250 Piksel.]]></phrase>
+  <phrase title="option_explain.XenGenTr_ResimliKonular_Sileder_gecis_zamani" version_id="1000090" version_string="1.0.0"><![CDATA[Konuların daha detaylı görünmesi,incelenebilmesi için daha "yavaş" geçişler yapabilir yada çok sayıdaki konunuzun tümünün görünmesi için daha "hızlı" geçişler yapabilirsiniz.]]></phrase>
+  <phrase title="option_explain.XenGenTr_ResimliKonular_baslik" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Öne çıkan konularınız için bir başlık belirleyebilirsiniz.]]></phrase>
+  <phrase title="option_explain.XenGenTr_ResimliKonular_gosterim_sayisi" version_id="1000032" version_string="1.0.0 Beta 1"><![CDATA[En fazla gösterilecek olan öne çıkan konu sayısını belirtiniz. Bu değer en az "4" konu ile sınırlandırılabilir.]]></phrase>
+  <phrase title="option_explain.XenGenTr_ResimliKonular_header_gizle" version_id="1000090" version_string="1.0.0"><![CDATA[Bazı alanlarda header görünmemesini isteyebileceğinizi düşünüyorum :)]]></phrase>
+  <phrase title="option_explain.XenGenTr_ResimliKonular_kapat" version_id="1000032" version_string="1.0.0 Beta 1"><![CDATA[Sistemi etkinleştir yada kapat]]></phrase>
+  <phrase title="option_explain.XenGenTr_ResimliKonular_konum" version_id="1000032" version_string="1.0.0 Beta 1"><![CDATA[Gösterim için belirtilen 3 konumdan birini seçebilirsiniz.]]></phrase>
+  <phrase title="option_explain.XenGenTr_ResimliKonular_limit" version_id="1000032" version_string="1.0.0 Beta 1"><![CDATA[Konu içeriğinden gösterilecek olan karakter sayısını sınırlayabilirsiniz. Öne çıkan resimli konular içinde konu içeriğiniziden belirttiğiniz karakter sayısı kadar karakter gösterilecektir.]]></phrase>
+  <phrase title="option_explain.XenGenTr_ResimliKonular_slider_gecis_bloklari" version_id="1000032" version_string="1.0.0 Beta 1"><![CDATA[Konular her hareket ettiğinde kaç adet konunun atlanmasını istersiniz.
+Örneğin "4" değeri girilir ise slider harekete geçtiği anda "4" konu ileriye gidecektir. <br /> Tavsiye edilen en fazla "4" konu]]></phrase>
+  <phrase title="option_explain.XenGenTr_ResimliKonular_slider_gecis_hizi" version_id="1000032" version_string="1.0.0 Beta 1"><![CDATA[Konu değişimindeki kayma hızını ayarlayabilirsiniz. Konular kaydırılırken içeriği metinleri daha sağlıklı okuyabilmek için ihtiyaç duyabilirsiniz.]]></phrase>
+  <phrase title="option_group.XenGenTr_ResimliOneCikanKonu_Secenekleri" version_id="1000032" version_string="1.0.0 Beta 1"><![CDATA[[XenGenTr] Öne Çikan resimli konular V1]]></phrase>
+  <phrase title="option_group_description.XenGenTr_ResimliOneCikanKonu_Secenekleri" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Öne çıkan resimler konu seçenekleri.]]></phrase>
+  <phrase title="permission.ResimliKonular_izinler_modFeatures" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[modFeatures]]></phrase>
+  <phrase title="permission.ResimliKonular_izinler_onecikan_gonder" version_id="1000030" version_string="1.0.0 Beta3"><![CDATA[Konuları öne çıkarabilir mi?]]></phrase>
+  <phrase title="permission.ResimliKonular_izinler_onecikan_gor" version_id="1000030" version_string="1.0.0 Beta3"><![CDATA[Öne çıkan konuları görebilir mi?]]></phrase>
+  <phrase title="permission.ResimliKonular_izinler_onecikan_yonet" version_id="1000030" version_string="1.0.0 Beta3"><![CDATA[Öne çıkan konuları yönetebilir mi?]]></phrase>
+  <phrase title="permission.ResimliKonular_izinler_resimlionecikan_gonder" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Öne çıkan konu gönderebilir mi?]]></phrase>
+  <phrase title="permission.ResimliKonular_izinler_resimlionecikan_gor" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Öne çıkan konuları görebilir mi?]]></phrase>
+  <phrase title="permission.ResimliKonular_izinler_resimlionecikan_yonet" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Öne çıkan konuları yönetebilir mi?]]></phrase>
+  <phrase title="permission.ResimliKonular_izinler_submitFeatures" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Ona çıkan konu gönderebilir mi?]]></phrase>
+  <phrase title="permission_interface.ResimliKonular_izinler" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] Öne çıkan resimli konular]]></phrase>
+  <phrase title="style_prop.XGTResimliKonular_Header" version_id="1000050" version_string="1.0.0"><![CDATA[Resimli konular header rengi]]></phrase>
+  <phrase title="style_prop.XGTResimliKonular_Header_Metin" version_id="1000050" version_string="1.0.0"><![CDATA[Resimli konular header mentin rengi]]></phrase>
+  <phrase title="style_prop.XGTResimliKonular_body" version_id="1000050" version_string="1.0.0"><![CDATA[Resimli konular arka plan rengi]]></phrase>
+  <phrase title="style_prop_desc.XGTResimliKonular_Header" version_id="1000050" version_string="1.0.0"><![CDATA[]]></phrase>
+  <phrase title="style_prop_desc.XGTResimliKonular_Header_Metin" version_id="1000050" version_string="1.0.0"><![CDATA[]]></phrase>
+  <phrase title="style_prop_desc.XGTResimliKonular_body" version_id="1000050" version_string="1.0.0"><![CDATA[]]></phrase>
+  <phrase title="style_prop_group.XenGenTr_OneCikan_Resimli_konular" version_id="1000050" version_string="1.0.0"><![CDATA[[XenGenTr] Resimli Öne Çıkan Konular]]></phrase>
+  <phrase title="style_prop_group_desc.XenGenTr_OneCikan_Resimli_konular" version_id="1000050" version_string="1.0.0"><![CDATA[]]></phrase>
+  <phrase title="widget_def.ResimliOneCikanWidget" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[[XenGenTr] Resimli Öne cikan konular]]></phrase>
+  <phrase title="widget_def_desc.ResimliOneCikanWidget" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Forumdan one cikan konular içerir.]]></phrase>
+</phrases>
