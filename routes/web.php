@@ -164,6 +164,6 @@ $homeRoute = function () {
 };
 
 
-Route::group(['domain' => 'cdn.'.env("PURE_URL")], $homeRoute);
-Route::group(['domain' => env("PURE_URL")], $homeRoute);
-Route::group(['domain' => 'www.'.env("PURE_URL")], $homeRoute);
+Route::group(['scheme' => 'https', 'domain' => 'cdn.'.env("PURE_URL")], $homeRoute);
+Route::group(['scheme' => 'https', 'domain' => env("PURE_URL")], $homeRoute);
+Route::group(['scheme' => 'https', 'domain' => 'www.'.env("PURE_URL")], $homeRoute);
