@@ -164,8 +164,7 @@ $homeRoute = function () {
 
     Route::get('/phpinfo', function () {
         phpinfo();
-    };
-
+    });
 };
 
 
