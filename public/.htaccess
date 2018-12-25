@@ -7,11 +7,17 @@
     # RewriteCond %{HTTP_HOST} !^www\.sanalyer\.com
     # RewriteRule (.*) https://www.sanalyer.com/$1 [R=301,L]
 
-    RewriteCond %{HTTP_ACCEPT} image/webp
-    RewriteCond %{REQUEST_URI}  (?i)(.*)(\.jpe?g|\.png)$
-    RewriteCond %{DOCUMENT_ROOT}%1.webp -f
-    RewriteRule (?i)(.*)(\.jpe?g|\.png)$ %1\.webp [L,T=image/webp,R]
+    # RewriteCond %{HTTP_ACCEPT} image/webp
+    # RewriteCond %{REQUEST_URI}  (?i)(.*)(\.jpe?g|\.png)$
+    # RewriteCond %{DOCUMENT_ROOT}%1.webp -f
+    # RewriteRule (?i)(.*)(\.jpe?g|\.png)$ %1\.webp [L,T=image/webp,R]
 
+    # Check if browser support WebP images
+    RewriteCond %{HTTP_ACCEPT} image/webp
+    # Check if WebP replacement image exists
+    RewriteCond %{DOCUMENT_ROOT}/$1_$2.webp -f
+    # Serve WebP image instead
+    RewriteRule (resimler.+)\.(jpe?g|JPE?G|png)$ $1_$2.webp [T=image/webp,E=accept:1]
 
     SecFilterEngine Off
 
@@ -34,7 +40,9 @@
   Header append Vary Accept env=REDIRECT_accept
 </IfModule>
 
-AddType image/webp .webp
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
 
 # BEGIN Gzip
 <IfModule mod_deflate.c>
