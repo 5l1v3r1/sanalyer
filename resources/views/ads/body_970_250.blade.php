@@ -1,5 +1,5 @@
 {{--class = hide-mobile--}}
-<div class="wt-masthead" id="wt-masthead">
+<div class="wt-masthead hide-mobile" id="wt-masthead">
     <div class="wt-masthead__horizontal">
         <div class="wt-masthead__vertical">
             <!-- 970px -->
