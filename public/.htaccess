@@ -7,6 +7,12 @@
     # RewriteCond %{HTTP_HOST} !^www\.sanalyer\.com
     # RewriteRule (.*) https://www.sanalyer.com/$1 [R=301,L]
 
+    RewriteCond %{HTTP_ACCEPT} image/webp
+    RewriteCond %{REQUEST_URI}  (?i)(.*)(\.jpe?g|\.png)$
+    RewriteCond %{DOCUMENT_ROOT}%1.webp -f
+    RewriteRule (?i)(.*)(\.jpe?g|\.png)$ %1\.webp [L,T=image/webp,R]
+
+
     SecFilterEngine Off
 
     # Handle Authorization Header
@@ -23,10 +29,12 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
-# php -- BEGIN cPanel-generated handler, do not edit
-# Set the “ea-php71” package as the default “PHP” programming language.
 
-# php -- END cPanel-generated handler, do not edit
+<IfModule mod_headers.c>
+  Header append Vary Accept env=REDIRECT_accept
+</IfModule>
+
+AddType image/webp .webp
 
 # BEGIN Gzip
 <IfModule mod_deflate.c>
