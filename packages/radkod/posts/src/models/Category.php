@@ -2,8 +2,11 @@
 namespace Radkod\Posts\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 
 class Category extends Model{
+    use Cachable;
+
     protected $table = "categories";
 
     protected $hidden = ['content', 'tag', 'design', "created_at", "updated_at"];
