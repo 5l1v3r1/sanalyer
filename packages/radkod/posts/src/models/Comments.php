@@ -2,6 +2,7 @@
 namespace Radkod\Posts\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 
 /**
  * @property int|null user_id
@@ -11,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string content
  */
 class Comments extends Model{
+    use Cachable;
     protected $table = "comments";
 
     protected $hidden = ['content'];
