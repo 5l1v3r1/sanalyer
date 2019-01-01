@@ -35,19 +35,19 @@
     <div class="sidebar-block">
         <div class="sidebar-title global-title">Son Eklenen Videolar</div>
         <ol class="sidebar-trend">
-            @widget("TrendVideos")
+            {{--@widget("TrendVideos")--}}
         </ol>
     </div>
     <div class="sidebar-block clearfix">
         <div class="sidebar-title global-title">En Çok Okunanlar</div>
         <ol class="sidebar-mosts sidebar-mosts--readed">
-            @widget("MostReadPost")
+            {{--@widget("MostReadPost")--}}
         </ol>
     </div>
     <div class="sidebar-block clearfix">
         <div class="sidebar-title global-title">Bu Hafta En Çok Okunanlar</div>
         <ol class="sidebar-mosts sidebar-mosts--shared">
-            @widget("MostWeekReadPost")
+            {{--@widget("MostWeekReadPost")--}}
         </ol>
     </div>
 
