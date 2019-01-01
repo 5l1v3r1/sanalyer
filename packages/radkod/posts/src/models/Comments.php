@@ -12,7 +12,7 @@ use GeneaLabs\LaravelModelCaching\Traits\Cachable;
  * @property string content
  */
 class Comments extends Model{
-    use Cachable;
+    /*use Cachable;*/
     protected $table = "comments";
 
     protected $hidden = ['content'];

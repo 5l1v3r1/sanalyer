@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 
 class Posts extends Model{
-    use Cachable;
+    /*use Cachable;*/
     protected $table = "posts";
 
     protected $hidden = ['content'];
