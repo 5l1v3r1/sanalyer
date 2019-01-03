@@ -1,0 +1,5 @@
+{
+                    "origin": "istanbul",
+                    "destination": "denizli",
+                    "waypoints": ["samsun","ankara"]
+                }

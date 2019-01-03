@@ -3744,7 +3744,7 @@ input[type=checkbox]:not(:disabled)~.lever:active:after {
 .content-timeline__media__icon,
 .headline__blocks__icon,
 .sidebar-trend__item__icon {
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#9b28b0', endColorstr='#4052b6', GradientType=1)
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#0070ca', endColorstr='#4052b6', GradientType=1)
 }
 
 .headline__blocks__icon {
@@ -3753,8 +3753,8 @@ input[type=checkbox]:not(:disabled)~.lever:active:after {
     position: absolute;
     right: 16px;
     top: 16px;
-    background: #9b28b0;
-    background: linear-gradient(45deg, #9b28b0 0, #4052b6 100%);
+    background: #0070ca;
+    background: linear-gradient(45deg, #0070ca 0, #4052b6 100%);
     border-radius: 22px;
     z-index: 4;
     opacity: .9
@@ -3800,11 +3800,11 @@ input[type=checkbox]:not(:disabled)~.lever:active:after {
 }
 
 .headline__blocks__header__category--review {
-    background-color: #3f51b5
+    background-color: #0070ca
 }
 
 .headline__blocks__header__category--video {
-    background-color: #3F51B5
+    background-color: #0070ca
 }
 
 .headline__blocks__header__category--listing {
@@ -4561,11 +4561,11 @@ input[type=checkbox]:not(:disabled)~.lever:active:after {
 }
 
 .content-timeline__time__icon--product {
-    background-color: #3f51b5
+    background-color: #0070ca
 }
 
 .content-timeline__time__icon--video {
-    background-color: #3F51B5
+    background-color: #0070ca
 }
 
 .content-timeline__time__icon--gallery {
@@ -4951,8 +4951,8 @@ input[type=checkbox]:not(:disabled)~.lever:active:after {
     position: absolute;
     left: calc(50% - 32px);
     top: calc(50% - 32px);
-    background: #9b28b0;
-    background: linear-gradient(45deg, #9b28b0 0, #4052b6 100%);
+    background: #0070ca;
+    background: linear-gradient(45deg, #0070ca 0, #4052b6 100%);
     border-radius: 30px;
     z-index: 10;
     opacity: .9
@@ -5057,7 +5057,7 @@ input[type=checkbox]:not(:disabled)~.lever:active:after {
     position: relative;
     padding: 10px 20px;
     display: table-cell;
-    color: #3F51B5
+    color: #0070ca
 }
 
 .content-timeline__media__detail .detail-content__category:after {
@@ -5099,7 +5099,7 @@ input[type=checkbox]:not(:disabled)~.lever:active:after {
 }
 
 .content-timeline__media__detail .detail-content__title {
-    background-color: #3F51B5;
+    background-color: #0070ca;
     color: #FFF;
     padding: 10px 20px;
     display: table-cell;
@@ -5113,7 +5113,7 @@ input[type=checkbox]:not(:disabled)~.lever:active:after {
     width: 10px;
     height: 100%;
     position: absolute;
-    background-color: #283593;
+    background-color: #125c98;
     top: 5px;
     left: -10px;
     z-index: -1;
@@ -5317,7 +5317,7 @@ input[type=checkbox]:not(:disabled)~.lever:active:after {
         transition: all .3s
     }
     .content-timeline__media__icon--play-button:hover:before {
-        background-color: #3f51b5
+        background-color: #0070ca
     }
 }
 
@@ -5644,8 +5644,8 @@ input[type=checkbox]:not(:disabled)~.lever:active:after {
     position: absolute;
     left: calc(50% - 32px);
     top: calc(50% - 32px);
-    background: #9b28b0;
-    background: linear-gradient(45deg, #9b28b0 0, #4052b6 100%);
+    background: #0070ca;
+    background: linear-gradient(45deg, #0070ca 0, #4052b6 100%);
     border-radius: 30px;
     z-index: 9;
     opacity: .9
