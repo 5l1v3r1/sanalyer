@@ -1,0 +1,29 @@
+[13-Nov-2018 21:10:36 Europe/Rome] PHP Fatal error:  Uncaught Error: Call to undefined function mime_content_type() in /home/sanalyer/public_html/filemanager/include/php_image_magician.php:2723
+Stack trace:
+#0 /home/sanalyer/public_html/filemanager/include/php_image_magician.php(230): imageLib->openImage('../resimler/spo...')
+#1 /home/sanalyer/public_html/filemanager/include/utils.php(377): imageLib->__construct('../resimler/spo...')
+#2 /home/sanalyer/public_html/filemanager/UploadHandler.php(1431): create_img('../resimler/spo...', '../resimler/.th...', 122, 91)
+#3 /home/sanalyer/public_html/filemanager/UploadHandler.php(1382): UploadHandler->onUploadEnd(Array)
+#4 /home/sanalyer/public_html/filemanager/UploadHandler.php(187): UploadHandler->post(false)
+#5 /home/sanalyer/public_html/filemanager/UploadHandler.php(171): UploadHandler->initialize()
+#6 /home/sanalyer/public_html/filemanager/upload.php(152): UploadHandler->__construct(Array, true, Array)
+#7 {main}
+  thrown in /home/sanalyer/public_html/filemanager/include/php_image_magician.php on line 2723
+[18-Nov-2018 12:11:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function dd() in /home/sanalyer/public_html/filemanager/config/config.php:17
+Stack trace:
+#0 /home/sanalyer/public_html/filemanager/dialog.php(5): include()
+#1 {main}
+  thrown in /home/sanalyer/public_html/filemanager/config/config.php on line 17
+[18-Nov-2018 12:12:24 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function FileManager::__construct(), 0 passed in /home/sanalyer/public_html/filemanager/config/config.php on line 17 and exactly 1 expected in /home/sanalyer/public_html/filemanager/config/config.php:12
+Stack trace:
+#0 /home/sanalyer/public_html/filemanager/config/config.php(17): FileManager->__construct()
+#1 /home/sanalyer/public_html/filemanager/dialog.php(5): include('/home/sanalyer/...')
+#2 {main}
+  thrown in /home/sanalyer/public_html/filemanager/config/config.php on line 12
+[18-Nov-2018 12:12:51 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function FileManager::__construct(), 0 passed in /home/sanalyer/public_html/filemanager/config/config.php on line 20 and exactly 1 expected in /home/sanalyer/public_html/filemanager/config/config.php:15
+Stack trace:
+#0 /home/sanalyer/public_html/filemanager/config/config.php(20): FileManager->__construct()
+#1 /home/sanalyer/public_html/filemanager/dialog.php(5): include('/home/sanalyer/...')
+#2 {main}
+  thrown in /home/sanalyer/public_html/filemanager/config/config.php on line 15
+[18-Nov-2018 12:13:02 UTC] PHP Notice:  Undefined property: Radkod\Xenforo2\XenforoBridge\XenforoBridge::$forumUser in /home/sanalyer/public_html/filemanager/config/config.php on line 13

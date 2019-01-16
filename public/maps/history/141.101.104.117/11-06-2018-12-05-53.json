@@ -1,0 +1,5 @@
+{
+                    "origin": "izmir",
+                    "destination": "denizli",
+                    "waypoints": ["erzurum","sivas","mu\u011fla"]
+                }
