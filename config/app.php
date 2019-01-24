@@ -230,8 +230,6 @@ return [
 
         UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
         
-        Intervention\Image\ImageServiceProvider::class,
-
         Radkod\Posts\PostsServiceProvider::class,
         Radkod\Admin\AdminServiceProvider::class,
         Radkod\Xenforo2\XenforoBridge\ServiceProvider::class,
@@ -290,7 +288,6 @@ return [
         'XF' => 'Urb\XenforoBridge\Facades\XenforoBridge',
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
-        'ImageInter' => Intervention\Image\Facades\Image::class
     ],
 
 ];
