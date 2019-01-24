@@ -229,7 +229,6 @@ return [
         Barryvdh\Cors\ServiceProvider::class,
 
         UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
 
         Folklore\Image\ImageServiceProvider::class,
 
@@ -292,7 +291,6 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'Image' => Folklore\Image\Facades\Image::class,
-        'ImageInter'     => Intervention\Image\Facades\Image::class,
 
     ],
 
