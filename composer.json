@@ -10,6 +10,8 @@
         "barryvdh/laravel-cors": "^0.11.0",
         "davejamesmiller/laravel-breadcrumbs": "^4.2",
         "fideloper/proxy": "~3.3",
+        "intervention/image": "^2.3",
+        "folklore/image": "0.3.*",
         "genealabs/laravel-model-caching": "^0.3.3",
         "imanghafoori/laravel-widgetize": "^1.8",
         "laravel/framework": "5.5.*",
