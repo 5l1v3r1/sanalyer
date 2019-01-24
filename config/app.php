@@ -290,7 +290,7 @@ return [
         'XF' => 'Urb\XenforoBridge\Facades\XenforoBridge',
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
-        'Image' => Intervention\Image\Facades\Image::class
+        'ImageInter' => Intervention\Image\Facades\Image::class
     ],
 
 ];
