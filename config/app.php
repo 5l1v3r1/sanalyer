@@ -227,8 +227,6 @@ return [
 
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
-
-        UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
         
         Folklore\Image\ImageServiceProvider::class,
         
