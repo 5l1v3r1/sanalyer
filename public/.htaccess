@@ -60,10 +60,6 @@
   Header append Vary User-Agent
 </IfModule>
 
-<filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|svg|js|css|swf)$">
-    Header set Cache-Control "max-age=604800"
-</filesMatch>
-
 ## EXPIRES HEADER CACHING ##
 <IfModule mod_expires.c>
   ExpiresActive On
