@@ -16,13 +16,12 @@
         "laravel/framework": "5.5.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
+        "laravelium/feed": "^2.11",
+        "laravelium/sitemap": "^2.7",
         "lullabot/amp": "^1.0.0",
         "predis/predis": "^1.1",
-        "roumen/feed": "^2.11",
-        "roumen/sitemap": "^2.7",
         "toolkito/larasap": "^1.2",
         "tymon/jwt-auth": "^0.5.12",
-        "unisharp/laravel-filemanager": "~1.8",
         "urb/xenforobridge": "dev-master",
         "uxweb/sweet-alert": "^1.4",
         "yajra/laravel-datatables-oracle": "~8.0"
@@ -56,6 +55,7 @@
     "extra": {
         "laravel": {
             "dont-discover": [
+                "Intervention/image"
             ]
         }
     },
