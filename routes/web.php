@@ -133,6 +133,9 @@ $homeRoute = function () {
     Route::post('kayit', 'Auth\RegisterController@register');
     */
 
+    Route::get('kayit', function (){
+        return redirect(env('FORUM_URL').'/register');
+    })->name('forum_register');
     Route::post('kayit', 'Forum\UserController@register')->name('register');
 
 

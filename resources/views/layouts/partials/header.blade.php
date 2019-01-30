@@ -33,8 +33,9 @@
                     <button class="login__form-button login__form-button--signin ripple" type="submit">GİRİŞ YAP
                     </button>
                 </div>
-                <div class="login__form-signup">Üyeliğiniz yoksa <a href="#!" class="modal-button"
-                                                                    data-modal="modal-signup">yeni üyelik oluşturun</a>.
+                <div class="login__form-signup">Üyeliğiniz yoksa
+                    <a href="{{ route("forum_register") }}" class="modal-button">yeni üyelik oluşturun</a>.
+                    {{--<a href="#!" class="modal-button" data-modal="modal-signup">yeni üyelik oluşturun</a>.--}}
                 </div>
             </form>
         </div>
