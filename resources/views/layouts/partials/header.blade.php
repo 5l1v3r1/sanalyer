@@ -205,6 +205,10 @@
                            class="ripple">FORUM</a>
                     </li>
                     <li class="header__appbar--left__menu__list__item">
+                        <a href="https://www.gamer.com.tr/" target="_blank" title="Oyun Haberleri" alt="Oyun Haberleri"
+                           class="ripple">Gamer.com.tr</a>
+                    </li>
+                    <li class="header__appbar--left__menu__list__item">
                         <a class="category-dropdown ripple has-dropdown" data-target="category-dropdown"
                            data-align="left-bottom">
                             KATEGORİLER <i class="material-icons">&#xE5C5;</i>
