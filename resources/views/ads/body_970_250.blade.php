@@ -14,11 +14,11 @@
         </div>
     </div>
 </div>--}}
-<div class="wt-masthead" id="wt-masthead">
+<div class="wt-masthead hide-mobile" id="wt-masthead">
     <div class="" style="position: relative;
     vertical-align: middle;
     display: block;
-    width: 970px;
+    width: 728px;
     margin: 0 auto;">
         <div class="">
             <a href="https://takipciservisi.net/" title="takipçi servisi" target="_blank">
@@ -28,3 +28,18 @@
         </div>
     </div>
 </div>
+<div class="wt-masthead visible-mobile" id="wt-masthead">
+    <div class="" style="position: relative;
+    vertical-align: middle;
+    display: block;
+    width: 100%;
+    margin: 0 auto;">
+        <div class="">
+            <a href="https://takipciservisi.net/" title="takipçi servisi" target="_blank">
+                <img src="https://i.hizliresim.com/nQ61YV.gif" alt="takipçi servisi">
+            </a>
+            <div class="wt-masthead__close">Reklamı gizle</div>
+        </div>
+    </div>
+</div>
+
