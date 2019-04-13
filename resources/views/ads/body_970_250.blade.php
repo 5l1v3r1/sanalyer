@@ -15,8 +15,12 @@
     </div>
 </div>--}}
 <div class="wt-masthead" id="wt-masthead">
-    <div class="wt-masthead__horizontal">
-        <div class="wt-masthead__vertical">
+    <div class="" style="position: relative;
+    vertical-align: middle;
+    display: block;
+    width: 970px;
+    margin: 0 auto;">
+        <div class="">
             <a href="https://takipciservisi.net/" title="takipçi servisi" target="_blank">
                 <img src="https://i.hizliresim.com/nQ61YV.gif" alt="takipçi servisi">
             </a>
