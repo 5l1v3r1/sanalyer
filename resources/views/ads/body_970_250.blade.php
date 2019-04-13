@@ -1,5 +1,5 @@
 {{--class = hide-mobile--}}
-<div class="wt-masthead hide-mobile" id="wt-masthead">
+{{--<div class="wt-masthead hide-mobile" id="wt-masthead">
     <div class="wt-masthead__horizontal">
         <div class="wt-masthead__vertical">
             <!-- 970px -->
@@ -10,6 +10,16 @@
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
+            <div class="wt-masthead__close">Reklamı gizle</div>
+        </div>
+    </div>
+</div>--}}
+<div class="wt-masthead" id="wt-masthead">
+    <div class="wt-masthead__horizontal">
+        <div class="wt-masthead__vertical">
+            <a href="https://takipciservisi.net/" title="takipçi servisi" target="_blank">
+                <img src="https://i.hizliresim.com/nQ61YV.gif" alt="takipçi servisi">
+            </a>
             <div class="wt-masthead__close">Reklamı gizle</div>
         </div>
     </div>
