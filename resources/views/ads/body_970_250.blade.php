@@ -22,7 +22,7 @@
     margin: 0 auto;">
         <div class="">
             <a href="https://takipciservisi.net/" title="takipçi servisi" target="_blank">
-                <img src="https://i.hizliresim.com/nQ61YV.gif" alt="takipçi servisi">
+                <img src="https://i.hizliresim.com/nQ61YV.gif" alt="takipçi servisi" style="width: 100%">
             </a>
             <div class="wt-masthead__close">Reklamı gizle</div>
         </div>
@@ -36,7 +36,7 @@
     margin: 0 auto;">
         <div class="">
             <a href="https://takipciservisi.net/" title="takipçi servisi" target="_blank">
-                <img src="https://i.hizliresim.com/nQ61YV.gif" alt="takipçi servisi">
+                <img src="https://i.hizliresim.com/nQ61YV.gif" alt="takipçi servisi" style="width: 100%">
             </a>
             <div class="wt-masthead__close">Reklamı gizle</div>
         </div>
