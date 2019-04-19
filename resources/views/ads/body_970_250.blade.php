@@ -18,7 +18,8 @@
     <div class="" style="position: relative;
     vertical-align: middle;
     display: block;
-    width: 728px;
+    /*width: 728px;*/
+    width: 970px;
     margin: 0 auto;">
         <div class="">
             <a href="https://donanimforum.com/" title="donanım forum" target="_blank">
