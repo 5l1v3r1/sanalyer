@@ -24,30 +24,7 @@
             <a href="https://donanimforum.com/" title="donanım forum" target="_blank">
                 <img src="https://donanimforum.com/images/ads/970x90.jpg" alt="donanım forum" style="width: 100%">
             </a>
-        </div>
-    </div>
-</div>
-<div class="wt-masthead visible-mobile" id="wt-masthead">
-    <div class="" style="position: relative;
-    vertical-align: middle;
-    display: block;
-    width: 100%;
-    margin: 0 auto;">
-        <div class="">
-            <a href="https://donanimforum.com/" title="donanım forum" target="_blank">
-                <img src="https://donanimforum.com/images/ads/970x90.jpg" alt="donanım forum" style="width: 100%">
-            </a>
-        </div>
-    </div>
-</div>
-
-<div class="wt-masthead hide-mobile" id="wt-masthead">
-    <div class="" style="position: relative;
-    vertical-align: middle;
-    display: block;
-    width: 970px;
-    margin: 0 auto;">
-        <div class="">
+            <br>
             <a href="https://www.bilisimcini.com/" title="bilişim cini" target="_blank">
                 <img src="https://i.hizliresim.com/oXvA3o.jpg" alt="bilişim cini" style="width: 100%">
             </a>
@@ -61,6 +38,10 @@
     width: 100%;
     margin: 0 auto;">
         <div class="">
+            <a href="https://donanimforum.com/" title="donanım forum" target="_blank">
+                <img src="https://donanimforum.com/images/ads/970x90.jpg" alt="donanım forum" style="width: 100%">
+            </a>
+            <br>
             <a href="https://www.bilisimcini.com/" title="bilişim cini" target="_blank">
                 <img src="https://i.hizliresim.com/oXvA3o.jpg" alt="bilişim cini" style="width: 100%">
             </a>
