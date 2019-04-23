@@ -31,6 +31,11 @@
 	<script src="//cdn2.admatic.com.tr/showad/showad.js" async></script>
 	<!-- Admatic Scroll 300x250 Ad Code END -->
 
+    <!-- Admatic imageplus x Ad Code START -->
+    <ins data-publisher="adm-pub-177662955945" data-ad-type="imageplus" class="adm-ads-area" data-ad-network="160412231757" data-ad-sid="400"></ins>
+    <script src="//cdn2.admatic.com.tr/showad/showad.js" async></script>
+    <!-- Admatic imageplus x Ad Code END -->
+
 </head>
 <body>
 @include('ads.body_970_250')
