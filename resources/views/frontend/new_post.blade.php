@@ -3,8 +3,6 @@
 @section('css')
     <link href="{{ asset('/assets/default/css/other-pages.css?v=2.3.4') }}" rel="stylesheet" media="all"/>
     <link rel="stylesheet" href="{{ asset('assets/default/js-packages/jquery.datetimepicker.min.css') }}">
-
-
 @endsection
 
 @section('content')

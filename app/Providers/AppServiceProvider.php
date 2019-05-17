@@ -5,6 +5,7 @@ namespace App\Providers;
 use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Blade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
         Validator::extend('without_spaces', function($attr, $value){
             return preg_match('/^\S*$/u', $value);
         });
+        Blade::withoutDoubleEncoding();
     }
 
     /**
