@@ -41,7 +41,7 @@
     <div class="sidebar-block">
         <div class="sidebar-title global-title">Sponsor</div>
         <div>
-            <a href="https://www.bitcofly.com/" target="_blank" title="bitcofly">
+            <a href="https://www.sanalyer.com/haber/dunyanin-ilk-sertifikali-kriptopara-hesap-yonetimi-ve-bitcoin-faiz-getirisi-sirketi-1849.html" target="_blank" title="bitcofly">
                 <img src="https://i.hizliresim.com/Yd233l.png" alt="bitcofly">
             </a>
         </div>
