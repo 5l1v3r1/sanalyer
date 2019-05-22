@@ -168,5 +168,5 @@ $homeRoute = function () {
 
 
 Route::group(['domain' => 'cdn.'.env("PURE_URL")], $homeRoute);
-Route::group(['domain' => env("PURE_URL")], $homeRoute);
-Route::group(['domain' => 'www.'.env("PURE_URL")], $homeRoute);
+Route::group([], $homeRoute);
+Route::group([], $homeRoute);

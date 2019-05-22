@@ -38,6 +38,14 @@
             @widget("TrendVideos")
         </ol>
     </div>
+    <div class="sidebar-block">
+        <div class="sidebar-title global-title">Sponsor</div>
+        <div>
+            <a href="https://www.bitcofly.com/" target="_blank" title="bitcofly">
+                <img src="https://i.hizliresim.com/Yd233l.png" alt="bitcofly">
+            </a>
+        </div>
+    </div>
     <div class="sidebar-block clearfix">
         <div class="sidebar-title global-title">En Çok Okunanlar</div>
         <ol class="sidebar-mosts sidebar-mosts--readed">
