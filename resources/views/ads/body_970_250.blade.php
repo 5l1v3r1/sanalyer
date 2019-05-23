@@ -1,5 +1,5 @@
 {{--class = hide-mobile--}}
-{{--<div class="wt-masthead hide-mobile" id="wt-masthead">
+<div class="wt-masthead hide-mobile" id="wt-masthead">
     <div class="wt-masthead__horizontal">
         <div class="wt-masthead__vertical">
             <!-- 970px -->
@@ -13,8 +13,8 @@
             <div class="wt-masthead__close">Reklamı gizle</div>
         </div>
     </div>
-</div>--}}
-<div class="wt-masthead hide-mobile" id="wt-masthead">
+</div>-
+{{--<div class="wt-masthead hide-mobile" id="wt-masthead">
     <div class="" style="position: relative;
     vertical-align: middle;
     display: block;
@@ -39,5 +39,5 @@
             </a>
         </div>
     </div>
-</div>
+</div>--}}
 
