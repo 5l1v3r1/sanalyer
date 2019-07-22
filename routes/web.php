@@ -15,6 +15,9 @@ Route::group(['middleware' => ['App\Http\Middleware\Cors']], function () {
     Route::post('/ajax/comments', 'HomeAjaxController@comments')->name("ajax::comments");
     Route::post('/ajax/commentsLoad', 'HomeAjaxController@commentsLoad')->name("ajax::commentsLoad");
     Route::get('/ajax/threads','HomeAjaxController@ajaxThreads')->name('ajax::threads');
+    Route::post('/ajax/image/upload','HomeAjaxController@ajaxImageUpload')->name('ajax::imageUpload');
+    Route::delete('/ajax/image/delete','HomeAjaxController@ajaxImageDelete')->name('ajax::imageDelete');
+    Route::get('/ajax/image/loads','HomeAjaxController@ajaxLoadImages')->name('ajax::loadImages');
 });
 
 Route::group(['middleware' => 'forum.login'], function () {

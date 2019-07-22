@@ -26,6 +26,10 @@
                         <span class="copyright--row__text">info@sanalyer.com</span>
                     </div>
                     <div class="copyright--row">
+                        <span class="copyright--row__label">İmtiyaz Sahibi:</span>
+                        <span class="copyright--row__text">Furkan Yurdakul</span>
+                    </div>
+                    <div class="copyright--row">
                         <span class="copyright--row__label">Editörler:</span>
                         <span class="copyright--row__text">Abdullah Bozdağ</span>
                         <span class="copyright--row__text">Murat Özakçil</span>

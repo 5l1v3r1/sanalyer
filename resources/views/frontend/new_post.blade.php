@@ -1,8 +1,22 @@
 @extends('layouts.master')
 
 @section('css')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
     <link href="{{ asset('/assets/default/css/other-pages.css?v=2.3.4') }}" rel="stylesheet" media="all"/>
     <link rel="stylesheet" href="{{ asset('assets/default/js-packages/jquery.datetimepicker.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/froala_editor_2.9.1/css/froala_editor.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/froala_editor_2.9.1/css/froala_editor.pkgd.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/froala_editor_2.9.1/css/froala_style.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/froala_editor_2.9.1/libs/tui/css/tui-image-editor.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/froala_editor_2.9.1/libs/tui/css/tui-color-picker.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/froala_editor_2.9.1/libs/tui/css/image_tui.min.css') }}">
+
+    <!-- sanalyerAppEditor -->
+    <link rel="stylesheet" href="{{ asset('assets/froala_editor_2.9.1/sanalyerAppEditor.css') }}">
+
 @endsection
 
 @section('content')
@@ -53,8 +67,13 @@
                         </div>
 
                         <div>
-                            <textarea name="content_full" class="ckeditor "
-                                      id="editor-ckeditor">{!! old('content_full') !!}</textarea>
+                            <div id="sanalyerAppEditorWrapper">
+                                <textarea id="content_full" name="content_full">{!! old('content_full') !!}</textarea>
+                            </div>
+
+
+                            {{--textarea name="content_full" class="ckeditor "
+                                      id="editor-ckeditor">{!! old('content_full') !!}</textarea>--}}
                         </div>
 
                         <div>
@@ -106,9 +125,55 @@
 @endsection
 
 @section('script')
+
+    <script src="{{ asset('assets/froala_editor_2.9.1/js/froala_editor.min.js') }}"></script>
+    <script src="{{ asset('assets/froala_editor_2.9.1/js/froala_editor.pkgd.min.js') }}"></script>
+
+    <script src="{{ asset('assets/froala_editor_2.9.1/libs/tui/js/fabric.min.js') }}"></script>
+    <script src="{{ asset('assets/froala_editor_2.9.1/libs/tui/js/tui-code-snippet.min.js') }}"></script>
+    <script src="{{ asset('assets/froala_editor_2.9.1/libs/tui/js/tui-image-editor.min.js') }}"></script>
+    <script src="{{ asset('assets/froala_editor_2.9.1/libs/tui/js/image_tui.min.js') }}"></script>
+
+
+    <script src="{{ asset('assets/froala_editor_2.9.1/js/languages/tr.js') }}"></script>
+    <script src="{{ asset('assets/froala_editor_2.9.1/sanalyerAppEditor.js') }}"></script>
+
+    <script>
+        $('#content_full').froalaEditor({
+            inlineMode: false,
+            imageMove: true,
+            imageUploadParam: 'file',
+            imageUploadMethod: 'post',
+            // Set the image upload methods (Doc: https://www.froala.com/wysiwyg-editor/v2.0/docs/sdks/php/image-server-upload).
+            imageUploadURL: 'https://www.sanalyer.com/ajax/image/upload',
+            imageUploadParams: {
+                froala: 'true', // This allows us to distinguish between Froala or a regular file upload.
+                id: 'content_full',
+                _token: "{{ csrf_token() }}" // This passes the laravel token with the ajax request.
+            },
+            // Image Manager (Doc: https://www.froala.com/wysiwyg-editor/v2.0/docs/sdks/php/image-manager)
+            imageManagerLoadURL: 'https://www.sanalyer.com/ajax/image/loads',
+            imageManagerDeleteURL: 'https://www.sanalyer.com/ajax/image/delete',
+            imageManagerDeleteMethod: "delete",
+            imageManagerDeleteParams: {
+                _token: "{{ csrf_token() }}"
+            },
+            // Set the file upload URL (Doc: https://www.froala.com/wysiwyg-editor/v2.0/docs/sdks/php/file-server-upload).
+            fileUploadURL: 'https://www.sanalyer.com/ajax/image/upload',
+            // Options for editor
+            language: 'tr',
+            heightMin: 300,
+            videoTextNear: false,
+            videoEditButtons: ['videoReplace', 'videoRemove', 'videoSize'],
+            quickInsertButtons: ['image', 'video', 'embedly', 'hr'],
+            toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|', 'fontSize', 'color', 'inlineClass', 'clearFormatting', '|', 'emoticons', 'fontAwesome', 'specialCharacters', 'paragraphFormat', 'paragraphStyle', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 'insertLink', 'insertImage', 'insertVideo', 'embedly', 'insertTable', '|', 'insertHR', 'selectAll', 'getPDF', 'print', 'help', 'html', 'fullscreen', '|', 'undo', 'redo']
+        });
+    </script>
+
     <script type="text/javascript"
             src="{{ asset('assets/default/js-packages/jquery.datetimepicker.full.min.js') }}">
     </script>
+
     <script type="text/javascript">
         $('#datetimepicker1').datetimepicker({
             value: new Date(),

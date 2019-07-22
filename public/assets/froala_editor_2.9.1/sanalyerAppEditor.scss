@@ -1,0 +1,11 @@
+#sanalyerAppEditorWrapper{
+    max-width: 90vw;
+    margin:0 auto;
+    font-family: inherit;
+    // Hack for unlicensed notify
+    .fr-wrapper>div {
+        a[href^="https://www.froala.com/wysiwyg-editor?k=u"] {
+            display: none !important;
+        }
+    }
+}

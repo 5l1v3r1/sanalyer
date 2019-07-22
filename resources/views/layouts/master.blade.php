@@ -16,6 +16,8 @@
     <link rel="preconnect" href="https://cdn.sanalyer.com"/>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
+    <link rel="stylesheet" href="{{ asset('assets/froala_editor_2.9.1/css/third_party/embedly.min.css') }}">
+
     <!-- global reklam -->
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({

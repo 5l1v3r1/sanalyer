@@ -283,4 +283,71 @@ class HomeAjaxController extends Controller
         return DataTables::of($posts)->make();
     }
 
+    public function ajaxImageUpload(Request $request){
+        $name = sha1(microtime()) . "." . $request->file('file')->getClientOriginalExtension();
+        $request->file('file')->move(public_path('resimler'), $name);
+        if($request['froala'] == 'true'){
+            return stripslashes(response()->json(['link' => env('APP_URL').'/resimler/'.$name])->content());
+        }
+
+    }
+
+    public function ajaxImageDelete(Request $request){
+
+        if($this->user->user()->is_admin == 1 || $this->user->user()->is_moderator == 1){
+            \File::delete([
+                getcwd() . '/resimler/'. $request['name'],
+            ]);
+
+            return $request['name']. ' deleting';
+        }else {
+            return 'not is admin';
+        }
+
+    }
+
+    public function ajaxLoadImages(){
+        // Array of image links to return.
+        $response = array();
+
+        // Image types.
+        $image_types = array(
+            "image/gif",
+            "image/jpeg",
+            "image/pjpeg",
+            "image/jpeg",
+            "image/pjpeg",
+            "image/png",
+            "image/x-png"
+        );
+
+        $ignored = array('.', '..', '.svn', '.htaccess', '.thumbs', 'error_log');
+        $files = array();
+        foreach (scandir(getcwd() . '/resimler') as $file) {
+            if (in_array($file, $ignored)) continue;
+            /*if (in_array(mime_content_type(getcwd() . '/resimler/'.$file), $image_types)) {
+                $files[$file] = filemtime(getcwd() . '/resimler/' . $file);
+            }*/
+            $files[$file] = filemtime(getcwd() . '/resimler/' . $file);
+        }
+
+        arsort($files);
+
+        // $files = array_slice(array_keys($files), 0, 500);
+        $files = array_keys($files);
+
+        foreach ($files as $file){
+            array_push($response, [
+                'url'=>env('APP_URL').'/resimler/'.$file,
+                'thumb'=>env('APP_URL').'/resimler/'.$file,
+                'type'=>"image",
+                /*'tag'=>$file,*/
+                'name'=>$file,
+            ]);
+        }
+
+        return response()->json($response);
+
+    }
+
 }
