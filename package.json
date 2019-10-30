@@ -19,6 +19,6 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "swagger-ui": "^3.17.3"
+        "swagger-ui": "^3.23.11"
     }
 }
