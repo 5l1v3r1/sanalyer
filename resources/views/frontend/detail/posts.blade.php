@@ -309,6 +309,10 @@
                             Hemen yukarıda <b>{{ $posts->title }}</b> ile ilgili yorum ve görüşleri
                             inceleyerek sizlerde yorum bırakabilirsiniz. "
 
+                            <hr>
+                            <a href="{{ route('comments_detail', $posts->id) }}" title="{{ $posts->title }} yorumlar"
+                               class="content-comments__title global-title">Tüm Yorumlar</a>
+                            <hr>
                             <!-- publisher -->
                             <div itemprop="publisher" id="commentArea" itemscope itemtype="https://schema.org/Organization">
                                 <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">

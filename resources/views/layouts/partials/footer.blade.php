@@ -20,7 +20,11 @@
 <script>
     // adblock detect
     var adBlockDetected = function() {
-        console.log('AdBlock algılandı.');
+        swal(
+            "adblock :(",
+            "adblock eklentinizi sitemizde kapatmanızı rica ediyoruz, dikkatinizi çekmeyecek kadar az reklam yapıyoruz.",
+            "error"
+        );
     };
     var adBlockUndetected = function() {};
     if(typeof fuckAdBlock === 'undefined') {

@@ -157,6 +157,8 @@ $homeRoute = function () {
     Route::get('/ara', 'HomeController@search')->name("search");
     Route::get('/etiket/{q}', 'HomeController@search')->name("tag");
 
+    Route::get('yorumlar/icerik-{id}.html', 'HomePostsController@commentsDetail')->name('comments_detail');
+
 
     Route::get('/forum-test', function(){
         $asdasd = new \Radkod\Xenforo2\XenforoBridge\XenforoBridge();

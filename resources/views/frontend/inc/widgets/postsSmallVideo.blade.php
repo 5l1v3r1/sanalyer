@@ -28,6 +28,7 @@
         <div class="content-timeline__detail">
             <div class="content-timeline__detail__container">
                 <div class="content-timeline__detail--top">
+
                     <a href="{{ route('show_category',$item->category()->first()->full_url) }}"
                        title="{{ $item->category()->first()->title }}">
                         <h5 class="content-timeline__detail__category">{{ $item->category()->first()->title }}</h5>

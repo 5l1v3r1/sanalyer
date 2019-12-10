@@ -1,7 +1,7 @@
 <div class="content-timeline__item">
     <div class="content-timeline--left">
         <div class="content-timeline__time">
-            @if($item->category() != null)
+            @if(count($item->category()->get()))
             <a class="content-timeline__time__link"
                href="{{ route('show_category',$item->category()->first()->full_url) }}">
                 <span class="content-timeline__time__icon content-timeline__time__icon--news tooltip"
@@ -29,7 +29,7 @@
         <div class="content-timeline__detail">
             <div class="content-timeline__detail__container">
                 <div class="content-timeline__detail--top">
-                    @if($item->category() != null)
+                    @if(count($item->category()->get()))
                     <a href="{{ route('show_category',$item->category()->first()->full_url) }}"
                        class="content-timeline__link clearfix"
                        title="{{ $item->category()->first()->title }}">

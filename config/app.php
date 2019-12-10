@@ -233,6 +233,8 @@ return [
         Radkod\Posts\PostsServiceProvider::class,
         Radkod\Admin\AdminServiceProvider::class,
         Radkod\Xenforo2\XenforoBridge\ServiceProvider::class,
+
+        'JD\Cloudder\CloudderServiceProvider'
     ],
 
     /*
@@ -289,6 +291,7 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'Image' => Folklore\Image\Facades\Image::class,
+        'Cloudder' => 'JD\Cloudder\Facades\Cloudder'
     ],
 
 ];

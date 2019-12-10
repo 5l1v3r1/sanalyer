@@ -8,14 +8,17 @@ Breadcrumbs::register('home', function ($breadcrumbs) {
 Breadcrumbs::register('category', function ($breadcrumbs, $category) {
     $category = \Radkod\Posts\Models\Category::find($category);
     $breadcrumbs->parent('home');
-    foreach ($category->parent as $item){
-        $parent = \Radkod\Posts\Models\Category::find($item->parent_id);
-        if($parent != null){
-        $breadcrumbs->push($parent->title, route('show_category', str_slug($parent->title) . '-' . $parent->id));
+    if ($category){
+        foreach ($category->parent as $item){
+            $parent = \Radkod\Posts\Models\Category::find($item->parent_id);
+            if($parent != null){
+                $breadcrumbs->push($parent->title, route('show_category', str_slug($parent->title) . '-' . $parent->id));
+            }
+            $breadcrumbs->push($item->title, route('show_category', str_slug($item->title) . '-' . $item->id));
         }
-        $breadcrumbs->push($item->title, route('show_category', str_slug($item->title) . '-' . $item->id));
+        $breadcrumbs->push($category->title, route('show_category', str_slug($category->title) . '-' . $category->id));
     }
-    $breadcrumbs->push($category->title, route('show_category', str_slug($category->title) . '-' . $category->id));
+
 });
 
 // Home  > [Category] > [Post]

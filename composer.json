@@ -13,6 +13,7 @@
         "folklore/image": "0.3.*",
         "genealabs/laravel-model-caching": "^0.3.3",
         "imanghafoori/laravel-widgetize": "^1.8",
+        "jrm2k6/cloudder": "0.4.*",
         "laravel/framework": "5.6.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
@@ -24,7 +25,7 @@
         "tymon/jwt-auth": "^0.5.12",
         "urb/xenforobridge": "dev-master",
         "uxweb/sweet-alert": "^1.4",
-        "yajra/laravel-datatables-oracYANLIŞle": "~8.0"
+        "yajra/laravel-datatables-oracle": "~8.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

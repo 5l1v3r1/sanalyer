@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Radkod\Posts\Models\Comments;
 use function App\checkImage;
 use Lullabot\AMP\AMP;
 use function App\YoutubeID;
@@ -519,6 +520,15 @@ class HomePostsController extends Controller
         }
         alert()->error('Lütfen bizimle iletişime geçiniz.','Bunu yapmaya yetkiniz yok.')->persistent("Kapat");
         return redirect(route('threads'));
+    }
+
+    public function commentsDetail($id){
+        $post = Posts::find($id);
+        $comments = Comments::where('posts_id', $id)
+            ->where('status', 1)
+            ->where('parent_id', 0)
+            ->orderBy('created_at', 'DESC')->paginate(10);
+        return view('frontend.detail.comment_detail', compact('comments', 'post'));
     }
 
 }
