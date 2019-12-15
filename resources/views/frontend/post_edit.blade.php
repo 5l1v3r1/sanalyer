@@ -172,8 +172,13 @@ $newDate = date("d-m-Y H:i:s", strtotime($post->created_at));
             quickInsertButtons: ['image', 'video', 'embedly', 'hr'],
             toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|', 'fontSize', 'color', 'inlineClass', 'clearFormatting', '|', 'emoticons', 'fontAwesome', 'specialCharacters', 'paragraphFormat', 'paragraphStyle', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 'insertLink', 'insertImage', 'insertVideo', 'embedly', 'insertTable', '|', 'insertHR', 'selectAll', 'getPDF', 'print', 'help', 'html', 'fullscreen', '|', 'undo', 'redo']
         });
-        document.querySelector('a[href*="https://www.froala.com/wysiwyg-editor"]').style.display = "none";
     </script>
+
+    <style>
+        #sanalyerAppEditorWrapper a[href*="https://www.froala.com/wysiwyg-editor"]{
+            display: none !important;
+        }
+    </style>
 
     <script type="text/javascript"
             src="{{ asset('assets/default/js-packages/jquery.datetimepicker.full.min.js') }}">
